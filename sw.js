@@ -1,5 +1,5 @@
 /* BJT 빈출 단어장 — 오프라인 캐시 (서비스 워커) */
-const VERSION = '4c56e9e809';
+const VERSION = '63a7a288a6';
 const CORE = 'bjt-core-' + VERSION;
 const FONTS = 'bjt-fonts-v1';
 const BASE = new URL('./', self.location).href;            // 앱이 놓인 폴더 (루트든 하위 경로든)
