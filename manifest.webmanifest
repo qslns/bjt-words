@@ -1,0 +1,34 @@
+{
+  "id": "./",
+  "name": "BJT 빈출 단어장",
+  "short_name": "BJT 단어",
+  "description": "BJT 빈출 500단어를 회독 방식으로 외우는 단어장",
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F2F4F7",
+  "theme_color": "#F2F4F7",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
