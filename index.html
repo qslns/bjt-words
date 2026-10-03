@@ -592,6 +592,7 @@ function enterCard() {
   closeModal();
   ui = {rev: false, mode: 'front', id, t0: m, lock: m + 300};
   renderStudy();
+  warmCard(id, false);
 }
 function pushUndo(r, id) {
   const dk = dayKey(Date.now());
@@ -616,9 +617,10 @@ function answer(known) {
     ui = {rev: true, mode: 'unknown', id, t0: m, lock: m + 300};
     renderStudy();
     if (S.auto) sayWord(id);
+    warmCard(id, true);
     return;
   }
-  TTS.stop();
+  stopVoice();
   enterCard();
 }
 function goNext() {
@@ -626,7 +628,7 @@ function goNext() {
   if (m < ui.lock) return;
   const r = getRun();
   if (r) { addTime(r, Math.min(90e3, Math.max(0, m - ui.t0))); touch(r, now); saveH(); }
-  TTS.stop();
+  stopVoice();
   enterCard();
 }
 function showExplain() {
@@ -634,6 +636,7 @@ function showExplain() {
   ui.rev = true; ui.mode = 'explain'; ui.lock = mono() + 300;
   renderStudy();
   if (S.auto) sayWord(ui.id);
+  warmCard(ui.id, true);
 }
 function undo() {
   const s = undoStack.pop();
@@ -646,7 +649,7 @@ function undo() {
   w.u = now; H.w[s.id] = w;
   if (ctx.kind === 'ch') chGet(ctx.i).t = s.chT;
   H.g.tt = s.tt; H.g.d[s.dk] = s.dv;
-  saveH(); closeModal(); TTS.stop();
+  saveH(); closeModal(); stopVoice();
   const id = curId(r);
   ui = {rev: false, mode: 'front', id, t0: mono(), lock: mono() + 200};
   if (id == null) { enterCard(); return; }
@@ -704,8 +707,60 @@ const TTS = {
   stop() { if (!this.ok) return; try { const ss = window.speechSynthesis; if (ss.speaking || ss.pending) ss.cancel(); } catch (e) {} }
 };
 TTS.init();
-const sayWord = id => { const w = byId.get(id); if (w) TTS.say(w.r); };
-const saySent = (id, i) => { const w = byId.get(id); if (w && w.e[i]) TTS.say(w.e[i].t); };
+/* 녹음 음성(앱 버전): 미리 만든 신경망 음성 파일을 재생하고, 못 불러오면 기기 음성으로 대신 읽음 */
+const AUDIO_CACHE = 'bjt-audio-v1';
+const AUDIO_TOTAL = W.reduce((n, w) => n + 1 + w.e.length, 0);
+const AUDIO_MB = '32';
+const AUD = {
+  on: IS_PWA,
+  el: null, warned: false, seq: 0,
+  url(kind, id, i) { return new URL('audio/' + (kind === 'w' ? 'w/' + id : 's/' + id + '-' + i) + '.mp3', location.href).href; },
+  get() {
+    if (!this.el) {
+      const a = new Audio();
+      a.preload = 'auto';
+      try { a.preservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {}
+      this.el = a;
+    }
+    return this.el;
+  },
+  play(url, fallback) {
+    const a = this.get();
+    const token = ++this.seq;
+    const failOnce = () => { if (token !== this.seq) return; this.seq++; this.fail(fallback); };
+    TTS.stop();
+    try { a.pause(); } catch (e) {}
+    a.onerror = failOnce;
+    a.src = url;
+    const r = S.rate || 1;
+    try { a.defaultPlaybackRate = r; a.playbackRate = r; } catch (e) {}
+    let p;
+    try { p = a.play(); } catch (e) { failOnce(); return; }
+    if (p && p.catch) p.catch(err => { const n = err && err.name; if (n === 'AbortError' || n === 'NotAllowedError') return; failOnce(); });
+  },
+  fail(text) {
+    if (text) TTS.say(text);
+    if (!this.warned) { this.warned = true; toast('녹음 음성을 못 불러와서 기기 음성으로 읽었어요'); }
+  },
+  stop() { this.seq++; if (this.el) { try { this.el.pause(); } catch (e) {} } },
+  warm(urls) {
+    if (!this.on || !('caches' in window)) return;
+    caches.open(AUDIO_CACHE).then(c => urls.forEach(u => c.match(u).then(hit => {
+      if (!hit) fetch(u).then(r => { if (r.ok) return c.put(u, r); }).catch(() => {});
+    }))).catch(() => {});
+  }
+};
+const sayWord = id => { const w = byId.get(id); if (!w) return; if (AUD.on) AUD.play(AUD.url('w', id), w.r); else TTS.say(w.r); };
+const saySent = (id, i) => { const w = byId.get(id); if (!w || !w.e[i]) return; if (AUD.on) AUD.play(AUD.url('s', id, i), w.e[i].t); else TTS.say(w.e[i].t); };
+const stopVoice = () => { TTS.stop(); AUD.stop(); };
+const CAN_SPEAK = () => AUD.on || TTS.ok;
+const frontSentIdx = (w, r) => { const passN = ctx && ctx.kind === 'ch' ? chGet(ctx.i).n : 0; return (passN + (r ? r.round : 0)) % w.e.length; };
+function warmCard(id, all) {
+  if (!AUD.on) return;
+  const w = byId.get(id); if (!w) return;
+  if (all) AUD.warm(w.e.map((e, i) => AUD.url('s', id, i)));
+  else AUD.warm([AUD.url('w', id), AUD.url('s', id, frontSentIdx(w, getRun()))]);
+}
 
 /* ================= 전체화면 ================= */
 const FS = {
@@ -837,7 +892,7 @@ const B = {q: '', tier: 'all', st: 'all', cat: 'all', mask: false, wmask: false,
 function show(v) {
   view = v;
   for (const k in V) V[k].hidden = k !== v;
-  if (v !== 'study') TTS.stop();
+  if (v !== 'study') stopVoice();
   if (v === 'home') renderHome();
   if (v === 'weak') renderWeak();
   if (v === 'browse') renderBrowse();
@@ -987,7 +1042,7 @@ function frontHTML(w, r) {
   return '<div class="cf-top">' + tierTag(w.t) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">No.' + NO.get(w.id) + '</span>' + phase + '</div>' +
     '<div class="cf-mid">' +
       '<button class="cf-word w' + len + '" data-act="sayW" lang="ja" aria-label="' + esc(w.w) + ' 발음 듣기">' + esc(w.w) + '</button>' +
-      (TTS.ok ? '<span class="cf-hint">' + ICON.spk + '단어를 누르면 발음</span>' : '') +
+      (CAN_SPEAK() ? '<span class="cf-hint">' + ICON.spk + '단어를 누르면 발음</span>' : '') +
       (S.sent ? '<p class="cf-sent" lang="ja" data-act="saySF">' + ruby(e.j, true) + '</p>' : '') +
     '</div>';
 }
@@ -1006,7 +1061,7 @@ function ansHTML(w, inSheet) {
   return '<section class="s-ans ans"><div class="ans-top">' + tierTag(w.t) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">No.' + NO.get(w.id) + '</span>' +
       (x && x.m ? '<span class="miss">모르겠음 ' + x.m + '회</span>' : '') +
       (inSheet ? '<button class="starw" data-act="starW" data-id="' + w.id + '" aria-pressed="' + weak + '">' + (weak ? ICON.star + '약점에 있음' : ICON.starO + '약점에 넣기') + '</button>' : '') + '</div>' +
-    '<div class="ans-row"><h2 class="ans-hw' + ([...w.w].length >= 6 ? ' long' : '') + '" lang="ja">' + headRuby(w) + '</h2>' + (TTS.ok ? '<button class="spk lg" data-act="sayW" data-id="' + w.id + '" aria-label="발음 듣기">' + ICON.spk + '</button>' : '') + '</div>' +
+    '<div class="ans-row"><h2 class="ans-hw' + ([...w.w].length >= 6 ? ' long' : '') + '" lang="ja">' + headRuby(w) + '</h2>' + (CAN_SPEAK() ? '<button class="spk lg" data-act="sayW" data-id="' + w.id + '" aria-label="발음 듣기">' + ICON.spk + '</button>' : '') + '</div>' +
     (w.r !== w.w ? '<div class="ans-read" lang="ja">' + esc(w.r) + '</div>' : '') +
     '<div class="ans-mean">' + mixJa(w.m) + '</div>' +
     (sub.length ? '<div class="ans-sub">' + sub.join('') + '</div>' : '') +
@@ -1024,7 +1079,7 @@ function sentHTML(w) {
     w.e.map((e, i) => {
       const sc = SCENE[e.s] || ['', e.s];
       return '<article class="sent" data-i="' + i + '"><div class="sent-h"><span class="scene"><b>' + sc[0] + '</b>' + esc(sc[1]) + '</span>' +
-        (TTS.ok ? '<button class="spk" data-act="sayS" data-id="' + w.id + '" data-i="' + i + '" aria-label="예문 듣기">' + ICON.spk + '</button>' : '') + '</div>' +
+        (CAN_SPEAK() ? '<button class="spk" data-act="sayS" data-id="' + w.id + '" data-i="' + i + '" aria-label="예문 듣기">' + ICON.spk + '</button>' : '') + '</div>' +
         '<p class="jp" lang="ja" data-act="peek">' + ruby(e.j) + '</p><p class="ko" data-act="peek">' + esc(e.k) + '</p></article>';
     }).join('') + '</section>';
 }
@@ -1194,7 +1249,9 @@ function openSettings() {
   openSheet('설정',
     '<div class="set">' +
       '<section><h3>발음</h3>' + segB('setAuto', S.auto, [[true, '해설 열 때 자동 발음'], [false, '누를 때만']]) + segB('setRate', S.rate, [[0.8, '느리게'], [1, '보통'], [1.2, '빠르게']]) +
-        '<div><button class="btn" data-act="testVoice"' + (TTS.ok ? '' : ' disabled') + '>' + ICON.spk.replace('<svg ', '<svg width="20" height="20" ') + '<span>음성 테스트</span></button></div><p class="hint">' + voice + '</p></section>' +
+        '<div class="frow"><button class="btn" data-act="testVoice"' + (CAN_SPEAK() ? '' : ' disabled') + '>' + ICON.spk.replace('<svg ', '<svg width="20" height="20" ') + '<span>음성 테스트</span></button>' +
+        (AUD.on ? '<button class="btn" data-act="audioAll" id="aud-all"' + (audJob ? ' disabled' : '') + '>음성 전체 받아두기</button>' : '') + '</div>' +
+        '<p class="hint" id="aud-note">' + (AUD.on ? (audJob ? audJobText() : audioNote()) : voice + ' 자연스러운 녹음 음성은 아이패드 앱 버전에서 나와요.') + '</p></section>' +
       '<section><h3>카드 앞면</h3>' + segB('setSent', S.sent, [[true, '예문 같이 보기'], [false, '단어만']]) + segB('setShuf', S.shuf, [[false, '번호 순서대로'], [true, '섞어서']]) +
         '<p class="hint">순서 설정은 새로 시작하는 회독부터 적용돼요. 장 끝의 ‘모르는 단어’ 반복은 매번 섞을지 물어봐요.</p></section>' +
       '<section><h3>약점 자동 추가</h3>' + segB('setWk', S.wkN, [[2, '2번 모르면'], [3, '3번 모르면']]) + '</section>' +
@@ -1205,6 +1262,44 @@ function openSettings() {
       (!IS_PWA && APP_URL.indexOf('http') === 0 ? '<section><h3>아이패드 앱</h3><p class="hint"><a href="' + esc(APP_URL) + '" target="_blank" rel="noopener">' + esc(APP_URL.replace(/^https?:\/\//, '')) + '</a> — Safari로 열고 공유 → ‘홈 화면에 추가’.</p></section>' : '') +
       '<section class="danger-zone"><h3>전체 초기화</h3><div><button class="btn danger" data-act="resetAll">모든 진도·약점 지우기…</button></div></section>' +
     '</div>');
+}
+
+/* ================= 음성 전체 받아두기 ================= */
+let audJob = null;
+function audioNote() {
+  let saved = ''; try { saved = localStorage.getItem('bjt500.audio') || ''; } catch (e) {}
+  const done = saved.indexOf(AUDIO_CACHE + '|') === 0;
+  return '단어·예문 ' + AUDIO_TOTAL.toLocaleString() + '개를 Microsoft 신경망 음성(여성 Nanami, 남성 Keita)으로 미리 녹음해 뒀어요. ' +
+    (done ? '이 기기에 전부 저장돼 있어서 인터넷 없이도 발음이 나와요.' : '‘음성 전체 받아두기’(약 ' + AUDIO_MB + 'MB, 와이파이 권장)를 한 번 해 두면 인터넷 없이도 발음이 나와요. 안 해도 들을 때마다 받아요.');
+}
+const audJobText = () => audJob ? '음성 받는 중… ' + audJob.done.toLocaleString() + ' / ' + audJob.N.toLocaleString() + (audJob.fail ? ' (실패 ' + audJob.fail + ')' : '') : audioNote();
+function audioUrls() { const out = []; for (const id of ORDER) { const w = byId.get(id); out.push(AUD.url('w', id)); w.e.forEach((e, i) => out.push(AUD.url('s', id, i))); } return out; }
+async function downloadAllAudio() {
+  if (audJob || !AUD.on) return;
+  if (!('caches' in window)) { toast('이 브라우저에선 음성을 저장할 수 없어요'); return; }
+  const urls = audioUrls();
+  audJob = {done: 0, fail: 0, N: urls.length};
+  const upd = () => { const el = $('#aud-note'); if (el) el.textContent = audJobText(); const b = $('#aud-all'); if (b) b.disabled = !!audJob; };
+  upd();
+  let cache;
+  try { cache = await caches.open(AUDIO_CACHE); } catch (e) { audJob = null; upd(); toast('이 기기에 저장 공간을 못 열었어요'); return; }
+  let idx = 0;
+  const worker = async () => {
+    while (idx < urls.length) {
+      const u = urls[idx++];
+      try {
+        const hit = await cache.match(u);
+        if (!hit) { const r = await fetch(u, {cache: 'no-cache'}); if (r.ok) await cache.put(u, r); else audJob.fail++; }
+      } catch (e) { audJob.fail++; }
+      audJob.done++;
+      if (audJob.done % 25 === 0) upd();
+    }
+  };
+  await Promise.all(Array.from({length: 6}, worker));
+  const fail = audJob.fail, N = audJob.N;
+  if (!fail) { try { localStorage.setItem('bjt500.audio', AUDIO_CACHE + '|' + Date.now()); } catch (e) {} }
+  audJob = null; upd();
+  toast(fail ? '음성 ' + (N - fail).toLocaleString() + '개 저장 · ' + fail + '개 실패 — 다시 누르면 나머지만 받아요' : '음성 ' + N.toLocaleString() + '개 저장 완료 · 인터넷 없이도 발음이 나와요');
 }
 
 /* ================= 설치 안내 · 백업 ================= */
@@ -1286,7 +1381,7 @@ function act(a, el) {
     case 'chRestart': { const i = +el.dataset.i, ch = H.ch[i]; askConfirm(chName(i) + '을 처음부터?', (ch && ch.cur ? '지금 ' + progText(ch.cur) + '까지 한 이번 회독을 버리고 처음부터 시작해요. ' : '') + '단어별 기록과 약점은 그대로예요.', '처음부터', () => openChapter(i, true)); break; }
     case 'chReset': { const i = +el.dataset.i; askConfirm(chName(i) + ' 기록 초기화', '이 장의 회독 수와 진행 상태를 지워요. 단어별 기록과 약점은 남아요.', '초기화', () => { H.ch[i] = {n: 0, cur: null, t: 0, last: null, u: Date.now()}; saveH(); closeSheet(); renderHome(); toast(chName(i) + ' 기록을 지웠어요'); }, true); break; }
     case 'home': closeModal(); closeSheet(); show('home'); break;
-    case 'exit': Sync.flushNow(); TTS.stop(); ctx = null; show('home'); toast('저장했어요 · 언제든 이어서 할 수 있어요'); break;
+    case 'exit': Sync.flushNow(); stopVoice(); ctx = null; show('home'); toast('저장했어요 · 언제든 이어서 할 수 있어요'); break;
     case 'explain': showExplain(); break;
     case 'ng': answer(false); break;
     case 'ok': answer(true); break;
@@ -1297,7 +1392,7 @@ function act(a, el) {
     case 'starW': { if (idAttr == null) break; const on = !isWeak(idAttr); setWeak(idAttr, on); el.setAttribute('aria-pressed', on); el.innerHTML = on ? ICON.star + '약점에 있음' : ICON.starO + '약점에 넣기'; if (view === 'weak') renderWeak(); else if (view === 'browse') renderList(); break; }
     case 'sayW': { const id = idAttr != null ? idAttr : ui.id; if (id != null) sayWord(id); break; }
     case 'sayS': if (idAttr != null) saySent(idAttr, +el.dataset.i || 0); break;
-    case 'saySF': { if (ui.id == null) break; const w = byId.get(ui.id), r = getRun(); const passN = ctx && ctx.kind === 'ch' ? chGet(ctx.i).n : 0; saySent(ui.id, (passN + (r ? r.round : 0)) % w.e.length); break; }
+    case 'saySF': { if (ui.id == null) break; const w = byId.get(ui.id); saySent(ui.id, frontSentIdx(w, getRun())); break; }
     case 'peek': { const s = el.closest('.sent'); if (s && (S.furi === 'tap' || S.tr === 'tap')) s.classList.toggle('peek'); break; }
     case 'open': openWord(+el.dataset.id); break;
     case 'row': {
@@ -1327,14 +1422,15 @@ function act(a, el) {
     case 'settings': openSettings(); break;
     case 'full': FS.toggle(); break;
     case 'setAuto': setS({auto: el.dataset.v === 'true'}); openSettings(); break;
-    case 'setRate': setS({rate: +el.dataset.v}); openSettings(); TTS.say('お世話になっております。'); break;
+    case 'setRate': setS({rate: +el.dataset.v}); openSettings(); if (AUD.on) saySent(ORDER[0], 0); else TTS.say('お世話になっております。'); break;
     case 'setSent': setS({sent: el.dataset.v === 'true'}); openSettings(); break;
     case 'setShuf': setS({shuf: el.dataset.v === 'true'}); openSettings(); break;
     case 'setWk': setS({wkN: +el.dataset.v}); openSettings(); onDataChanged(); break;
     case 'setFuri': setS({furi: el.dataset.v}); openSettings(); refreshStage(); break;
     case 'setTr': setS({tr: el.dataset.v}); openSettings(); refreshStage(); break;
     case 'setKp': setS({kp: el.dataset.v === 'true'}); openSettings(); break;
-    case 'testVoice': TTS.say('お世話になっております。本日はよろしくお願いいたします。'); break;
+    case 'testVoice': if (AUD.on) saySent(ORDER[0], 0); else TTS.say('お世話になっております。本日はよろしくお願いいたします。'); break;
+    case 'audioAll': downloadAllAudio(); break;
     case 'resetAll': askConfirm('모든 진도를 지울까요?', '11개 장의 회독 기록, 단어별 기록, 약점 목록이 전부 사라져요. 되돌릴 수 없어요.', '전부 지우기', () => { const t = Date.now(); H = blankH(); H.rs = t; saveH(); undoStack = []; ctx = null; closeSheet(); show('home'); toast('전부 지웠어요'); }, true); break;
     case 'hintOff': { try { localStorage.setItem('bjt500.hint', '1'); } catch (e) {} renderHome(); break; }
     case 'exportOpen': openExport(); break;
@@ -1381,7 +1477,7 @@ document.addEventListener('keydown', e => {
   else if (k === 'r' || k === 'R') { if (ui.id != null) sayWord(ui.id); }
 });
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'hidden') { Sync.flushNow(); TTS.stop(); }
+  if (document.visibilityState === 'hidden') { Sync.flushNow(); stopVoice(); }
   else { if (view === 'study') wake(true); onDataChanged(); }
 });
 window.addEventListener('pagehide', () => Sync.flushNow());

@@ -1,7 +1,8 @@
 /* BJT 빈출 단어장 — 오프라인 캐시 (서비스 워커) */
-const VERSION = '63a7a288a6';
+const VERSION = '1f07005b7e';
 const CORE = 'bjt-core-' + VERSION;
 const FONTS = 'bjt-fonts-v1';
+const AUDIO = 'bjt-audio-v1';   // 녹음 음성: 앱을 업데이트해도 지우지 않음
 const BASE = new URL('./', self.location).href;            // 앱이 놓인 폴더 (루트든 하위 경로든)
 const SCOPE_PATH = new URL('./', self.location).pathname;
 const CORE_FILES = ['./', './manifest.webmanifest', './icons/apple-touch-icon.png', './icons/icon-192.png', './icons/icon-512.png'];
@@ -52,6 +53,35 @@ function font(event) {
   }));
 }
 
+/* 녹음 음성: 저장본 먼저. 사파리는 음성을 구간(Range) 단위로 요청하므로 206 응답으로 잘라서 줌 */
+async function audio(event) {
+  const req = event.request;
+  const url = req.url.split('#')[0];
+  const cache = await caches.open(AUDIO);
+  let res = await cache.match(url);
+  if (!res) {
+    const net = await fetch(url);
+    if (!net.ok) return net;
+    await cache.put(url, net.clone());
+    res = net;
+  }
+  const range = req.headers.get('range');
+  if (!range) return res;
+  const buf = await res.arrayBuffer();
+  const size = buf.byteLength;
+  const type = res.headers.get('Content-Type') || 'audio/mpeg';
+  const m = /^bytes=(\d*)-(\d*)$/.exec(range.trim());
+  if (!m || (m[1] === '' && m[2] === '')) {
+    return new Response(buf, {status: 200, headers: {'Content-Type': type, 'Content-Length': String(size), 'Accept-Ranges': 'bytes'}});
+  }
+  let start, end;
+  if (m[1] === '') { start = Math.max(0, size - Number(m[2])); end = size - 1; }
+  else { start = Number(m[1]); end = m[2] === '' ? size - 1 : Math.min(Number(m[2]), size - 1); }
+  if (start >= size || start > end) return new Response(null, {status: 416, headers: {'Content-Range': 'bytes */' + size}});
+  const part = buf.slice(start, end + 1);
+  return new Response(part, {status: 206, statusText: 'Partial Content', headers: {'Content-Type': type, 'Content-Range': 'bytes ' + start + '-' + end + '/' + size, 'Content-Length': String(part.byteLength), 'Accept-Ranges': 'bytes'}});
+}
+
 /* 그 밖의 앱 파일(아이콘·매니페스트): 저장본 먼저 */
 function asset(event) {
   return caches.match(event.request).then(hit => hit || fetch(event.request).then(res => {
@@ -71,6 +101,10 @@ self.addEventListener('fetch', event => {
   }
   if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') {
     event.respondWith(font(event));
+    return;
+  }
+  if (same && url.pathname.startsWith(SCOPE_PATH + 'audio/')) {
+    event.respondWith(audio(event).catch(() => fetch(req)));
     return;
   }
   if (same && url.pathname.startsWith(SCOPE_PATH) && url.pathname !== SCOPE_PATH + 'sw.js') {
