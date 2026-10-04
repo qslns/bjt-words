@@ -441,22 +441,28 @@ const CAT = {};
 CATS.forEach(([k, name]) => { CAT[k] = name; });
 const SCENE = {tel:['청해','전화'], mtg:['청해','회의'], talk:['청해','사내 대화'], visit:['청해','방문 응대'], biz:['청해','상담'], graph:['청독해','그래프'], doc:['청독해','자료'], mail:['독해','메일'], notice:['독해','공지'], report:['독해','보고·규정'], news:['독해','기사']};
 /* 장(章): 250개 묶음 안에서 50개씩 누적 → 500개마다 총정리 → 마지막에 전체 */
-const CHAPTERS = (() => {
+function genChapters(total) {
   const list = [];
-  const add = (a, b, blk, kind) => list.push({i: list.length, a, b, ids: ORDER.slice(a - 1, b), blk, cnt: b - a + 1, kind});
-  for (let p = 0; p * 500 < TOTAL; p++) {
-    const ps = p * 500 + 1, pe = Math.min(TOTAL, ps + 499);
+  const add = (a, b, blk, kind) => list.push({a, b, blk, kind, part: Math.floor((a - 1) / 500)});
+  for (let p = 0; p * 500 < total; p++) {
+    const ps = p * 500 + 1, pe = Math.min(total, ps + 499);
     for (let bs = ps, k = 0; bs <= pe; bs += 250, k++) {
       const be = Math.min(pe, bs + 249);
       for (let e = Math.min(be, bs + 49); ; e = Math.min(be, e + 50)) { add(bs, e, k % 2 ? 'B' : 'A', 'step'); if (e >= be) break; }
     }
     if (pe - ps + 1 > 250) add(ps, pe, 'Z', 'review');
   }
-  if (TOTAL > 500) add(1, TOTAL, 'Z', 'all');
-  list.forEach(c => { c.part = Math.floor((c.a - 1) / 500); });
+  if (total > 500) add(1, total, 'Z', 'all');
   return list;
-})();
-const LAYOUT = 'v3:' + TOTAL + ':' + CHAPTERS.length;
+}
+/* 500개 묶음마다 단어 구성 지문: 단어가 추가돼도 내용이 같은 장은 진도를 그대로 이어감 */
+const PSIG = (() => { const out = []; for (let p = 0; p * 500 < TOTAL; p++) { let h = 2166136261; const part = ORDER.slice(p * 500, p * 500 + 500); for (const id of part) { h ^= id; h = Math.imul(h, 16777619) >>> 0; } out.push(h.toString(36) + '.' + part.length); } return out; })();
+const chKey = (c, sig) => c.kind === 'all' ? 'all:' + sig.join(',') : sig[c.part] + ':' + c.a + '-' + c.b + ':' + c.kind;
+const CHAPTERS = genChapters(TOTAL).map((c, i) => Object.assign(c, {i, ids: ORDER.slice(c.a - 1, c.b), cnt: c.b - c.a + 1, key: chKey(c, PSIG)}));
+const KEY2I = new Map(CHAPTERS.map(c => [c.key, c.i]));
+const LAYOUT = 'v4';
+const LEGACY = {'v3:2697:60': ['zkf6ci.500', '1g6pezw.500', 'ppslt0.500', '1ytbfhm.500', 'dj9ngn.500', 'dxqmwp.197']};
+function legacyKeys(lay) { const sig = LEGACY[lay]; if (!sig) return null; return genChapters(+String(lay).split(':')[1]).map(c => chKey(c, sig)); }
 const chName = i => '第' + (i + 1) + '章';
 
 /* ================= 유틸 ================= */
@@ -572,23 +578,23 @@ function cleanRun(r) {
   return o;
 }
 function cleanLast(x) { if (!x || typeof x !== 'object') return null; return {pass: nn(x.pass), k: nn(x.k), tot: nn(x.tot), r: nn(x.r), t: nn(x.t), at: nn(x.at)}; }
-function cleanCh(x) { if (!x || typeof x !== 'object') return null; return {n: nn(x.n), cur: cleanRun(x.cur), t: nn(x.t), last: cleanLast(x.last), u: nn(x.u)}; }
+function cleanCh(x) { if (!x || typeof x !== 'object') return null; return {n: nn(x.n), cur: cleanRun(x.cur), t: nn(x.t), last: cleanLast(x.last), u: nn(x.u), k: typeof x.k === 'string' ? x.k : ''}; }
 function cleanW(x) {
   if (!x || typeof x !== 'object') return null;
   const rm = +x.rm;
   return {n: nn(x.n), m: nn(x.m), l: x.l === 1 ? 1 : x.l === 0 ? 0 : -1, t: nn(x.t), pin: x.pin ? 1 : 0, rm: Number.isFinite(rm) && rm >= 0 ? rm : -1, u: nn(x.u)};
 }
 const blankH = () => ({ch: {}, w: {}, wr: null, wru: 0, g: {tt: 0, d: {}}, lt: {pos: 0, done: 0, t: 0, u: 0}, lay: LAYOUT, rs: 0, u: 0});
-function cleanLt(x) { x = obj(x); return {pos: Math.min(Math.floor(nn(x.pos)), Math.max(0, TOTAL - 1)), done: nn(x.done), t: nn(x.t), u: nn(x.u)}; }
+function cleanLt(x) { x = obj(x); let pos = Math.min(Math.floor(nn(x.pos)), Math.max(0, TOTAL - 1)); const id = +x.id; if (Number.isInteger(id) && NO.has(id)) pos = NO.get(id) - 1; return {pos, id: ORDER[pos], done: nn(x.done), t: nn(x.t), u: nn(x.u)}; }
 function normH(o) {
   const h = blankH();
   if (!o || typeof o !== 'object') return h;
-  const sameLay = o.lay === LAYOUT;   /* 장 구성이 바뀌면 장 기록·약점 복습 진행만 비우고 단어 기록은 그대로 */
-  const ch = sameLay ? obj(o.ch) : {};
-  for (const k in ch) { const i = +k; if (Number.isInteger(i) && i >= 0 && i < CHAPTERS.length) { const c = cleanCh(ch[k]); if (c) h.ch[i] = c; } }
+  /* 장 기록은 장의 지문(key)으로 찾아 옮김: 내용이 바뀐 장만 비워짐. 단어 기록은 항상 그대로 */
+  const ch = obj(o.ch), lk = o.lay === LAYOUT ? null : legacyKeys(o.lay);
+  for (const k in ch) { const c = cleanCh(ch[k]); if (!c) continue; const key = c.k || (lk ? lk[+k] : null); const i = key != null ? KEY2I.get(key) : undefined; if (i != null) { c.k = key; h.ch[i] = c; } }
   const w = obj(o.w);
   for (const k in w) { if (byId.has(+k)) { const c = cleanW(w[k]); if (c) h.w[+k] = c; } }
-  h.wr = sameLay ? cleanRun(o.wr) : null; h.wru = nn(o.wru);
+  h.wr = cleanRun(o.wr); h.wru = nn(o.wru);
   h.lt = cleanLt(o.lt);
   const g = obj(o.g); h.g.tt = nn(g.tt);
   const d = obj(g.d); for (const k in d) if (/^\d{4}-\d{2}-\d{2}$/.test(k)) h.g.d[k] = nn(d[k]);
@@ -599,7 +605,7 @@ const RAW_H = LS.get(KH);
 let H = normH(RAW_H);
 if (RAW_H && RAW_H.lay !== LAYOUT) LS.set(KH, H);   /* 새 장 구성으로 한 번 정리해서 저장 */
 function saveH() { H.u = Date.now(); LS.set(KH, H); Sync.pushP(); }
-const chGet = i => H.ch[i] || (H.ch[i] = {n: 0, cur: null, t: 0, last: null, u: 0});
+const chGet = i => { const c = H.ch[i] || (H.ch[i] = {n: 0, cur: null, t: 0, last: null, u: 0, k: ''}); c.k = CHAPTERS[i].key; return c; };
 const wsGet = id => H.w[id] || (H.w[id] = {n: 0, m: 0, l: -1, t: 0, pin: 0, rm: -1, u: 0});
 
 /* 약점: ★로 넣은 단어 + N번 이상 ‘모르겠음’ (삭제하면 그 뒤로 N번 더 틀려야 다시 들어옴) */
@@ -857,12 +863,13 @@ function mergeH(R) {
   const rrs = nn(R.rs), lrs = nn(H.rs);
   if (rrs > lrs) { H = normH(R); res.changed = true; return res; }
   if (lrs > rrs) { res.localNewer = true; return res; }
-  const rch = R.lay === LAYOUT ? obj(R.ch) : {};
+  const rch = obj(R.ch), rlk = R.lay === LAYOUT ? null : legacyKeys(R.lay);
   const rlt = cleanLt(R.lt);
   if (rlt.u > nn(H.lt && H.lt.u)) { H.lt = rlt; res.changed = true; } else if (nn(H.lt && H.lt.u) > rlt.u) res.localNewer = true;
   for (const k in rch) {
-    const i = +k; if (!(Number.isInteger(i) && i >= 0 && i < CHAPTERS.length)) continue;
     const r = cleanCh(rch[k]); if (!r) continue;
+    const key = r.k || (rlk ? rlk[+k] : null); const i = key != null ? KEY2I.get(key) : undefined;
+    if (i == null) continue; r.k = key;
     const l = H.ch[i];
     if (!l || r.u > l.u) { H.ch[i] = r; res.changed = true; } else if (l.u > r.u) res.localNewer = true;
   }
@@ -876,7 +883,7 @@ function mergeH(R) {
   }
   for (const k in H.w) if (!(k in rw)) res.localNewer = true;
   const rwru = nn(R.wru);
-  if (rwru > H.wru) { H.wr = R.lay === LAYOUT ? cleanRun(R.wr) : null; H.wru = rwru; res.changed = true; } else if (H.wru > rwru) res.localNewer = true;
+  if (rwru > H.wru) { H.wr = cleanRun(R.wr); H.wru = rwru; res.changed = true; } else if (H.wru > rwru) res.localNewer = true;
   const rg = obj(R.g), rtt = nn(rg.tt);
   if (rtt > H.g.tt) { H.g.tt = rtt; res.changed = true; } else if (H.g.tt > rtt) res.localNewer = true;
   const rd = obj(rg.d);
@@ -1098,7 +1105,7 @@ function partsHTML() {
 
 /* ================= 가볍게 1회독 ================= */
 let lt0 = 0;
-function ltSave() { H.lt.u = Date.now(); saveH(); }
+function ltSave() { H.lt.id = ORDER[H.lt.pos]; H.lt.u = Date.now(); saveH(); }
 function ltTime() { const m = mono(); if (lt0) { const dt = Math.min(90e3, Math.max(0, m - lt0)); H.lt.t += dt; H.g.tt += dt; const k = dayKey(Date.now()); H.g.d[k] = (H.g.d[k] || 0) + dt; } lt0 = m; }
 function openLight(fresh) {
   if (!H.lt) H.lt = {pos: 0, done: 0, t: 0, u: 0};
