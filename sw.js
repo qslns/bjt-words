@@ -1,5 +1,5 @@
 /* BJT 빈출 단어장 — 오프라인 캐시 (서비스 워커) */
-const VERSION = '4a816c4a3e';
+const VERSION = '1c76eb3178';
 const CORE = 'bjt-core-' + VERSION;
 const FONTS = 'bjt-fonts-v1';
 const AUDIO = 'bjt-audio-v1';   // 녹음 음성: 앱을 업데이트해도 지우지 않음
