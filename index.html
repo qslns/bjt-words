@@ -552,7 +552,7 @@ u.em{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-of
 'use strict';
 document.documentElement.lang = 'ko';
 const MODE = 'pwa';
-const BUILD = '10/07 17:05';
+const BUILD = '10/07 17:37';
 const IS_PWA = MODE === 'pwa';
 const APP_URL = 'https://qslns.github.io/bjt-words/';
 const STANDALONE = (() => { try { return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true; } catch (e) { return false; } })();
@@ -1000,21 +1000,53 @@ function warmCard(id, all) {
 }
 
 /* ================= 전체화면 ================= */
+// 아이패드 Safari는 아래로 쓸어내리면 전체화면을 끈다(웹에서 막을 수 없음: WebKit 정책).
+// 그래서 전체화면 버튼으로 끈 게 아니면 '켜 둔 상태'를 기억했다가, 다음 탭에서 바로 다시 켠다.
 const FS = {
   ok: !!(document.fullscreenEnabled || document.webkitFullscreenEnabled),
+  want: (() => { try { return sessionStorage.getItem('bjt-fs') === '1'; } catch (e) { return false; } })(),
+  busy: false,
+  setWant(v) { this.want = v; try { sessionStorage.setItem('bjt-fs', v ? '1' : '0'); } catch (e) {} },
   on() { return !!(document.fullscreenElement || document.webkitFullscreenElement); },
+  enter(quiet) {
+    const el = document.documentElement, f = el.requestFullscreen || el.webkitRequestFullscreen;
+    const fail = () => { this.busy = false; if (!quiet) { this.setWant(false); toast('이 화면에선 전체화면이 막혀 있어요. Safari에서 열어 보세요.'); } };
+    if (!f) { fail(); return; }
+    this.busy = true;
+    let p;
+    try { p = f.call(el); } catch (e) { fail(); return; }
+    if (p && p.then) p.then(() => { this.busy = false; }, fail);
+    else setTimeout(() => { this.busy = false; }, 700);
+  },
   toggle() {
-    try {
-      if (this.on()) { const f = document.exitFullscreen || document.webkitExitFullscreen; if (f) { const p = f.call(document); if (p && p.catch) p.catch(() => {}); } }
-      else {
-        const el = document.documentElement, f = el.requestFullscreen || el.webkitRequestFullscreen;
-        if (!f) throw new Error('no');
-        const p = f.call(el);
-        if (p && p.catch) p.catch(() => toast('이 화면에선 전체화면이 막혀 있어요. Safari에서 열어 보세요.'));
-      }
-    } catch (e) { toast('이 화면에선 전체화면이 막혀 있어요. Safari에서 열어 보세요.'); }
+    if (this.on()) {
+      this.setWant(false);
+      const f = document.exitFullscreen || document.webkitExitFullscreen;
+      if (f) { try { const p = f.call(document); if (p && p.catch) p.catch(() => {}); } catch (e) {} }
+    } else { this.setWant(true); this.enter(false); }
+  },
+  restore(e) {
+    if (!this.ok || STANDALONE || !this.want || this.busy || this.on()) return;
+    const t = e && e.target;
+    if (t && t.closest && t.closest('[data-act="full"]')) return;   // 버튼은 toggle()이 처리
+    this.enter(true);
   }
 };
+(() => {
+  // 드래그(스크롤)가 아니라 '탭'일 때만 다시 켠다 — 스크롤 도중에 화면이 출렁이지 않게
+  let sx = 0, sy = 0, st = 0, multi = false;
+  document.addEventListener('touchstart', e => {
+    multi = e.touches.length > 1;
+    const p = e.touches[0]; sx = p.clientX; sy = p.clientY; st = Date.now();
+  }, {capture: true, passive: true});
+  document.addEventListener('touchend', e => {
+    if (multi || e.touches.length) return;
+    const p = e.changedTouches[0]; if (!p) return;
+    if (Math.abs(p.clientX - sx) > 12 || Math.abs(p.clientY - sy) > 12 || Date.now() - st > 600) return;
+    FS.restore(e);
+  }, {capture: true, passive: true});
+  document.addEventListener('click', e => FS.restore(e), true);
+})();
 
 /* ================= 동기화 (계정 db ↔ 이 기기) ================= */
 function mergeH(R) {
