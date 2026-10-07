@@ -512,6 +512,10 @@ u.em{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-of
 .sk-row.open .sk-w.more{display:flex}
 .sk-row.open .sk-more{display:none}
 .sk-more{align-self:stretch;min-height:44px;padding:0 12px;border:1px dashed var(--line);border-radius:8px;background:transparent;font-size:14px;color:var(--ink-2)}
+
+.sk-row{grid-template-columns:58px minmax(0,1fr)}
+.sk-kc{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+.sk-h{font-size:11.5px;line-height:1.25;color:var(--ink-2);text-align:center;word-break:keep-all;overflow-wrap:anywhere;max-width:58px}
 </style>
 </head>
 <body>
@@ -546,7 +550,7 @@ u.em{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-of
 'use strict';
 document.documentElement.lang = 'ko';
 const MODE = 'pwa';
-const BUILD = '10/07 15:56';
+const BUILD = '10/07 16:01';
 const IS_PWA = MODE === 'pwa';
 const APP_URL = 'https://qslns.github.io/bjt-words/';
 const STANDALONE = (() => { try { return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true; } catch (e) { return false; } })();
@@ -1374,7 +1378,7 @@ function frontHTML(w, r) {
 
 /* 해설 — 학습 화면과 단어 상세에서 같이 씀 */
 function explainHTML(w, inSheet) {
-  return '<div class="ex"><div class="ex-a">' + ansHTML(w, inSheet) + storyHTML(w, 's-story') + ptHTML(w) + pairHTML(w) + kpHTML(w) + '</div><div class="ex-b">' + sentHTML(w, !inSheet && ctx && view === 'study' && w.id === ui.id ? frontSentIdx(w, getRun()) : -1) + '</div></div>';
+  return '<div class="ex"><div class="ex-a">' + ansHTML(w, inSheet) + storyHTML(w, 's-story') + ptHTML(w) + pairHTML(w) + '</div><div class="ex-b">' + sentHTML(w, !inSheet && ctx && view === 'study' && w.id === ui.id ? frontSentIdx(w, getRun()) : -1) + kpHTML(w) + '</div></div>';
 }
 /* 같은 한자를 쓰는 다른 단어: 한자마다 6개(본 단어 먼저, 그다음 번호순), 나머지는 +N. 지금 단어·이미 나온 단어는 빼기 */
 const SK_N = 6;
@@ -1389,7 +1393,8 @@ function skHTML(w) {
     if (!ids.length) return '';
     ids.slice(0, SK_N).forEach(id => shown.add(id));
     const items = ids.map((id, i) => { const o = byId.get(id); return '<button class="sk-w' + (i >= SK_N ? ' more' : '') + '" data-act="open" data-id="' + id + '"><span class="sk-j" lang="ja">' + headRuby(o) + '</span><span class="sk-m">' + mixJa(shortM(o.m)) + '</span></button>'; }).join('');
-    return '<div class="sk-row"><span class="sk-k" lang="ja">' + esc(c) + '</span><div class="sk-ws">' + items + (ids.length > SK_N ? '<button class="sk-more" data-act="skMore">+' + (ids.length - SK_N) + '개 더</button>' : '') + '</div></div>';
+    const kh = K[c].h ? K[c].h.replace(/^\?\s*/, '') : '';
+    return '<div class="sk-row"><span class="sk-kc"><span class="sk-k" lang="ja">' + esc(c) + '</span>' + (kh ? '<span class="sk-h">' + esc(kh) + '</span>' : '') + '</span><div class="sk-ws">' + items + (ids.length > SK_N ? '<button class="sk-more" data-act="skMore">+' + (ids.length - SK_N) + '개 더</button>' : '') + '</div></div>';
   }).join('');
   return rows ? '<section class="sk"><span class="sk-l">같은 한자</span>' + rows + '</section>' : '';
 }
@@ -1406,8 +1411,8 @@ function ansHTML(w, inSheet) {
     '<div class="ans-row"><h2 class="ans-hw' + ([...w.w].length >= 10 ? ' xlong' : [...w.w].length >= 6 ? ' long' : '') + '" lang="ja">' + headRuby(w) + '</h2>' + (CAN_SPEAK() ? '<button class="spk lg" data-act="sayW" data-id="' + w.id + '" aria-label="발음 듣기">' + ICON.spk + '</button>' : '') + '</div>' +
     (w.r !== w.w ? '<div class="ans-read" lang="ja">' + esc(w.r) + '</div>' : '') +
     '<div class="ans-mean">' + mixJa(w.m) + '</div>' +
-    skHTML(w) +
     (sub.length ? '<div class="ans-sub">' + sub.join('') + '</div>' : '') +
+    skHTML(w) +
   '</section>';
 }
 
