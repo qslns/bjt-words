@@ -85,3 +85,27 @@ for n, j in enumerate(todo, 1):
         print(time.strftime('%H:%M:%S'), f'{n}/{len(todo)} ok {ok} fail {len(fail)}', flush=True)
 for f in fail: print('FAIL', *f)
 print('DONE ok', ok, 'fail', len(fail), 'sec', int(time.time() - t0))
+
+# 앱이 새 음성을 받게: index.html 안 데이터의 음성 해시(av/avh)를 새 파일 기준으로 고치고 sw.js 버전을 올림.
+# (기기에 저장된 음성은 주소가 같으면 안 바뀌므로, 주소 끝 ?v=해시가 바뀌어야 새 음성을 받음)
+def patch_app():
+    import hashlib, re
+    idx, swp = os.path.join(ROOT, 'index.html'), os.path.join(ROOT, 'sw.js')
+    html = open(idx, encoding='utf-8').read()
+    m = re.search(r'<script type="application/json" id="bjt-data">(.*?)</script>', html, re.S)
+    data = json.loads(m.group(1))
+    av = {}
+    for j in JOBS:
+        f = os.path.join(ROOT, j['f'])
+        if os.path.exists(f): av[j['f'][6:-4]] = hashlib.md5(open(f, 'rb').read()).hexdigest()[:8]
+    avh = hashlib.md5(json.dumps(av, sort_keys=True).encode()).hexdigest()[:8]
+    if data.get('avh') == avh: print('app: audio versions unchanged', avh); return
+    data['av'], data['avh'] = av, avh
+    js = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+    html = html[:m.start(1)] + js + html[m.end(1):]
+    open(idx, 'w', encoding='utf-8').write(html)
+    ver = hashlib.sha1(html.encode('utf-8')).hexdigest()[:10]
+    sw = re.sub(r"const VERSION = '[^']*'", "const VERSION = '" + ver + "'", open(swp, encoding='utf-8').read(), count=1)
+    open(swp, 'w', encoding='utf-8').write(sw)
+    print('app: audio versions', len(av), avh, 'sw', ver, '→ git add -A audio tools index.html sw.js && commit && push')
+if ok: patch_app()
