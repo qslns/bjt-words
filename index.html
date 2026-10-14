@@ -580,6 +580,27 @@ button.lk-big:active,button.kc-big:active{background:var(--surface-2)}
 .kc-eu{font-size:22px;font-weight:700;color:var(--stamp)}
 .kc-h small{font-family:var(--f-ui)}
 @media (max-width:520px){.kz-top{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}.kz-eu,.kz-rd{justify-content:center}}
+
+/* ---------- 10/15 편의성 ---------- */
+/* 아이패드: 스크롤 안 되는 곳을 끌어도 화면 전체가 출렁이며 밀리지 않게 · 두 번 탭 확대 막기 */
+html,body{overscroll-behavior:none}
+html{touch-action:manipulation}
+body{position:fixed;top:0;left:0;right:0;bottom:0;width:auto;box-sizing:border-box;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+[data-act]{touch-action:manipulation}
+/* 공부 화면 글자는 길게 눌러도 선택·복사 메뉴가 안 뜨게(스크롤하다 잘못 잡히는 것 방지) */
+.stage,.sheet-stage{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+/* 아래 버튼 자리 고정: 앞면 [해설][모르겠음][알고있음] · 해설 [발음][모르겠음][알고있음] · 모름 [발음][다음 →] */
+#v-study .abar-in{display:grid;grid-template-columns:repeat(3,minmax(0,360px));justify-content:center}
+#v-study .ab{max-width:none;min-width:0}
+#v-study .ab-next{grid-column:span 2;max-width:none}
+.ab-gap{display:block}
+/* 누른 소리 버튼: 소리가 끝날 때까지 살짝 깜빡여서 눌린 걸 바로 알 수 있게 */
+@keyframes sayp{0%,100%{opacity:1}50%{opacity:.45}}
+.say-on{animation:sayp .8s ease-in-out infinite}
+.ans-hw[data-act]{cursor:pointer;-webkit-user-select:none;user-select:none}
+/* 이 단어에서 쓰는 읽기: 흑백 화면에서도 또렷하게 */
+.rk.here{border-color:var(--ink);color:var(--ink);font-weight:700}
+.kz-wk{border:1px solid var(--line)}
 </style>
 </head>
 <body>
@@ -615,7 +636,7 @@ button.lk-big:active,button.kc-big:active{background:var(--surface-2)}
 'use strict';
 document.documentElement.lang = 'ko';
 const MODE = 'pwa';
-const BUILD = '10/15 08:38';
+const BUILD = '10/15 08:56';
 const IS_PWA = MODE === 'pwa';
 const APP_URL = 'https://qslns.github.io/bjt-words/';
 const STANDALONE = (() => { try { return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true; } catch (e) { return false; } })();
@@ -1032,8 +1053,42 @@ const AUDIO_TOTAL = W.reduce((n, w) => n + 1 + w.e.length, 0);
 const AUDIO_MB = '120';
 /* 다시 녹음한 음성: 파일 내용 해시를 주소에 붙여(?v=) 기기에 저장된 옛 음성 대신 새 음성을 받게 함 */
 const AV = DATA.av || {}, AVH = DATA.avh || '';
+/* 소리 빨리 내기: 지금 카드·다음 카드 소리를 미리 메모리(blob)에 받아 두고, 누르면 서비스워커를 거치지 않고 바로 재생 */
+const AMEM = {
+  m: new Map(), max: 60,
+  take(url) { const e = this.m.get(url); if (!e || !e.u) return null; e.t = Date.now(); return e.u; },
+  drop(url) { const e = this.m.get(url); if (!e) return; if (e.u) { try { URL.revokeObjectURL(e.u); } catch (x) {} } this.m.delete(url); },
+  want(urls) {
+    if (!AUD.on || typeof fetch !== 'function' || !window.URL || !URL.createObjectURL) return;
+    for (const url of urls) {
+      if (!url) continue;
+      const e = this.m.get(url);
+      if (e) { e.t = Date.now(); continue; }
+      const n = {u: null, t: Date.now(), busy: true};
+      this.m.set(url, n);
+      fetch(url).then(r => r.ok ? r.blob() : null).then(b => {
+        n.busy = false;
+        if (this.m.get(url) !== n) return;
+        if (!b || b.size < 200) { this.m.delete(url); return; }
+        if (!b.type) b = new Blob([b], {type: 'audio/mpeg'});
+        n.u = URL.createObjectURL(b);
+      }).catch(() => { n.busy = false; if (this.m.get(url) === n) this.m.delete(url); });
+    }
+    this.trim();
+  },
+  trim() {
+    if (this.m.size <= this.max) return;
+    const cur = AUD.el ? AUD.el.src : '';
+    const old = [...this.m.entries()].sort((a, b) => a[1].t - b[1].t);
+    for (const [k, e] of old) {
+      if (this.m.size <= this.max) break;
+      if (e.busy || (e.u && e.u === cur)) continue;
+      this.drop(k);
+    }
+  }
+};
 const AUD = {
-  on: IS_PWA,
+  on: IS_PWA, btn: null,
   el: null, warned: false, seq: 0,
   url(kind, id, i) { const k = kind === 'w' ? 'w/' + id : 's/' + id + '-' + i; return new URL('audio/' + k + '.mp3' + (AV[k] ? '?v=' + AV[k] : ''), location.href).href; },
   get() {
@@ -1041,29 +1096,47 @@ const AUD = {
       const a = new Audio();
       a.preload = 'auto';
       try { a.preservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {}
+      a.addEventListener('ended', () => this.mark(null));
       this.el = a;
     }
     return this.el;
   },
-  play(url, fallback) {
+  play(url, fallback, btn) {
     const a = this.get();
     const token = ++this.seq;
-    const failOnce = () => { if (token !== this.seq) return; this.seq++; this.fail(fallback); };
+    const mem = AMEM.take(url);
+    let direct = !mem;
+    const failOnce = () => {
+      if (token !== this.seq) return;
+      if (!direct) { direct = true; AMEM.drop(url); start(url); return; }   /* 메모리 소리가 안 되면 주소로 한 번 더 */
+      this.seq++; this.mark(null); this.fail(fallback);
+    };
+    const start = src => {
+      try { a.pause(); } catch (e) {}
+      a.onerror = failOnce;
+      if (a.src === src && a.readyState >= 2) { try { a.currentTime = 0; } catch (e) { a.src = src; } }   /* 같은 소리 다시: 되감기만 */
+      else a.src = src;
+      const r = S.rate || 1;
+      try { a.defaultPlaybackRate = r; a.playbackRate = r; } catch (e) {}
+      let p;
+      try { p = a.play(); } catch (e) { failOnce(); return; }
+      if (p && p.catch) p.catch(err => { const n = err && err.name; if (n === 'AbortError') return; if (n === 'NotAllowedError') { if (token === this.seq) this.mark(null); return; } failOnce(); });
+    };
     TTS.stop();
-    try { a.pause(); } catch (e) {}
-    a.onerror = failOnce;
-    a.src = url;
-    const r = S.rate || 1;
-    try { a.defaultPlaybackRate = r; a.playbackRate = r; } catch (e) {}
-    let p;
-    try { p = a.play(); } catch (e) { failOnce(); return; }
-    if (p && p.catch) p.catch(err => { const n = err && err.name; if (n === 'AbortError' || n === 'NotAllowedError') return; failOnce(); });
+    this.mark(btn);
+    start(mem || url);
+    if (!mem) AMEM.want([url]);   /* 다음에 누를 땐 바로 */
+  },
+  mark(btn) {
+    if (this.btn && this.btn !== btn) { try { this.btn.classList.remove('say-on'); } catch (e) {} }
+    this.btn = btn || null;
+    if (btn) btn.classList.add('say-on');
   },
   fail(text) {
     if (text) TTS.say(text);
     if (!this.warned) { this.warned = true; toast('녹음 음성을 못 불러와서 기기 음성으로 읽었어요'); }
   },
-  stop() { this.seq++; if (this.el) { try { this.el.pause(); } catch (e) {} } },
+  stop() { this.seq++; this.mark(null); if (this.el) { try { this.el.pause(); } catch (e) {} } },
   warm(urls) {
     if (!this.on || !('caches' in window)) return;
     caches.open(AUDIO_CACHE).then(c => urls.forEach(u => c.match(u).then(hit => {
@@ -1087,16 +1160,20 @@ function audioPrune() {
   })))).then(() => { try { localStorage.setItem('bjt500.avh', AVH); } catch (e) {} return n; }).catch(() => 0);
 }
 setTimeout(audioPrune, 5000);
-const sayWord = id => { const w = byId.get(id); if (!w) return; const t = w.tw || w.r; if (AUD.on) AUD.play(AUD.url('w', id), t); else TTS.say(t); };
-const saySent = (id, i) => { const w = byId.get(id); if (!w || !w.e[i]) return; if (AUD.on) AUD.play(AUD.url('s', id, i), w.e[i].t); else TTS.say(w.e[i].t); };
+const sayWord = (id, btn) => { const w = byId.get(id); if (!w) return; const t = w.tw || w.r; if (AUD.on) AUD.play(AUD.url('w', id), t, btn); else TTS.say(t); };
+const saySent = (id, i, btn) => { const w = byId.get(id); if (!w || !w.e[i]) return; if (AUD.on) AUD.play(AUD.url('s', id, i), w.e[i].t, btn); else TTS.say(w.e[i].t); };
 const stopVoice = () => { TTS.stop(); AUD.stop(); };
 const CAN_SPEAK = () => AUD.on || TTS.ok;
 const frontSentIdx = (w, r) => { const passN = ctx && ctx.kind === 'ch' ? chGet(ctx.i).n : 0; return (passN + (r ? r.round : 0)) % w.e.length; };
 function warmCard(id, all) {
   if (!AUD.on) return;
   const w = byId.get(id); if (!w) return;
-  if (all) AUD.warm(w.e.map((e, i) => AUD.url('s', id, i)));
-  else AUD.warm([AUD.url('w', id), AUD.url('s', id, frontSentIdx(w, getRun()))]);
+  if (all) { AMEM.want([AUD.url('w', id)].concat(w.e.map((e, i) => AUD.url('s', id, i)))); return; }
+  const r = getRun();
+  AMEM.want([AUD.url('w', id), AUD.url('s', id, frontSentIdx(w, r))]);
+  /* 다음 카드 소리도 미리: 알고있음을 누르자마자 나오게 */
+  const nx = r ? (r.ph === 'main' ? r.ord[r.pos + 1] : r.q[r.qpos + 1]) : null, nw = nx != null ? byId.get(nx) : null;
+  if (nw) AMEM.want([AUD.url('w', nx), AUD.url('s', nx, frontSentIdx(nw, r))]);
 }
 
 /* ================= 전체화면 ================= */
@@ -1146,6 +1223,22 @@ const FS = {
     FS.restore(e);
   }, {capture: true, passive: true});
   document.addEventListener('click', e => FS.restore(e), true);
+})();
+
+/* 아이패드: 위·아래 막대처럼 스크롤 안 되는 곳을 끌면 화면 전체가 출렁이며 밀리는 것 막기(스크롤 되는 곳·두 손가락은 그대로) */
+(() => {
+  const scrollable = el => {
+    for (let n = el; n && n.nodeType === 1 && n !== document.body; n = n.parentElement) {
+      if (n.matches && n.matches('textarea, input, select')) return true;
+      const cs = getComputedStyle(n);
+      if (/(auto|scroll)/.test(cs.overflowY) && n.scrollHeight > n.clientHeight + 1) return true;
+      if (/(auto|scroll)/.test(cs.overflowX) && n.scrollWidth > n.clientWidth + 1) return true;
+    }
+    return false;
+  };
+  let allow = true;
+  document.addEventListener('touchstart', e => { allow = e.touches.length > 1 || scrollable(e.target); }, {passive: true});
+  document.addEventListener('touchmove', e => { if (!allow && e.touches.length === 1 && e.cancelable) e.preventDefault(); }, {passive: false});
 })();
 
 /* ================= 동기화 (계정 db ↔ 이 기기) ================= */
@@ -1263,6 +1356,7 @@ let view = 'home', sheetOpen = false, sheetStack = [], modalOpen = false, modalD
 const B = {q: '', tier: 'all', st: 'all', cat: 'all', mask: false, wmask: false, smask: false, wsel: false, wpick: new Set()};
 let swPending = false, swReload = false;
 function applyUpdate() { if (swReload) return; swReload = true; try { if (view === 'light') { ltTime(); ltSave(); } Sync.flushNow(); } catch (e) {} location.reload(); }
+const SCR = {};   /* 홈 스크롤 위치(홈을 다시 그려도·다른 화면 갔다 와도 그대로) */
 function show(v) {
   view = v;
   for (const k in V) V[k].hidden = k !== v;
@@ -1374,6 +1468,7 @@ function renderHome() {
       '<div class="sync ' + Sync.state + '"><i></i><span>' + syncTxt + '</span></div>' +
       '<p class="ver">앱 버전 ' + BUILD + ' · 단어 ' + TOTAL.toLocaleString() + '개' + (BTOTAL ? ' + 기본 ' + BTOTAL + '개' : '') + '</p>' +
     '</div></div>';
+  { const sc = V.home.querySelector('.scroll'); if (sc) { if (SCR.home) sc.scrollTop = SCR.home; sc.addEventListener('scroll', () => { SCR.home = sc.scrollTop; }, {passive: true}); } }
 }
 function weakTopHTML() {
   const ids = weakIds(), n = ids.length, wr = H.wr;
@@ -1481,7 +1576,7 @@ function renderLight(play) {
       '</div></div></div></div>' +
     '<footer class="abar"><div class="abar-in"><button class="ab ab-ng" data-act="ltPrev" aria-label="이전 단어">← 이전</button><button class="ab ab-ok" data-act="ltNext" aria-label="다음 단어">다음 →</button></div></footer>';
   const sc = $('#lsc'); if (sc) sc.scrollTop = 0;
-  if (AUD.on) AUD.warm([AUD.url('w', id), AUD.url('s', id, 0)].concat(ORDER[H.lt.pos + 1] != null ? [AUD.url('w', ORDER[H.lt.pos + 1])] : []));
+  if (AUD.on) AMEM.want([AUD.url('w', id), AUD.url('s', id, 0)].concat(ORDER[H.lt.pos + 1] != null ? [AUD.url('w', ORDER[H.lt.pos + 1])] : []));
   if (play && S.auto) sayWord(id);
 }
 
@@ -1628,8 +1723,9 @@ function renderStudy() {
   const r = getRun(), id = ui.id, w = byId.get(id);
   if (!w) { enterCard(); return; }
   let bar;
-  if (ui.mode === 'unknown') bar = '<button class="ab ab-next" data-act="next">다음 →</button>';
-  else if (ui.rev) bar = '<button class="ab ab-ng" data-act="ng">' + ICON.q + '모르겠음</button><button class="ab ab-ok" data-act="ok">' + ICON.check + '알고있음</button>';
+  const sayB = CAN_SPEAK() ? '<button class="ab ab-ex ab-say" data-act="sayW" aria-label="발음 다시 듣기">' + ICON.spk + '발음</button>' : '<span class="ab-gap"></span>';
+  if (ui.mode === 'unknown') bar = sayB + '<button class="ab ab-next" data-act="next">다음 →</button>';
+  else if (ui.rev) bar = sayB + '<button class="ab ab-ng" data-act="ng">' + ICON.q + '모르겠음</button><button class="ab ab-ok" data-act="ok">' + ICON.check + '알고있음</button>';
   else bar = '<button class="ab ab-ex" data-act="explain">' + ICON.book + '해설</button><button class="ab ab-ng" data-act="ng">' + ICON.q + '모르겠음</button><button class="ab ab-ok" data-act="ok">' + ICON.check + '알고있음</button>';
   V.study.innerHTML = sbarHTML(r, id) +
     '<div class="scroll" id="sc"><div class="stage' + modeCls() + '" id="stage">' + (ui.rev ? explainHTML(w, false) : frontHTML(w, r)) + '</div></div>' +
@@ -1694,7 +1790,7 @@ function ansHTML(w, inSheet) {
   return '<section class="s-ans ans"><div class="ans-top">' + tierTag(w.t) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">' + numLabel(w.id) + '</span>' +
       (x && x.m ? '<span class="miss">모르겠음 ' + x.m + '회</span>' : '') +
       (inSheet ? '<button class="starw" data-act="starW" data-id="' + w.id + '" aria-pressed="' + weak + '">' + (weak ? ICON.star + '약점에 있음' : ICON.starO + '약점에 넣기') + '</button>' : '') + '</div>' +
-    '<div class="ans-row"><h2 class="ans-hw' + ([...w.w].length >= 10 ? ' xlong' : [...w.w].length >= 6 ? ' long' : '') + '" lang="ja">' + headRuby(w) + '</h2>' + (CAN_SPEAK() ? '<button class="spk lg" data-act="sayW" data-id="' + w.id + '" aria-label="발음 듣기">' + ICON.spk + '</button>' : '') + '</div>' +
+    '<div class="ans-row"><h2 class="ans-hw' + ([...w.w].length >= 10 ? ' xlong' : [...w.w].length >= 6 ? ' long' : '') + '" lang="ja"' + (CAN_SPEAK() ? ' data-act="sayW" data-id="' + w.id + '" role="button" tabindex="0" aria-label="' + esc(w.w) + ' 발음 듣기"' : '') + '>' + headRuby(w) + '</h2>' + (CAN_SPEAK() ? '<button class="spk lg" data-act="sayW" data-id="' + w.id + '" aria-label="발음 듣기">' + ICON.spk + '</button>' : '') + '</div>' +
     (w.r !== w.w ? '<div class="ans-read" lang="ja">' + esc(w.r) + '</div>' : '') +
     '<div class="ans-mean">' + mixJa(w.m) + '</div>' +
     (sub.length ? '<div class="ans-sub">' + sub.join('') + '</div>' : '') +
@@ -1926,7 +2022,7 @@ function sheetShow(en) {
   if (en.t === 'ch') renderChList(en.i);
   else if (en.t === 'kzl') renderKzList(en.b);
   else if (en.t === 'kz1') { const r = KZ[en.i]; if (!r) { closeSheet(); return; } openSheet('<span lang="ja">' + esc(r[0]) + '</span> · 한자 ' + (en.i + 1) + '/' + KZ.length, '<div class="sheet-stage">' + kzPanelHTML(en.i, true) + '</div>'); }
-  else { const w = byId.get(en.id); if (!w) { closeSheet(); return; } openSheet('<span lang="ja">' + esc(w.w) + '</span>', '<div class="sheet-stage' + modeCls() + '">' + explainHTML(w, true) + '</div>'); }
+  else { const w = byId.get(en.id); if (!w) { closeSheet(); return; } openSheet('<span lang="ja">' + esc(w.w) + '</span>', '<div class="sheet-stage' + modeCls() + '">' + explainHTML(w, true) + '</div>'); if (AUD.on) AMEM.want([AUD.url('w', w.id), AUD.url('s', w.id, 0)]); }
 }
 function openWord(id) { if (!byId.has(id)) return; sheetStack.push({t: 'word', id}); sheetShow(sheetStack[sheetStack.length - 1]); }
 function closeSheet() { $('#sheet').hidden = true; sheetOpen = false; sheetStack = []; $('#sheet-body').innerHTML = ''; }
@@ -2109,9 +2205,9 @@ function act(a, el) {
     case 'roundGo': roundGo(el.dataset.v === '1'); break;
     case 'star': { if (ui.id == null) break; const on = !isWeak(ui.id); setWeak(ui.id, on); const bar = V.study.querySelector('.sbar'); if (bar) { const tmp = document.createElement('div'); tmp.innerHTML = sbarHTML(getRun(), ui.id); bar.replaceWith(tmp.firstChild); } toast(on ? '약점 단어에 넣었어요' : '약점 단어에서 뺐어요'); break; }
     case 'starW': { if (idAttr == null) break; const on = !isWeak(idAttr); setWeak(idAttr, on); el.setAttribute('aria-pressed', on); el.innerHTML = on ? ICON.star + '약점에 있음' : ICON.starO + '약점에 넣기'; if (view === 'weak') renderWeak(); else if (view === 'browse') renderList(); break; }
-    case 'sayW': { const id = idAttr != null ? idAttr : ui.id; if (id != null) sayWord(id); break; }
-    case 'sayS': if (idAttr != null) saySent(idAttr, +el.dataset.i || 0); break;
-    case 'saySF': { if (ui.id == null) break; const w = byId.get(ui.id); saySent(ui.id, frontSentIdx(w, getRun())); break; }
+    case 'sayW': { const id = idAttr != null ? idAttr : ui.id; if (id != null) sayWord(id, el); break; }
+    case 'sayS': if (idAttr != null) saySent(idAttr, +el.dataset.i || 0, el); break;
+    case 'saySF': { if (ui.id == null) break; const w = byId.get(ui.id); saySent(ui.id, frontSentIdx(w, getRun()), el); break; }
     case 'peek': { const s = el.closest('.sent'); if (s && (S.furi === 'tap' || S.tr === 'tap')) s.classList.toggle('peek'); break; }
     case 'open': openWord(+el.dataset.id); break;
     case 'skMore': { const row = el.closest('.sk-row'); if (row) row.classList.add('open'); break; }
@@ -2239,7 +2335,7 @@ if (IS_PWA) {
   }
   try { if (navigator.storage && navigator.storage.persisted) navigator.storage.persisted().then(p => { if (!p && navigator.storage.persist) return navigator.storage.persist(); }).catch(() => {}); } catch (e) {}
 }
-window.__t = {get ui() { return ui; }, CHAPTERS, AUD, AV, AVH, audioPrune, KZ, get KZS() { return KZS; }, get view() { return view; }, kzGo, kzPanelHTML, explainHTML, storyHTML, kpHTML, getRun, isWeak, get S() { return S; }, get H() { return H; }};
+window.__t = {get ui() { return ui; }, CHAPTERS, AUD, AMEM, AV, AVH, audioPrune, KZ, get KZS() { return KZS; }, get view() { return view; }, kzGo, kzPanelHTML, explainHTML, storyHTML, kpHTML, getRun, isWeak, get S() { return S; }, get H() { return H; }};
 })();
 </script>
 
