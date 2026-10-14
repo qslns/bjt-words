@@ -98,6 +98,11 @@ def patch_app():
     for j in JOBS:
         f = os.path.join(ROOT, j['f'])
         if os.path.exists(f): av[j['f'][6:-4]] = hashlib.md5(open(f, 'rb').read()).hexdigest()[:8]
+    xv = os.path.join(ROOT, 'tools/audio_versioned.json')   # 본편에서 내용이 바뀐 음성(오독 다시 녹음 등)도 같이
+    if os.path.exists(xv):
+        for k in json.load(open(xv, encoding='utf-8')):
+            f = os.path.join(ROOT, 'audio', k + '.mp3')
+            if os.path.exists(f): av[k] = hashlib.md5(open(f, 'rb').read()).hexdigest()[:8]
     avh = hashlib.md5(json.dumps(av, sort_keys=True).encode()).hexdigest()[:8]
     if data.get('avh') == avh: print('app: audio versions unchanged', avh); return
     data['av'], data['avh'] = av, avh
