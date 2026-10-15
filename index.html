@@ -582,10 +582,8 @@ button.lk-big:active,button.kc-big:active{background:var(--surface-2)}
 @media (max-width:520px){.kz-top{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}.kz-eu,.kz-rd{justify-content:center}}
 
 /* ---------- 10/15 편의성 ---------- */
-/* 아이패드: 스크롤 안 되는 곳을 끌어도 화면 전체가 출렁이며 밀리지 않게 · 두 번 탭 확대 막기 */
+/* 화면 전체가 출렁이며 밀리는 것 줄이기(레이아웃·터치는 그대로) */
 html,body{overscroll-behavior:none}
-html{touch-action:manipulation}
-body{position:fixed;top:0;left:0;right:0;bottom:0;width:auto;box-sizing:border-box;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
 [data-act]{touch-action:manipulation}
 /* 공부 화면 글자는 길게 눌러도 선택·복사 메뉴가 안 뜨게(스크롤하다 잘못 잡히는 것 방지) */
 .stage,.sheet-stage{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
@@ -594,9 +592,6 @@ body{position:fixed;top:0;left:0;right:0;bottom:0;width:auto;box-sizing:border-b
 #v-study .ab{max-width:none;min-width:0}
 #v-study .ab-next{grid-column:span 2;max-width:none}
 .ab-gap{display:block}
-/* 누른 소리 버튼: 소리가 끝날 때까지 살짝 깜빡여서 눌린 걸 바로 알 수 있게 */
-@keyframes sayp{0%,100%{opacity:1}50%{opacity:.45}}
-.say-on{animation:sayp .8s ease-in-out infinite}
 .ans-hw[data-act]{cursor:pointer;-webkit-user-select:none;user-select:none}
 /* 이 단어에서 쓰는 읽기: 흑백 화면에서도 또렷하게 */
 .rk.here{border-color:var(--ink);color:var(--ink);font-weight:700}
@@ -636,7 +631,7 @@ body{position:fixed;top:0;left:0;right:0;bottom:0;width:auto;box-sizing:border-b
 'use strict';
 document.documentElement.lang = 'ko';
 const MODE = 'pwa';
-const BUILD = '10/15 08:56';
+const BUILD = '10/15 09:32';
 const IS_PWA = MODE === 'pwa';
 const APP_URL = 'https://qslns.github.io/bjt-words/';
 const STANDALONE = (() => { try { return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true; } catch (e) { return false; } })();
@@ -1096,7 +1091,6 @@ const AUD = {
       const a = new Audio();
       a.preload = 'auto';
       try { a.preservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {}
-      a.addEventListener('ended', () => this.mark(null));
       this.el = a;
     }
     return this.el;
@@ -1109,7 +1103,7 @@ const AUD = {
     const failOnce = () => {
       if (token !== this.seq) return;
       if (!direct) { direct = true; AMEM.drop(url); start(url); return; }   /* 메모리 소리가 안 되면 주소로 한 번 더 */
-      this.seq++; this.mark(null); this.fail(fallback);
+      this.seq++; this.fail(fallback);
     };
     const start = src => {
       try { a.pause(); } catch (e) {}
@@ -1120,23 +1114,18 @@ const AUD = {
       try { a.defaultPlaybackRate = r; a.playbackRate = r; } catch (e) {}
       let p;
       try { p = a.play(); } catch (e) { failOnce(); return; }
-      if (p && p.catch) p.catch(err => { const n = err && err.name; if (n === 'AbortError') return; if (n === 'NotAllowedError') { if (token === this.seq) this.mark(null); return; } failOnce(); });
+      if (p && p.catch) p.catch(err => { const n = err && err.name; if (n === 'AbortError') return; if (n === 'NotAllowedError') return; failOnce(); });
     };
     TTS.stop();
-    this.mark(btn);
     start(mem || url);
     if (!mem) AMEM.want([url]);   /* 다음에 누를 땐 바로 */
   },
-  mark(btn) {
-    if (this.btn && this.btn !== btn) { try { this.btn.classList.remove('say-on'); } catch (e) {} }
-    this.btn = btn || null;
-    if (btn) btn.classList.add('say-on');
-  },
+  mark() {},
   fail(text) {
     if (text) TTS.say(text);
     if (!this.warned) { this.warned = true; toast('녹음 음성을 못 불러와서 기기 음성으로 읽었어요'); }
   },
-  stop() { this.seq++; this.mark(null); if (this.el) { try { this.el.pause(); } catch (e) {} } },
+  stop() { this.seq++; if (this.el) { try { this.el.pause(); } catch (e) {} } },
   warm(urls) {
     if (!this.on || !('caches' in window)) return;
     caches.open(AUDIO_CACHE).then(c => urls.forEach(u => c.match(u).then(hit => {
@@ -1223,22 +1212,6 @@ const FS = {
     FS.restore(e);
   }, {capture: true, passive: true});
   document.addEventListener('click', e => FS.restore(e), true);
-})();
-
-/* 아이패드: 위·아래 막대처럼 스크롤 안 되는 곳을 끌면 화면 전체가 출렁이며 밀리는 것 막기(스크롤 되는 곳·두 손가락은 그대로) */
-(() => {
-  const scrollable = el => {
-    for (let n = el; n && n.nodeType === 1 && n !== document.body; n = n.parentElement) {
-      if (n.matches && n.matches('textarea, input, select')) return true;
-      const cs = getComputedStyle(n);
-      if (/(auto|scroll)/.test(cs.overflowY) && n.scrollHeight > n.clientHeight + 1) return true;
-      if (/(auto|scroll)/.test(cs.overflowX) && n.scrollWidth > n.clientWidth + 1) return true;
-    }
-    return false;
-  };
-  let allow = true;
-  document.addEventListener('touchstart', e => { allow = e.touches.length > 1 || scrollable(e.target); }, {passive: true});
-  document.addEventListener('touchmove', e => { if (!allow && e.touches.length === 1 && e.cancelable) e.preventDefault(); }, {passive: false});
 })();
 
 /* ================= 동기화 (계정 db ↔ 이 기기) ================= */
