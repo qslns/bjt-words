@@ -245,6 +245,9 @@ rt{font-family:var(--f-jp);font-size:.5em;font-weight:500;color:var(--ink-2);let
 .jp{font-size:clamp(19px,2.3vw,26px);line-height:2.25;margin:2px 0 3px;color:var(--ink)}
 .ko{font-size:clamp(15px,1.7vw,19px);color:var(--ink-2);line-height:1.6;border-radius:4px}
 .furi-off .sent:not(.peek) .jp rt{visibility:hidden}
+.furi-off .sk-j rt{visibility:hidden}
+.tb.furi .furi-ic{font-family:var(--f-jp);font-size:19px;font-weight:700;line-height:1;width:21px;text-align:center}
+.tb.furi[aria-pressed="false"] .furi-ic{text-decoration:line-through;text-decoration-thickness:2px;opacity:.55}
 .tr-off .sent:not(.peek) .ko{color:transparent;background:var(--mask);-webkit-user-select:none;user-select:none}
 .tr-off .sent .ko,.furi-off .sent .jp{cursor:pointer}
 .pairs{display:flex;flex-wrap:wrap;gap:8px}
@@ -750,7 +753,7 @@ if (typeof module !== 'undefined') module.exports = { kzCardHTML, kzMark };
 'use strict';
 document.documentElement.lang = 'ko';
 const MODE = 'pwa';
-const BUILD = '10/21 01:02';
+const BUILD = '10/21 18:45';
 const IS_PWA = MODE === 'pwa';
 const APP_URL = 'https://qslns.github.io/bjt-words/';
 const STANDALONE = (() => { try { return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true; } catch (e) { return false; } })();
@@ -1940,6 +1943,7 @@ function kzBarHTML(r) {
   return '<header class="sbar"><button class="tb" data-act="kzExit" aria-label="닫기 (자동 저장)">' + ICON.close + '</button>' +
     '<div class="sb-t"><b>' + kzName(kctx.i) + ' · ' + ((ch ? ch.n : 0) + 1) + '회독</b><span>한자 ' + kzRange(c) + '</span></div>' +
     '<div class="sb-p"><b id="kz-prog">' + prog + '</b><span id="kz-clock">' + fmtClock(r ? r.t : 0) + '</span></div>' +
+    '<button class="tb furi" data-act="furi" aria-pressed="' + (S.furi !== 'tap') + '" aria-label="후리가나 ' + (S.furi !== 'tap' ? '끄기' : '켜기') + '"><span class="furi-ic" lang="ja" aria-hidden="true">あ</span><span class="sm-hide">후리가나</span></button>' +
     '<button class="tb" data-act="kzUndo" aria-label="이전 카드로 되돌리기"' + (kundo.length ? '' : ' disabled') + '>' + ICON.undo + '<span class="sm-hide">이전</span></button>' +
     (FS.ok && !STANDALONE ? '<button class="tb" data-act="full" aria-label="전체화면">' + ICON.full + '<span class="sm-hide">전체화면</span></button>' : '') +
   '</header><div class="pbar"><i style="width:' + (100 * Math.min(1, ratio)).toFixed(1) + '%"></i></div>';
@@ -1984,7 +1988,7 @@ function kzRender() {
     : kzTopHTML(c, r, false) + '<div class="cf-mid"><button class="cf-word w1 kzu-q" data-act="kzSay" lang="ja" aria-label="' + esc(c) + ' 발음 듣기">' + esc(c) + '</button>' +
       (CAN_SPEAK() && kzSayText(c) ? '<span class="cf-hint">' + ICON.spk + '한자를 누르면 발음</span>' : '') + '</div>';
   V.kz.innerHTML = kzBarHTML(r) +
-    '<div class="scroll" id="kz-sc"><div class="stage" id="kz-stage">' + body + '</div></div>' +
+    '<div class="scroll" id="kz-sc"><div class="stage' + modeCls() + '" id="kz-stage">' + body + '</div></div>' +
     '<footer class="abar"><div class="abar-in">' + bar + '</div></footer>';
   const sc = $('#kz-sc'); if (sc) sc.scrollTop = 0;
 }
@@ -2076,6 +2080,7 @@ function sbarHTML(r, id) {
     '<div class="sb-p"><b id="prog">' + prog + '</b><span id="clock">' + fmtClock(r ? r.t : 0) + '</span></div>' +
     (id != null ? '<button class="tb star" data-act="star" aria-pressed="' + weak + '" aria-label="약점 단어에 ' + (weak ? '서 빼기' : ' 넣기') + '">' + (weak ? ICON.star : ICON.starO) + '</button>' : '') +
     '<button class="tb lis" data-act="lis" aria-pressed="' + !!S.lis + '" aria-label="소리로 맞히기 ' + (S.lis ? '끄기' : '켜기') + '">' + ICON.spk.replace('<svg ', '<svg width="21" height="21" ') + '<span class="sm-hide">소리</span></button>' +
+    '<button class="tb furi" data-act="furi" aria-pressed="' + (S.furi !== 'tap') + '" aria-label="후리가나 ' + (S.furi !== 'tap' ? '끄기' : '켜기') + '"><span class="furi-ic" lang="ja" aria-hidden="true">あ</span><span class="sm-hide">후리가나</span></button>' +
     '<button class="tb" data-act="undo" aria-label="이전 카드로 되돌리기"' + (undoStack.length ? '' : ' disabled') + '>' + ICON.undo + '<span class="sm-hide">이전</span></button>' +
     (FS.ok && !STANDALONE ? '<button class="tb" data-act="full" aria-label="전체화면">' + ICON.full + '<span class="sm-hide">전체화면</span></button>' : '') +
   '</header><div class="pbar"><i style="width:' + (100 * Math.min(1, ratio)).toFixed(1) + '%"></i></div>';
@@ -2424,7 +2429,7 @@ function openSettings0() {
         '<p class="hint">회독 순서는 새로 시작할 때마다 랜덤이에요. 누적 장은 앞 장 단어와 새 단어를 고르게 섞어요. 진행 중인 회독은 순서가 그대로예요.</p></section>' +
       '<section><h3>약점 자동 추가</h3>' + segB('setWk', S.wkN, [[3, '3번'], [5, '5번'], [7, '7번']]) + '<p class="hint">‘모르겠음’ 누른 횟수를 장을 넘나들며 합쳐요. 예: 1–50에서 3번 + 1–100에서 2번 = 5번 → 약점 단어로.</p></section>' +
       '<section><h3>일본어 글씨체</h3>' + segB('setJf', S.jf, [['m', '명조 · BJT 지문·자료'], ['g', '고딕 · BJT 문제·선택지']]) + '<p class="hint">실제 BJT(CBT) 화면은 문서·메일 같은 자료가 명조, 문제 문장과 선택지가 고딕이에요.</p></section>' +
-      '<section><h3>해설 표시</h3>' + segB('setFuri', S.furi, [['all', '후리가나 항상'], ['tap', '후리가나 탭해서']]) + segB('setTr', S.tr, [['show', '번역 항상'], ['tap', '번역 탭해서']]) + '</section>' +
+      '<section><h3>해설 표시</h3>' + segB('setFuri', S.furi, [['all', '후리가나 보임'], ['tap', '후리가나 숨김(예문 누르면 보임)']]) + segB('setTr', S.tr, [['show', '번역 항상'], ['tap', '번역 탭해서']]) + '</section>' +
       '<section><h3>시험일</h3><input type="date" id="exam-date" value="' + esc(S.exam) + '" min="2026-01-01" max="2030-12-31"><p class="hint">홈의 D-day가 이 날짜 기준이에요.</p></section>' +
       '<section><h3>저장</h3><p class="hint">' + saveText() + '</p></section>' +
       '<section><h3>진도 백업 · 옮기기</h3><div class="frow"><button class="btn" data-act="exportOpen">내보내기</button><button class="btn" data-act="importOpen">가져오기</button></div><p class="hint">' + (IS_PWA ? '앱을 지우거나 기기를 바꾸기 전에 내보내기 코드를 메모 앱 등에 저장해 두세요. claude.ai 단어장의 진도도 여기로 가져올 수 있어요.' : '아이패드 앱 버전으로 진도를 옮길 때 써요. 여기서 내보내기 → 앱의 설정 › 가져오기.') + '</p></section>' +
@@ -2617,6 +2622,7 @@ function act(a, el) {
     case 'setShuf': setS({shuf: el.dataset.v === 'true'}); openSettings(); break;
     case 'setWk': setS({wkN: +el.dataset.v}); openSettings(); onDataChanged(); break;
     case 'setFuri': setS({furi: el.dataset.v}); openSettings(); refreshStage(); break;
+    case 'furi': setS({furi: S.furi === 'tap' ? 'all' : 'tap'}); refreshStage(); toast(S.furi === 'tap' ? '후리가나 숨김 · 예문은 누르면 보여요' : '후리가나 보임'); break;
     case 'setJf': setS({jf: el.dataset.v}); applyJf(); openSettings(); break;
     case 'setTr': setS({tr: el.dataset.v}); openSettings(); refreshStage(); break;
     case 'setKp': setS({kp: el.dataset.v === 'true'}); openSettings(); break;
@@ -2642,6 +2648,8 @@ function act(a, el) {
 function refreshStage() {
   const st = $('#stage'); if (st) st.className = 'stage' + modeCls();
   const sb = $('#sheet-body .sheet-stage'); if (sb) sb.className = 'sheet-stage' + modeCls();
+  const ks = $('#kz-stage'); if (ks) ks.className = 'stage' + modeCls();
+  document.querySelectorAll('[data-act="furi"]').forEach(b => { const on = S.furi !== 'tap'; b.setAttribute('aria-pressed', on); b.setAttribute('aria-label', '후리가나 ' + (on ? '끄기' : '켜기')); });
 }
 document.addEventListener('click', e => {
   if (e.target.id === 'modal-bg') { if (modalDismiss) closeModal(); return; }
