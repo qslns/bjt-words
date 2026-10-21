@@ -1,6 +1,9 @@
 """한자 소리(10/21): audio/kr/<읽기 코드>.mp3 = 읽기 칩마다, audio/k/<한자 코드>.mp3 = 대표 소리(빨간 읽기들을 이어 붙인 것).
-작업 목록 tools/kanji_voice_jobs.json: kr = [{key, t}] (t = 「읽기」 — 따옴표로 감싸야 한 박 소리가 깨끗함:
-  그냥 'い'는 뒤에 짧은 잡음이 붙고, 'こ。'는 무음이 나옴), rep = {k/키: [kr/키...]}, gap = 읽기 사이 쉼(초).
+작업 목록 tools/kanji_voice_jobs.json: kr = [{key, t, v?, rate?}] (t = 엔진에 넣는 글, v = 목소리(없으면 voice), rate = 속도),
+  rep = {k/키: [kr/키 또는 krk/키...]}, gap = 읽기 사이 쉼(초).
+  기본은 「읽기」(그냥 'い'는 뒤에 짧은 잡음, 'こ。'는 무음). 10/21 음소 인식기 전수 검사로 「」가 틀리게 만드는 읽기
+  (はいる→わいる, ひかえる→ひかれる 등)는 그냥 글·가타카나로, 나나미가 단독으로 못 읽는 읽기(てん → 'せ')는 게이타로 바꿈.
+  krk/ = 대표 소리 안에서 목소리를 맞추려고 만든 게이타 판 읽기(앱에서 따로 쓰지 않음).
 다시 만들기: pip install edge-tts && python3 tools/kanji_voice.py   (같은 글은 audio/manifest_kanji.json 보고 건너뜀)
 그다음 작업 폴더 make.py로 다시 빌드(av의 k/·kr/ 해시가 바뀌어 기기 저장본도 바뀜)."""
 import os, sys, json, ssl, asyncio, subprocess, shutil
@@ -21,12 +24,13 @@ def trim(src, dst):
     elif os.path.exists(src): os.remove(src)
 async def one(sem, j, man, fails):
     dst = os.path.join(A, j['key'] + '.mp3'); os.makedirs(os.path.dirname(dst), exist_ok=True)
-    raw = dst + '.tmp.mp3'; sig = 'edge:' + VOICE + ':' + j['t']
+    v = j.get('v') or VOICE; rate = j.get('rate') or '+0%'
+    raw = dst + '.tmp.mp3'; sig = 'edge:' + v + ':' + j['t'] + ('' if rate == '+0%' else ':' + rate)
     if man.get(j['key']) == sig and os.path.exists(dst): return
     async with sem:
         for k in range(5):
             try:
-                await edge_tts.Communicate(j['t'], VOICE, proxy=PROXY).save(raw)
+                await edge_tts.Communicate(j['t'], v, rate=rate, proxy=PROXY).save(raw)
                 if os.path.getsize(raw) > 800: break
             except Exception:
                 await asyncio.sleep(1.5 * (k + 1))
