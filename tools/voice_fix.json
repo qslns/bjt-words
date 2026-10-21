@@ -656,5 +656,342 @@
   "t": "資料が5部ふそくしているので、コピーしてきます。",
   "was": "資料が5部不足しているので、コピーしてきます。",
   "why": "不足 → ぶそく(유성)에 가깝게 들림(불확실) → ふそく 가나로 합성 (10/17)"
+ },
+ {
+  "f": "audio/w/1.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "先方",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/63.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "司会",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/101.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "年度",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/104.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "テイレイ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/110.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "「きじつ」",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/150.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "提出",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/162.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "件",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/308.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "すいい",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/389.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "タイオウ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/488.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "リスケ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/1339.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "セッケイ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/1405.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "得る",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/1505.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "キュウニ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/1513.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "きんし",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/1875.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "「パーセント」",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2051.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "しょうしょうおまちください",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2068.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "わたくしども",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/2157.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "定員",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2174.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "けってい",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2202.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "定休日",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2208.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "けんがく",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2351.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "限定",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/2373.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "倍",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2493.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "経緯",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/2658.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "「フォロー」",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2715.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "先般",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/2720.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "選任",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%"
+ },
+ {
+  "f": "audio/w/2893.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "スバヤイ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2969.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "ケイ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/2996.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "「ひ」",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22"
+ },
+ {
+  "f": "audio/w/9018.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "イウ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (best-delta)",
+  "date": "10/22",
+  "was": "いう"
+ },
+ {
+  "f": "audio/w/9020.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "いい",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%",
+  "was": "いい"
+ },
+ {
+  "f": "audio/w/9045.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "会議室",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "was": "会議室"
+ },
+ {
+  "f": "audio/w/9108.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "点",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "was": "てん"
+ },
+ {
+  "f": "audio/w/9187.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "ハイル",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "was": "はいる"
+ },
+ {
+  "f": "audio/w/9191.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "関係",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%",
+  "was": "関係"
+ },
+ {
+  "f": "audio/w/9248.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "書く",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%",
+  "was": "書く"
+ },
+ {
+  "f": "audio/w/9324.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "「あう」",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "was": "会う"
+ },
+ {
+  "f": "audio/w/9326.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "具合",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%",
+  "was": "具合"
+ },
+ {
+  "f": "audio/w/9398.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "「あう」",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "was": "合う"
+ },
+ {
+  "f": "audio/w/9400.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "「きゅう」",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "was": "きゅう"
+ },
+ {
+  "f": "audio/w/9412.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "キル",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "+10%",
+  "was": "切る"
+ },
+ {
+  "f": "audio/w/9423.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "先輩",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "rate": "-10%",
+  "was": "先輩"
+ },
+ {
+  "f": "audio/w/9668.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "カベ",
+  "why": "단어 음성 받아쓰기 전수 검사(음소 인식기+ReazonSpeech)에서 틀림 (both)",
+  "date": "10/22",
+  "was": "かべ"
  }
 ]

@@ -4,7 +4,8 @@
 이 저장소만 있으면 돌아가게 만든 스크립트(작업 폴더 없이). 필요한 것: python3, ffmpeg.
   Azure(같은 목소리, 공식):  AZURE_SPEECH_KEY=키 AZURE_SPEECH_REGION=japaneast python3 tools/regen_voice.py --engine az
   edge-tts(고쳐졌을 때):     pip install edge-tts && python3 tools/regen_voice.py --engine edge
-작업 목록: tools/voice_jobs.json (f=파일, v=목소리, t=읽을 글). 단어·예문 0/2번=Nanami, 예문 1번=Keita.
+작업 목록: tools/voice_jobs.json (f=파일, v=목소리, t=읽을 글, rate=속도(있을 때만)). 단어·예문 0/2번=Nanami, 예문 1번=Keita.
+10/22 음소 인식기 + ReazonSpeech 두 가지 받아쓰기로 전수 검사해 틀린 것은 t(가나 바꿔 넣기)·v·rate를 바꿔 다시 만듦.
 이미 같은 엔진·목소리·글로 만든 파일은 tools/voice_manifest.json을 보고 건너뜀. 무료 Azure(F0)는 1분에 20건 → 약 90분.
 무음 자르기·음질(24kHz 48kbps 모노 mp3)은 본편과 같음."""
 import os, sys, json, ssl, time, argparse, subprocess, urllib.request, urllib.error
@@ -30,11 +31,11 @@ def trim(src, dst):
     elif os.path.exists(src): os.remove(src)
 
 last = [0.0]
-def az(text, voice, raw):
+def az(text, voice, raw, rate='+0%'):
     key, region = os.environ.get('AZURE_SPEECH_KEY'), (os.environ.get('AZURE_SPEECH_REGION') or '').replace(' ', '').lower()
     if not key or not region: sys.exit('AZURE_SPEECH_KEY / AZURE_SPEECH_REGION 필요')
     ssml = ("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='ja-JP'>"
-            f"<voice name='{voice}'><prosody pitch='+0Hz' rate='+0%' volume='+0%'>{escape(text)}</prosody></voice></speak>")
+            f"<voice name='{voice}'><prosody pitch='+0Hz' rate='{rate}' volume='+0%'>{escape(text)}</prosody></voice></speak>")
     for k in range(8):
         wait = 3.1 - (time.time() - last[0])
         if wait > 0: time.sleep(wait)
@@ -53,7 +54,7 @@ def az(text, voice, raw):
             time.sleep(3 * (k + 1))
     raise RuntimeError('azure failed')
 
-def edge(text, voice, raw):
+def edge(text, voice, raw, rate='+0%'):
     import asyncio, edge_tts
     if CA:
         import edge_tts.communicate as C
@@ -61,23 +62,24 @@ def edge(text, voice, raw):
             if isinstance(getattr(C, n), ssl.SSLContext): setattr(C, n, CTX)
     for k in range(4):
         try:
-            asyncio.run(edge_tts.Communicate(text, voice, proxy=PROXY).save(raw))
+            asyncio.run(edge_tts.Communicate(text, voice, rate=rate, proxy=PROXY).save(raw))
             if os.path.getsize(raw) > 1000: return
         except Exception:
             time.sleep(1.5 * (k + 1))
     raise RuntimeError('edge failed')
 
 FETCH = az if A.engine == 'az' else edge
-todo = [j for j in JOBS if A.force or MAN.get(j['f']) != f"{A.engine}:{j['v']}:{j['t']}" or not os.path.exists(os.path.join(ROOT, j['f']))]
+def sig(j): return f"{A.engine}:{j['v']}:{j['t']}" + (f":{j['rate']}" if j.get('rate', '+0%') != '+0%' else '')
+todo = [j for j in JOBS if A.force or MAN.get(j['f']) != sig(j) or not os.path.exists(os.path.join(ROOT, j['f']))]
 if A.limit: todo = todo[:A.limit]
 print('jobs', len(JOBS), 'todo', len(todo), flush=True)
 ok, fail, t0 = 0, [], time.time()
 for n, j in enumerate(todo, 1):
     dst = os.path.join(ROOT, j['f']); raw = os.path.join(TMP, os.path.basename(dst))
     try:
-        FETCH(j['t'], j['v'], raw); trim(raw, dst)
+        FETCH(j['t'], j['v'], raw, j.get('rate', '+0%')); trim(raw, dst)
         if os.path.getsize(dst) < 1000: raise RuntimeError('small')
-        MAN[j['f']] = f"{A.engine}:{j['v']}:{j['t']}"; ok += 1
+        MAN[j['f']] = sig(j); ok += 1
     except Exception as e:
         fail.append((j['f'], str(e)))
     if n % 25 == 0 or n == len(todo):

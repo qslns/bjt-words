@@ -116,7 +116,7 @@
 {
 "f": "audio/w/9018.mp3",
 "v": "ja-JP-NanamiNeural",
-"t": "いう",
+"t": "イウ",
 "bn": 18
 },
 {
@@ -135,7 +135,8 @@
 "f": "audio/w/9020.mp3",
 "v": "ja-JP-NanamiNeural",
 "t": "いい",
-"bn": 20
+"bn": 20,
+"rate": "-10%"
 },
 {
 "f": "audio/s/9020-0.mp3",
@@ -800,7 +801,7 @@
 {
 "f": "audio/w/9108.mp3",
 "v": "ja-JP-NanamiNeural",
-"t": "てん",
+"t": "点",
 "bn": 108
 },
 {
@@ -1352,7 +1353,7 @@
 {
 "f": "audio/w/9187.mp3",
 "v": "ja-JP-NanamiNeural",
-"t": "はいる",
+"t": "ハイル",
 "bn": 187
 },
 {
@@ -1383,7 +1384,8 @@
 "f": "audio/w/9191.mp3",
 "v": "ja-JP-NanamiNeural",
 "t": "関係",
-"bn": 191
+"bn": 191,
+"rate": "-10%"
 },
 {
 "f": "audio/w/9192.mp3",
@@ -1815,7 +1817,8 @@
 "f": "audio/w/9248.mp3",
 "v": "ja-JP-NanamiNeural",
 "t": "書く",
-"bn": 248
+"bn": 248,
+"rate": "-10%"
 },
 {
 "f": "audio/w/9249.mp3",
@@ -2564,7 +2567,7 @@
 {
 "f": "audio/w/9324.mp3",
 "v": "ja-JP-NanamiNeural",
-"t": "会う",
+"t": "「あう」",
 "bn": 324
 },
 {
@@ -2577,7 +2580,8 @@
 "f": "audio/w/9326.mp3",
 "v": "ja-JP-NanamiNeural",
 "t": "具合",
-"bn": 326
+"bn": 326,
+"rate": "-10%"
 },
 {
 "f": "audio/s/9326-0.mp3",
@@ -3422,7 +3426,7 @@
 {
 "f": "audio/w/9398.mp3",
 "v": "ja-JP-NanamiNeural",
-"t": "合う",
+"t": "「あう」",
 "bn": 398
 },
 {
@@ -3434,7 +3438,7 @@
 {
 "f": "audio/w/9400.mp3",
 "v": "ja-JP-NanamiNeural",
-"t": "きゅう",
+"t": "「きゅう」",
 "bn": 400
 },
 {
@@ -3542,8 +3546,9 @@
 {
 "f": "audio/w/9412.mp3",
 "v": "ja-JP-NanamiNeural",
-"t": "切る",
-"bn": 412
+"t": "キル",
+"bn": 412,
+"rate": "+10%"
 },
 {
 "f": "audio/w/9413.mp3",
@@ -3681,7 +3686,8 @@
 "f": "audio/w/9423.mp3",
 "v": "ja-JP-NanamiNeural",
 "t": "先輩",
-"bn": 423
+"bn": 423,
+"rate": "-10%"
 },
 {
 "f": "audio/s/9423-0.mp3",
@@ -6751,8 +6757,8 @@
 },
 {
 "f": "audio/w/9668.mp3",
-"v": "ja-JP-NanamiNeural",
-"t": "かべ",
+"v": "ja-JP-KeitaNeural",
+"t": "カベ",
 "bn": 668
 },
 {
