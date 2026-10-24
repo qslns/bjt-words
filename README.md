@@ -33,3 +33,4 @@ BJT에 나오는 비즈니스 일본어 3,817단어를 회독 방식으로 외�
 | `audio/w/<번호>.mp3`, `audio/s/<번호>-<예문>.mp3` | 단어·예문 녹음 |
 | `manifest.webmanifest`, `icons/` | 홈 화면 아이콘·이름 |
 | `vercel.json` | Vercel로 올릴 때의 캐시 설정 (GitHub Pages에서는 쓰지 않음) |
+| `src/` | 앱을 만드는 원본 소스 백업 (빌드·테스트·배포 방법은 `src/README.md`) — 앱은 읽지 않음 |

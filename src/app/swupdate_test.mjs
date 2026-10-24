@@ -1,0 +1,26 @@
+import { chromium } from 'playwright';
+import fs from 'fs';
+const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const ctx = await browser.newContext({ viewport: { width: 1180, height: 820 }, serviceWorkers: 'allow' });
+const page = await ctx.newPage();
+await page.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
+await page.goto('http://127.0.0.1:8765/');
+await page.waitForSelector('#v-home .ver');
+await page.evaluate(() => navigator.serviceWorker.ready);
+await page.reload(); await page.waitForSelector('#v-home .ver');
+const ctl = await page.evaluate(() => !!navigator.serviceWorker.controller);
+const v1 = await page.textContent('#v-home .ver');
+console.log('controlled', ctl, 'v1', v1);
+// simulate a new deploy
+const idx = '/home/claude/work/app/test/index.html', sw = '/home/claude/work/app/test/sw.js';
+const html0 = fs.readFileSync(idx, 'utf8'), sw0 = fs.readFileSync(sw, 'utf8');
+fs.writeFileSync(idx, html0.replace(/const BUILD = '[^']*'/, "const BUILD = 'NEW-BUILD'"));
+fs.writeFileSync(sw, sw0.replace(/const VERSION = '[^']*'/, "const VERSION = 'newver123'"));
+const nav = page.waitForEvent('framenavigated', { timeout: 20000 }).catch(() => null);
+await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+await nav; await page.waitForSelector('#v-home .ver', { timeout: 20000 });
+await page.waitForTimeout(500);
+const v2 = await page.textContent('#v-home .ver');
+console.log('after update', v2, v2.includes('NEW-BUILD') ? 'PASS' : 'FAIL');
+fs.writeFileSync(idx, html0); fs.writeFileSync(sw, sw0);
+await browser.close();

@@ -1,0 +1,1355 @@
+1	N5	お	お	honorable ~ (honorific)	m262 c1036 j105	 AP
+2	N5	する	する	to do, to try; to wear small	m270 c1208 j74	
+3	N4	御	ご	honorable ~	m262 c1036 j60	 AP
+4	N4	おる	おる	-- extra-modest expression f	m134 c454 j91	D12
+5	N5	居る	いる	(humble) to be (animate), to	m134 c454 j91	
+6	N5	じゃ	じゃ	well, well then	m122 c522 j60	
+7	N4	くださる	くださる	(hon.) to give, to confer	m45 c395 j92	D25
+8	N4	事	こと	thing(s), matter(s), fact	m99 c126 j102	
+9	N5	下さい	ください	(with te-form verb) please d	m45 c395 j97	
+10	N5	日	にち	~ day of the month, for ~ da	m64 c138 j107	 AS
+11	N4	様	さま	Mr., Mrs., Ms.	m79 c158 j60	 AS
+12	N5	なる	なる	to become	m48 c191 j103	
+13	N5	在る	ある	to be, to have	m55 c141 j105	
+14	N5	有る	ある	to be, to have	m55 c141 j87	
+15	N4	いただく	頂く	-- extra-modest expression f	m48 c167 j60	D22
+16	N4	致す	いたす	-- extra-modest expression f	m43 c195 j86	
+17	N4	会議	かいぎ	business meeting; conference	m36 c122 j109	D349
+18	N5	この	この	this	m37 c217 j60	
+19	N5	ない	ない	there isn't, doesn't have	m53 c90 j65	
+20	N4	ございます	ございます	to be (polite), to exist	m35 c106 j60	D18 AS
+21	N4	ついて	ついて	about, concerning	m43 c61 j100	 AS
+22	N5	人	じん	counter for people	m58 c56 j60	 AS
+23	N5	月	がつ	month of year	m42 c83 j60	 AS
+24	N5	電話	でんわ	a telephone	m32 c66 j109	
+25	N5	会社	かいしゃ	company, corporation	m36 c51 j109	
+26	N5	言う	いう	to say	m63 c16 j109	
+27	N5	年	とし	year, age	m32 c49 j108	
+28	N5	いい	いい	good	m33 c40 j102	
+29	N5	できる	できる	to be able to (to accomplish	m24 c73 j95	
+30	N5	歳	さい	~ years old	m32 c49 j87	 AS
+31	N5	時間	じかん	time	m21 c72 j109	
+32	N4	為	ため	good, advantage, in order to	m19 c87 j101	
+33	N5	何	なん	what	m50 c16 j108	
+34	N4	送る	おくる	to send, to dispatch	m17 c77 j104	
+35	N5	そう	そう	yes; appears, to be the case	m27 c37 j101	
+36	N5	先	さき	future; recent, previous	m35 c39 j60	
+37	N5	男	おとこ	man, male	m118 c2 j109	
+38	N5	はい	はい	yes	m49 c12 j104	
+39	N5	だけ	だけ	only ~, just ~, as ~	m19 c94 j60	 AS
+40	N5	では	では	then, well, so	m21 c80 j60	
+41	N5	どう	どう	how, in what way	m30 c25 j105	
+42	N5	その	その	that	m23 c39 j101	
+43	N5	女	おんな	woman, female	m106 c2 j108	
+44	N4	申し上げる	もうしあげる	(humble)to say, to tell	m22 c31 j93	D28
+45	N4	おき	おき	after every ~	m18 c54 j94	 AS
+46	N5	後	あと	afterwards (later); in the f	m20 c37 j109	
+47	N4	連絡	れんらく	communication, contact, conn	m12 c58 j108	D351
+48	N4	部長	ぶちょう	department (division) manage	m13 c46 j109	D365
+49	N4	客	きゃく	guest, customer	m10 c94 j109	
+50	N5	番	ばん	~st; ~th best	m86 c4 j60	 AS
+51	N5	さん	さん	Mr. ~, Ms. ~	m14 c51 j109	 AS
+52	N5	話す	はなす	to speak	m43 c9 j89	
+53	N5	見る	みる	to see, to look	m17 c40 j96	
+54	N5	置く	おく	to put; to lay; to place	m18 c54 j60	
+55	N4	予定	よてい	plans, arrangement, schedule	m10 c51 j109	D350
+56	N5	中	じゅう	during, while	m15 c63 j60	 AS
+57	N5	私	わたし	I, myself	m13 c43 j109	
+58	N5	方	かた	-- honorific form for 人 (ひと)	m11 c58 j98	
+59	N4	工場	こうじょう	factory	m10 c40 j109	D359
+60	N5	来る	くる	to come	m16 c20 j94	D10
+61	N4	思う	おもう	to think, to feel	m14 c30 j108	
+62	N5	来月	らいげつ	next month	m8 c68 j107	
+63	N4	会議室	かいぎしつ	conference room	m16 c23 j102	
+64	N5	今	いま	now	m15 c23 j103	
+65	N5	こちら	こちら	this person (polite); this w	m13 c47 j60	
+66	N5	こっち	こっち	this person; this direction;	m13 c47 j60	
+67	N5	どの	どの	which	m21 c12 j105	
+68	N4	案内	あんないする	information, guidance	m17 c12 j103	D352
+69	N4	会	かい	~ meeting	m11 c57 j60	 AS
+70	N5	分	ふん	~ minutes	m14 c27 j60	D1073 AS
+71	N5	でも	でも	but, however	m17 c27 j60	
+72	N5	新しい	あたらしい	new	m6 c77 j102	
+73	N5	次	つぎ	next	m26 c12 j60	
+74	N4	場合	ばあい	case, situation	m9 c40 j101	
+75	N5	これ	これ	this one	m24 c13 j60	
+76	N4	必要	ひつよう	necessary	m8 c39 j109	
+77	N4	行う	おこなう	to carry out; to conduct (ty	m8 c38 j109	
+78	N5	午後	ごご	afternoon, P.M.	m9 c29 j109	
+79	N4	社長	しゃちょう	president of a company	m12 c18 j109	
+80	N5	分かる	わかる	to understand	m21 c11 j71	
+81	N5	一	いち	one	m10 c31 j77	
+82	N4	伺う	うかがう	humble form of 行く (いく), 聞く (	m10 c24 j65	D29
+83	N5	物	もの	thing (concrete object)	m15 c18 j60	
+84	N5	店	みせ	store, shop	m17 c14 j60	
+85	N4	通り	とおり	~ Street, ~ Avenue	m6 c29 j105	D1069
+86	N5	待つ	まつ	to wait	m11 c18 j92	
+87	N5	それ	それ	that one	m24 c7 j60	
+88	N4	以上	いじょう	more than; this is all	m8 c19 j98	D45
+89	N4	考える	かんがえる	to think (about); to conside	m10 c18 j100	
+90	N5	もう	もう	already; again; more	m9 c32 j60	
+91	N4	まず	まず	first (of all), to start wit	m8 c38 j60	
+92	N5	かかる	かかる	it takes (amount of time, mo	m9 c30 j63	
+93	N5	取る	とる	to take (a class); to get (a	m7 c27 j104	
+94	N5	仕事	しごと	work, job, occupation, emplo	m6 c30 j109	
+95	N4	場所	ばしょ	place, location	m12 c10 j109	
+96	N4	力	ちから	strength, power	m11 c14 j60	D1472
+97	N5	出す	だす	to take (something) out; to 	m6 c29 j107	
+98	N4	だす	だす	to start doing ~	m6 c29 j107	 AS
+99	N5	聞く	きく	to hear, to listen, to ask	m12 c17 j60	
+100	N5	いつ	いつ	when	m12 c13 j81	
+101	N4	利用	りよう	use, utilization	m4 c34 j108	D468
+102	N5	撮る	とる	to take (a photo), to make (	m7 c27 j88	
+103	N5	上	うえ	above (up, top, etc.), over,	m12 c16 j60	
+104	N5	入れる	いれる	to put in	m10 c21 j60	
+105	N4	もらう	もらう	to receive	m9 c21 j68	
+106	N5	うち	うち	home; house; my place	m8 c16 j102	
+107	N4	内	うち	within, inside	m8 c16 j102	
+108	N4	準備	じゅんびする	prepare	m9 c12 j108	
+109	N5	行く	いく	to go	m12 c13 j60	
+110	N5	今日	きょう	today, this day	m5 c26 j108	
+111	N5	ころ	ころ	about, toward, approximately	m12 c12 j60	 AS
+112	N5	持つ	もつ	to hold, to carry; to posses	m7 c17 j102	
+113	N4	生産	せいさんする	production; to produce	m5 c18 j109	D370
+114	N5	度	ど	counter for occurrences; ~ d	m6 c35 j60	 AS
+115	N4	会場	かいじょう	venue, meeting place	m5 c18 j108	D426
+116	N5	質問	しつもん	question, inquiry	m9 c10 j109	
+117	N4	最も	もっとも	most	m6 c19 j109	
+118	N5	午前	ごぜん	morning, A.M.	m8 c12 j109	
+119	N4	すると	すると	and, then	m10 c15 j60	
+120	N4	課長	かちょう	section manager	m9 c6 j108	D396
+121	N5	少し	すこし	little, few	m4 c30 j109	
+122	N5	大切	たいせつ	important	m6 c15 j108	
+123	N5	欲しい	ほしい	to want, in need of	m13 c5 j92	
+124	N5	出る	でる	to appear, to leave	m5 c21 j98	
+125	N5	問題	もんだい	a problem	m4 c25 j109	
+126	N5	来週	らいしゅう	next week	m2 c63 j104	
+127	N4	よろしい	よろしい	(hon.) good, OK, all right	m6 c24 j60	
+128	N4	説明	せつめい	explanation	m2 c57 j108	
+129	N4	交通	こうつう	traffic, transportation	m5 c17 j108	
+130	N4	予約	よやく	reservation	m5 c12 j104	D1065
+131	N4	あげる	あげる	to give	m6 c9 j135	
+132	N4	参る	まいる	humble expression for 行く and	m6 c12 j75	D80
+133	N5	どうぞ	どうぞ	please, kindly, by all means	m8 c13 j60	
+134	N4	点	てん	mark, score, grade; point, d	m4 c21 j105	
+135	N5	今年	ことし	this year	m2 c48 j109	
+136	N5	まだ	まだ	yet, still, besides	m5 c26 j60	
+137	N4	世話	せわする	looking after; to look after	m7 c9 j105	
+138	N5	ページ	ページ	a page	m8 c12 j60	
+139	N4	おわる	おわる	to finish doing ~	m7 c9 j99	 AS
+140	N4	必ず	かならず	surely, certainly	m5 c13 j107	
+141	N5	早い	はやい	early	m7 c9 j94	
+142	N5	前	まえ	before, in front	m4 c29 j60	
+143	N5	すぐに	すぐに	immediately, soon	m5 c21 j60	
+144	N5	多い	おおい	many; there are a lot	m5 c19 j66	
+145	N5	車	くるま	car, vehicle	m8 c5 j109	
+146	N5	明日	あした	tomorrow	m1 c52 j105	D216
+147	N5	速い	はやい	fast, quick	m7 c9 j79	
+148	N4	申す	もうす	-- extra-modest (humble) exp	m5 c9 j89	D95
+149	N5	みんな	みんな	all, everyone, everybody	m3 c22 j105	
+150	N4	皆	みな	everyone	m3 c22 j105	
+151	N5	使う	つかう	to use	m2 c34 j108	
+152	N5	今月	こんげつ	this month	m2 c32 j109	
+153	N4	戻る	もどる	to return (v.i.); to come ba	m6 c12 j66	
+154	N4	出席	しゅっせきする	attendance	m4 c8 j107	D440
+155	N5	大きい	おおきい	big, large	m3 c18 j103	
+156	N4	程	ほど	degree, extent	m3 c22 j83	
+157	N4	経験	けいけんする	experience	m3 c16 j108	
+158	N5	上げる	あげる	to raise, to lift	m6 c9 j68	
+159	N5	話	はなし	talk (chat), story	m7 c4 j109	
+160	N4	注意	ちゅうい	caution, attention	m3 c14 j106	
+161	N5	あれ	あれ	that one (over there)	m6 c6 j89	
+162	N4	もし	もし	if	m8 c5 j60	
+163	N4	技術	ぎじゅつ	technique, technology, skill	m4 c8 j109	
+164	N5	答える	こたえる	to answer, to reply	m4 c12 j76	
+165	N4	相談	そうだんする	consultation	m2 c20 j108	
+166	N4	ファックス	ファックス	fax	m7 c4 j60	D379
+167	N4	安全	あんぜん	safety, security	m6 c4 j109	
+168	N5	作る	つくる	to make, to create	m4 c8 j106	
+169	N4	席	せき	a seat	m4 c8 j106	
+170	N4	都合	つごう	circumstances, convenience	m2 c14 j103	D98
+171	N4	代	だい	~ age; period	m5 c10 j60	 AS
+172	N4	別	べつ	distinction, different	m3 c14 j60	D1492
+173	N5	来年	らいねん	next year	m1 c36 j109	
+174	N5	三	さん	three	m4 c7 j109	
+175	N5	高い	たかい	tall, high; expensive	m2 c19 j102	
+176	N4	輸出	ゆしゅつする	export	m2 c12 j109	D467
+177	N4	やすい	やすい	easy to do ~	m7 c5 j63	 AS
+178	N4	伝える	つたえる	to convey (a message); to te	m5 c9 j60	
+179	N4	変わる	かわる	to change (v.i.), to be tran	m2 c17 j107	
+180	N4	返事	へんじ	reply, answer	m2 c18 j102	
+181	N5	どこ	どこ	where, what place	m14 c1 j63	
+182	N5	回	かい	counter for occurrences (~ t	m4 c7 j101	 AS
+183	N4	届ける	とどける	to deliver (v.t.)	m6 c6 j60	
+184	N4	用	よう	errand, task, business (to t	m4 c11 j60	
+185	N4	最近	さいきん	recently, nowadays, in recen	m5 c4 j109	
+186	N5	掛ける	かける	to put on (e.g., glasses); t	m2 c18 j90	
+187	N5	目	め	eye(s)	m4 c10 j60	
+188	N5	終る	おわる	to finish, to close	m7 c9 j0	
+189	N4	くれる	くれる	to give, to do for	m6 c3 j98	
+190	N4	お礼	おれい	expression of gratitude; tha	m5 c7 j60	
+191	N5	初め	はじめ	beginning, start	m2 c16 j93	
+192	N4	始める	はじめる	to start, to begin	m2 c16 j93	
+193	N4	以内	いない	within, less (no more) than	m1 c19 j108	D308
+194	N5	自動車	じどうしゃ	automobile	m4 c5 j109	
+195	N5	駅	えき	station	m3 c8 j105	
+196	N5	名前	なまえ	name	m2 c13 j108	
+197	N4	直す	なおす	to correct (v.t.); to fix	m4 c8 j72	
+198	N4	受付	うけつけ	reception(ist) desk	m1 c32 j60	D189
+199	N4	計画	けいかくする	plan, project, schedule	m1 c25 j109	
+200	N5	机	つくえ	desk	m4 c5 j103	
+201	N5	階	かい	counter for stories (floors)	m2 c13 j102	 AS
+202	N5	また	また	and; furthermore	m5 c4 j91	
+203	N4	選ぶ	えらぶ	to choose; to select	m3 c7 j108	
+204	N4	空港	くうこう	airport	m5 c3 j109	
+205	N5	花	はな	flower	m8 c1 j109	
+206	N5	よく	よく	frequently, often (much); we	m4 c5 j99	
+207	N4	以下	いか	less than, below	m2 c8 j106	D432
+208	N4	足りる	たりる	to be sufficient; to be enou	m3 c10 j69	
+209	N4	社会	しゃかい	society	m3 c6 j109	
+210	N4	原因	げんいん	cause, origin, source	m1 c14 j109	D570
+211	N5	どちら	どちら	which (one) (way); where (po	m4 c7 j60	
+212	N5	どっち	どっち	which one, which way	m4 c7 j60	
+213	N5	どなた	どなた	who	m4 c7 j60	
+214	N5	ここ	ここ	here, this place	m3 c6 j103	
+215	N5	難しい	むずかしい	difficult	m3 c6 j103	
+216	N4	是非	ぜひ	certainly, by all means; wit	m2 c10 j105	
+217	N5	二	に	two	m5 c2 j109	
+218	N5	週間	しゅうかん	~ weeks	m1 c20 j98	 AS
+219	N5	そこ	そこ	that place, there; bottom, s	m5 c2 j106	
+220	N4	専門	せんもん	major; speciality	m4 c3 j108	
+221	N5	入る	はいる	to enter, to contain, to hol	m2 c11 j85	
+222	N5	いつも	いつも	always, usually, every time,	m5 c4 j60	
+223	N4	員	いん	member of ~	m5 c4 j60	 AS
+224	N4	最後	さいご	last, end	m2 c8 j109	
+225	N4	関係	かんけい	relation(ship), connection	m2 c8 j109	
+226	N5	朝	あさ	morning	m2 c8 j101	
+227	N5	大変	たいへん	very; difficult, hard	m1 c15 j108	
+228	N4	売り場	うりば	place where things are sold	m2 c5 j104	D497
+229	N4	十分	じゅうぶん	enough	m3 c4 j108	
+230	N4	帰り	かえり	return, coming back	m2 c7 j103	
+231	N5	若い	わかい	young	m1 c19 j80	
+232	N4	増える	ふえる	to increase, to multiply	m0 c55 j89	
+233	N4	見つかる	みつかる	to be found (v.i.), to be di	m2 c7 j99	
+234	N5	くらい	くらい	approximate (quantity)	m3 c6 j68	 AS
+235	N5	そちら	そちら	over there	m6 c2 j60	
+236	N5	そっち	そっち	over there	m6 c2 j60	
+237	N5	など	など	et cetera	m6 c2 j60	 AS
+238	N4	それで	それで	and (conj.), thereupon, beca	m6 c2 j60	
+239	N4	これから	これから	from now on, after this	m6 c2 j60	
+240	N5	番号	ばんごう	number, series of digits	m1 c13 j107	
+241	N5	万	まん	ten thousand	m1 c23 j60	
+242	N5	いかが	いかが	how, in what way	m2 c11 j60	
+243	N5	大きな	おおきな	big	m1 c13 j106	
+244	N4	心	こころ	heart, mind	m2 c11 j60	
+245	N4	うん	うん	yes (informal), all right (o	m9 c0 j101	
+246	N5	忙しい	いそがしい	busy (people, days)	m1 c15 j92	
+247	N5	どれ	どれ	which one	m4 c4 j60	
+248	N4	表	おもて	surface; front; outside	m1 c13 j104	
+249	N4	決まる	きまる	to be set; fixed (v.i.)	m1 c14 j96	
+250	N4	済む	すむ	to finish, to end	m2 c9 j72	
+251	N4	集める	あつめる	to collect, to gather (v.t.)	m4 c2 j103	
+252	N4	なさる	なさる	-- honorific expression for 	m3 c4 j60	D125
+253	N5	帰る	かえる	to go back, to go home, to r	m3 c5 j73	
+254	N4	いらっしゃる	いらっしゃる	-- honorific expression for 	m2 c7 j60	D214
+255	N4	(て) しまう	(て) しまう	to end up ~	m3 c13 j0	 AS G
+256	N5	半	はん	half (e.g., にじはん | half-past	m3 c3 j107	
+257	N5	下	した	under, below, beneath	m3 c3 j103	
+258	N4	気	き	spirit, mood	m2 c5 j109	
+259	N4	受ける	うける	to take (an examination, int	m1 c13 j94	
+260	N4	差し上げる	さしあげる	-- humble expression for あげる	m2 c5 j78	D227
+261	N5	安い	やすい	inexpensive; cheap (things)	m2 c9 j63	
+262	N5	零	れい	zero, nought	m10 c0 j73	
+263	N5	ええ	ええ	yes	m11 c0 j60	
+264	N5	読む	よむ	to read	m3 c3 j98	
+265	N4	下げる	さげる	to lower (v.t.); to hang	m1 c11 j103	
+266	N4	やはり	やはり	as I thought, absolutely	m4 c2 j60	D1078
+267	N5	あの	あの	that over there; like that, 	m5 c2 j60	
+268	N4	招待	しょうたいする	invitation	m2 c3 j105	D1056
+269	N4	間	あいだ	space, interval	m1 c10 j105	
+270	N5	どうして	どうして	why, for what reason	m4 c3 j60	
+271	N5	どんな	どんな	what, what kind of	m4 c3 j60	
+272	N5	やる	やる	to do; to give (to pets, par	m4 c3 j60	
+273	N5	立つ	たつ	to stand up	m3 c3 j89	
+274	N4	建てる	たてる	to build	m2 c8 j60	
+275	N4	立てる	たてる	to stand (something) up, to 	m2 c8 j60	
+276	N4	産業	さんぎょう	industry	m7 c0 j109	
+277	N4	まま	まま	as it is	m2 c8 j60	 AS
+278	N4	点く	つく	to be started, to be switche	m2 c8 j60	
+279	N5	少ない	すくない	a little; a few	m2 c5 j94	
+280	N4	承知	しょうちする	consent, acceptance	m2 c3 j99	D269
+281	N5	一緒	いっしょ	together	m2 c4 j108	
+282	N5	色	いろ	color	m2 c4 j108	
+283	N5	テスト	テスト	test	m10 c0 j60	
+284	N4	確か	たしか	if I remember correctly; cer	m1 c6 j108	D1268
+285	N4	込む	こむ	to be crowded	m6 c1 j64	
+286	N5	つける	つける	to turn on (e.g., a light); 	m1 c10 j96	
+287	N5	毎月	まいげつ	every month, monthly	m1 c9 j105	
+288	N5	皆さん	みなさん	all of you, everyone	m1 c9 j104	
+289	N4	失礼	しつれい	discourtesy, impoliteness; E	m1 c12 j79	
+290	N4	安心	あんしん	peace of mind, relief	m3 c2 j105	
+291	N5	ホテル	ホテル	hotel	m3 c4 j60	
+292	N5	書く	かく	to write	m2 c7 j60	
+293	N5	先月	せんげつ	last month	m1 c8 j108	
+294	N5	頼む	たのむ	to request, to ask (a favor)	m3 c2 j102	
+295	N4	店員	てんいん	clerk; shop-employee	m4 c1 j103	
+296	N5	たち	たち	plural suffix	m4 c1 j99	 AS
+297	N5	知る	しる	to know, to understand	m0 c25 j108	
+298	N5	練習	れんしゅう	(to) practice	m6 c0 j108	
+299	N4	事故	じこ	accident	m1 c7 j109	
+300	N5	手紙	てがみ	letter	m6 c0 j107	
+301	N4	意見	いけん	opinion, view, idea	m0 c24 j109	
+302	N4	簡単	かんたん	simple	m1 c7 j108	
+303	N4	間に合う	まにあう	to be in time for	m1 c6 j90	D229
+304	N5	個	こ	counter for small items (e.g	m2 c6 j60	 AS
+305	N4	理由	りゆう	reason	m2 c3 j109	
+306	N4	うまい	うまい	delicious; skillful; fortuna	m4 c2 j60	
+307	N4	約束	やくそく	arrangement, appointment, pr	m2 c3 j105	
+308	N4	訳	わけ	reason; explanation	m4 c1 j88	
+309	N4	上がる	あがる	to rise, to go up	m0 c25 j97	
+310	N5	声	こえ	voice	m1 c6 j109	
+311	N5	ちょっと	ちょっと	a little, somewhat; just a l	m8 c0 j60	
+312	N5	紙	かみ	paper	m1 c6 j107	
+313	N5	月曜日	げつようび	Monday	m1 c11 j60	
+314	N5	本	ほん	book	m1 c11 j60	
+315	N4	変える	かえる	to change, to alter, to vary	m1 c9 j76	
+316	N5	か月	かげつ	(number of) months	m2 c11 j0	 AS
+317	N5	がる	がる	feel	m2 c5 j60	 AS
+318	N5	厚い	あつい	kind, warm(hearted), thick, 	m4 c1 j81	
+319	N4	決める	きめる	to decide (v.t.)	m0 c26 j88	
+320	N4	倍	ばい	double	m0 c15 j101	D1404
+321	N5	今朝	けさ	this morning	m2 c3 j91	
+322	N4	研究	けんきゅう	study, research, investigati	m3 c1 j109	
+323	N4	一度	いちど	once, one time	m0 c19 j107	
+324	N5	止まる	とまる	to come to a halt	m1 c6 j97	
+325	N5	言葉	ことば	language; word(s); expressio	m1 c5 j109	
+326	N4	経済	けいざい	economics, finance, economy	m2 c2 j109	
+327	N5	火曜日	かようび	Tuesday	m1 c6 j93	
+328	N4	用意	ようい	preparation	m1 c5 j105	
+329	N4	遅れる	おくれる	to (be) become late	m0 c30 j63	
+330	N5	先週	せんしゅう	last week	m2 c2 j105	
+331	N4	終わり	おわり	end	m2 c2 j105	
+332	N5	初めて	はじめて	for the first time	m2 c4 j60	
+333	N4	大事	だいじ	important, valuable, serious	m1 c5 j102	
+334	N5	去年	きょねん	last year	m1 c5 j100	
+335	N5	グラム	グラム	gram	m3 c2 j60	
+336	N4	中々	なかなか	very, considerably, quite	m3 c2 j60	
+337	N4	お祝い	おいわい	congratulation, celebration	m4 c1 j60	
+338	N5	今週	こんしゅう	this week	m0 c16 j105	
+339	N4	建て	だて	~ storied, separate housing	m2 c8 j0	
+340	N4	または	または	or, otherwise	m2 c2 j95	
+341	N4	調べる	しらべる	to check; to look up; to inq	m2 c3 j68	
+342	N4	残る	のこる	to remain (v.i.), to be left	m2 c2 j92	
+343	N4	尋ねる	たずねる	to inquire (same as 質問する)	m3 c1 j83	
+344	N5	悪い	わるい	bad, sinful; inferior	m1 c7 j62	
+345	N4	知らせる	しらせる	to notify	m0 c25 j60	
+346	N5	四	し	four	m4 c0 j109	
+347	N5	自分	じぶん	myself, oneself	m4 c0 j109	
+348	N4	だから	だから	so; therefore	m6 c0 j60	
+349	N4	挨拶	あいさつする	greet(ing)	m1 c5 j86	
+350	N4	けれど	けれど	but, although	m6 c0 j60	
+351	N5	パン	パン	bread	m1 c7 j60	
+352	N5	呼ぶ	よぶ	to call (one's name); to inv	m4 c0 j108	
+353	N5	重い	おもい	heavy; serious	m2 c2 j85	
+354	N5	一日	いちにち	one day (duration)	m2 c3 j60	
+355	N5	渡す	わたす	to hand (something) over (v.	m1 c4 j99	
+356	N4	無くなる	なくなる	to disappear, to get lost	m2 c3 j60	
+357	N4	輸入	ゆにゅう	import	m0 c9 j109	D1237
+358	N5	銀行	ぎんこう	bank	m0 c13 j109	
+359	N5	文章	ぶんしょう	sentence, text	m4 c0 j105	
+360	N5	半分	はんぶん	half	m0 c13 j108	
+361	N4	見える	みえる	to be visible; -- polite ver	m1 c4 j94	
+362	N5	遠い	とおい	far (away), distant	m2 c2 j76	
+363	N5	ずつ	ずつ	at a time	m1 c6 j60	 AS
+364	N5	野菜	やさい	vegetable	m1 c3 j107	
+365	N4	貿易	ぼうえき	trade	m2 c1 j109	
+366	N4	割合	わりあい	rate, ratio, percentage	m0 c8 j107	D267
+367	N5	外	そと	outside, exterior	m2 c1 j108	
+368	N5	西	にし	west	m2 c1 j108	
+369	N5	本当	ほんとう	real, true	m2 c1 j108	
+370	N4	続く	つづく	to be continued	m0 c20 j60	
+371	N5	会う	あう	to meet, to see	m1 c4 j84	
+372	N4	比べる	くらべる	to compare	m0 c11 j108	
+373	N4	具合	ぐあい	condition, state, health	m1 c3 j103	
+374	N5	お茶	おちゃ	(green) tea	m2 c1 j104	
+375	N5	明るい	あかるい	bright (in reference to pers	m1 c3 j101	
+376	N5	昨日	きのう	yesterday	m0 c8 j100	D902
+377	N5	パーティー	パーティー	a party	m3 c1 j60	
+378	N5	すぎ	すぎ	past; to exceed, ~ too much	m0 c11 j104	 AS
+379	N5	ああ	ああ	Ah!, Oh!	m5 c0 j60	
+380	N5	借りる	かりる	to borrow, to owe	m1 c3 j97	
+381	N5	丈夫	じょうぶ	strong, solid, durable	m1 c3 j95	
+382	N5	それでは	それでは	in that situation, well then	m2 c2 j60	
+383	N4	通る	とおる	to pass (by), to go through	m2 c1 j96	
+384	N4	はっきり	はっきり	clearly, distinctly	m2 c2 j60	
+385	N4	遠く	とおく	far away, distant	m2 c2 j60	
+386	N5	休み	やすみ	holiday; day off; absence	m0 c10 j105	
+387	N4	厳しい	きびしい	hard; rigorous; strict	m1 c3 j92	
+388	N5	面白い	おもしろい	interesting, amusing	m2 c1 j91	
+389	N5	木	き	tree, wood, timber	m3 c0 j109	
+390	N5	水	みず	water	m3 c0 j109	
+391	N4	教育	きょういく	education	m3 c0 j109	
+392	N4	特に	とくに	particularly	m3 c0 j109	
+393	N5	公園	こうえん	a park	m3 c0 j108	
+394	N4	今度	こんど	now, this time, near future,	m3 c0 j108	
+395	N4	火	ひ	fire	m3 c0 j108	
+396	N5	緑	みどり	green	m3 c0 j107	
+397	N4	入院	にゅういんする	hospitalization	m3 c0 j106	
+398	N5	電車	でんしゃ	electric train	m0 c9 j106	
+399	N4	台風	たいふう	typhoon	m0 c9 j106	
+400	N5	一番	いちばん	best (most), first, number o	m1 c2 j109	
+401	N5	国	くに	country; place of origin	m1 c2 j109	
+402	N4	迎える	むかえる	to welcome; to meet; to gree	m2 c1 j86	
+403	N4	以外	いがい	other than, with the excepti	m1 c3 j84	
+404	N4	最初	さいしょ	beginning, first	m1 c2 j109	
+405	N4	故障	こしょうする	breakdown	m0 c6 j105	D151
+406	N5	売る	うる	to sell (v.t.)	m3 c0 j102	
+407	N4	線	せん	line, wire	m1 c2 j106	
+408	N4	進む	すすむ	to advance, to proceed	m0 c11 j86	
+409	N5	荷物	にもつ	luggage; baggage	m0 c9 j101	
+410	N4	無理	むり	unreasonable, impossible	m1 c2 j105	
+411	N5	同じ	おなじ	same, identical	m0 c12 j77	
+412	N5	大丈夫	だいじょうぶ	It's ok (all right); No need	m1 c2 j104	
+413	N4	止める	やめる	to end, to stop	m1 c4 j60	
+414	N5	見せる	みせる	to show, to display	m1 c3 j75	
+415	N5	教える	おしえる	to teach, to inform, to inst	m0 c12 j72	
+416	N4	棚	たな	shelves, rack	m1 c2 j99	
+417	N4	過ぎる	すぎる	to exceed, to go beyond	m0 c11 j76	
+418	N4	優しい	やさしい	kind (person), gentle (perso	m1 c2 j96	
+419	N4	女性	じょせい	woman	m0 c7 j109	
+420	N5	一人	ひとり	one person	m0 c7 j108	
+421	N5	三つ	みっつ	three things	m0 c7 j107	
+422	N5	そうして	そうして	and, like that	m1 c2 j60	D1142
+423	N5	沢山	たくさん	many, much	m2 c1 j67	
+424	N4	駐車場	ちゅうしゃじょう	parking lot	m0 c7 j105	
+425	N4	紹介	しょうかい	an introduction	m0 c7 j105	
+426	N4	祈る	いのる	to pray; to wish	m1 c3 j64	
+427	N5	枚	まい	counter for flat things	m1 c3 j63	 AS
+428	N4	合う	あう	to fit, to match	m0 c7 j102	
+429	N5	金曜日	きんようび	Friday	m0 c11 j60	
+430	N4	代わり	かわり	substitute, replacement	m0 c6 j107	
+431	N4	急	きゅう	urgent, sudden; steep	m0 c6 j107	
+432	N5	遅い	おそい	slow; (to be) late	m0 c7 j92	
+433	N4	規則	きそく	rule, regulation	m0 c6 j104	
+434	N5	右	みぎ	right hand side	m1 c1 j109	
+435	N4	形	かたち	shape	m1 c1 j109	
+436	N4	自由	じゆう	freedom	m1 c1 j109	
+437	N5	口	くち	job opening; mouth	m1 c1 j108	
+438	N5	働く	はたらく	to work	m0 c10 j60	
+439	N4	機会	きかい	chance, opportunity	m1 c1 j108	
+440	N4	留守	るす	absence; not at home	m0 c4 j99	D614
+441	N5	切る	きる	to cut; to hang up (a phone)	m0 c6 j99	
+442	N5	十	じゅう	ten	m2 c0 j109	
+443	N4	残念	ざんねん	regret; regrettable	m1 c1 j107	
+444	N4	生活	せいかつする	living, life; to live	m2 c0 j109	
+445	N5	先生	せんせい	teacher, professor; master; 	m2 c0 j108	
+446	N5	隣	となり	next to, next door to	m1 c1 j106	
+447	N4	心配	しんぱいする	worry, concern	m1 c1 j106	
+448	N4	裏	うら	reverse side, back	m1 c1 j106	
+449	N4	普通	ふつう	common; usual	m2 c0 j108	
+450	N4	楽しみ	たのしみ	pleasure, joy	m1 c1 j106	
+451	N5	時	じ	~ o'clock (time)	m2 c0 j106	 AS
+452	N5	手	て	hand	m0 c5 j109	
+453	N4	仕方	しかた	way (of doing something)	m2 c0 j106	
+454	N4	先輩	せんぱい	senior members of a group	m2 c0 j105	
+455	N5	角	かど	corner (e.g., desk, pavement	m2 c0 j104	
+456	N5	結構	けっこう	splendid; enough, tolerably	m1 c1 j102	
+457	N5	箱	はこ	box	m1 c1 j101	
+458	N4	僕	ぼく	I (used by men towards those	m2 c0 j103	
+459	N5	買う	かう	to buy	m1 c1 j100	
+460	N5	しかし	しかし	however; but	m3 c0 j60	
+461	N5	それから	それから	and then, after that	m3 c0 j60	
+462	N5	丁度	ちょうど	just, right, exactly	m3 c0 j60	
+463	N4	そんな	そんな	such, like that, that sort o	m3 c0 j60	
+464	N5	いいえ	いいえ	no, not at all	m2 c0 j100	
+465	N5	誰	だれ	who	m1 c1 j97	
+466	N5	低い	ひくい	short, low	m1 c1 j96	
+467	N5	余り	あまり	not very; surplus	m1 c1 j95	
+468	N4	しばらく	しばらく	little while	m1 c2 j60	
+469	N4	市	し	city	m1 c2 j60	
+470	N5	開く	あく	to open, to become open	m0 c8 j60	
+471	N5	エレベーター	エレベーター	elevator	m0 c8 j60	
+472	N5	とても	とても	very (much), greatly, exceed	m0 c8 j60	
+473	N4	パソコン	パソコン	(personal) computer	m0 c8 j60	
+474	N4	おっしゃる	おっしゃる	-- honorific expression for 	m1 c1 j60	D261
+475	N4	集まる	あつまる	to gather (v.i.), to collect	m1 c1 j90	
+476	N5	乗る	のる	to get on, to ride in, to bo	m1 c1 j89	
+477	N5	秋	あき	fall (season)	m0 c4 j109	
+478	N5	写真	しゃしん	a picture; a photograph	m0 c4 j109	
+479	N5	夏	なつ	summer	m0 c4 j109	
+480	N5	一つ	ひとつ	one thing	m0 c4 j109	
+481	N5	毎日	まいにち	every day	m0 c4 j109	
+482	N4	事務所	じむしょ	office	m0 c4 j109	
+483	N5	起きる	おきる	to get up (e.g., from sleepi	m0 c6 j79	
+484	N5	強い	つよい	strong, powerful	m0 c5 j92	
+485	N5	小さい	ちいさい	small, little	m1 c1 j86	
+486	N5	軽い	かるい	light, non-serious, minor	m0 c6 j76	
+487	N5	毎週	まいしゅう	every week	m0 c4 j105	
+488	N4	払う	はらう	to pay	m0 c5 j89	
+489	N5	買い物	かいもの	shopping	m0 c4 j104	
+490	N5	違う	ちがう	to be different; to differ; 	m1 c1 j83	
+491	N5	あちら	あちら	this way (polite)	m1 c1 j82	
+492	N4	丁寧	ていねい	polite, courteous, careful	m0 c4 j101	
+493	N4	パート (タイム)	パート (タイム)	part time (esp. female part 	m1 c4 j0	 G
+494	N5	始まる	はじまる	(something) begins	m0 c5 j82	
+495	N5	長い	ながい	long, lengthy	m0 c4 j95	
+496	N4	億	おく	hundred million	m0 c6 j66	
+497	N5	いくつ	いくつ	how many, how old	m0 c4 j94	
+498	N5	古い	ふるい	old (in reference to objects	m0 c4 j94	
+499	N4	探す	さがす	to search, to seek, to look 	m0 c4 j94	
+500	N5	外国	がいこく	foreign country; abroad	m0 c3 j109	
+501	N5	外国人	がいこくじん	foreigner	m0 c3 j109	
+502	N5	新聞	しんぶん	newspaper	m0 c3 j109	
+503	N5	大学	だいがく	college; university	m0 c3 j109	
+504	N5	休む	やすむ	to rest, to have a break, to	m0 c4 j90	
+505	N4	人口	じんこう	population	m0 c3 j109	
+506	N5	雨	あめ	rain	m0 c3 j108	
+507	N5	雑誌	ざっし	magazine, journal	m0 c3 j108	
+508	N5	水曜日	すいようび	Wednesday	m0 c6 j60	
+509	N5	勤める	つとめる	to work (for)	m0 c6 j60	
+510	N5	電気	でんき	electricity, (electric) ligh	m0 c3 j108	
+511	N4	続ける	つづける	to continue doing ~	m0 c6 j60	 AS
+512	N5	勉強	べんきょう	study	m0 c3 j107	
+513	N4	住所	じゅうしょ	address; place of residence	m0 c3 j107	
+514	N4	深い	ふかい	deep, profound	m0 c4 j87	
+515	N4	はず	はず	it should be so	m2 c0 j68	
+516	N4	向かう	むかう	to face, to go towards	m0 c4 j87	
+517	N4	寄る	よる	to stop by	m1 c1 j65	
+518	N5	短い	みじかい	short (length)	m0 c4 j85	
+519	N4	ご存じ	ごぞんじ	knowing, acquaintance	m0 c2 j97	D316
+520	N4	細かい	こまかい	small; fine, minute	m0 c3 j101	
+521	N5	あっち	あっち	over there	m1 c1 j60	
+522	N5	歩く	あるく	to walk	m1 c1 j60	
+523	N5	こんな	こんな	such, like this	m1 c1 j60	
+524	N5	レストラン	レストラン	restaurant	m1 c1 j60	
+525	N5	忘れる	わすれる	to forget	m1 c1 j60	
+526	N4	しっかり	しっかり	firmly, steady	m1 c1 j60	
+527	N4	非常に	ひじょうに	extremely; very	m1 c1 j60	
+528	N4	ビル	ビル	(abbr.) building	m1 c1 j60	
+529	N4	ばかり	ばかり	just did ~, only	m1 c1 j60	 AS
+530	N4	空く	あく	to open, to become empty (va	m1 c1 j60	
+531	N4	きっと	きっと	surely, definitely, undoubte	m1 c1 j60	
+532	N4	アジア	アジア	Asia	m0 c8 j30	
+533	N5	困る	こまる	to be bothered, to have diff	m0 c4 j80	
+534	N5	封筒	ふうとう	envelope	m0 c3 j99	
+535	N5	あなた	あなた	you	m2 c0 j60	
+536	N5	曲る	まがる	to turn, to bend	m2 c1 j0	
+537	N5	まっすぐ	まっすぐ	straight (ahead), direct	m2 c0 j60	
+538	N5	ラジオ	ラジオ	radio	m2 c0 j60	
+539	N4	スーパー (マーケット)	スーパー (マーケット)	supermarket	m2 c1 j0	 G
+540	N4	かまう		to mind, to care about, to b	m0 c3 j96	
+541	N5	近く	ちかく	nearby; in the neighborhood	m0 c5 j60	
+542	N5	もっと	もっと	more	m0 c5 j60	
+543	N4	昼休み	ひるやすみ	lunch break, noon recess	m0 c3 j92	
+544	N4	移る	うつる	to move (from a house); to t	m0 c4 j72	
+545	N4	気持ち	きもち	feeling, sensation, mood	m1 c0 j109	
+546	N5	部屋	へや	a room	m1 c0 j108	
+547	N5	町	まち	town; city	m1 c0 j108	
+548	N5	料理	りょうり	cooking; cuisine	m1 c0 j108	
+549	N4	林	はやし	woods, forest	m1 c0 j108	
+550	N4	例えば	たとえば	for example, e.g.	m1 c0 j108	
+551	N4	工業	こうぎょう	(manufacturing) industry	m1 c0 j108	
+552	N4	急ぐ	いそぐ	to hurry, to be in a hurry, 	m0 c3 j88	
+553	N5	毎年	まいねん	every year, yearly, annually	m1 c0 j107	
+554	N4	都	と	metropolitan	m1 c0 j107	
+555	N5	大勢	おおぜい	great number of people	m1 c0 j106	
+556	N5	お金	おかね	money	m1 c0 j106	
+557	N4	失敗	しっぱい	failure, mistake	m1 c0 j106	
+558	N5	静か	しずか	quiet, calm	m1 c0 j105	
+559	N5	地図	ちず	a map	m1 c0 j105	
+560	N5	足	あし	foot; leg	m0 c2 j109	
+561	N5	後ろ	うしろ	back, behind, rear	m1 c0 j104	
+562	N5	元気	げんき	health(y), energetic	m1 c0 j104	
+563	N5	春	はる	spring	m0 c2 j109	
+564	N5	二人	ふたり	two people	m0 c2 j109	
+565	N5	嫌	いや	disagreeable, detestable, un	m1 c0 j103	
+566	N5	漢字	かんじ	kanji; Chinese character	m1 c0 j103	
+567	N5	消す	けす	to erase, to delete, to turn	m0 c3 j83	
+568	N4	彼女	かのじょ	girlfriend; she	m0 c2 j108	
+569	N5	全部	ぜんぶ	all, entire, whole	m0 c2 j107	
+570	N5	背	せい	(one's) height, stature	m1 c0 j101	
+571	N4	区	く	~ district, ~ ward, ~ boroug	m1 c0 j101	 AS
+572	N5	玄関	げんかん	entrance (to a house or a bu	m0 c2 j105	
+573	N4	こう	こう	like this, this way	m1 c0 j100	
+574	N4	お見舞い	おみまい	calling on someone who is il	m3 c0 j0	
+575	N4	出発	しゅっぱつする	departure	m0 c2 j105	
+576	N5	入口	いりぐち	entrance	m0 c4 j60	
+577	N5	便利	べんり	convenient, handy	m0 c2 j104	
+578	N4	アルバイト	アルバイト	part-time job	m0 c4 j60	
+579	N4	運ぶ	はこぶ	to transport, to carry	m0 c2 j104	
+580	N4	拝見	はいけんする	(humble) (polite) seeing, lo	m0 c3 j79	
+581	N4	動く	うごく	to move	m0 c4 j60	
+582	N4	両方	りょうほう	both sides, both parties	m0 c2 j103	
+583	N4	品物	しなもの	goods	m1 c0 j96	
+584	N5	向こう	むこう	beyond, over there	m1 c0 j95	
+585	N4	親切	しんせつ	kindness	m1 c0 j95	
+586	N4	変	へん	strange, odd	m1 c0 j95	
+587	N4	一杯	いっぱい	full, to the utmost	m1 c0 j95	
+588	N4	手袋	てぶくろ	glove(s)	m1 c0 j93	
+589	N4	遠慮	えんりょする	restraint, reserve, hesitate	m1 c0 j91	
+590	N5	所	ところ	place	m1 c0 j60	D1178
+591	N4	召し上がる	めしあがる	-- honorific form of 食べる (たべ	m0 c2 j65	D899
+592	N5	椅子	いす	chair	m1 c0 j88	
+593	N5	飲み物	のみもの	drink, beverage	m0 c2 j90	
+594	N4	レポート	レポート	report	m0 c2 j60	D1143
+595	N4	頑張る	がんばる	to try one's best, to try ha	m0 c2 j87	
+596	N4	似る	にる	to resemble, to be similar	m1 c0 j81	
+597	N5	家	いえ	house, home	m0 c3 j60	
+598	N4	止む	やむ	to cease, to stop	m0 c3 j60	
+599	N4	式	しき	~ ceremony; ~ style	m0 c3 j60	 AS
+600	N4	お陰	おかげ	thanks or owing to	m0 c7 j0	
+601	N4	ソフト	ソフト	soft; soft hat; software	m0 c3 j60	
+602	N4	にくい	にくい	difficult to do ~	m0 c2 j82	 AS
+603	N4	つもり	つもり	intention, plan	m1 c0 j75	
+604	N4	間違える	まちがえる	to make a mistake	m0 c2 j79	
+605	N5	暑い	あつい	hot (in reference to weather	m0 c2 j76	
+606	N5	学生	がくせい	student	m0 c1 j109	
+607	N5	台	だい	counter for vehicles; machin	m0 c1 j109	 AS
+608	N5	父	ちち	(my) father	m0 c1 j109	
+609	N5	道	みち	road, street; way, direction	m0 c1 j109	
+610	N4	反対	はんたい	oppose, opposition, resistan	m0 c1 j109	
+611	N4	男性	だんせい	man; male	m0 c1 j109	
+612	N4	国際	こくさい	international	m0 c1 j109	
+613	N4	将来	しょうらい	(in the) future; prospects	m0 c1 j109	
+614	N5	暗い	くらい	dark, gloomy	m1 c0 j68	
+615	N5	二つ	ふたつ	two things	m0 c1 j108	
+616	N5	旅行	りょこう	travel, trip	m0 c1 j108	
+617	N4	運転	うんてんする	driving	m0 c1 j108	
+618	N4	法律	ほうりつ	law	m0 c1 j108	
+619	N4	試験	しけん	an exam	m0 c1 j108	
+620	N4	途中	とちゅう	on the way, midway	m0 c1 j108	
+621	N4	競争	きょうそう	competition, contest	m0 c1 j108	
+622	N5	色々	いろいろ	various	m1 c0 j67	
+623	N5	黒	くろ	black	m0 c1 j107	
+624	N5	建物	たてもの	building	m0 c1 j107	
+625	N5	冬	ふゆ	winter	m0 c1 j107	
+626	N4	決して	けっして	never	m0 c1 j107	
+627	N4	卒業	そつぎょう	graduation	m0 c1 j107	
+628	N4	食事	しょくじする	meal	m0 c1 j107	
+629	N5	昼	ひる	noon, daytime	m0 c1 j106	
+630	N5	服	ふく	clothes	m0 c1 j106	
+631	N4	値段	ねだん	price	m0 c1 j106	
+632	N5	円	えん	Yen	m0 c1 j105	 AS
+633	N5	肉	にく	meat	m0 c1 j105	
+634	N4	熱	ねつ	fever, temperature	m0 c1 j105	
+635	N4	周り	まわり	surroundings	m0 c1 j105	
+636	N4	鳴る	なる	to sound, to ring (v.i.)	m0 c2 j69	
+637	N4	翻訳	ほんやく	translation	m0 c1 j104	
+638	N5	閉まる	しまる	to close, to be closed	m0 c2 j68	
+639	N5	夕方	ゆうがた	late afternoon (typically ju	m0 c1 j103	
+640	N5	押す	おす	to push, to press, to stamp 	m0 c1 j102	
+641	N5	牛肉	ぎゅうにく	beef	m0 c1 j102	
+642	N5	食堂	しょくどう	cafeteria, dining hall	m0 c1 j102	
+643	N4	慣れる	なれる	to grow accustomed to	m0 c2 j67	
+644	N5	あそこ	あそこ	there, over there, that plac	m1 c0 j60	
+645	N5	頭	あたま	head	m1 c0 j60	
+646	N5	降りる	おりる	to get off	m0 c1 j100	
+647	N5	カメラ	カメラ	camera	m1 c0 j60	
+648	N5	綺麗	きれい	pretty, clean, tidy	m1 c0 j60	
+649	N5	デパート	デパート	(abbr.) department store	m1 c0 j60	
+650	N5	廊下	ろうか	corridor	m0 c1 j100	
+651	N4	それに	それに	moreover; besides	m1 c0 j60	
+652	N4	驚く	おどろく	to be surprised, to be aston	m1 c0 j60	
+653	N4	もちろん	もちろん	certainly, of course	m1 c0 j60	
+654	N4	火事	かじ	fire	m0 c1 j100	
+655	N4	アメリカ	アメリカ	America, U.S.A.	m1 c0 j60	
+656	N4	よると	よると	according to ~	m1 c1 j0	 AS
+657	N4	なるほど	なるほど	I see; I now understand	m1 c0 j60	
+658	N4	引き出し	ひきだし	drawer	m0 c1 j99	
+659	N5	屋	や	~ shop	m2 c0 j0	 AS
+660	N5	赤	あか	red	m0 c2 j60	
+661	N5	お弁当	おべんとう	a boxed lunch	m0 c2 j60	
+662	N5	コピーする	コピーする	to copy	m0 c5 j0	
+663	N5	タクシー	タクシー	taxi	m0 c2 j60	
+664	N5	着く	つく	to arrive at, to reach	m0 c2 j60	
+665	N5	土曜日	どようび	Saturday	m0 c2 j60	
+666	N5	貼る	はる	to post; to paste; to attach	m0 c2 j60	
+667	N4	やっと	やっと	at last, finally	m0 c2 j60	
+668	N4	ベル	ベル	bell	m0 c2 j60	
+669	N4	喜ぶ	よろこぶ	to rejoice, to be delighted,	m0 c1 j95	
+670	N5	白い	しろい	white	m0 c1 j94	
+671	N5	登る	のぼる	to climb	m0 c1 j94	
+672	N5	鍵	かぎ	a lock; a key	m0 c1 j92	
+673	N4	できるだけ	できるだけ	if at all possible, as much 	m0 c1 j92	
+674	N4	今夜	こんや	this evening, tonight	m0 c1 j92	
+675	N5	語	ご	word, language	m0 c1 j91	 AS
+676	N4	壊れる	こわれる	to be broken, to break	m0 c1 j89	
+677	N4	不便	ふべん	inconvenience	m0 c1 j88	
+678	N5	青い	あおい	blue	m0 c1 j85	
+679	N5	座る	すわる	to sit	m0 c1 j85	
+680	N4	用事	ようじ	business to take care of; ta	m0 c1 j85	
+681	N5	覚える	おぼえる	to learn, to commit to memor	m0 c1 j84	
+682	N5	疲れる	つかれる	to get (become) tired; to be	m0 c1 j81	
+683	N4	忘れ物	わすれもの	lost article, something forg	m0 c1 j77	
+684	N4	ごみ	ごみ	trash, garbage	m0 c1 j74	
+685	N5	いくら	いくら	how much, how many	m0 c1 j73	
+686	N4	レジ	レジ	register	m0 c2 j30	
+687	N5	開ける	あける	to open (v.t.)	m0 c1 j60	
+688	N5	お菓子	おかし	confections, sweets, snack	m0 c1 j60	
+689	N5	お手洗い	おてあらい	toilet, restroom, bathroom (	m0 c1 j60	
+690	N5	カレンダー	カレンダー	calendar	m0 c1 j60	
+691	N5	好き	すき	liking, fondness, love	m0 c1 j60	
+692	N5	小さな	ちいさな	small, little	m0 c1 j60	
+693	N5	テレビ	テレビ	television, TV	m0 c1 j60	
+694	N5	ノート	ノート	notebook	m0 c1 j60	
+695	N5	バス	バス	bus; bath; bass	m0 c1 j60	
+696	N5	ペン	ペン	pen	m0 c1 j60	
+697	N5	ボールペン	ボールペン	ball-point pen	m0 c1 j60	
+698	N4	ガソリン	ガソリン	gasoline, petrol	m0 c1 j60	
+699	N4	大学生	だいがくせい	college student, university 	m0 c1 j60	
+700	N4	彼	かれ	he, boyfriend	m0 c1 j60	
+701	N4	さっき	さっき	a little while ago	m0 c1 j60	
+702	N4	なるべく	なるべく	if possible, as much as poss	m0 c1 j60	
+703	N4	すっかり	すっかり	all, completely	m0 c1 j60	
+704	N4	ごらんになる		-- honorific expression for 	m0 c1 j60	
+705	N4	米	こめ	uncooked rice	m0 c1 j60	
+706	N4	再来週	さらいしゅう	the week after next	m0 c1 j60	
+707	N4	下りる	おりる	to get down, to go; come dow	m0 c1 j60	
+708	N5	意味	いみ	meaning, significance	m0 c0 j109	
+709	N5	映画	えいが	movie, film	m0 c0 j109	
+710	N5	音楽	おんがく	Music	m0 c0 j109	
+711	N5	顔	かお	face (body part)	m0 c0 j109	
+712	N5	家族	かぞく	family, members of a family	m0 c0 j109	
+713	N5	学校	がっこう	a school	m0 c0 j109	
+714	N5	家庭	かてい	home; family	m0 c0 j109	
+715	N5	北	きた	north	m0 c0 j109	
+716	N5	九	きゅう	nine	m0 c0 j109	
+717	N5	五	ご	five	m0 c0 j109	
+718	N5	子供	こども	child(ren)	m0 c0 j109	
+719	N5	七	しち	seven	m0 c0 j109	
+720	N5	千	せん	thousand	m0 c0 j109	
+721	N5	八	はち	eight	m0 c0 j109	
+722	N5	母	はは	(my) mother	m0 c0 j109	
+723	N5	東	ひがし	east	m0 c0 j109	
+724	N5	左	ひだり	left hand side	m0 c0 j109	
+725	N5	一月	ひとつき	one month	m0 c0 j109	
+726	N5	百	ひゃく	hundred	m0 c0 j109	
+727	N5	病院	びょういん	hospital	m0 c0 j109	
+728	N5	南	みなみ	South	m0 c0 j109	
+729	N5	六	ろく	six	m0 c0 j109	
+730	N4	運動	うんどうする	exercise	m0 c0 j109	
+731	N4	時代	じだい	age, period, epoch, era	m0 c0 j109	
+732	N4	世界	せかい	world	m0 c0 j109	
+733	N4	戦争	せんそう	war	m0 c0 j109	
+734	N4	夫	おっと	husband	m0 c0 j109	
+735	N4	試合	しあい	match, game, competition	m0 c0 j109	
+736	N4	歴史	れきし	history	m0 c0 j109	
+737	N4	子	こ	child	m0 c0 j109	
+738	N4	妻	つま	wife (humble)	m0 c0 j109	
+739	N4	放送	ほうそうする	broadcasting	m0 c0 j109	
+740	N4	政治	せいじ	politics	m0 c0 j109	
+741	N4	市民	しみん	citizen	m0 c0 j109	
+742	N4	高校	こうこう	high school; senior high sch	m0 c0 j109	
+743	N4	光	ひかり	light	m0 c0 j109	
+744	N4	文化	ぶんか	culture	m0 c0 j109	
+745	N4	警察	けいさつ	police; police station	m0 c0 j109	
+746	N4	特別	とくべつ	special	m0 c0 j109	
+747	N4	番組	ばんぐみ	broadcast program	m0 c0 j109	
+748	N5	歌	うた	a song	m0 c0 j108	
+749	N5	海	うみ	sea, beach	m0 c0 j108	
+750	N5	絵	え	a painting; a picture; a dra	m0 c0 j108	
+751	N5	英語	えいご	English (language)	m0 c0 j108	
+752	N5	体	からだ	body; health	m0 c0 j108	
+753	N5	結婚	けっこん	marriage (get married)	m0 c0 j108	
+754	N5	生徒	せいと	student; pupil	m0 c0 j108	
+755	N5	動物	どうぶつ	animal	m0 c0 j108	
+756	N5	はく	はく	to put on (items below your 	m0 c0 j108	
+757	N5	病気	びょうき	illness; sickness	m0 c0 j108	
+758	N5	山	やま	mountain	m0 c0 j108	
+759	N5	夜	よる	evening, night	m0 c0 j108	
+760	N4	医学	いがく	medical science	m0 c0 j108	
+761	N4	地震	じしん	earthquake	m0 c0 j108	
+762	N4	学部	がくぶ	department of a university	m0 c0 j108	 AS
+763	N4	親	おや	a parent	m0 c0 j108	
+764	N4	昔	むかし	old days; past	m0 c0 j108	
+765	N4	壁	かべ	wall	m0 c0 j108	
+766	N4	森	もり	forest	m0 c0 j108	
+767	N4	科学	かがく	science	m0 c0 j108	
+768	N4	彼ら	かれら	they (usually male)	m0 c0 j108	
+769	N4	夢	ゆめ	a dream	m0 c0 j108	
+770	N4	音	おと	sound, note	m0 c0 j108	
+771	N4	島	しま	island	m0 c0 j108	
+772	N4	危険	きけん	danger, risk, hazard	m0 c0 j108	
+773	N4	寺	てら	Buddhist temple	m0 c0 j108	
+774	N4	文学	ぶんがく	literature	m0 c0 j108	
+775	N4	娘	むすめ	daughter (humble)	m0 c0 j108	
+776	N5	青	あお	blue	m0 c0 j107	
+777	N5	犬	いぬ	dog	m0 c0 j107	
+778	N5	大人	おとな	adult	m0 c0 j107	
+779	N5	川	かわ	river	m0 c0 j107	
+780	N5	側	がわ	~ side	m0 c0 j107	 AS
+781	N5	教室	きょうしつ	classroom	m0 c0 j107	
+782	N5	魚	さかな	fish	m0 c0 j107	
+783	N5	授業	じゅぎょう	a class (of school)	m0 c0 j107	
+784	N5	白	しろ	white	m0 c0 j107	
+785	N5	そば	そば	near, close, beside; Japanes	m0 c0 j107	
+786	N5	空	そら	sky	m0 c0 j107	
+787	N5	大使館	たいしかん	embassy	m0 c0 j107	
+788	N5	耳	みみ	ear	m0 c0 j107	
+789	N5	村	むら	village	m0 c0 j107	
+790	N5	門	もん	gate	m0 c0 j107	
+791	N5	有名	ゆうめい	famous	m0 c0 j107	
+792	N5	雪	ゆき	snow	m0 c0 j107	
+793	N5	横	よこ	beside; side; width	m0 c0 j107	
+794	N5	両親	りょうしん	parents (lit., both parents)	m0 c0 j107	
+795	N4	複雑	ふくざつ	complexity, complication	m0 c0 j107	
+796	N4	小説	しょうせつ	novel	m0 c0 j107	
+797	N4	気分	きぶん	feeling, mood	m0 c0 j107	
+798	N4	小学校	しょうがっこう	elementary school	m0 c0 j107	
+799	N4	美術館	びじゅつかん	art gallery, art museum	m0 c0 j107	
+800	N4	石	いし	stone	m0 c0 j107	
+801	N4	空気	くうき	air, atmosphere	m0 c0 j107	
+802	N4	味	あじ	flavor, taste	m0 c0 j107	
+803	N4	校長	こうちょう	principal, headmaster	m0 c0 j107	
+804	N4	血	ち	blood	m0 c0 j107	
+805	N4	高校生	こうこうせい	high school student	m0 c0 j107	
+806	N4	息子	むすこ	(humble) son	m0 c0 j107	
+807	N4	首	くび	neck	m0 c0 j107	
+808	N5	弟	おとうと	younger brother	m0 c0 j106	
+809	N5	薬	くすり	medicine	m0 c0 j106	
+810	N5	自転車	じてんしゃ	bicycle	m0 c0 j106	
+811	N5	鳥	とり	chicken (lit., bird)	m0 c0 j106	
+812	N5	匹	ひき	counter for small animals	m0 c0 j106	 AS
+813	N5	広い	ひろい	spacious; wide; broad	m0 c0 j106	
+814	N5	窓	まど	window	m0 c0 j106	
+815	N4	生きる	いきる	to live	m0 c0 j106	
+816	N4	運転手	うんてんしゅ	driver (by occupation)	m0 c0 j106	
+817	N4	郊外	こうがい	suburb, outskirts	m0 c0 j106	
+818	N4	葉	は	leaf	m0 c0 j106	
+819	N4	中学校	ちゅうがっこう	junior high school pupil	m0 c0 j106	
+820	N4	季節	きせつ	season (in reference to weat	m0 c0 j106	
+821	N4	会話	かいわ	conversation	m0 c0 j106	
+822	N4	興味	きょうみ	interest (in something)	m0 c0 j106	
+823	N4	港	みなと	harbor, port	m0 c0 j106	
+824	N4	入学	にゅうがくする	entry to school or universit	m0 c0 j106	
+825	N4	遊び	あそび	play	m0 c0 j106	
+826	N4	格好	かっこう	appearance, manner, shape, f	m0 c0 j106	
+827	N4	看護婦	かんごふ	(female) nurse	m0 c0 j106	
+828	N5	兄	あに	(my) older brother (humble)	m0 c0 j105	
+829	N5	池	いけ	pond	m0 c0 j105	
+830	N5	お母さん	おかあさん	mother (formal)	m0 c0 j105	
+831	N5	兄弟	きょうだい	siblings (humble), brothers 	m0 c0 j105	
+832	N5	警官	けいかん	police officer	m0 c0 j105	
+833	N5	卵	たまご	egg	m0 c0 j105	
+834	N5	地下鉄	ちかてつ	underground train, subway	m0 c0 j105	
+835	N5	図書館	としょかん	library	m0 c0 j105	
+836	N5	友達	ともだち	friend	m0 c0 j105	
+837	N5	夏休み	なつやすみ	summer vacation	m0 c0 j105	
+838	N5	歯	は	tooth	m0 c0 j105	
+839	N5	橋	はし	bridge	m0 c0 j105	
+840	N5	飛行機	ひこうき	airplane	m0 c0 j105	
+841	N5	留学生	りゅうがくせい	international student	m0 c0 j105	
+842	N4	漫画	まんが	comic (book), cartoon	m0 c0 j105	
+843	N4	盛ん	さかん	prosperous, active, thriving	m0 c0 j105	
+844	N4	人形	にんぎょう	doll, figure	m0 c0 j105	
+845	N4	星	ほし	star	m0 c0 j105	
+846	N4	柔道	じゅうどう	judo	m0 c0 j105	
+847	N4	熱心	ねっしん	enthusiasm	m0 c0 j105	
+848	N4	おかしい	おかしい	strange; odd; funny	m0 c0 j105	
+849	N4	公務員	こうむいん	government worker, public se	m0 c0 j105	
+850	N4	海岸	かいがん	coast, seashore	m0 c0 j105	
+851	N4	教会	きょうかい	church	m0 c0 j105	
+852	N4	枝	えだ	branch, twig	m0 c0 j105	
+853	N4	腕	うで	arm (in reference to body)	m0 c0 j105	
+854	N4	字	じ	letter; character	m0 c0 j105	
+855	N4	新聞社	しんぶんしゃ	newspaper company	m0 c0 j105	
+856	N4	神社	じんじゃ	Shinto shrine	m0 c0 j105	
+857	N4	趣味	しゅみ	hobby; pastime	m0 c0 j105	
+858	N5	医者	いしゃ	doctor; physician	m0 c0 j104	
+859	N5	妹	いもうと	younger sister (humble)	m0 c0 j104	
+860	N5	女の子	おんなのこ	girl	m0 c0 j104	
+861	N5	靴	くつ	shoes, footwear	m0 c0 j104	
+862	N5	塩	しお	salt	m0 c0 j104	
+863	N5	天気	てんき	weather	m0 c0 j104	
+864	N5	庭	にわ	garden	m0 c0 j104	
+865	N5	四つ	よっつ	four things	m0 c0 j104	
+866	N5	りっぱ	りっぱ	splendid, fine	m0 c0 j104	
+867	N4	正月	しょうがつ	New Year, New Year's Day	m0 c0 j104	
+868	N4	一生懸命	いっしょうけんめい	very hard (as in "to work ha	m0 c0 j104	
+869	N4	赤ちゃん	あかちゃん	baby, infant	m0 c0 j104	
+870	N4	包む	つつむ	to wrap, to cover	m0 c0 j104	
+871	N4	雲	くも	cloud	m0 c0 j104	
+872	N4	適当	てきとう	fitness, suitability	m0 c0 j104	
+873	N4	水道	すいどう	water service, water line	m0 c0 j104	
+874	N4	鏡	かがみ	mirror	m0 c0 j104	
+875	N4	打つ	うつ	to hit, to strike	m0 c0 j104	
+876	N4	毛	け	hair, fur	m0 c0 j104	
+877	N4	髪	かみ	hair	m0 c0 j104	
+878	N4	近所	きんじょ	neighborhood	m0 c0 j104	
+879	N4	習慣	しゅうかん	custom (in reference to cult	m0 c0 j104	
+880	N4	虫	むし	insect	m0 c0 j104	
+881	N4	砂	すな	sand	m0 c0 j104	
+882	N4	草	くさ	grass	m0 c0 j104	
+883	N4	訪ねる	たずねる	to visit	m0 c0 j104	
+884	N4	湯	ゆ	hot water	m0 c0 j104	
+885	N4	指	ゆび	finger	m0 c0 j104	
+886	N5	姉	あね	(my) older sister (humble)	m0 c0 j103	
+887	N5	お父さん	おとうさん	father (formal)	m0 c0 j103	
+888	N5	男の子	おとこのこ	boy	m0 c0 j103	
+889	N5	階段	かいだん	stairs	m0 c0 j103	
+890	N5	台所	だいどころ	kitchen	m0 c0 j103	
+891	N5	戸	と	door (Japanese style)	m0 c0 j103	
+892	N5	時々	ときどき	sometimes	m0 c0 j103	
+893	N5	時計	とけい	a watch; a clock	m0 c0 j103	
+894	N5	猫	ねこ	cat	m0 c0 j103	
+895	N5	晩	ばん	evening	m0 c0 j103	
+896	N5	郵便局	ゆうびんきょく	post office	m0 c0 j103	
+897	N4	動物園	どうぶつえん	zoo	m0 c0 j103	
+898	N4	道具	どうぐ	tool	m0 c0 j103	
+899	N4	日記	にっき	diary, journal	m0 c0 j103	
+900	N4	久しぶり	ひさしぶり	it has been a long time; for	m0 c0 j103	
+901	N4	背中	せなか	back (of body)	m0 c0 j103	
+902	N4	水泳	すいえい	swimming	m0 c0 j103	
+903	N4	糸	いと	thread	m0 c0 j103	
+904	N5	切手	きって	postal (postage) stamps	m0 c0 j102	
+905	N5	牛乳	ぎゅうにゅう	milk	m0 c0 j102	
+906	N5	嫌い	きらい	dislike	m0 c0 j102	
+907	N5	砂糖	さとう	sugar	m0 c0 j102	
+908	N5	大好き	だいすき	very like-able, like very mu	m0 c0 j102	
+909	N5	たて	たて	length, height	m0 c0 j102	
+910	N5	食べ物	たべもの	food	m0 c0 j102	
+911	N5	出口	でぐち	an exit	m0 c0 j102	
+912	N5	鼻	はな	nose	m0 c0 j102	
+913	N5	冷蔵庫	れいぞうこ	refrigerator	m0 c0 j102	
+914	N4	西洋	せいよう	the West, Western countries	m0 c0 j102	
+915	N4	美しい	うつくしい	beautiful, lovely	m0 c0 j102	
+916	N4	踊り	おどり	dance	m0 c0 j102	
+917	N4	昼間	ひるま	daytime, during the day	m0 c0 j102	
+918	N4	講義	こうぎ	a lecture	m0 c0 j102	
+919	N4	展覧会	てんらんかい	exhibition	m0 c0 j102	
+920	N4	研究室	けんきゅうしつ	the professor's office; labo	m0 c0 j102	
+921	N4	湖	みずうみ	lake	m0 c0 j102	
+922	N5	浴びる	あびる	to bathe, to shower	m0 c0 j101	
+923	N5	五つ	いつつ	five things	m0 c0 j101	
+924	N5	映画館	えいがかん	movie theater, cinema	m0 c0 j101	
+925	N5	風邪	かぜ	cold, flu	m0 c0 j101	
+926	N5	果物	くだもの	fruit	m0 c0 j101	
+927	N5	作文	さくぶん	essay; composition	m0 c0 j101	
+928	N5	洗濯	せんたく	washing, laundry	m0 c0 j101	
+929	N5	掃除	そうじ	cleaning, sweeping	m0 c0 j101	
+930	N5	帽子	ぼうし	hat; cap	m0 c0 j101	
+931	N4	盗む	ぬすむ	to steal; to rob	m0 c0 j101	
+932	N4	坂	さか	slope, hill	m0 c0 j101	
+933	N4	食料品	しょくりょうひん	foodstuff, groceries	m0 c0 j101	
+934	N4	旅館	りょかん	a Japanese inn	m0 c0 j101	
+935	N4	祖父	そふ	grandfather	m0 c0 j101	
+936	N4	着物	きもの	kimono; Japanese traditional	m0 c0 j101	
+937	N4	隅	すみ	corner	m0 c0 j101	
+938	N4	田舎	いなか	rural, countryside	m0 c0 j101	
+939	N4	注射	ちゅうしゃ	injection	m0 c0 j101	
+940	N4	数学	すうがく	mathematics	m0 c0 j101	
+941	N5	喫茶店	きっさてん	café	m0 c0 j100	
+942	N5	切符	きっぷ	a ticket	m0 c0 j100	
+943	N5	財布	さいふ	wallet	m0 c0 j100	
+944	N5	散歩	さんぽ	walk, stroll	m0 c0 j100	
+945	N5	辞書	じしょ	dictionary	m0 c0 j100	
+946	N5	走る	はしる	to run	m0 c0 j100	
+947	N5	辺	へん	area, vicinity	m0 c0 j100	
+948	N4	屋上	おくじょう	rooftop	m0 c0 j100	
+949	N4	布団	ふとん	futon	m0 c0 j100	
+950	N4	地理	ちり	geography	m0 c0 j100	
+951	N4	辞典	じてん	encyclopedia, reference book	m0 c0 j100	
+952	N4	祖母	そぼ	grandmother	m0 c0 j100	
+953	N4	講堂	こうどう	auditorium	m0 c0 j100	
+954	N4	特急	とっきゅう	limited express (train faste	m0 c0 j100	
+955	N4	倒れる	たおれる	to collapse, to break down	m0 c0 j100	
+956	N5	傘	かさ	umbrella, parasol	m0 c0 j99	
+957	N5	黄色	きいろ	yellow	m0 c0 j99	
+958	N5	交差点	こうさてん	intersection	m0 c0 j99	
+959	N5	毎朝	まいあさ	every morning	m0 c0 j99	
+960	N5	洋服	ようふく	Western-style clothes	m0 c0 j99	
+961	N4	苦い	にがい	bitter	m0 c0 j99	
+962	N4	ぶどう	ぶどう	grapes	m0 c0 j99	
+963	N4	下着	したぎ	underwear	m0 c0 j99	
+964	N4	大分	だいぶ	fairly well, to a large exte	m0 c0 j99	
+965	N5	鉛筆	えんぴつ	pencil	m0 c0 j98	
+966	N5	上手	じょうず	be good at, skillful	m0 c0 j98	
+967	N5	背広	せびろ	men's suit	m0 c0 j98	
+968	N4	絹	きぬ	silk	m0 c0 j98	
+969	N4	畳	たたみ	tatami mat (Japanese straw m	m0 c0 j98	
+970	N4	飾る	かざる	to decorate, to adorn	m0 c0 j98	
+971	N4	消しゴム	けしゴム	eraser	m0 c0 j98	
+972	N4	冷房	れいぼう	cooling, air conditioning	m0 c0 j98	
+973	N4	暮れる	くれる	to get dark, to come to an e	m0 c0 j98	
+974	N4	退院	たいいんする	leaving hospital	m0 c0 j98	
+975	N4	花見	はなみ	cherry-blossom viewing	m0 c0 j98	
+976	N5	着る	きる	to put on (clothes above you	m0 c0 j97	
+977	N5	紅茶	こうちゃ	black tea	m0 c0 j97	
+978	N5	宿題	しゅくだい	homework	m0 c0 j97	
+979	N5	多分	たぶん	perhaps, probably, maybe	m0 c0 j97	
+980	N5	七つ	ななつ	seven things	m0 c0 j97	
+981	N5	眼鏡	めがね	eye glasses	m0 c0 j97	
+982	N4	起こす	おこす	to wake (someone) up	m0 c0 j97	
+983	N4	大体	だいたい	approximately; in most cases	m0 c0 j97	
+984	N5	熱い	あつい	hot (objects)	m0 c0 j96	
+985	N5	かける	かける	to dial/call (e.g., phone); 	m0 c0 j96	
+986	N5	暇	ひま	free time, leisure	m0 c0 j96	
+987	N4	贈り物	おくりもの	a gift; a present	m0 c0 j96	
+988	N4	飛行場	ひこうじょう	airport	m0 c0 j96	
+989	N4	赤ん坊	あかんぼう	baby	m0 c0 j96	
+990	N4	漬ける	つける	to soak, to moisten, to pick	m0 c0 j96	
+991	N4	景色	けしき	scenery, landscape	m0 c0 j96	
+992	N4	邪魔	じゃま	hindrance, intrusion	m0 c0 j96	
+993	N4	騒ぐ	さわぐ	to make noise, to clamor	m0 c0 j96	
+994	N4	指輪	ゆびわ	(finger) ring	m0 c0 j96	
+995	N4	見物	けんぶつ	sightseeing	m0 c0 j96	
+996	N4	電報	でんぽう	telegram	m0 c0 j96	
+997	N5	赤い	あかい	red	m0 c0 j95	
+998	N5	歌う	うたう	to sing	m0 c0 j95	
+999	N5	茶色	ちゃいろ	brown	m0 c0 j95	
+1000	N5	寝る	ねる	to sleep; to go to sleep; to	m0 c0 j95	
+1001	N5	晴れ	はれ	clear (sunny) weather	m0 c0 j95	
+1002	N5	下手	へた	unskillful, poor	m0 c0 j95	
+1003	N4	泥棒	どろぼう	thief; burglar	m0 c0 j95	
+1004	N4	逃げる	にげる	to escape, to run away	m0 c0 j95	
+1005	N4	思い出す	おもいだす	to recall, to remember	m0 c0 j95	
+1006	N4	支度	したくする	preparation	m0 c0 j95	
+1007	N4	暖房	だんぼう	heating	m0 c0 j95	
+1008	N4	落す	おとす	to drop, to lose	m0 c2 j0	
+1009	N5	痛い	いたい	hurt; painful; sore	m0 c0 j94	
+1010	N5	楽しい	たのしい	enjoyable, fun	m0 c0 j94	
+1011	N5	細い	ほそい	thin, slender, fine	m0 c0 j94	
+1012	N4	素晴らしい	すばらしい	wonderful; terrific	m0 c0 j94	
+1013	N4	連れる	つれる	to lead, to take (a person)	m0 c0 j94	
+1014	N4	全然	ぜんぜん	not at all; wholly, entirely	m0 c0 j94	
+1015	N5	上着	うわぎ	coat, jacket	m0 c0 j93	
+1016	N5	豚肉	ぶたにく	pork	m0 c0 j93	
+1017	N4	発音	はつおん	pronunciation	m0 c0 j93	
+1018	N4	軒	けん	counter for houses	m0 c0 j93	 AS
+1019	N4	下宿	げしゅく	lodging, boarding house	m0 c0 j93	
+1020	N4	下る	さがる	to descend, to drop, to fall	m0 c0 j93	
+1021	N5	黒い	くろい	black; dark	m0 c0 j92	
+1022	N5	交番	こうばん	police box	m0 c0 j92	
+1023	N5	毎晩	まいばん	every night	m0 c0 j92	
+1024	N4	小鳥	ことり	small bird	m0 c0 j92	
+1025	N4	引っ越す	ひっこす	to move to a new place of re	m0 c0 j92	
+1026	N5	甘い	あまい	generous, sweet	m0 c0 j91	
+1027	N5	靴下	くつした	socks	m0 c0 j91	
+1028	N5	箸	はし	chopsticks	m0 c0 j91	
+1029	N5	丸い	まるい	round, circular	m0 c0 j91	
+1030	N4	踏む	ふむ	to step on, to tread on	m0 c0 j91	
+1031	N4	壊す	こわす	to break, to break down	m0 c0 j91	
+1032	N4	怖い	こわい	scary, frightening	m0 c0 j91	
+1033	N4	乗り物	のりもの	vehicle	m0 c0 j91	
+1034	N4	汽車	きしゃ	train (steam)	m0 c0 j91	
+1035	N5	薄い	うすい	thin, weak	m0 c0 j90	
+1036	N5	泳ぐ	およぐ	to swim	m0 c0 j90	
+1037	N5	返す	かえす	to return something	m0 c0 j90	
+1038	N5	曇り	くもり	cloudiness, cloudy weather	m0 c0 j90	
+1039	N5	近い	ちかい	near, close by, short	m0 c0 j90	
+1040	N5	太い	ふとい	fat, thick	m0 c0 j90	
+1041	N5	万年筆	まんねんひつ	fountain pen	m0 c0 j90	
+1042	N4	怒る	おこる	to get angry; to scold angri	m0 c0 j90	
+1043	N4	柔らかい	やわらかい	soft (in reference to textur	m0 c0 j90	
+1044	N4	オーバー	オーバー	overcoat; over, exceeding, e	m0 c1 j30	
+1045	N4	通う	かよう	to go back and forth; to com	m0 c0 j90	
+1046	N4	急行	きゅうこう	express train or bus	m0 c0 j90	
+1047	N4	家内	かない	(one's own) wife	m0 c0 j90	
+1048	N5	九つ	ここのつ	nine things	m0 c0 j89	
+1049	N5	灰皿	はいざら	ashtray	m0 c0 j89	
+1050	N5	昨夜	ゆうべ	last night	m0 c0 j89	
+1051	N4	お嬢さん	おじょうさん	(someone's) daughter (polite	m0 c0 j89	
+1052	N5	締める	しめる	to tie, to fasten, to tighte	m0 c0 j88	
+1053	N4	とうとう	とうとう	finally, at last	m0 c0 j88	
+1054	N4	嘘	うそ	lie	m0 c0 j88	
+1055	N4	文法	ぶんぽう	grammar	m0 c0 j88	
+1056	N4	おもちゃ	おもちゃ	a toy	m0 c0 j88	
+1057	N4	笑う	わらう	to laugh, to smile	m0 c0 j88	
+1058	N4	木綿	もめん	cotton	m0 c0 j88	
+1059	N5	洗う	あらう	to wash	m0 c0 j87	
+1060	N5	伯父	おじさん	uncle, middle-aged man	m0 c0 j87	
+1061	N5	鶏肉	とりにく	chicken meat	m0 c0 j87	
+1062	N5	杯	はい	counter for cupfuls	m0 c0 j87	 AS
+1063	N4	沸かす	わかす	to boil	m0 c0 j87	
+1064	N4	役に立つ	やくにたつ	to be helpful, to be useful	m0 c0 j87	
+1065	N4	乗り換える	のりかえる	to transfer (trains), to cha	m0 c0 j87	
+1066	N4	別れる	わかれる	to part from, to separate	m0 c0 j87	
+1067	N5	辛い	からい	hot and spicy; salty	m0 c0 j86	
+1068	N5	弱い	よわい	weak	m0 c0 j86	
+1069	N4	大抵	たいてい	generally, usually	m0 c0 j86	
+1070	N4	だめ	だめ	useless, no good, hopeless	m0 c0 j86	
+1071	N4	写す	うつす	to copy (v.t.); to photograp	m0 c0 j86	
+1072	N4	電灯	でんとう	electric light	m0 c0 j86	
+1073	N4	正しい	ただしい	correct	m0 c0 j86	
+1074	N4	冷える	ひえる	to grow cold, to cool down	m0 c0 j86	
+1075	N5	遊ぶ	あそぶ	to play; to spend time pleas	m0 c0 j85	
+1076	N5	閉める	しめる	to close, to shut	m0 c0 j85	
+1077	N5	食べる	たべる	to eat	m0 c0 j85	
+1078	N5	八百屋	やおや	greengrocer	m0 c0 j85	
+1079	N4	聞こえる	きこえる	to be heard, to be audible	m0 c0 j85	
+1080	N5	晴れる	はれる	to be sunny	m0 c0 j84	
+1081	N4	治る	なおる	to get better; to recover fr	m0 c0 j84	
+1082	N5	要る	いる	to need	m0 c0 j83	
+1083	N5	花瓶	かびん	(flower) vase	m0 c0 j83	
+1084	N5	降る	ふる	to precipitate, to fall (e.g	m0 c0 j83	
+1085	N5	本棚	ほんだな	bookshelf	m0 c0 j83	
+1086	N4	塗る	ぬる	to paint, to plaster	m0 c0 j83	
+1087	N4	汚れる	よごれる	to become dirty	m0 c0 j83	
+1088	N5	誰か	だれか	someone	m0 c0 j82	
+1089	N5	冷たい	つめたい	cold (things, people)	m0 c0 j82	
+1090	N4	恥ずかしい	はずかしい	ashamed, embarrassed	m0 c0 j82	
+1091	N4	光る	ひかる	to shine, to glitter	m0 c0 j82	
+1092	N4	勝つ	かつ	to win	m0 c0 j82	
+1093	N5	今晩	こんばん	tonight, this evening	m0 c0 j81	
+1094	N5	並ぶ	ならぶ	to line up, to stand in a li	m0 c0 j81	
+1095	N4	匂い	におい	odor, smell	m0 c0 j81	
+1096	N4	泊まる	とまる	to stay (over night) (v.i.)	m0 c0 j81	
+1097	N4	滑る	すべる	to slide, to slip	m0 c0 j81	
+1098	N4	負ける	まける	to lose (a game) (v.i.), to 	m0 c0 j81	
+1099	N5	涼しい	すずしい	cool, refreshing (in referen	m0 c0 j80	
+1100	N4	随分	ずいぶん	extremely	m0 c0 j80	
+1101	N4	眠い	ねむい	sleepy, drowsy	m0 c0 j80	
+1102	N5	貸す	かす	to lend	m0 c0 j79	
+1103	N5	醤油	しょうゆ	soy sauce	m0 c0 j79	
+1104	N5	片仮名	かたかな	katakana	m0 c0 j78	
+1105	N5	可愛い	かわいい	cute, adorable	m0 c0 j78	
+1106	N5	石鹸	せっけん	soap	m0 c0 j78	
+1107	N4	歯医者	はいしゃ	dentist	m0 c0 j78	
+1108	N4	味噌	みそ	miso, bean paste	m0 c0 j78	
+1109	N4	謝る	あやまる	to apologize	m0 c0 j78	
+1110	N4	喉	のど	throat	m0 c0 j78	
+1111	N4	珍しい	めずらしい	unusual, rare	m0 c0 j77	
+1112	N4	寂しい	さびしい	lonely, lonesome	m0 c0 j77	
+1113	N5	吸う	すう	to breathe in, to suck	m0 c0 j76	
+1114	N5	汚い	きたない	dirty, unclean, filthy	m0 c0 j75	
+1115	N5	飲む	のむ	to drink	m0 c0 j75	
+1116	N4	悲しい	かなしい	sad, sorrowful	m0 c0 j75	
+1117	N4	捕まえる	つかまえる	to catch, to arrest	m0 c0 j75	
+1118	N4	釣る	つる	to fish	m0 c0 j75	
+1119	N5	平仮名	ひらがな	hiragana	m0 c0 j74	
+1120	N4	予習	よしゅう	preparation of lessons (for 	m0 c0 j74	
+1121	N4	触る	さわる	to touch, to feel	m0 c0 j74	
+1122	N4	真面目	まじめ	diligent, serious	m0 c0 j74	
+1123	N4	折る	おる	to snap, to break; to bend	m0 c0 j73	
+1124	N4	片付ける	かたづける	to (clean) tidy up (v.t.), t	m0 c0 j73	
+1125	N4	見つける	みつける	to discover, to find (v.t.)	m0 c0 j73	
+1126	N4	復習	ふくしゅう	review (of lessons), revisio	m0 c0 j73	
+1127	N5	たばこ	たばこ	tobacco, cigarettes	m0 c0 j72	
+1128	N5	段々	だんだん	gradually, by degrees	m0 c0 j72	
+1129	N5	危ない	あぶない	dangerous, critical	m0 c0 j71	
+1130	N5	消える	きえる	to vanish, to disappear	m0 c0 j71	
+1131	N5	易しい	やさしい	easy, plain, simple	m0 c0 j71	
+1132	N4	拾う	ひろう	to pick up (something), to f	m0 c0 j71	
+1133	N4	褒める	ほめる	to praise; to say nice thing	m0 c0 j71	
+1134	N4	眠る	ねむる	to sleep	m0 c0 j71	
+1135	N5	一昨日	おととい	the day before yesterday	m0 c0 j70	
+1136	N5	おまわりさん	おまわりさん	policeman (friendly term)	m0 c0 j70	
+1137	N5	寒い	さむい	cold (in reference to weathe	m0 c0 j70	
+1138	N5	夕飯	ゆうはん	dinner, supper, evening meal	m0 c0 j70	
+1139	N4	足す	たす	to add (numbers)	m0 c0 j70	
+1140	N5	黄色い	きいろい	yellow	m0 c0 j69	
+1141	N5	差す	さす	to raise (stretch out) hands	m0 c0 j69	
+1142	N5	渡る	わたる	to cross over, to go across	m0 c0 j69	
+1143	N4	濡れる	ぬれる	to get wet	m0 c0 j69	
+1144	N5	習う	ならう	to learn	m0 c0 j68	
+1145	N5	曇る	くもる	to become cloudy, to become 	m0 c0 j67	
+1146	N5	飴	あめ	(hard) candy	m0 c0 j66	
+1147	N5	脱ぐ	ぬぐ	to take off (clothes)	m0 c0 j66	
+1148	N4	投げる	なげる	to pitch, to cast away	m0 c0 j66	
+1149	N4	うかがう	うかがう	to ask	m0 c0 j65	
+1150	N4	浅い	あさい	shallow, superficial	m0 c0 j65	
+1151	N4	太る	ふとる	to gain weight	m0 c0 j65	
+1152	N4	植える	うえる	to plant	m0 c0 j65	
+1153	N5	かぶる	かぶる	to wear, to put on (e.g., a 	m0 c0 j64	
+1154	N5	冊	さつ	counter for books	m0 c0 j64	 AS
+1155	N5	死ぬ	しぬ	to die	m0 c0 j64	
+1156	N4	捨てる	すてる	throw away (trash), dump, di	m0 c0 j64	
+1157	N4	堅	かたい	solid, hard, firm	m0 c0 j64	
+1158	N4	手伝う	てつだう	to help	m0 c0 j64	
+1159	N5	御飯	ごはん	rice (cooked); meal	m0 c0 j63	
+1160	N5	住む	すむ	to reside, to live in	m0 c0 j63	
+1161	N5	狭い	せまい	narrow; not spacious	m0 c0 j63	
+1162	N5	朝御飯	あさごはん	breakfast	m0 c0 j60	
+1163	N5	明後日	あさって	day after tomorrow	m0 c0 j60	
+1164	N5	暖かい	あたたかい	warm	m0 c0 j60	
+1165	N5	アパート	アパート	apartment (abbr.)	m0 c0 j60	
+1166	N5	五日	いつか	five days; fifth day of the 	m0 c0 j60	
+1167	N5	生まれる	うまれる	to be born	m0 c0 j60	
+1168	N5	うるさい	うるさい	noisy; annoying	m0 c0 j60	
+1169	N5	美味しい	おいしい	delicious, tasty	m0 c0 j60	
+1170	N5	奥さん	おくさん	(someone else's) wife (hon.)	m0 c0 j60	
+1171	N5	おじいさん	おじいさん	grandfather, male senior cit	m0 c0 j60	
+1172	N5	おととし	おととし	year before last	m0 c0 j60	
+1173	N5	お腹	おなか	stomach	m0 c0 j60	
+1174	N5	お兄さん	おにいさん	(someone else's) older broth	m0 c0 j60	
+1175	N5	お姉さん	おねえさん	older sister (formal)	m0 c0 j60	
+1176	N5	おばあさん	おばあさん	grandmother, female senior-c	m0 c0 j60	
+1177	N5	風	かぜ	wind, breeze	m0 c0 j60	
+1178	N5	カップ	カップ	cup	m0 c0 j60	
+1179	N5	かばん	かばん	bag, basket	m0 c0 j60	
+1180	N5	カレー	カレー	curry (abbr. for curry and r	m0 c0 j60	
+1181	N5	ギター	ギター	guitar	m0 c0 j60	
+1182	N5	キロ	キロ	(abbr.) kilo (kilogram)	m0 c0 j60	
+1183	N5	クラス	クラス	a class	m0 c0 j60	
+1184	N5	コート	コート	coat; court (e.g., tennis)	m0 c0 j60	
+1185	N5	コーヒー	コーヒー	coffee	m0 c0 j60	
+1186	N5	九日	ここのか	nine days; ninth day of the 	m0 c0 j60	
+1187	N5	コップ	コップ	a tumbler; a glass	m0 c0 j60	
+1188	N5	さあ	さあ	come now, well	m0 c0 j60	
+1189	N5	咲く	さく	to bloom	m0 c0 j60	
+1190	N5	字引	じびき	dictionary	m0 c0 j60	
+1191	N5	シャツ	シャツ	shirt	m0 c0 j60	
+1192	N5	シャワー	シャワー	shower	m0 c0 j60	
+1193	N5	スカート	スカート	skirt	m0 c0 j60	
+1194	N5	ストーブ	ストーブ	heater (lit: stove)	m0 c0 j60	
+1195	N5	スプーン	スプーン	spoon	m0 c0 j60	
+1196	N5	スポーツ	スポーツ	sport(s)	m0 c0 j60	
+1197	N5	ズボン	ズボン	trousers	m0 c0 j60	
+1198	N5	セーター	セーター	sweater	m0 c0 j60	
+1199	N5	ゼロ	ゼロ	zero	m0 c0 j60	
+1200	N5	誕生日	たんじょうび	birthday	m0 c0 j60	
+1201	N5	茶碗	ちゃわん	rice bowl	m0 c0 j60	
+1202	N5	つまらない	つまらない	boring, dull; insignificant	m0 c0 j60	
+1203	N5	テープ	テープ	tape	m0 c0 j60	
+1204	N5	テープレコーダー	テープレコーダー	tape recorder	m0 c0 j60	
+1205	N5	テーブル	テーブル	table	m0 c0 j60	
+1206	N5	出かける	でかける	to go out; to depart	m0 c0 j60	
+1207	N5	ドア	ドア	door (Western style)	m0 c0 j60	
+1208	N5	トイレ	トイレ	bathroom; toilet	m0 c0 j60	
+1209	N5	どうも	どうも	Thank you; somehow; no matte	m0 c0 j60	
+1210	N5	十日	とおか	ten days; tenth day of the m	m0 c0 j60	
+1211	N5	飛ぶ	とぶ	to fly, to hop	m0 c0 j60	
+1212	N5	ナイフ	ナイフ	knife	m0 c0 j60	
+1213	N5	鳴く	なく	to make sound (animal)	m0 c0 j60	
+1214	N5	無くす	なくす	to lose something	m0 c0 j60	
+1215	N5	なぜ	なぜ	why (same as どうして)	m0 c0 j60	
+1216	N5	七日	なのか	seven days; seventh day (of 	m0 c0 j60	
+1217	N5	並べる	ならべる	to put (things) side by side	m0 c0 j60	
+1218	N5	にぎやか	にぎやか	bustling, busy	m0 c0 j60	
+1219	N5	日曜日	にちようび	Sunday	m0 c0 j60	
+1220	N5	ニュース	ニュース	news	m0 c0 j60	
+1221	N5	温い	ぬるい	lukewarm	m0 c0 j60	
+1222	N5	ネクタイ	ネクタイ	tie, necktie	m0 c0 j60	
+1223	N5	葉書	はがき	postcard	m0 c0 j60	
+1224	N5	バター	バター	butter	m0 c0 j60	
+1225	N5	二十歳	はたち	20 years old	m0 c0 j60	
+1226	N5	二十日	はつか	twenty days, twentieth (day 	m0 c0 j60	
+1227	N5	ハンカチ	ハンカチ	handkerchief	m0 c0 j60	
+1228	N5	晩御飯	ばんごはん	dinner, evening meal	m0 c0 j60	
+1229	N5	引く	ひく	to pull, to draw; subtract	m0 c0 j60	
+1230	N5	弾く	ひく	to play (a string instrument	m0 c0 j60	
+1231	N5	フィルム	フィルム	film (roll of)	m0 c0 j60	
+1232	N5	プール	プール	swimming pool	m0 c0 j60	
+1233	N5	フォーク	フォーク	fork	m0 c0 j60	
+1234	N5	吹く	ふく	to blow (wind, etc.)	m0 c0 j60	
+1235	N5	二日	ふつか	two days; second day of the 	m0 c0 j60	
+1236	N5	ベッド	ベッド	bed	m0 c0 j60	
+1237	N5	ポケット	ポケット	pocket	m0 c0 j60	
+1238	N5	ポスト	ポスト	mailbox; post, position	m0 c0 j60	
+1239	N5	ボタン	ボタン	button	m0 c0 j60	
+1240	N5	まずい	まずい	terrible (in reference to fo	m0 c0 j60	
+1241	N5	マッチ	マッチ	match	m0 c0 j60	
+1242	N5	磨く	みがく	to brush (teeth); to polish	m0 c0 j60	
+1243	N5	三日	みっか	three days, third day of the	m0 c0 j60	
+1244	N5	六日	むいか	six days; sixth day of month	m0 c0 j60	
+1245	N5	六つ	むっつ	six things	m0 c0 j60	
+1246	N5	メートル	メートル	meter	m0 c0 j60	
+1247	N5	木曜日	もくようび	Thursday	m0 c0 j60	
+1248	N5	もしもし	もしもし	Hello? (used on the phone)	m0 c0 j60	
+1249	N5	八つ	やっつ	eight things	m0 c0 j60	
+1250	N5	八日	ようか	eight days; eighth day of th	m0 c0 j60	
+1251	N5	四日	よっか	four days; fourth day of the	m0 c0 j60	
+1252	N5	レコード	レコード	record	m0 c0 j60	
+1253	N5	ワイシャツ	ワイシャツ	shirt (lit: white shirt), bu	m0 c0 j60	
+1254	N4	すっと	すっと	straight, quickly	m0 c0 j60	
+1255	N4	沸く	わく	to boil, to grow hot	m0 c0 j60	
+1256	N4	ステレオ	ステレオ	stereo	m0 c0 j60	
+1257	N4	テキスト	テキスト	text; text book	m0 c0 j60	
+1258	N4	床屋	とこや	barber's (shop)	m0 c0 j60	
+1259	N4	オートバイ	オートバイ	motorcycle (lit: auto-bi(ke)	m0 c0 j60	
+1260	N4	お宅	おたく	(someone else's) house; home	m0 c0 j60	
+1261	N4	ほとんど	ほとんど	mostly, almost	m0 c0 j60	
+1262	N4	焼く	やく	to bake, to grill	m0 c0 j60	
+1263	N4	アフリカ	アフリカ	Africa	m0 c0 j60	
+1264	N4	製	せい	made in ~	m0 c0 j60	 AS
+1265	N4	ガラス	ガラス	glass, pane	m0 c0 j60	
+1266	N4	エスカレーター	エスカレーター	escalator	m0 c0 j60	
+1267	N4	ちっとも	ちっとも	not at all (neg. verb)	m0 c0 j60	
+1268	N4	揺れる	ゆれる	to shake, to sway	m0 c0 j60	
+1269	N4	ガス	ガス	gas	m0 c0 j60	
+1270	N4	噛む	かむ	to bite, to chew	m0 c0 j60	
+1271	N4	サンドイッチ	サンドイッチ	sandwich	m0 c0 j60	
+1272	N4	再来月	さらいげつ	the month after next	m0 c0 j60	
+1273	N4	痩せる	やせる	to lose weight	m0 c0 j60	
+1274	N4	寝坊	ねぼう	sleeping in late	m0 c0 j60	
+1275	N4	パパ	パパ	papa, daddy	m0 c0 j60	
+1276	N4	どんどん	どんどん	quickly and steadily; at a r	m0 c0 j60	
+1277	N4	泣く	なく	to cry	m0 c0 j60	
+1278	N4	答	こたえ	answer, response	m0 c0 j60	
+1279	N4	サラダ	サラダ	salad	m0 c0 j60	
+1280	N4	乾く	かわく	to get dry	m0 c0 j60	
+1281	N4	踊る	おどる	to dance	m0 c0 j60	
+1282	N4	ご主人	ごしゅじん	(your, her) husband	m0 c0 j60	
+1283	N4	アナウンサー	アナウンサー	announcer	m0 c0 j60	
+1284	N4	お土産	おみやげ	souvenir	m0 c0 j60	
+1285	N4	育てる	そだてる	to raise (v.t.); to bring up	m0 c0 j60	
+1286	N4	ジャム	ジャム	jam	m0 c0 j60	
+1287	N4	おつり	おつり	change; balance of money ret	m0 c0 j60	
+1288	N4	チェックする	チェックする	check	m0 c1 j0	
+1289	N4	ワープロ	ワープロ	word processor	m0 c0 j60	
+1290	N4	ごちそう	ごちそう	feast, treating (someone)	m0 c0 j60	
+1291	N4	亡くなる	なくなる	to pass away	m0 c0 j60	
+1292	N4	凄い	すごい	terrific, great	m0 c0 j60	
+1293	N4	ちゃん	ちゃん	suffix for familiar (female)	m0 c0 j60	 AS
+1294	N4	あんな	あんな	such, like that	m0 c0 j60	
+1295	N4	ひどい	ひどい	terrible, awful, unfair, cru	m0 c0 j60	
+1296	N4	押し入れ	おしいれ	closet	m0 c0 j60	
+1297	N4	叱る	しかる	to scold	m0 c0 j60	
+1298	N4	折れる	おれる	to break, to be folded, to g	m0 c0 j60	
+1299	N4	それほど	それほど	to that degree; extent	m0 c0 j60	
+1300	N4	プレゼント	プレゼント	present, gift	m0 c0 j60	
+1301	N4	スーツ	スーツ	suit	m0 c0 j60	
+1302	N4	天気予報	てんきよほう	weather forecast	m0 c0 j60	
+1303	N4	そろそろ	そろそろ	gradually, soon	m0 c0 j60	
+1304	N4	そんなに	そんなに	so much, like that	m0 c0 j60	
+1305	N4	カーテン	カーテン	curtain	m0 c0 j60	
+1306	N4	直る	なおる	to be fixed	m0 c0 j60	
+1307	N4	焼ける	やける	to burn, to be roasted	m0 c0 j60	
+1308	N4	君	きみ	you (informal for men)	m0 c0 j60	
+1309	N4	この間	このあいだ	the other day, recently	m0 c0 j60	
+1310	N4	割れる	われる	to break	m0 c0 j60	
+1311	N4	いじめる	いじめる	to bully, to torment	m0 c0 j60	
+1312	N4	アクセサリー	アクセサリー	accessory	m0 c0 j60	
+1313	N4	ひげ	ひげ	beard	m0 c0 j60	
+1314	N4	コンサート	コンサート	concert	m0 c0 j60	
+1315	N4	コンピュータ	コンピュータ	computer	m0 c0 j60	
+1316	N4	取り替える	とりかえる	to exchange, to replace	m0 c0 j60	
+1317	N4	もうすぐ	もうすぐ	very soon; in a few moments;	m0 c1 j0	
+1318	N4	ケーキ	ケーキ	cake	m0 c0 j60	
+1319	N4	この頃	このごろ	these days, nowadays	m0 c0 j60	
+1320	N4	ガソリンスタンド	ガソリンスタンド	gas station, service station	m0 c0 j60	
+1321	N4	テニス	テニス	tennis	m0 c0 j60	
+1322	N4	ピアノ	ピアノ	piano	m0 c0 j60	
+1323	N4	タイプ	タイプ	type, style	m0 c0 j60	
+1324	N4	すり	すり	pickpocket	m0 c0 j60	
+1325	N4	嬉しい	うれしい	to be happy; to be glad	m0 c0 j60	
+1326	N4	アルコール	アルコール	alcohol	m0 c0 j60	
+1327	N4	たまに	たまに	occasionally	m0 c0 j60	
+1328	N5	ペット	ペット	pet	m0 c0 j30	
+1329	N4	スクリーン	スクリーン	screen	m0 c0 j30	
+1330	N4	ステーキ	ステーキ	steak	m0 c0 j30	
+1331	N4	サンダル	サンダル	sandal	m0 c0 j30	
+1332	N4	ハンバーグ	ハンバーグ	hamburger steak	m0 c0 j30	
+1333	N4	スーツケース	スーツケース	suitcase	m0 c0 j30	
+1334	N5	お酒	おさけ	sake; alcohol	m0 c0 j0	
+1335	N5	お皿	おさら	plate, dish	m0 c0 j0	
+1336	N5	伯母さん	おばさん	aunt	m0 c0 j0	
+1337	N5	お風呂	おふろ	a bath	m0 c0 j0	
+1338	N5	さ来年	さらいねん	year after next	m0 c0 j0	
+1339	N5	昼御飯	ひるごはん	lunch, midday meal	m0 c0 j0	
+1340	N5	ゆっくりと	ゆっくりと	slowly, at ease	m0 c0 j0	
+1341	N5	ラジオカセ	ラジオカセ	radio cassette player	m0 c0 j0	
+1342	N4	落る	おちる	to fall, to drop	m0 c0 j0	
+1343	N4	いくらても	いくらても	however much one may ~	m0 c0 j0	 G
+1344	N4	けんかする	けんかする	quarrel	m0 c0 j0	
+1345	N4	お祭り	おまつり	festival	m0 c0 j0	
+1346	N4	けがする	けがする	injury (to animate object), 	m0 c0 j0	
+1347	N4	楽む	たのしむ	to enjoy	m0 c0 j0	
+1348	N4	びっくりする	びっくりする	to be surprised	m0 c0 j0	
+1349	N4	おいでになる	おいでになる	(hon.) to be	m0 c0 j0	
+1350	N4	お金持ち	かねもち	rich person	m0 c0 j0	
+1351	N4	お子さん	おこさん	(someone else's) child (poli	m0 c0 j0	
+1352	N4	あ	あ	Ah	m0 c0 j0	
+1353	N4	回る、回す	まわる、まわす	to go around, to revolve	m0 c0 j0	
+1354	N4	舟	ふね	ship, boat	m0 c0 j0	
+1355	N4	真中	まんなか	middle, center	m0 c0 j0	
