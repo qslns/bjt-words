@@ -19,6 +19,7 @@ CATS = set('org mtg sch tel doc deal money sales graph hr trouble verb formal ka
 SCENES = set('tel mtg talk visit biz graph doc mail notice report news'.split())
 NO_GLOSS = set('する いる この なる ある こと おる ござる そう よう その 私 いい よる 知る くる いう うち もの いつ ところ それ これ ほう なに 為る 居る 有る 成る 言う 来る 良い 事 物 内 所 方 何 御座る 御'.split())
 COUNTERS = set('円 割 度 階 週間 か月 ヶ月 カ月 個 人 名 社 件 台 枚 冊 本 回 倍 歳 才 時 時間 分 秒 日 月 年 年間 日間 号 位 点 品 種 代 期 泊 着 軒 杯 匹 店 店舗 部 課 箱 通 便 個所 か所 箇所 カ所 ケ所 番 番目 次 名様 人分 円台 本目 年度 月末 日目 階建て 万 億 千 百 兆 キロ メートル グラム パーセント 時半 分間 年代 ドル ユーロ ウォン 元 字 行 ページ 枚目 回目 週 週目 週末 期目'.split())
+KO_ALT = {'糖': {'탕'}, '茶': {'차', '다'}}   # 11/13 P2 검수: 한국어에서 실제로 쓰는 다른 음
 DIGIT = re.compile(r'[0-9０-９]')
 NUMK = re.compile(r'[0-9０-９〇一二三四五六七八九十百千万億兆]')
 HANGUL = re.compile(r'[가-힣ㄱ-ㆎ]')
@@ -260,6 +261,7 @@ def check_card(c, R, sheet, seen_heads, new_bg):
                 else:
                     es = eums(ch)
                     ok_set = None if es is None else set(es)
+                    if ok_set is not None and ch in KO_ALT: ok_set |= KO_ALT[ch]   # 한 한자에 한국 음이 둘(砂糖 사탕·紅茶 홍차)
                 if ok_set is None: Wn('ko 확인 못 함(한자 정보 없음): ' + ch)
                 else:
                     cand = set()
