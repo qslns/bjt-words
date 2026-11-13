@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome', args: ['--autoplay-policy=no-user-gesture-required'] });
+const b = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}), args: ['--autoplay-policy=no-user-gesture-required'] });
 const c = await b.newContext({ viewport: {width:1180,height:820} });
 const p = await c.newPage();
 const errs = []; p.on('pageerror', e => errs.push(String(e)));

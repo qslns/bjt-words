@@ -1,0 +1,4258 @@
+[
+{
+"id": "Jn4-321",
+"w": "事",
+"alt": [],
+"r": "こと",
+"en": "thing(s), matter(s), fact",
+"lv": "N4",
+"score": 1203.61
+},
+{
+"id": "Jn5-108",
+"w": "さん",
+"alt": [],
+"r": "～さん",
+"en": "Mr. ~, Ms. ~",
+"lv": "N5",
+"score": 746.92
+},
+{
+"id": "Jn5-173",
+"w": "ない",
+"alt": [],
+"r": "ない",
+"en": "there isn't, doesn't have",
+"lv": "N5",
+"score": 614.8
+},
+{
+"id": "Jn5-97",
+"w": "この",
+"alt": [],
+"r": "この",
+"en": "this",
+"lv": "N5",
+"score": 581.71
+},
+{
+"id": "Jn5-140",
+"w": "そう",
+"alt": [
+"そうです"
+],
+"r": "そう; そうです",
+"en": "yes; appears, to be the case",
+"lv": "N5",
+"score": 533.62
+},
+{
+"id": "Jn5-190",
+"w": "はい",
+"alt": [],
+"r": "はい",
+"en": "yes",
+"lv": "N5",
+"score": 438.92
+},
+{
+"id": "Jn5-235",
+"w": "物",
+"alt": [],
+"r": "もの",
+"en": "thing (concrete object)",
+"lv": "N5",
+"score": 374.77
+},
+{
+"id": "Jn5-179",
+"w": "何",
+"alt": [],
+"r": "なん; なに",
+"en": "what",
+"lv": "N5",
+"score": 359.97
+},
+{
+"id": "Jn5-162",
+"w": "どう",
+"alt": [],
+"r": "どう",
+"en": "how, in what way",
+"lv": "N5",
+"score": 327.17
+},
+{
+"id": "Jn5-142",
+"w": "その",
+"alt": [],
+"r": "その",
+"en": "that",
+"lv": "N5",
+"score": 326.5
+},
+{
+"id": "Jn5-144",
+"w": "それ",
+"alt": [],
+"r": "それ",
+"en": "that one",
+"lv": "N5",
+"score": 269.54
+},
+{
+"id": "Jn5-117",
+"w": "じゃ",
+"alt": [
+"じゃあ"
+],
+"r": "じゃ; じゃあ",
+"en": "well, well then",
+"lv": "N5",
+"score": 176.79
+},
+{
+"id": "Jn5-99",
+"w": "これ",
+"alt": [],
+"r": "これ",
+"en": "this one",
+"lv": "N5",
+"score": 142.7
+},
+{
+"id": "Jn5-151",
+"w": "誰",
+"alt": [],
+"r": "だれ",
+"en": "who",
+"lv": "N5",
+"score": 137.95
+},
+{
+"id": "Jn5-37",
+"w": "ええ",
+"alt": [],
+"r": "ええ",
+"en": "yes",
+"lv": "N5",
+"score": 116.51
+},
+{
+"id": "Jn5-58",
+"w": "掛ける",
+"alt": [],
+"r": "かける",
+"en": "to put on (e.g., glasses); to hang (e.g., on a wall)",
+"lv": "N5",
+"score": 115.29
+},
+{
+"id": "Jn5-240",
+"w": "やる",
+"alt": [],
+"r": "やる",
+"en": "to do; to give (to pets, parents, siblings, etc.)",
+"lv": "N5",
+"score": 108.93
+},
+{
+"id": "Jn5-168",
+"w": "どの",
+"alt": [],
+"r": "どの",
+"en": "which",
+"lv": "N5",
+"score": 89.15
+},
+{
+"id": "Jn5-128",
+"w": "すぐに",
+"alt": [],
+"r": "すぐに",
+"en": "immediately, soon",
+"lv": "N5",
+"score": 88.43
+},
+{
+"id": "Jn4-273",
+"w": "彼",
+"alt": [],
+"r": "かれ",
+"en": "he, boyfriend",
+"lv": "N4",
+"score": 88.32
+},
+{
+"id": "Jn5-94",
+"w": "ここ",
+"alt": [],
+"r": "ここ",
+"en": "here, this place",
+"lv": "N5",
+"score": 83.52
+},
+{
+"id": "Jn4-261",
+"w": "僕",
+"alt": [],
+"r": "ぼく",
+"en": "I (used by men towards those of equal or lower status)",
+"lv": "N4",
+"score": 81.51
+},
+{
+"id": "Jn5-0",
+"w": "ああ",
+"alt": [],
+"r": "ああ",
+"en": "Ah!, Oh!",
+"lv": "N5",
+"score": 79.27
+},
+{
+"id": "Jn5-9",
+"w": "あなた",
+"alt": [],
+"r": "あなた",
+"en": "you",
+"lv": "N5",
+"score": 78.59
+},
+{
+"id": "Jn4-416",
+"w": "光",
+"alt": [],
+"r": "ひかり",
+"en": "light",
+"lv": "N4",
+"score": 65.02
+},
+{
+"id": "Jn4-428",
+"w": "君",
+"alt": [],
+"r": "きみ",
+"en": "you (informal for men)",
+"lv": "N4",
+"score": 61.8
+},
+{
+"id": "Jn5-230",
+"w": "緑",
+"alt": [],
+"r": "みどり",
+"en": "green",
+"lv": "N5",
+"score": 58.74
+},
+{
+"id": "Jn4-269",
+"w": "うん",
+"alt": [],
+"r": "うん",
+"en": "yes (informal), all right (ok)",
+"lv": "N4",
+"score": 46.71
+},
+{
+"id": "Jn5-23",
+"w": "いつ",
+"alt": [],
+"r": "いつ",
+"en": "when",
+"lv": "N5",
+"score": 45.76
+},
+{
+"id": "Jn4-366",
+"w": "彼ら",
+"alt": [],
+"r": "かれら",
+"en": "they (usually male)",
+"lv": "N4",
+"score": 44.17
+},
+{
+"id": "Jn4-400",
+"w": "彼女",
+"alt": [],
+"r": "かのじょ",
+"en": "girlfriend; she",
+"lv": "N4",
+"score": 42.94
+},
+{
+"id": "Jn5-166",
+"w": "どこ",
+"alt": [],
+"r": "どこ",
+"en": "where, what place",
+"lv": "N5",
+"score": 40.29
+},
+{
+"id": "Jn5-141",
+"w": "そこ",
+"alt": [],
+"r": "そこ",
+"en": "that place, there; bottom, sole",
+"lv": "N5",
+"score": 38.61
+},
+{
+"id": "Jn5-13",
+"w": "あの",
+"alt": [],
+"r": "あの",
+"en": "that over there; like that, that way; um...",
+"lv": "N5",
+"score": 37.67
+},
+{
+"id": "Jn5-172",
+"w": "どんな",
+"alt": [],
+"r": "どんな",
+"en": "what, what kind of",
+"lv": "N5",
+"score": 36.67
+},
+{
+"id": "Jn4-306",
+"w": "そんな",
+"alt": [],
+"r": "そんな",
+"en": "such, like that, that sort of",
+"lv": "N4",
+"score": 27.41
+},
+{
+"id": "Jn5-20",
+"w": "いくつ",
+"alt": [],
+"r": "いくつ",
+"en": "how many, how old",
+"lv": "N5",
+"score": 26.29
+},
+{
+"id": "Jn4-309",
+"w": "林",
+"alt": [],
+"r": "はやし",
+"en": "woods, forest",
+"lv": "N4",
+"score": 25.55
+},
+{
+"id": "Jn5-152",
+"w": "誰か",
+"alt": [],
+"r": "だれか",
+"en": "someone",
+"lv": "N5",
+"score": 23.22
+},
+{
+"id": "Jn5-19",
+"w": "いいえ",
+"alt": [],
+"r": "いいえ",
+"en": "no, not at all",
+"lv": "N5",
+"score": 22.81
+},
+{
+"id": "Jn5-21",
+"w": "いくら",
+"alt": [],
+"r": "いくら",
+"en": "how much, how many",
+"lv": "N5",
+"score": 22.12
+},
+{
+"id": "Jn4-408",
+"w": "そんなに",
+"alt": [],
+"r": "そんなに",
+"en": "so much, like that",
+"lv": "N4",
+"score": 21.96
+},
+{
+"id": "Jn5-163",
+"w": "どうして",
+"alt": [],
+"r": "どうして",
+"en": "why, for what reason",
+"lv": "N5",
+"score": 18.32
+},
+{
+"id": "Jn5-214",
+"w": "二人",
+"alt": [],
+"r": "ふたり",
+"en": "two people",
+"lv": "N5",
+"score": 18.05
+},
+{
+"id": "Jn4-390",
+"w": "こう",
+"alt": [],
+"r": "こう",
+"en": "like this, this way",
+"lv": "N4",
+"score": 17.29
+},
+{
+"id": "Jn5-53",
+"w": "お弁当",
+"alt": [],
+"r": "おべんとう",
+"en": "a boxed lunch",
+"lv": "N5",
+"score": 14.85
+},
+{
+"id": "Jn5-231",
+"w": "耳",
+"alt": [],
+"r": "みみ",
+"en": "ear",
+"lv": "N5",
+"score": 13.32
+},
+{
+"id": "Jn5-18",
+"w": "あれ",
+"alt": [],
+"r": "あれ",
+"en": "that one (over there)",
+"lv": "N5",
+"score": 12.58
+},
+{
+"id": "Jn5-6",
+"w": "あそこ",
+"alt": [],
+"r": "あそこ",
+"en": "there, over there, that place",
+"lv": "N5",
+"score": 12.3
+},
+{
+"id": "Jn5-60",
+"w": "学校",
+"alt": [],
+"r": "がっこう",
+"en": "a school",
+"lv": "N5",
+"score": 12.02
+},
+{
+"id": "Jn4-438",
+"w": "首",
+"alt": [],
+"r": "くび",
+"en": "neck",
+"lv": "N4",
+"score": 11.93
+},
+{
+"id": "Jn4-442",
+"w": "舟",
+"alt": [],
+"r": "ふね",
+"en": "ship, boat",
+"lv": "N4",
+"score": 10.94
+},
+{
+"id": "Jn4-357",
+"w": "チェックする",
+"alt": [],
+"r": "チェックする",
+"en": "check",
+"lv": "N4",
+"score": 10.62
+},
+{
+"id": "Jn5-86",
+"w": "クラス",
+"alt": [],
+"r": "クラス",
+"en": "a class",
+"lv": "N5",
+"score": 10.29
+},
+{
+"id": "Jn5-100",
+"w": "こんな",
+"alt": [],
+"r": "こんな",
+"en": "such, like this",
+"lv": "N5",
+"score": 10.21
+},
+{
+"id": "Jn5-212",
+"w": "二つ",
+"alt": [],
+"r": "ふたつ",
+"en": "two things",
+"lv": "N5",
+"score": 10.16
+},
+{
+"id": "Jn5-87",
+"w": "黒",
+"alt": [],
+"r": "くろ",
+"en": "black",
+"lv": "N5",
+"score": 9.47
+},
+{
+"id": "Jn5-27",
+"w": "嫌",
+"alt": [],
+"r": "いや",
+"en": "disagreeable, detestable, unpleasant",
+"lv": "N5",
+"score": 8.11
+},
+{
+"id": "Jn5-218",
+"w": "ペン",
+"alt": [],
+"r": "ペン",
+"en": "pen",
+"lv": "N5",
+"score": 8.0
+},
+{
+"id": "Jn5-93",
+"w": "コート",
+"alt": [],
+"r": "コート",
+"en": "coat; court (e.g., tennis)",
+"lv": "N5",
+"score": 7.44
+},
+{
+"id": "Jn4-373",
+"w": "打つ",
+"alt": [],
+"r": "うつ",
+"en": "to hit, to strike",
+"lv": "N4",
+"score": 7.23
+},
+{
+"id": "Jn5-1",
+"w": "青",
+"alt": [],
+"r": "あお",
+"en": "blue",
+"lv": "N5",
+"score": 7.01
+},
+{
+"id": "Jn5-124",
+"w": "白",
+"alt": [],
+"r": "しろ",
+"en": "white",
+"lv": "N5",
+"score": 7.01
+},
+{
+"id": "Jn4-418",
+"w": "褒める",
+"alt": [],
+"r": "ほめる",
+"en": "to praise; to say nice things",
+"lv": "N4",
+"score": 6.87
+},
+{
+"id": "Jn4-375",
+"w": "米",
+"alt": [],
+"r": "こめ",
+"en": "uncooked rice",
+"lv": "N4",
+"score": 6.61
+},
+{
+"id": "Jn5-135",
+"w": "生徒",
+"alt": [],
+"r": "せいと",
+"en": "student; pupil",
+"lv": "N5",
+"score": 6.59
+},
+{
+"id": "Jn5-176",
+"w": "なぜ",
+"alt": [],
+"r": "なぜ",
+"en": "why (same as どうして)",
+"lv": "N5",
+"score": 6.43
+},
+{
+"id": "Jn5-33",
+"w": "上着",
+"alt": [],
+"r": "うわぎ",
+"en": "coat, jacket",
+"lv": "N5",
+"score": 6.17
+},
+{
+"id": "Jn5-65",
+"w": "カレー",
+"alt": [],
+"r": "カレー",
+"en": "curry (abbr. for curry and rice)",
+"lv": "N5",
+"score": 6.17
+},
+{
+"id": "Jn5-31",
+"w": "海",
+"alt": [],
+"r": "うみ",
+"en": "sea, beach",
+"lv": "N5",
+"score": 6.15
+},
+{
+"id": "Jn5-188",
+"w": "寝る",
+"alt": [],
+"r": "ねる",
+"en": "to sleep; to go to sleep; to go to bed",
+"lv": "N5",
+"score": 5.88
+},
+{
+"id": "Jn5-161",
+"w": "戸",
+"alt": [],
+"r": "と",
+"en": "door (Japanese style)",
+"lv": "N5",
+"score": 5.71
+},
+{
+"id": "Jn4-387",
+"w": "子",
+"alt": [],
+"r": "こ",
+"en": "child",
+"lv": "N4",
+"score": 5.59
+},
+{
+"id": "Jn4-413",
+"w": "息子",
+"alt": [],
+"r": "むすこ",
+"en": "(humble) son",
+"lv": "N4",
+"score": 5.59
+},
+{
+"id": "Jn4-430",
+"w": "拝見",
+"alt": [],
+"r": "はいけんする",
+"en": "(humble) (polite) seeing, look at",
+"lv": "N4",
+"score": 5.47
+},
+{
+"id": "Jn5-98",
+"w": "コピーする",
+"alt": [],
+"r": "コピーする",
+"en": "to copy",
+"lv": "N5",
+"score": 5.33
+},
+{
+"id": "Jn5-83",
+"w": "靴",
+"alt": [],
+"r": "くつ",
+"en": "shoes, footwear",
+"lv": "N5",
+"score": 5.05
+},
+{
+"id": "Jn5-80",
+"w": "着る",
+"alt": [],
+"r": "きる",
+"en": "to put on (clothes above your waist); to wear",
+"lv": "N5",
+"score": 5.04
+},
+{
+"id": "Jn5-61",
+"w": "カップ",
+"alt": [],
+"r": "カップ",
+"en": "cup",
+"lv": "N5",
+"score": 5.03
+},
+{
+"id": "Jn5-248",
+"w": "冷蔵庫",
+"alt": [],
+"r": "れいぞうこ",
+"en": "refrigerator",
+"lv": "N5",
+"score": 4.99
+},
+{
+"id": "Jn5-132",
+"w": "スポーツ",
+"alt": [],
+"r": "スポーツ",
+"en": "sport(s)",
+"lv": "N5",
+"score": 4.79
+},
+{
+"id": "Jn4-383",
+"w": "叱る",
+"alt": [],
+"r": "しかる",
+"en": "to scold",
+"lv": "N4",
+"score": 4.77
+},
+{
+"id": "Jn4-443",
+"w": "ついて",
+"alt": [],
+"r": "～(に) ついて",
+"en": "about, concerning",
+"lv": "N4",
+"score": 4.76
+},
+{
+"id": "Jn4-372",
+"w": "ちゃん",
+"alt": [],
+"r": "～ちゃん",
+"en": "suffix for familiar (female) person",
+"lv": "N4",
+"score": 4.75
+},
+{
+"id": "Jn5-189",
+"w": "歯",
+"alt": [],
+"r": "は",
+"en": "tooth",
+"lv": "N5",
+"score": 4.57
+},
+{
+"id": "Jn5-45",
+"w": "弟",
+"alt": [],
+"r": "おとうと",
+"en": "younger brother",
+"lv": "N5",
+"score": 4.49
+},
+{
+"id": "Jn4-264",
+"w": "運動",
+"alt": [],
+"r": "うんどうする",
+"en": "exercise",
+"lv": "N4",
+"score": 4.48
+},
+{
+"id": "Jn5-25",
+"w": "犬",
+"alt": [],
+"r": "いぬ",
+"en": "dog",
+"lv": "N5",
+"score": 4.47
+},
+{
+"id": "Jn5-118",
+"w": "シャツ",
+"alt": [],
+"r": "シャツ",
+"en": "shirt",
+"lv": "N5",
+"score": 4.35
+},
+{
+"id": "Jn4-441",
+"w": "研究室",
+"alt": [],
+"r": "けんきゅうしつ",
+"en": "the professor's office; laboratory",
+"lv": "N4",
+"score": 4.34
+},
+{
+"id": "Jn5-182",
+"w": "肉",
+"alt": [],
+"r": "にく",
+"en": "meat",
+"lv": "N5",
+"score": 4.15
+},
+{
+"id": "Jn5-208",
+"w": "フィルム",
+"alt": [],
+"r": "フィルム",
+"en": "film (roll of)",
+"lv": "N5",
+"score": 3.95
+},
+{
+"id": "Jn4-281",
+"w": "ちっとも",
+"alt": [],
+"r": "ちっとも",
+"en": "not at all (neg. verb)",
+"lv": "N4",
+"score": 3.93
+},
+{
+"id": "Jn4-393",
+"w": "折れる",
+"alt": [],
+"r": "おれる",
+"en": "to break, to be folded, to give in; to turn (a corner)",
+"lv": "N4",
+"score": 3.93
+},
+{
+"id": "Jn5-150",
+"w": "卵",
+"alt": [],
+"r": "たまご",
+"en": "egg",
+"lv": "N5",
+"score": 3.91
+},
+{
+"id": "Jn5-217",
+"w": "ペット",
+"alt": [],
+"r": "ペット",
+"en": "pet",
+"lv": "N5",
+"score": 3.87
+},
+{
+"id": "Jn5-103",
+"w": "魚",
+"alt": [],
+"r": "さかな",
+"en": "fish",
+"lv": "N5",
+"score": 3.78
+},
+{
+"id": "Jn4-279",
+"w": "ガラス",
+"alt": [],
+"r": "ガラス",
+"en": "glass, pane",
+"lv": "N4",
+"score": 3.71
+},
+{
+"id": "Jn4-329",
+"w": "匂い",
+"alt": [],
+"r": "におい",
+"en": "odor, smell",
+"lv": "N4",
+"score": 3.63
+},
+{
+"id": "Jn4-276",
+"w": "軒",
+"alt": [],
+"r": "～けん",
+"en": "counter for houses",
+"lv": "N4",
+"score": 3.52
+},
+{
+"id": "Jn4-414",
+"w": "笑う",
+"alt": [],
+"r": "わらう",
+"en": "to laugh, to smile",
+"lv": "N4",
+"score": 3.51
+},
+{
+"id": "Jn5-196",
+"w": "走る",
+"alt": [],
+"r": "はしる",
+"en": "to run",
+"lv": "N5",
+"score": 3.5
+},
+{
+"id": "Jn4-254",
+"w": "盗む",
+"alt": [],
+"r": "ぬすむ",
+"en": "to steal; to rob",
+"lv": "N4",
+"score": 3.36
+},
+{
+"id": "Jn4-299",
+"w": "サンドイッチ",
+"alt": [],
+"r": "サンドイッチ",
+"en": "sandwich",
+"lv": "N4",
+"score": 3.36
+},
+{
+"id": "Jn4-348",
+"w": "寂しい",
+"alt": [],
+"r": "さびしい",
+"en": "lonely, lonesome",
+"lv": "N4",
+"score": 3.36
+},
+{
+"id": "Jn5-207",
+"w": "昼御飯",
+"alt": [],
+"r": "ひるごはん",
+"en": "lunch, midday meal",
+"lv": "N5",
+"score": 3.23
+},
+{
+"id": "Jn4-288",
+"w": "浅い",
+"alt": [],
+"r": "あさい",
+"en": "shallow, superficial",
+"lv": "N4",
+"score": 3.23
+},
+{
+"id": "Jn5-234",
+"w": "眼鏡",
+"alt": [],
+"r": "めがね",
+"en": "eye glasses",
+"lv": "N5",
+"score": 3.1
+},
+{
+"id": "Jn5-79",
+"w": "嫌い",
+"alt": [],
+"r": "きらい",
+"en": "dislike",
+"lv": "N5",
+"score": 3.08
+},
+{
+"id": "Jn5-101",
+"w": "さあ",
+"alt": [],
+"r": "さあ",
+"en": "come now, well",
+"lv": "N5",
+"score": 3.08
+},
+{
+"id": "Jn4-409",
+"w": "腕",
+"alt": [],
+"r": "うで",
+"en": "arm (in reference to body)",
+"lv": "N4",
+"score": 3.08
+},
+{
+"id": "Jn4-458",
+"w": "娘",
+"alt": [],
+"r": "むすめ",
+"en": "daughter (humble)",
+"lv": "N4",
+"score": 3.08
+},
+{
+"id": "Jn5-68",
+"w": "漢字",
+"alt": [],
+"r": "かんじ",
+"en": "kanji; Chinese character",
+"lv": "N5",
+"score": 2.95
+},
+{
+"id": "Jn5-239",
+"w": "山",
+"alt": [],
+"r": "やま",
+"en": "mountain",
+"lv": "N5",
+"score": 2.95
+},
+{
+"id": "Jn4-411",
+"w": "高校",
+"alt": [
+"高等学校"
+],
+"r": "こうこう; こうとうがっこう",
+"en": "high school; senior high school",
+"lv": "N4",
+"score": 2.95
+},
+{
+"id": "Jn4-452",
+"w": "草",
+"alt": [],
+"r": "くさ",
+"en": "grass",
+"lv": "N4",
+"score": 2.95
+},
+{
+"id": "Jn5-3",
+"w": "赤",
+"alt": [],
+"r": "あか",
+"en": "red",
+"lv": "N5",
+"score": 2.88
+},
+{
+"id": "Jn5-77",
+"w": "教室",
+"alt": [],
+"r": "きょうしつ",
+"en": "classroom",
+"lv": "N5",
+"score": 2.83
+},
+{
+"id": "Jn5-63",
+"w": "かぶる",
+"alt": [],
+"r": "かぶる",
+"en": "to wear, to put on (e.g., a hat on the head)",
+"lv": "N5",
+"score": 2.8
+},
+{
+"id": "Jn5-69",
+"w": "木",
+"alt": [],
+"r": "き",
+"en": "tree, wood, timber",
+"lv": "N5",
+"score": 2.8
+},
+{
+"id": "Jn5-145",
+"w": "大好き",
+"alt": [],
+"r": "だいすき",
+"en": "very like-able, like very much",
+"lv": "N5",
+"score": 2.8
+},
+{
+"id": "Jn4-302",
+"w": "恥ずかしい",
+"alt": [],
+"r": "はずかしい",
+"en": "ashamed, embarrassed",
+"lv": "N4",
+"score": 2.8
+},
+{
+"id": "Jn5-56",
+"w": "音楽",
+"alt": [],
+"r": "おんがく",
+"en": "Music",
+"lv": "N5",
+"score": 2.71
+},
+{
+"id": "Jn5-219",
+"w": "帽子",
+"alt": [],
+"r": "ぼうし",
+"en": "hat; cap",
+"lv": "N5",
+"score": 2.66
+},
+{
+"id": "Jn5-139",
+"w": "洗濯",
+"alt": [],
+"r": "せんたく",
+"en": "washing, laundry",
+"lv": "N5",
+"score": 2.6
+},
+{
+"id": "Jn5-121",
+"w": "授業",
+"alt": [],
+"r": "じゅぎょう",
+"en": "a class (of school)",
+"lv": "N5",
+"score": 2.52
+},
+{
+"id": "Jn4-385",
+"w": "びっくりする",
+"alt": [],
+"r": "びっくりする",
+"en": "to be surprised",
+"lv": "N4",
+"score": 2.52
+},
+{
+"id": "Jn4-377",
+"w": "夢",
+"alt": [],
+"r": "ゆめ",
+"en": "a dream",
+"lv": "N4",
+"score": 2.46
+},
+{
+"id": "Jn5-44",
+"w": "お父さん",
+"alt": [],
+"r": "おとうさん",
+"en": "father (formal)",
+"lv": "N5",
+"score": 2.38
+},
+{
+"id": "Jn5-88",
+"w": "黒い",
+"alt": [],
+"r": "くろい",
+"en": "black; dark",
+"lv": "N5",
+"score": 2.38
+},
+{
+"id": "Jn4-457",
+"w": "眠る",
+"alt": [],
+"r": "ねむる",
+"en": "to sleep",
+"lv": "N4",
+"score": 2.38
+},
+{
+"id": "Jn5-47",
+"w": "お腹",
+"alt": [],
+"r": "おなか",
+"en": "stomach",
+"lv": "N5",
+"score": 2.24
+},
+{
+"id": "Jn5-143",
+"w": "空",
+"alt": [],
+"r": "そら",
+"en": "sky",
+"lv": "N5",
+"score": 2.24
+},
+{
+"id": "Jn4-252",
+"w": "踏む",
+"alt": [],
+"r": "ふむ",
+"en": "to step on, to tread on",
+"lv": "N4",
+"score": 2.24
+},
+{
+"id": "Jn4-298",
+"w": "怖い",
+"alt": [],
+"r": "こわい",
+"en": "scary, frightening",
+"lv": "N4",
+"score": 2.24
+},
+{
+"id": "Jn4-338",
+"w": "ステーキ",
+"alt": [],
+"r": "ステーキ",
+"en": "steak",
+"lv": "N4",
+"score": 2.24
+},
+{
+"id": "Jn4-359",
+"w": "手袋",
+"alt": [],
+"r": "てぶくろ",
+"en": "glove(s)",
+"lv": "N4",
+"score": 2.24
+},
+{
+"id": "Jn5-64",
+"w": "がる",
+"alt": [],
+"r": "～がる",
+"en": "feel",
+"lv": "N5",
+"score": 2.1
+},
+{
+"id": "Jn4-271",
+"w": "焼く",
+"alt": [],
+"r": "やく",
+"en": "to bake, to grill",
+"lv": "N4",
+"score": 2.1
+},
+{
+"id": "Jn4-289",
+"w": "嘘",
+"alt": [],
+"r": "うそ",
+"en": "lie",
+"lv": "N4",
+"score": 2.1
+},
+{
+"id": "Jn4-396",
+"w": "滑る",
+"alt": [],
+"r": "すべる",
+"en": "to slide, to slip",
+"lv": "N4",
+"score": 2.1
+},
+{
+"id": "Jn4-451",
+"w": "ケーキ",
+"alt": [],
+"r": "ケーキ",
+"en": "cake",
+"lv": "N4",
+"score": 2.1
+},
+{
+"id": "Jn5-28",
+"w": "薄い",
+"alt": [],
+"r": "うすい",
+"en": "thin, weak",
+"lv": "N5",
+"score": 2.04
+},
+{
+"id": "Jn5-200",
+"w": "鼻",
+"alt": [],
+"r": "はな",
+"en": "nose",
+"lv": "N5",
+"score": 1.97
+},
+{
+"id": "Jn5-206",
+"w": "平仮名",
+"alt": [],
+"r": "ひらがな",
+"en": "hiragana",
+"lv": "N5",
+"score": 1.97
+},
+{
+"id": "Jn5-220",
+"w": "ボールペン",
+"alt": [],
+"r": "ボールペン",
+"en": "ball-point pen",
+"lv": "N5",
+"score": 1.97
+},
+{
+"id": "Jn4-311",
+"w": "戦争",
+"alt": [],
+"r": "せんそう",
+"en": "war",
+"lv": "N4",
+"score": 1.96
+},
+{
+"id": "Jn5-213",
+"w": "豚肉",
+"alt": [],
+"r": "ぶたにく",
+"en": "pork",
+"lv": "N5",
+"score": 1.84
+},
+{
+"id": "Jn5-15",
+"w": "甘い",
+"alt": [],
+"r": "あまい",
+"en": "generous, sweet",
+"lv": "N5",
+"score": 1.82
+},
+{
+"id": "Jn5-110",
+"w": "散歩",
+"alt": [],
+"r": "さんぽ (する)",
+"en": "walk, stroll",
+"lv": "N5",
+"score": 1.82
+},
+{
+"id": "Jn4-255",
+"w": "生きる",
+"alt": [],
+"r": "いきる",
+"en": "to live",
+"lv": "N4",
+"score": 1.82
+},
+{
+"id": "Jn4-405",
+"w": "田舎",
+"alt": [],
+"r": "いなか",
+"en": "rural, countryside",
+"lv": "N4",
+"score": 1.82
+},
+{
+"id": "Jn4-436",
+"w": "濡れる",
+"alt": [],
+"r": "ぬれる",
+"en": "to get wet",
+"lv": "N4",
+"score": 1.82
+},
+{
+"id": "Jn5-35",
+"w": "映画",
+"alt": [],
+"r": "えいが",
+"en": "movie, film",
+"lv": "N5",
+"score": 1.76
+},
+{
+"id": "Jn4-347",
+"w": "海岸",
+"alt": [],
+"r": "かいがん",
+"en": "coast, seashore",
+"lv": "N4",
+"score": 1.76
+},
+{
+"id": "Jn4-395",
+"w": "島",
+"alt": [],
+"r": "しま",
+"en": "island",
+"lv": "N4",
+"score": 1.76
+},
+{
+"id": "Jn5-123",
+"w": "醤油",
+"alt": [],
+"r": "しょうゆ",
+"en": "soy sauce",
+"lv": "N5",
+"score": 1.72
+},
+{
+"id": "Jn5-4",
+"w": "赤い",
+"alt": [],
+"r": "あかい",
+"en": "red",
+"lv": "N5",
+"score": 1.68
+},
+{
+"id": "Jn5-32",
+"w": "うるさい",
+"alt": [],
+"r": "うるさい",
+"en": "noisy; annoying",
+"lv": "N5",
+"score": 1.68
+},
+{
+"id": "Jn5-67",
+"w": "可愛い",
+"alt": [],
+"r": "かわいい",
+"en": "cute, adorable",
+"lv": "N5",
+"score": 1.68
+},
+{
+"id": "Jn5-169",
+"w": "飛ぶ",
+"alt": [],
+"r": "とぶ",
+"en": "to fly, to hop",
+"lv": "N5",
+"score": 1.68
+},
+{
+"id": "Jn5-224",
+"w": "まずい",
+"alt": [],
+"r": "まずい",
+"en": "terrible (in reference to food), unappetizing, unpleasant (taste)",
+"lv": "N5",
+"score": 1.68
+},
+{
+"id": "Jn5-229",
+"w": "三つ",
+"alt": [],
+"r": "みっつ",
+"en": "three things",
+"lv": "N5",
+"score": 1.68
+},
+{
+"id": "Jn5-75",
+"w": "牛肉",
+"alt": [],
+"r": "ぎゅうにく",
+"en": "beef",
+"lv": "N5",
+"score": 1.64
+},
+{
+"id": "Jn4-407",
+"w": "講義",
+"alt": [],
+"r": "こうぎ",
+"en": "a lecture",
+"lv": "N4",
+"score": 1.62
+},
+{
+"id": "Jn5-106",
+"w": "砂糖",
+"alt": [],
+"r": "さとう",
+"en": "sugar",
+"lv": "N5",
+"score": 1.56
+},
+{
+"id": "Jn4-362",
+"w": "科学",
+"alt": [],
+"r": "かがく",
+"en": "science",
+"lv": "N4",
+"score": 1.48
+},
+{
+"id": "Jn5-112",
+"w": "塩",
+"alt": [],
+"r": "しお",
+"en": "salt",
+"lv": "N5",
+"score": 1.44
+},
+{
+"id": "Jn4-292",
+"w": "触る",
+"alt": [],
+"r": "さわる",
+"en": "to touch, to feel",
+"lv": "N4",
+"score": 1.4
+},
+{
+"id": "Jn4-325",
+"w": "歯医者",
+"alt": [],
+"r": "はいしゃ",
+"en": "dentist",
+"lv": "N4",
+"score": 1.4
+},
+{
+"id": "Jn4-369",
+"w": "おもちゃ",
+"alt": [],
+"r": "おもちゃ",
+"en": "a toy",
+"lv": "N4",
+"score": 1.4
+},
+{
+"id": "Jn4-374",
+"w": "あんな",
+"alt": [],
+"r": "あんな",
+"en": "such, like that",
+"lv": "N4",
+"score": 1.4
+},
+{
+"id": "Jn5-249",
+"w": "レコード",
+"alt": [],
+"r": "レコード",
+"en": "record",
+"lv": "N5",
+"score": 1.36
+},
+{
+"id": "Jn5-194",
+"w": "橋",
+"alt": [],
+"r": "はし",
+"en": "bridge",
+"lv": "N5",
+"score": 1.34
+},
+{
+"id": "Jn4-285",
+"w": "中学校",
+"alt": [],
+"r": "ちゅうがっこう",
+"en": "junior high school pupil",
+"lv": "N4",
+"score": 1.28
+},
+{
+"id": "Jn4-319",
+"w": "小学校",
+"alt": [],
+"r": "しょうがっこう",
+"en": "elementary school",
+"lv": "N4",
+"score": 1.28
+},
+{
+"id": "Jn4-313",
+"w": "光る",
+"alt": [],
+"r": "ひかる",
+"en": "to shine, to glitter",
+"lv": "N4",
+"score": 1.26
+},
+{
+"id": "Jn4-337",
+"w": "景色",
+"alt": [],
+"r": "けしき",
+"en": "scenery, landscape",
+"lv": "N4",
+"score": 1.26
+},
+{
+"id": "Jn4-456",
+"w": "テニス",
+"alt": [],
+"r": "テニス",
+"en": "tennis",
+"lv": "N4",
+"score": 1.26
+},
+{
+"id": "Jn4-469",
+"w": "家内",
+"alt": [],
+"r": "かない",
+"en": "(one's own) wife",
+"lv": "N4",
+"score": 1.26
+},
+{
+"id": "Jn5-7",
+"w": "遊ぶ",
+"alt": [],
+"r": "あそぶ",
+"en": "to play; to spend time pleasantly; to hang out",
+"lv": "N5",
+"score": 1.2
+},
+{
+"id": "Jn4-341",
+"w": "石",
+"alt": [],
+"r": "いし",
+"en": "stone",
+"lv": "N4",
+"score": 1.2
+},
+{
+"id": "Jn5-66",
+"w": "川",
+"alt": [
+"河"
+],
+"r": "かわ",
+"en": "river",
+"lv": "N5",
+"score": 1.12
+},
+{
+"id": "Jn5-122",
+"w": "宿題",
+"alt": [],
+"r": "しゅくだい",
+"en": "homework",
+"lv": "N5",
+"score": 1.12
+},
+{
+"id": "Jn5-191",
+"w": "杯",
+"alt": [],
+"r": "～はい",
+"en": "counter for cupfuls",
+"lv": "N5",
+"score": 1.12
+},
+{
+"id": "Jn5-216",
+"w": "ベッド",
+"alt": [],
+"r": "ベッド",
+"en": "bed",
+"lv": "N5",
+"score": 1.12
+},
+{
+"id": "Jn4-268",
+"w": "拾う",
+"alt": [],
+"r": "ひろう",
+"en": "to pick up (something), to find",
+"lv": "N4",
+"score": 1.12
+},
+{
+"id": "Jn4-275",
+"w": "泥棒",
+"alt": [],
+"r": "どろぼう",
+"en": "thief; burglar",
+"lv": "N4",
+"score": 1.12
+},
+{
+"id": "Jn4-287",
+"w": "赤ちゃん",
+"alt": [],
+"r": "あかちゃん",
+"en": "baby, infant",
+"lv": "N4",
+"score": 1.12
+},
+{
+"id": "Jn4-336",
+"w": "サラダ",
+"alt": [],
+"r": "サラダ",
+"en": "salad",
+"lv": "N4",
+"score": 1.12
+},
+{
+"id": "Jn4-355",
+"w": "鏡",
+"alt": [],
+"r": "かがみ",
+"en": "mirror",
+"lv": "N4",
+"score": 1.12
+},
+{
+"id": "Jn5-164",
+"w": "動物",
+"alt": [],
+"r": "どうぶつ",
+"en": "animal",
+"lv": "N5",
+"score": 1.0
+},
+{
+"id": "Jn5-221",
+"w": "ポケット",
+"alt": [],
+"r": "ポケット",
+"en": "pocket",
+"lv": "N5",
+"score": 1.0
+},
+{
+"id": "Jn5-8",
+"w": "熱い",
+"alt": [],
+"r": "あつい",
+"en": "hot (objects)",
+"lv": "N5",
+"score": 0.98
+},
+{
+"id": "Jn5-129",
+"w": "涼しい",
+"alt": [],
+"r": "すずしい",
+"en": "cool, refreshing (in reference to weather)",
+"lv": "N5",
+"score": 0.98
+},
+{
+"id": "Jn5-184",
+"w": "脱ぐ",
+"alt": [],
+"r": "ぬぐ",
+"en": "to take off (clothes)",
+"lv": "N5",
+"score": 0.98
+},
+{
+"id": "Jn4-323",
+"w": "美術館",
+"alt": [],
+"r": "びじゅつかん",
+"en": "art gallery, art museum",
+"lv": "N4",
+"score": 0.98
+},
+{
+"id": "Jn4-328",
+"w": "水道",
+"alt": [],
+"r": "すいどう",
+"en": "water service, water line",
+"lv": "N4",
+"score": 0.98
+},
+{
+"id": "Jn4-368",
+"w": "着物",
+"alt": [],
+"r": "きもの",
+"en": "kimono; Japanese traditional dress",
+"lv": "N4",
+"score": 0.98
+},
+{
+"id": "Jn5-225",
+"w": "マッチ",
+"alt": [],
+"r": "マッチ",
+"en": "match",
+"lv": "N5",
+"score": 0.92
+},
+{
+"id": "Jn4-391",
+"w": "ハンバーグ",
+"alt": [],
+"r": "ハンバーグ",
+"en": "hamburger steak",
+"lv": "N4",
+"score": 0.92
+},
+{
+"id": "Jn4-465",
+"w": "アルコール",
+"alt": [],
+"r": "アルコール",
+"en": "alcohol",
+"lv": "N4",
+"score": 0.92
+},
+{
+"id": "Jn5-5",
+"w": "朝御飯",
+"alt": [],
+"r": "あさごはん",
+"en": "breakfast",
+"lv": "N5",
+"score": 0.84
+},
+{
+"id": "Jn5-17",
+"w": "洗う",
+"alt": [],
+"r": "あらう",
+"en": "to wash",
+"lv": "N5",
+"score": 0.84
+},
+{
+"id": "Jn5-57",
+"w": "女の子",
+"alt": [],
+"r": "おんなのこ",
+"en": "girl",
+"lv": "N5",
+"score": 0.84
+},
+{
+"id": "Jn5-119",
+"w": "シャワー",
+"alt": [],
+"r": "シャワー",
+"en": "shower",
+"lv": "N5",
+"score": 0.84
+},
+{
+"id": "Jn5-241",
+"w": "夕飯",
+"alt": [],
+"r": "ゆうはん",
+"en": "dinner, supper, evening meal",
+"lv": "N5",
+"score": 0.84
+},
+{
+"id": "Jn5-243",
+"w": "洋服",
+"alt": [],
+"r": "ようふく",
+"en": "Western-style clothes",
+"lv": "N5",
+"score": 0.84
+},
+{
+"id": "Jn4-265",
+"w": "大学生",
+"alt": [],
+"r": "だいがくせい",
+"en": "college student, university student",
+"lv": "N4",
+"score": 0.84
+},
+{
+"id": "Jn4-295",
+"w": "逃げる",
+"alt": [],
+"r": "にげる",
+"en": "to escape, to run away",
+"lv": "N4",
+"score": 0.84
+},
+{
+"id": "Jn4-305",
+"w": "投げる",
+"alt": [],
+"r": "なげる",
+"en": "to pitch, to cast away",
+"lv": "N4",
+"score": 0.84
+},
+{
+"id": "Jn4-320",
+"w": "美しい",
+"alt": [],
+"r": "うつくしい",
+"en": "beautiful, lovely",
+"lv": "N4",
+"score": 0.84
+},
+{
+"id": "Jn4-322",
+"w": "試合",
+"alt": [],
+"r": "しあい",
+"en": "match, game, competition",
+"lv": "N4",
+"score": 0.84
+},
+{
+"id": "Jn4-344",
+"w": "お嬢さん",
+"alt": [],
+"r": "おじょうさん",
+"en": "(someone's) daughter (polite)",
+"lv": "N4",
+"score": 0.84
+},
+{
+"id": "Jn4-349",
+"w": "火",
+"alt": [],
+"r": "ひ",
+"en": "fire",
+"lv": "N4",
+"score": 0.84
+},
+{
+"id": "Jn4-455",
+"w": "ガソリンスタンド",
+"alt": [],
+"r": "ガソリンスタンド",
+"en": "gas station, service station",
+"lv": "N4",
+"score": 0.84
+},
+{
+"id": "Jn5-12",
+"w": "アパート",
+"alt": [],
+"r": "アパート",
+"en": "apartment (abbr.)",
+"lv": "N5",
+"score": 0.72
+},
+{
+"id": "Jn5-22",
+"w": "池",
+"alt": [],
+"r": "いけ",
+"en": "pond",
+"lv": "N5",
+"score": 0.72
+},
+{
+"id": "Jn4-382",
+"w": "電灯",
+"alt": [],
+"r": "でんとう",
+"en": "electric light",
+"lv": "N4",
+"score": 0.72
+},
+{
+"id": "Jn5-76",
+"w": "牛乳",
+"alt": [],
+"r": "ぎゅうにゅう",
+"en": "milk",
+"lv": "N5",
+"score": 0.64
+},
+{
+"id": "Jn5-215",
+"w": "太い",
+"alt": [],
+"r": "ふとい",
+"en": "fat, thick",
+"lv": "N5",
+"score": 0.64
+},
+{
+"id": "Jn4-260",
+"w": "うかがう",
+"alt": [],
+"r": "うかがう",
+"en": "to ask",
+"lv": "N4",
+"score": 0.64
+},
+{
+"id": "Jn4-307",
+"w": "星",
+"alt": [],
+"r": "ほし",
+"en": "star",
+"lv": "N4",
+"score": 0.64
+},
+{
+"id": "Jn4-379",
+"w": "血",
+"alt": [],
+"r": "ち",
+"en": "blood",
+"lv": "N4",
+"score": 0.64
+},
+{
+"id": "Jn5-2",
+"w": "青い",
+"alt": [],
+"r": "あおい",
+"en": "blue",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-30",
+"w": "歌う",
+"alt": [],
+"r": "うたう",
+"en": "to sing",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-40",
+"w": "お母さん",
+"alt": [],
+"r": "おかあさん",
+"en": "mother (formal)",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-49",
+"w": "お姉さん",
+"alt": [],
+"r": "おねえさん",
+"en": "older sister (formal)",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-55",
+"w": "泳ぐ",
+"alt": [],
+"r": "およぐ",
+"en": "to swim",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-71",
+"w": "黄色い",
+"alt": [],
+"r": "きいろい",
+"en": "yellow",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-73",
+"w": "汚い",
+"alt": [],
+"r": "きたない",
+"en": "dirty, unclean, filthy",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-82",
+"w": "果物",
+"alt": [],
+"r": "くだもの",
+"en": "fruit",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-102",
+"w": "財布",
+"alt": [],
+"r": "さいふ",
+"en": "wallet",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-104",
+"w": "咲く",
+"alt": [],
+"r": "さく",
+"en": "to bloom",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-125",
+"w": "白い",
+"alt": [],
+"r": "しろい",
+"en": "white",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-136",
+"w": "セーター",
+"alt": [],
+"r": "セーター",
+"en": "sweater",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-137",
+"w": "石鹸",
+"alt": [],
+"r": "せっけん",
+"en": "soap",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-154",
+"w": "茶色",
+"alt": [],
+"r": "ちゃいろ",
+"en": "brown",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-156",
+"w": "冷たい",
+"alt": [],
+"r": "つめたい",
+"en": "cold (things, people)",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-157",
+"w": "テープ",
+"alt": [],
+"r": "テープ",
+"en": "tape",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-170",
+"w": "鳥",
+"alt": [],
+"r": "とり",
+"en": "chicken (lit., bird)",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-174",
+"w": "ナイフ",
+"alt": [],
+"r": "ナイフ",
+"en": "knife",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn5-183",
+"w": "庭",
+"alt": [],
+"r": "にわ",
+"en": "garden",
+"lv": "N5",
+"score": 0.56
+},
+{
+"id": "Jn4-286",
+"w": "噛む",
+"alt": [],
+"r": "かむ",
+"en": "to bite, to chew",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-291",
+"w": "西洋",
+"alt": [],
+"r": "せいよう",
+"en": "the West, Western countries",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-297",
+"w": "地理",
+"alt": [],
+"r": "ちり",
+"en": "geography",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-301",
+"w": "飾る",
+"alt": [],
+"r": "かざる",
+"en": "to decorate, to adorn",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-312",
+"w": "パパ",
+"alt": [],
+"r": "パパ",
+"en": "papa, daddy",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-315",
+"w": "坂",
+"alt": [],
+"r": "さか",
+"en": "slope, hill",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-316",
+"w": "しまう",
+"alt": [],
+"r": "～(て) しまう",
+"en": "to end up ~",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-324",
+"w": "文法",
+"alt": [],
+"r": "ぶんぽう",
+"en": "grammar",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-326",
+"w": "泣く",
+"alt": [],
+"r": "なく",
+"en": "to cry",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-340",
+"w": "乾く",
+"alt": [],
+"r": "かわく",
+"en": "to get dry",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-360",
+"w": "校長",
+"alt": [],
+"r": "こうちょう",
+"en": "principal, headmaster",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-364",
+"w": "入学",
+"alt": [],
+"r": "にゅうがくする",
+"en": "entry to school or university",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-365",
+"w": "教会",
+"alt": [],
+"r": "きょうかい",
+"en": "church",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-367",
+"w": "一杯",
+"alt": [],
+"r": "いっぱい",
+"en": "full, to the utmost",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-378",
+"w": "喉",
+"alt": [],
+"r": "のど",
+"en": "throat",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-403",
+"w": "市民",
+"alt": [],
+"r": "しみん",
+"en": "citizen",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-421",
+"w": "カーテン",
+"alt": [],
+"r": "カーテン",
+"en": "curtain",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-426",
+"w": "数学",
+"alt": [],
+"r": "すうがく",
+"en": "mathematics",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-435",
+"w": "眠い",
+"alt": [],
+"r": "ねむい",
+"en": "sleepy, drowsy",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-445",
+"w": "虫",
+"alt": [],
+"r": "むし",
+"en": "insect",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-447",
+"w": "水泳",
+"alt": [],
+"r": "すいえい",
+"en": "swimming",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-470",
+"w": "指",
+"alt": [],
+"r": "ゆび",
+"en": "finger",
+"lv": "N4",
+"score": 0.56
+},
+{
+"id": "Jn4-257",
+"w": "漫画",
+"alt": [],
+"r": "まんが",
+"en": "comic (book), cartoon",
+"lv": "N4",
+"score": 0.36
+},
+{
+"id": "Jn4-282",
+"w": "揺れる",
+"alt": [],
+"r": "ゆれる",
+"en": "to shake, to sway",
+"lv": "N4",
+"score": 0.36
+},
+{
+"id": "Jn4-330",
+"w": "ベル",
+"alt": [],
+"r": "ベル",
+"en": "bell",
+"lv": "N4",
+"score": 0.36
+},
+{
+"id": "Jn4-448",
+"w": "砂",
+"alt": [],
+"r": "すな",
+"en": "sand",
+"lv": "N4",
+"score": 0.36
+},
+{
+"id": "Jn4-461",
+"w": "糸",
+"alt": [],
+"r": "いと",
+"en": "thread",
+"lv": "N4",
+"score": 0.36
+},
+{
+"id": "Jn5-11",
+"w": "姉",
+"alt": [],
+"r": "あね",
+"en": "(my) older sister (humble)",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-14",
+"w": "浴びる",
+"alt": [],
+"r": "あびる",
+"en": "to bathe, to shower",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-26",
+"w": "妹",
+"alt": [],
+"r": "いもうと",
+"en": "younger sister (humble)",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-29",
+"w": "歌",
+"alt": [],
+"r": "うた",
+"en": "a song",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-34",
+"w": "絵",
+"alt": [],
+"r": "え",
+"en": "a painting; a picture; a drawing",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-42",
+"w": "伯父",
+"alt": [
+"叔父さん"
+],
+"r": "おじさん",
+"en": "uncle, middle-aged man",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-51",
+"w": "おばあさん",
+"alt": [],
+"r": "おばあさん",
+"en": "grandmother, female senior-citizen",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-52",
+"w": "お風呂",
+"alt": [],
+"r": "おふろ",
+"en": "a bath",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-62",
+"w": "花瓶",
+"alt": [],
+"r": "かびん",
+"en": "(flower) vase",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-70",
+"w": "黄色",
+"alt": [],
+"r": "きいろ",
+"en": "yellow",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-78",
+"w": "兄弟",
+"alt": [],
+"r": "きょうだい",
+"en": "siblings (humble), brothers and sisters",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-91",
+"w": "紅茶",
+"alt": [],
+"r": "こうちゃ",
+"en": "black tea",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-96",
+"w": "コップ",
+"alt": [],
+"r": "コップ",
+"en": "a tumbler; a glass",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-126",
+"w": "吸う",
+"alt": [],
+"r": "すう",
+"en": "to breathe in, to suck",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-127",
+"w": "スカート",
+"alt": [],
+"r": "スカート",
+"en": "skirt",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-133",
+"w": "ズボン",
+"alt": [],
+"r": "ズボン",
+"en": "trousers",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-153",
+"w": "誕生日",
+"alt": [],
+"r": "たんじょうび",
+"en": "birthday",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-167",
+"w": "図書館",
+"alt": [],
+"r": "としょかん",
+"en": "library",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-186",
+"w": "ネクタイ",
+"alt": [],
+"r": "ネクタイ",
+"en": "tie, necktie",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-187",
+"w": "猫",
+"alt": [],
+"r": "ねこ",
+"en": "cat",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-195",
+"w": "箸",
+"alt": [],
+"r": "はし",
+"en": "chopsticks",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-197",
+"w": "バター",
+"alt": [],
+"r": "バター",
+"en": "butter",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-202",
+"w": "晩御飯",
+"alt": [],
+"r": "ばんごはん",
+"en": "dinner, evening meal",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-203",
+"w": "匹",
+"alt": [],
+"r": "～ひき",
+"en": "counter for small animals",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-204",
+"w": "弾く",
+"alt": [],
+"r": "ひく",
+"en": "to play (a string instrument or piano)",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-205",
+"w": "一月",
+"alt": [],
+"r": "ひとつき",
+"en": "one month",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-209",
+"w": "プール",
+"alt": [],
+"r": "プール",
+"en": "swimming pool",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-210",
+"w": "フォーク",
+"alt": [],
+"r": "フォーク",
+"en": "fork",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-226",
+"w": "丸い",
+"alt": [
+"円い"
+],
+"r": "まるい",
+"en": "round, circular",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-236",
+"w": "門",
+"alt": [],
+"r": "もん",
+"en": "gate",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-237",
+"w": "八百屋",
+"alt": [],
+"r": "やおや",
+"en": "greengrocer",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn5-242",
+"w": "ゆっくりと",
+"alt": [],
+"r": "ゆっくりと",
+"en": "slowly, at ease",
+"lv": "N5",
+"score": 0.28
+},
+{
+"id": "Jn4-290",
+"w": "小説",
+"alt": [],
+"r": "しょうせつ",
+"en": "novel",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-294",
+"w": "捕まえる",
+"alt": [],
+"r": "つかまえる",
+"en": "to catch, to arrest",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-310",
+"w": "痩せる",
+"alt": [],
+"r": "やせる",
+"en": "to lose weight",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-333",
+"w": "祖母",
+"alt": [],
+"r": "そぼ",
+"en": "grandmother",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-350",
+"w": "味噌",
+"alt": [],
+"r": "みそ",
+"en": "miso, bean paste",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-351",
+"w": "乗り物",
+"alt": [],
+"r": "のりもの",
+"en": "vehicle",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-358",
+"w": "ワープロ",
+"alt": [],
+"r": "ワープロ",
+"en": "word processor",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-371",
+"w": "釣る",
+"alt": [],
+"r": "つる",
+"en": "to fish",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-397",
+"w": "よると",
+"alt": [],
+"r": "～(に) よると",
+"en": "according to ~",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-399",
+"w": "髪",
+"alt": [],
+"r": "かみ",
+"en": "hair",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-402",
+"w": "騒ぐ",
+"alt": [],
+"r": "さわぐ",
+"en": "to make noise, to clamor",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-406",
+"w": "高校生",
+"alt": [],
+"r": "こうこうせい",
+"en": "high school student",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-412",
+"w": "寺",
+"alt": [],
+"r": "てら",
+"en": "Buddhist temple",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-417",
+"w": "下る",
+"alt": [],
+"r": "さがる",
+"en": "to descend, to drop, to fall",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-423",
+"w": "太る",
+"alt": [],
+"r": "ふとる",
+"en": "to gain weight",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-429",
+"w": "冷える",
+"alt": [],
+"r": "ひえる",
+"en": "to grow cold, to cool down",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-437",
+"w": "アクセサリー",
+"alt": [],
+"r": "アクセサリー",
+"en": "accessory",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-439",
+"w": "スーツケース",
+"alt": [],
+"r": "スーツケース",
+"en": "suitcase",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-449",
+"w": "復習",
+"alt": [],
+"r": "ふくしゅう",
+"en": "review (of lessons), revision",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn4-460",
+"w": "湖",
+"alt": [],
+"r": "みずうみ",
+"en": "lake",
+"lv": "N4",
+"score": 0.28
+},
+{
+"id": "Jn5-10",
+"w": "兄",
+"alt": [],
+"r": "あに",
+"en": "(my) older brother (humble)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-16",
+"w": "飴",
+"alt": [],
+"r": "あめ",
+"en": "(hard) candy",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-24",
+"w": "五つ",
+"alt": [],
+"r": "いつつ",
+"en": "five things",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-36",
+"w": "映画館",
+"alt": [],
+"r": "えいがかん",
+"en": "movie theater, cinema",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-38",
+"w": "鉛筆",
+"alt": [],
+"r": "えんぴつ",
+"en": "pencil",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-39",
+"w": "お",
+"alt": [],
+"r": "お～",
+"en": "honorable ~ (honorific)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-41",
+"w": "お皿",
+"alt": [],
+"r": "おさら",
+"en": "plate, dish",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-43",
+"w": "おじいさん",
+"alt": [],
+"r": "おじいさん",
+"en": "grandfather, male senior citizen",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-46",
+"w": "男の子",
+"alt": [],
+"r": "おとこのこ",
+"en": "boy",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-48",
+"w": "お兄さん",
+"alt": [],
+"r": "おにいさん",
+"en": "(someone else's) older brother (formal)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-50",
+"w": "伯母さん",
+"alt": [
+"叔母さん"
+],
+"r": "おばさん",
+"en": "aunt",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-54",
+"w": "おまわりさん",
+"alt": [],
+"r": "おまわりさん",
+"en": "policeman (friendly term)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-59",
+"w": "片仮名",
+"alt": [],
+"r": "かたかな",
+"en": "katakana",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-72",
+"w": "ギター",
+"alt": [],
+"r": "ギター",
+"en": "guitar",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-74",
+"w": "九",
+"alt": [],
+"r": "きゅう",
+"en": "nine",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-81",
+"w": "九",
+"alt": [],
+"r": "く",
+"en": "nine",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-84",
+"w": "靴下",
+"alt": [],
+"r": "くつした",
+"en": "socks",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-85",
+"w": "曇る",
+"alt": [],
+"r": "くもる",
+"en": "to become cloudy, to become dim",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-89",
+"w": "警官",
+"alt": [],
+"r": "けいかん",
+"en": "police officer",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-90",
+"w": "五",
+"alt": [],
+"r": "ご",
+"en": "five",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-92",
+"w": "交番",
+"alt": [],
+"r": "こうばん",
+"en": "police box",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-95",
+"w": "九つ",
+"alt": [],
+"r": "ここのつ",
+"en": "nine things",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-105",
+"w": "作文",
+"alt": [],
+"r": "さくぶん",
+"en": "essay; composition",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-107",
+"w": "さ来年",
+"alt": [],
+"r": "さらいねん",
+"en": "year after next",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-109",
+"w": "三",
+"alt": [],
+"r": "さん",
+"en": "three",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-111",
+"w": "四",
+"alt": [],
+"r": "し",
+"en": "four",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-113",
+"w": "辞書",
+"alt": [],
+"r": "じしょ",
+"en": "dictionary",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-114",
+"w": "七",
+"alt": [],
+"r": "しち",
+"en": "seven",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-115",
+"w": "死ぬ",
+"alt": [],
+"r": "しぬ",
+"en": "to die",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-116",
+"w": "字引",
+"alt": [],
+"r": "じびき",
+"en": "dictionary",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-120",
+"w": "十",
+"alt": [],
+"r": "じゅう",
+"en": "ten",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-130",
+"w": "ストーブ",
+"alt": [],
+"r": "ストーブ",
+"en": "heater (lit: stove)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-131",
+"w": "スプーン",
+"alt": [],
+"r": "スプーン",
+"en": "spoon",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-134",
+"w": "背",
+"alt": [],
+"r": "せい",
+"en": "(one's) height, stature",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-138",
+"w": "背広",
+"alt": [],
+"r": "せびろ",
+"en": "men's suit",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-146",
+"w": "台所",
+"alt": [],
+"r": "だいどころ",
+"en": "kitchen",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-147",
+"w": "だけ",
+"alt": [],
+"r": "～だけ",
+"en": "only ~, just ~, as ~",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-148",
+"w": "たて",
+"alt": [],
+"r": "たて",
+"en": "length, height",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-149",
+"w": "たばこ",
+"alt": [],
+"r": "たばこ",
+"en": "tobacco, cigarettes",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-155",
+"w": "茶碗",
+"alt": [],
+"r": "ちゃわん",
+"en": "rice bowl",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-158",
+"w": "テープレコーダー",
+"alt": [],
+"r": "テープレコーダー",
+"en": "tape recorder",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-159",
+"w": "では",
+"alt": [],
+"r": "では",
+"en": "then, well, so",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-160",
+"w": "でも",
+"alt": [],
+"r": "でも",
+"en": "but, however",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-165",
+"w": "十",
+"alt": [],
+"r": "(〜を) とお",
+"en": "ten (~)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-171",
+"w": "鶏肉",
+"alt": [],
+"r": "とりにく",
+"en": "chicken meat",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-175",
+"w": "鳴く",
+"alt": [],
+"r": "なく",
+"en": "to make sound (animal)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-177",
+"w": "など",
+"alt": [],
+"r": "～など",
+"en": "et cetera",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-178",
+"w": "七つ",
+"alt": [],
+"r": "ななつ",
+"en": "seven things",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-180",
+"w": "何",
+"alt": [],
+"r": "なん～",
+"en": "what sort of ~",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-181",
+"w": "二",
+"alt": [],
+"r": "に",
+"en": "two",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-185",
+"w": "温い",
+"alt": [],
+"r": "ぬるい",
+"en": "lukewarm",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-192",
+"w": "灰皿",
+"alt": [],
+"r": "はいざら",
+"en": "ashtray",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-193",
+"w": "はく",
+"alt": [],
+"r": "はく",
+"en": "to put on (items below your waist)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-198",
+"w": "二十歳",
+"alt": [],
+"r": "はたち",
+"en": "20 years old",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-199",
+"w": "八",
+"alt": [],
+"r": "はち",
+"en": "eight",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-201",
+"w": "ハンカチ",
+"alt": [],
+"r": "ハンカチ",
+"en": "handkerchief",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-211",
+"w": "吹く",
+"alt": [],
+"r": "ふく",
+"en": "to blow (wind, etc.)",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-222",
+"w": "細い",
+"alt": [],
+"r": "ほそい",
+"en": "thin, slender, fine",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-223",
+"w": "本棚",
+"alt": [],
+"r": "ほんだな",
+"en": "bookshelf",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-227",
+"w": "万年筆",
+"alt": [],
+"r": "まんねんひつ",
+"en": "fountain pen",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-228",
+"w": "磨く",
+"alt": [],
+"r": "みがく",
+"en": "to brush (teeth); to polish",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-232",
+"w": "六つ",
+"alt": [],
+"r": "むっつ",
+"en": "six things",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-233",
+"w": "村",
+"alt": [],
+"r": "むら",
+"en": "village",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-238",
+"w": "八つ",
+"alt": [],
+"r": "やっつ",
+"en": "eight things",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-244",
+"w": "四つ",
+"alt": [],
+"r": "よっつ",
+"en": "four things",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-245",
+"w": "ラジオ",
+"alt": [],
+"r": "ラジオ",
+"en": "radio",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-246",
+"w": "ラジオカセ",
+"alt": [],
+"r": "ラジオカセ",
+"en": "radio cassette player",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-247",
+"w": "零",
+"alt": [],
+"r": "れい",
+"en": "zero, nought",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-250",
+"w": "六",
+"alt": [],
+"r": "ろく",
+"en": "six",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn5-251",
+"w": "ワイシャツ",
+"alt": [],
+"r": "ワイシャツ",
+"en": "shirt (lit: white shirt), business shirt",
+"lv": "N5",
+"score": 0.0
+},
+{
+"id": "Jn4-253",
+"w": "すっと",
+"alt": [],
+"r": "すっと",
+"en": "straight, quickly",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-256",
+"w": "苦い",
+"alt": [],
+"r": "にがい",
+"en": "bitter",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-258",
+"w": "ステレオ",
+"alt": [],
+"r": "ステレオ",
+"en": "stereo",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-259",
+"w": "医学",
+"alt": [],
+"r": "いがく",
+"en": "medical science",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-262",
+"w": "床屋",
+"alt": [],
+"r": "とこや",
+"en": "barber's (shop)",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-263",
+"w": "オートバイ",
+"alt": [],
+"r": "オートバイ",
+"en": "motorcycle (lit: auto-bi(ke))",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-266",
+"w": "予習",
+"alt": [],
+"r": "よしゅう",
+"en": "preparation of lessons (for class)",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-267",
+"w": "柔らかい",
+"alt": [],
+"r": "やわらかい",
+"en": "soft (in reference to texture), tender",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-270",
+"w": "発音",
+"alt": [],
+"r": "はつおん",
+"en": "pronunciation",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-272",
+"w": "アフリカ",
+"alt": [],
+"r": "アフリカ",
+"en": "Africa",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-274",
+"w": "布団",
+"alt": [],
+"r": "ふとん",
+"en": "futon",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-277",
+"w": "そう",
+"alt": [],
+"r": "そう",
+"en": "really, (is that) so; yes, right",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-278",
+"w": "葉",
+"alt": [],
+"r": "は",
+"en": "leaf",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-280",
+"w": "絹",
+"alt": [],
+"r": "きぬ",
+"en": "silk",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-283",
+"w": "落る",
+"alt": [],
+"r": "おちる",
+"en": "to fall, to drop",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-284",
+"w": "悲しい",
+"alt": [],
+"r": "かなしい",
+"en": "sad, sorrowful",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-293",
+"w": "動物園",
+"alt": [],
+"r": "どうぶつえん",
+"en": "zoo",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-296",
+"w": "畳",
+"alt": [],
+"r": "たたみ",
+"en": "tatami mat (Japanese straw mat)",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-300",
+"w": "人形",
+"alt": [],
+"r": "にんぎょう",
+"en": "doll, figure",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-303",
+"w": "いくらても",
+"alt": [],
+"r": "いくら～ても",
+"en": "however much one may ~",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-304",
+"w": "けんかする",
+"alt": [],
+"r": "けんかする",
+"en": "quarrel",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-308",
+"w": "ぶどう",
+"alt": [],
+"r": "ぶどう",
+"en": "grapes",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-314",
+"w": "雲",
+"alt": [],
+"r": "くも",
+"en": "cloud",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-317",
+"w": "飛行場",
+"alt": [],
+"r": "ひこうじょう",
+"en": "airport",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-318",
+"w": "柔道",
+"alt": [],
+"r": "じゅうどう",
+"en": "judo",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-327",
+"w": "お祭り",
+"alt": [],
+"r": "おまつり",
+"en": "festival",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-331",
+"w": "赤ん坊",
+"alt": [],
+"r": "あかんぼう",
+"en": "baby",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-332",
+"w": "辞典",
+"alt": [],
+"r": "じてん",
+"en": "encyclopedia, reference book",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-334",
+"w": "漬ける",
+"alt": [],
+"r": "つける",
+"en": "to soak, to moisten, to pickle",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-335",
+"w": "けがする",
+"alt": [],
+"r": "けがする",
+"en": "injury (to animate object), hurt",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-339",
+"w": "森",
+"alt": [],
+"r": "もり",
+"en": "forest",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-342",
+"w": "踊る",
+"alt": [],
+"r": "おどる",
+"en": "to dance",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-343",
+"w": "塗る",
+"alt": [],
+"r": "ぬる",
+"en": "to paint, to plaster",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-345",
+"w": "アナウンサー",
+"alt": [],
+"r": "アナウンサー",
+"en": "announcer",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-346",
+"w": "消しゴム",
+"alt": [],
+"r": "けしゴム",
+"en": "eraser",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-352",
+"w": "小鳥",
+"alt": [],
+"r": "ことり",
+"en": "small bird",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-353",
+"w": "下宿",
+"alt": [],
+"r": "げしゅく",
+"en": "lodging, boarding house",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-354",
+"w": "ジャム",
+"alt": [],
+"r": "ジャム",
+"en": "jam",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-356",
+"w": "楽む",
+"alt": [],
+"r": "たのしむ",
+"en": "to enjoy",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-361",
+"w": "踊り",
+"alt": [],
+"r": "おどり",
+"en": "dance",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-363",
+"w": "祖父",
+"alt": [],
+"r": "そふ",
+"en": "grandfather",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-370",
+"w": "暮れる",
+"alt": [],
+"r": "くれる",
+"en": "to get dark, to come to an end",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-376",
+"w": "隅",
+"alt": [],
+"r": "すみ",
+"en": "corner",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-380",
+"w": "毛",
+"alt": [],
+"r": "け",
+"en": "hair, fur",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-381",
+"w": "押し入れ",
+"alt": [],
+"r": "おしいれ",
+"en": "closet",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-384",
+"w": "サンダル",
+"alt": [],
+"r": "サンダル",
+"en": "sandal",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-386",
+"w": "講堂",
+"alt": [],
+"r": "こうどう",
+"en": "auditorium",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-388",
+"w": "沸かす",
+"alt": [],
+"r": "わかす",
+"en": "to boil",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-389",
+"w": "下着",
+"alt": [],
+"r": "したぎ",
+"en": "underwear",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-392",
+"w": "遊び",
+"alt": [],
+"r": "あそび",
+"en": "play",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-394",
+"w": "お金持ち",
+"alt": [],
+"r": "かねもち; おかねもち",
+"en": "rich person",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-398",
+"w": "堅",
+"alt": [
+"硬",
+"固い"
+],
+"r": "かたい",
+"en": "solid, hard, firm",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-401",
+"w": "枝",
+"alt": [],
+"r": "えだ",
+"en": "branch, twig",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-404",
+"w": "指輪",
+"alt": [],
+"r": "ゆびわ",
+"en": "(finger) ring",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-410",
+"w": "日記",
+"alt": [],
+"r": "にっき",
+"en": "diary, journal",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-415",
+"w": "文学",
+"alt": [],
+"r": "ぶんがく",
+"en": "literature",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-419",
+"w": "あ",
+"alt": [],
+"r": "あ",
+"en": "Ah",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-420",
+"w": "展覧会",
+"alt": [],
+"r": "てんらんかい",
+"en": "exhibition",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-422",
+"w": "汽車",
+"alt": [],
+"r": "きしゃ",
+"en": "train (steam)",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-424",
+"w": "注射",
+"alt": [],
+"r": "ちゅうしゃ",
+"en": "injection",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-425",
+"w": "御",
+"alt": [],
+"r": "ご～",
+"en": "honorable ~",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-427",
+"w": "焼ける",
+"alt": [],
+"r": "やける",
+"en": "to burn, to be roasted",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-431",
+"w": "背中",
+"alt": [],
+"r": "せなか",
+"en": "back (of body)",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-432",
+"w": "新聞社",
+"alt": [],
+"r": "しんぶんしゃ",
+"en": "newspaper company",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-433",
+"w": "いじめる",
+"alt": [],
+"r": "いじめる",
+"en": "to bully, to torment",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-434",
+"w": "君",
+"alt": [],
+"r": "～くん",
+"en": "Mr. (junior) ~, master ~",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-440",
+"w": "ひげ",
+"alt": [],
+"r": "ひげ",
+"en": "beard",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-444",
+"w": "コンサート",
+"alt": [],
+"r": "コンサート",
+"en": "concert",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-446",
+"w": "植える",
+"alt": [],
+"r": "うえる",
+"en": "to plant",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-450",
+"w": "真中",
+"alt": [],
+"r": "まんなか",
+"en": "middle, center",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-453",
+"w": "看護婦",
+"alt": [],
+"r": "かんごふ",
+"en": "(female) nurse",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-454",
+"w": "見物",
+"alt": [],
+"r": "けんぶつ",
+"en": "sightseeing",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-459",
+"w": "湯",
+"alt": [],
+"r": "ゆ",
+"en": "hot water",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-462",
+"w": "ピアノ",
+"alt": [],
+"r": "ピアノ",
+"en": "piano",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-463",
+"w": "木綿",
+"alt": [],
+"r": "もめん",
+"en": "cotton",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-464",
+"w": "すり",
+"alt": [],
+"r": "すり",
+"en": "pickpocket",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-466",
+"w": "神社",
+"alt": [],
+"r": "じんじゃ",
+"en": "Shinto shrine",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-467",
+"w": "大分",
+"alt": [],
+"r": "だいぶ",
+"en": "fairly well, to a large extent, considerably, pretty much",
+"lv": "N4",
+"score": 0.0
+},
+{
+"id": "Jn4-468",
+"w": "電報",
+"alt": [],
+"r": "でんぽう",
+"en": "telegram",
+"lv": "N4",
+"score": 0.0
+}
+]

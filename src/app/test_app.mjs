@@ -10,7 +10,7 @@ const byId = new Map(data.words.map(w => [w.id, w]));
 let pass = 0, fail = 0;
 const ok = (c, m) => { if (c) { pass++; console.log('  ok  ', m); } else { fail++; console.log('  FAIL', m); } };
 
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' }).catch(() => chromium.launch());
+const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) }).catch(() => chromium.launch());
 async function newPage(vp, init) {
   const ctx = await browser.newContext({ viewport: vp, serviceWorkers: 'block' });
   await ctx.addInitScript(() => { try { localStorage.setItem('bjt500.kzunit', '1'); } catch (e) {} });

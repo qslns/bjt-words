@@ -1,7 +1,7 @@
 // 10/17 버그 점검: 아이패드 세로, 손가락 탭(touch)으로 실제 공부 흐름 한 바퀴
 import { chromium } from 'playwright';
 const URL = process.env.URL || 'http://127.0.0.1:8766/';
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
 const ctx = await browser.newContext({ viewport: { width: 820, height: 1180 }, deviceScaleFactor: 1, serviceWorkers: 'block', hasTouch: true, isMobile: true });
 const page = await ctx.newPage(); const errs = [], log = [];
 page.on('pageerror', e => errs.push(String(e)));

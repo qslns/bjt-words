@@ -1,7 +1,7 @@
 // 실제 손가락처럼 '조금 움직이며 탭'했을 때 버튼이 눌리는지 (CDP 터치)
 import { chromium } from 'playwright';
 const BASE = process.env.BASE || 'http://127.0.0.1:8765/';
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
 const ctx = await browser.newContext({ viewport: { width: 1180, height: 820 }, serviceWorkers: 'block', hasTouch: true, isMobile: false });
 const page = await ctx.newPage();
 await page.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());

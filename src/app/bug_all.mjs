@@ -3,7 +3,7 @@ import { chromium } from 'playwright';
 const URL = process.env.URL || 'http://127.0.0.1:8766/';
 const VPS = (process.env.VPS || '820x1180').split(',').map(s => { const [w, h] = s.split('x').map(Number); return { width: w, height: h }; });
 const PART = process.env.PART || 'wk';
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
 const out = {};
 for (const vp of VPS) {
   const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: 1, serviceWorkers: 'block', hasTouch: true });

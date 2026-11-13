@@ -3,7 +3,7 @@ import { chromium } from 'playwright';
 const BASE = process.env.BASE || 'http://127.0.0.1:8765/';
 let pass = 0, fail = 0;
 const ok = (c, m) => { if (c) { pass++; console.log('  ok  ', m); } else { fail++; console.log('  FAIL', m); } };
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
 const ctx = await browser.newContext({ viewport: { width: 820, height: 1180 }, serviceWorkers: 'block', hasTouch: true });
 const page = await ctx.newPage(); const errs = [];
 page.on('pageerror', e => errs.push(String(e)));
