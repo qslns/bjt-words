@@ -13,6 +13,7 @@ const sheetOpen = () => page.evaluate(() => !document.getElementById('sheet').hi
 await page.goto(URL + '?t=' + Date.now());
 await page.waitForSelector('#v-home details.gf', { state: 'attached', timeout: 60000 });
 // 1) 1부 펼치고 第1章
+if (await page.locator('#v-home details[data-g="P"]').count()) await tap('#v-home details[data-g="P"] > summary');   /* 11/13: 1부는 큰 접기 'BJT 단어'(P) 안 */
 await tap('#v-home details[data-g="p0"] > summary');
 await tap('#v-home details[data-g="p0"] .book[data-i="0"]');
 await page.waitForSelector('#v-study .cf-word');

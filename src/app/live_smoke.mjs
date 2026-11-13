@@ -8,6 +8,7 @@ await page.goto('https://qslns.github.io/bjt-words/?t=' + Date.now());
 await page.waitForSelector('#v-home details.gf', { state: 'attached', timeout: 60000 });
 const r = await page.evaluate(() => ({ groups: document.querySelectorAll('#v-home details.gf').length, open: document.querySelectorAll('#v-home details.gf[open]').length, kz: !!document.getElementById('v-kanji'), ver: document.querySelector('#v-home .ver').textContent, av: Object.keys(window.__t.AV).length }));
 console.log(JSON.stringify(r));
+if (await page.locator('#v-home details[data-g="P"]').count()) await page.locator('#v-home details[data-g="P"] > summary').click();   /* 11/13: 1부는 큰 접기 'BJT 단어'(P) 안 */
 await page.locator('#v-home details[data-g="p0"] > summary').click();
 await page.locator('#v-home details[data-g="p0"] .book').first().click();
 await page.waitForSelector('#v-study');

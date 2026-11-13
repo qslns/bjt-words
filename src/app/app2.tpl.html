@@ -534,8 +534,15 @@ u.em{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-of
 .gf .g-on{font-size:12px;font-weight:700;color:var(--stamp);border:1px solid var(--stamp);border-radius:999px;padding:1px 8px}
 .gf .fold{font-size:13px;color:var(--ink-3);white-space:nowrap}
 .gf .fold::after{content:"펼치기 +"}
-.gf[open] .fold::after{content:"접기 −"}
+.gf[open]>summary .fold::after{content:"접기 −"}
 .gf>.g-in{padding:2px 14px 16px;display:flex;flex-direction:column;gap:10px}
+/* 11/13: 큰 접기 안의 500개 묶음 접기 */
+.gf .gf{border-radius:10px}
+.gf .gf>summary{min-height:50px;padding:8px 14px}
+.gf .gf>summary b{font-size:16px}
+.gf .gf>.g-in{padding:2px 12px 14px}
+.dchip.dq{font-size:13px;font-weight:600;padding:3px 10px;color:var(--ink-2);border:1px dashed var(--ink-3);background:transparent}
+.dchip.dq:active{background:var(--surface-2)}
 
 /* ---------- 10/15 편의성 ---------- */
 /* 화면 전체가 출렁이며 밀리는 것 줄이기(레이아웃·터치는 그대로) */
@@ -613,7 +620,7 @@ button.lk-big:active,button.sk-k:active{background:var(--surface-2)}
 #v-kz .ab{max-width:none;min-width:0}
 #v-kz .ab-next{grid-column:span 2;max-width:none}
 #v-kz .kz-card{width:100%;max-width:980px;margin:6px auto 0}
-.kzu-ph{font-size:13px;font-weight:600;color:var(--ink-2);margin-top:4px}
+.kzu-ph,.g-ph{font-size:13px;font-weight:600;color:var(--ink-2);margin-top:4px}
 /* 다크 모드: 카드 안 회색 글씨만 앱 회색으로(밝은 바탕 칸은 카드 색 그대로) */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kz-card{--kz-ink2:var(--ink-2);--kz-ink3:var(--ink-3)}}
 :root[data-theme="dark"] .kz-card{--kz-ink2:var(--ink-2);--kz-ink3:var(--ink-3)}
@@ -1522,7 +1529,7 @@ function bookHTML(c, wide) {
 }
 function renderHome() {
   const now = Date.now(), ex = examDay(), D = ex - calDay(now);
-  const ddTxt = D > 0 ? 'D-' + D : D === 0 ? 'D-DAY' : 'D+' + (-D);
+  const ddTxt = D > 0 ? 'D-' + D : 'D-DAY';
   const res = findResume();
   let banner;
   if (res) {
@@ -1541,7 +1548,8 @@ function renderHome() {
   const syncTxt = Sync.state === 'cloud' ? '계정에 저장 중 · 다른 기기에서도 이어집니다' : Sync.state === 'local' ? (IS_PWA ? (STANDALONE ? '이 앱에 자동 저장 · 백업은 설정 › 진도 백업' : 'Safari 탭에 저장 중 · 홈 화면 앱과는 따로 저장돼요') : '이 브라우저에만 저장 중 · claude.ai 안에서 열면 계정에 저장') : '저장소 연결 중…';
   V.home.innerHTML =
     '<header class="bar"><div class="brand"><b>BJT</b><span>단어 회독 ' + TOTAL.toLocaleString() + (BTOTAL ? '<small class="b-sub2"> + 기본 ' + BTOTAL + '</small>' : '') + '</span></div>' +
-      '<span class="dchip" title="' + (exD.getUTCMonth() + 1) + '/' + exD.getUTCDate() + '(' + WD[exD.getUTCDay()] + ') 시험">' + ddTxt + '</span><div class="grow"></div>' +
+      (D < 0 ? '<button class="dchip dq" data-act="examSet" aria-label="다음 시험일 정하기">시험일?</button>'
+        : '<span class="dchip" title="' + (exD.getUTCMonth() + 1) + '/' + exD.getUTCDate() + '(' + WD[exD.getUTCDay()] + ') 시험">' + ddTxt + '</span>') + '<div class="grow"></div>' +
       (FS.ok && !STANDALONE ? '<button class="tb" data-act="full" aria-label="전체화면">' + ICON.full + '<span class="sm-hide">전체화면</span></button>' : '') +
       '<button class="tb" data-act="settings" aria-label="설정">' + ICON.gear + '</button></header>' +
     '<div class="scroll"><div class="wrap home">' + installHint() + weakTopHTML() + banner + basicHTML() + partsHTML() + kzHomeHTML() +
@@ -1578,7 +1586,8 @@ function liteHTML() {
     '<div class="lite-acts"><button class="btn stamp big" data-act="ltGo">' + (started ? '이어서 · No.' + p : '시작하기') + ' →</button>' +
       (started ? '<button class="btn big" data-act="ltRestart">처음부터</button>' : '') + '</div></section>';
 }
-/* 홈의 큰 묶음(0부·1부…)은 접어 두고 눌러서 펼침. 펼친 묶음은 앱을 쓰는 동안 기억(홈을 다시 그려도 유지) */
+/* 홈의 묶음은 접어 두고 눌러서 펼침: 큰 접기(기본 B · BJT 단어 P · 한자 kz) 안에 500개 묶음 접기(b0… · p0…).
+   펼친 묶음은 앱을 쓰는 동안 기억(홈을 다시 그려도 유지, 큰 접기를 닫아도 안쪽 펼침은 그대로) */
 const GOPEN = new Set();
 document.addEventListener('toggle', e => { const d = e.target; if (d && d.matches && d.matches('details.gf[data-g]')) { if (d.open) GOPEN.add(d.dataset.g); else GOPEN.delete(d.dataset.g); } }, true);
 function foldHTML(key, cls, title, range, cs, inner, st) {
@@ -1587,31 +1596,28 @@ function foldHTML(key, cls, title, range, cs, inner, st) {
     '<summary class="grp-h"><b>' + title + '</b><span>' + range + '</span><span class="g-p">끝낸 장 ' + done + '/' + cs.length + '</span>' + (on ? '<span class="g-on">진행중</span>' : '') + '<i class="rule"></i><span class="fold"></span></summary>' +
     '<div class="g-in">' + inner + '</div></details></section>';
 }
+/* 큰 접기 하나: 머리(이름·범위·그 묶음 모든 장의 끝낸 장·진행중) + 안내 한 줄 + 500개 묶음 작은 접기들 + 맨 아래 총정리 카드 */
+function bigFoldHTML(key, cls, title, range, note, cs, sub, allName) {
+  const parts = [];
+  cs.forEach(c => { if (c.kind !== 'all') (parts[c.part] = parts[c.part] || []).push(c); });
+  const all = cs.find(c => c.kind === 'all');
+  const inner = '<p class="part-h">' + note + '</p>' +
+    parts.map((ps, p) => { const s = sub(p); return foldHTML(s.key, cls, s.title, s.range, ps, '<div class="books">' + ps.map(c => bookHTML(c)).join('') + '</div>'); }).join('') +
+    (all ? '<p class="g-ph">' + allName + '</p><div class="books">' + bookHTML(all) + '</div>' : '');
+  return foldHTML(key, cls, title, range, cs, inner);
+}
 function basicHTML() {
   if (!BTOTAL) return '';
-  const cs = CHAPTERS.filter(c => c.basic), parts = [];
-  cs.forEach(c => { if (c.kind !== 'all') (parts[c.part] = parts[c.part] || []).push(c); });
-  const allc = cs.find(c => c.kind === 'all');
-  return parts.map((ps, p) => {
-    const a = p * 500 + 1, b = Math.min(BTOTAL, a + 499);
-    return foldHTML('b' + p, 'grp-basic', '0부 · 기본' + (parts.length > 1 ? ' ' + (p + 1) : ''), '기본 ' + a + '–' + b, ps,
-      (p === 0 ? '<p class="part-h">N5·N4 단어 중 BJT에 나오는 기초 단어 · 1500 단어와 겹치는 건 같은 카드 · 250개씩 50개 단위로 쌓아 가며 회독</p>' : '') +
-      '<div class="books">' + ps.map(c => bookHTML(c)).join('') + '</div>');
-  }).join('') + (allc ? '<section class="grp grp-basic"><div class="grp-h"><b>기본 전체 총정리</b><span>기본 1–' + BTOTAL + '</span><i class="rule"></i></div><div class="books">' + bookHTML(allc) + '</div></section>' : '');
+  const cs = CHAPTERS.filter(c => c.basic);
+  return bigFoldHTML('B', 'grp-basic', '0부 · 기본', '기본 1–' + BTOTAL, 'N5·N4 기초 단어 · BJT 단어와 겹치는 건 같은 카드 · 250개씩 50개 단위로 쌓아 가며 회독', cs,
+    p => ({key: 'b' + p, title: '기본 ' + (p + 1), range: '기본 ' + (p * 500 + 1) + '–' + Math.min(BTOTAL, p * 500 + 500)}), '기본 전체 총정리');
 }
 function partsHTML() {
-  const parts = [];
-  for (const c of CHAPTERS) { if (c.kind === 'all' || c.basic) continue; (parts[c.part] = parts[c.part] || []).push(c); }
-  const lab = ['핵심', '중요', '확장', '보충', '보충', '보충'];
-  let out = parts.map((cs, p) => {
-    const a = p * 500 + 1, b = Math.min(TOTAL, a + 499);
-    return foldHTML('p' + p, '', (p + 1) + '부 · ' + (lab[p] || '보충'), 'No.' + a + '–' + b, cs,
-      '<p class="part-h">250개씩 50개 단위로 쌓아 가며 회독 → 마지막 장은 ' + a + '–' + b + ' 총정리</p>' +
-      '<div class="books">' + cs.map(c => bookHTML(c)).join('') + '</div>');
-  }).join('');
-  const all = CHAPTERS.find(c => c.kind === 'all' && !c.basic);
-  if (all) out += '<section class="grp"><div class="grp-h"><b>전체 총정리</b><span>No.1–' + TOTAL + '</span><i class="rule"></i></div><div class="books">' + bookHTML(all) + '</div></section>';
-  return out;
+  const cs = CHAPTERS.filter(c => !c.basic);
+  if (!cs.length) return '';
+  const lab = ['핵심', '중요', '확장', '보충', '보충', '보충', '보충', '보충'];
+  return bigFoldHTML('P', 'grp-main', 'BJT 단어', 'No.1–' + TOTAL, '번호가 앞일수록 BJT 핵심 · 250개씩 50개 단위로 쌓아 가며 회독 · 500개마다 총정리', cs,
+    p => ({key: 'p' + p, title: (p + 1) + '부 · ' + (lab[p] || '보충'), range: 'No.' + (p * 500 + 1) + '–' + Math.min(TOTAL, p * 500 + 500)}), '전체 총정리');
 }
 
 /* ================= 가볍게 1회독 ================= */
@@ -2430,7 +2436,7 @@ function openSettings0() {
       '<section><h3>약점 자동 추가</h3>' + segB('setWk', S.wkN, [[3, '3번'], [5, '5번'], [7, '7번']]) + '<p class="hint">‘모르겠음’ 누른 횟수를 장을 넘나들며 합쳐요. 예: 1–50에서 3번 + 1–100에서 2번 = 5번 → 약점 단어로.</p></section>' +
       '<section><h3>일본어 글씨체</h3>' + segB('setJf', S.jf, [['m', '명조 · BJT 지문·자료'], ['g', '고딕 · BJT 문제·선택지']]) + '<p class="hint">실제 BJT(CBT) 화면은 문서·메일 같은 자료가 명조, 문제 문장과 선택지가 고딕이에요.</p></section>' +
       '<section><h3>해설 표시</h3>' + segB('setFuri', S.furi, [['all', '후리가나 보임'], ['tap', '후리가나 숨김(예문 누르면 보임)']]) + segB('setTr', S.tr, [['show', '번역 항상'], ['tap', '번역 탭해서']]) + '</section>' +
-      '<section><h3>시험일</h3><input type="date" id="exam-date" value="' + esc(S.exam) + '" min="2026-01-01" max="2030-12-31"><p class="hint">홈의 D-day가 이 날짜 기준이에요.</p></section>' +
+      '<section><h3>시험일</h3><input type="date" id="exam-date" value="' + esc(S.exam) + '" min="2026-01-01" max="2030-12-31"><p class="hint">홈의 D-day가 이 날짜 기준이에요. 날짜가 지나면 홈에 ‘시험일?’로 보여요.</p></section>' +
       '<section><h3>저장</h3><p class="hint">' + saveText() + '</p></section>' +
       '<section><h3>진도 백업 · 옮기기</h3><div class="frow"><button class="btn" data-act="exportOpen">내보내기</button><button class="btn" data-act="importOpen">가져오기</button></div><p class="hint">' + (IS_PWA ? '앱을 지우거나 기기를 바꾸기 전에 내보내기 코드를 메모 앱 등에 저장해 두세요. claude.ai 단어장의 진도도 여기로 가져올 수 있어요.' : '아이패드 앱 버전으로 진도를 옮길 때 써요. 여기서 내보내기 → 앱의 설정 › 가져오기.') + '</p></section>' +
       (!IS_PWA && APP_URL.indexOf('http') === 0 ? '<section><h3>아이패드 앱</h3><p class="hint"><a href="' + esc(APP_URL) + '" target="_blank" rel="noopener">' + esc(APP_URL.replace(/^https?:\/\//, '')) + '</a> — Safari로 열고 공유 → ‘홈 화면에 추가’.</p></section>' : '') +
@@ -2614,6 +2620,7 @@ function act(a, el) {
     case 'mask': B.mask = !B.mask; el.setAttribute('aria-pressed', B.mask); renderList(); break;
     case 'bf': B[el.dataset.grp] = el.dataset.v; renderBrowse(); break;
     case 'settings': openSettings(); break;
+    case 'examSet': { openSettings(); const x = $('#exam-date'), sb = $('#sheet-body'); if (x && sb) { const sec = x.closest('section') || x; sb.scrollTop = Math.max(0, sec.getBoundingClientRect().top - sb.getBoundingClientRect().top + sb.scrollTop - 8); } break; }
     case 'full': FS.toggle(); break;
     case 'setAuto': setS({auto: el.dataset.v === 'true'}); openSettings(); break;
     case 'setRate': setS({rate: +el.dataset.v}); openSettings(); if (AUD.on) saySent(ORDER[0], 0); else TTS.say('お世話になっております。'); break;

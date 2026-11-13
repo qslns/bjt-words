@@ -167,7 +167,7 @@ const H0 = w => ({ ch: {}, w: w || {}, wr: null, wru: 0, g: { tt: 0, d: {} }, lt
   await page.waitForSelector('#v-home .grp-basic'); await openFolds(page);
   ok((await page.textContent('#v-home .grp-basic .grp-h')).includes('0부 · 기본'), 'home shows 0부 · 기본');
   const hk = await page.evaluate(() => [...document.querySelector('#v-home .home').children].map(e => e.className));
-  ok(hk.indexOf('grp grp-basic') > hk.indexOf('resume') && hk.indexOf('grp grp-basic') < hk.findIndex(c => c === 'grp'), 'basic section sits above 1부: ' + hk.slice(0, 5).join(','));
+  ok(hk.indexOf('grp grp-basic') > hk.indexOf('resume') && hk.indexOf('grp grp-basic') < hk.indexOf('grp grp-main'), 'basic fold sits above the BJT 단어 fold: ' + hk.slice(0, 6).join(','));   /* 11/13: '1부' → 큰 접기 'BJT 단어'(grp-main) */
   ok((await page.textContent('#v-home .resume')).includes('基本1章'), 'next suggestion is 基本1章');
   ok((await page.textContent('#v-home .wk-top b')).includes('1개'), 'pinned basic word counts as weak');
   const bi = await page.getAttribute('#v-home .grp-basic .book >> nth=0', 'data-i');
@@ -350,19 +350,25 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 390, height: 844 }, { w
   const KATA = /[ァ-ヺ]/;
   const { ctx, page, errs } = await newPage({ width: 1180, height: 820 });
   await page.waitForSelector('#v-home details.gf', { state: 'attached' });
-  ok(await page.locator('#v-home details.gf').count() === 6, 'home has 6 folding groups (기본 2 · 1–3부 · 한자)');
+  /* 11/13 홈 정리: 큰 접기 3개(기본 B · BJT 단어 P · 한자 kz) + 큰 접기 안 500개 묶음 접기(b0… · p0…). 총정리 카드도 큰 접기 안 → 접힌 홈엔 장 카드 0 */
+  const nFold = 3 + Math.ceil(BORDER.length / 500) + Math.ceil(ORDER.length / 500);
+  ok(await page.locator('#v-home details.gf').count() === nFold, 'home has ' + nFold + ' folding groups (3 big + 500-word folds inside)');
   ok(await page.locator('#v-home details.gf[open]').count() === 0, 'all groups folded by default');
-  ok(await page.locator('#v-home .book >> visible=true').count() === 2, 'only the two 총정리 books visible when folded');
+  ok(await page.locator('#v-home .book >> visible=true').count() === 0, 'no chapter book visible when folded (총정리 cards are inside the big folds)');
   ok(await page.locator('#v-kanji').count() === 0 && await page.locator('#v-home .grp-kz details[data-g="kz"]').count() === 1, 'kanji unit is one folding group (key kz) on home');
-  const sumTxt = await page.textContent('#v-home .grp:not(.grp-basic) details.gf summary');
+  const bigTxt = (await page.textContent('#v-home details[data-g="P"] > summary')).trim();
+  ok(bigTxt.startsWith('BJT 단어') && bigTxt.includes('No.1–' + ORDER.length) && bigTxt.includes('끝낸 장 0/' + genChapters(ORDER.length).length), 'BJT 단어 fold: range + progress over all its chapters: ' + bigTxt);
+  await page.locator('#v-home details[data-g="P"] > summary').click(); await page.waitForTimeout(150);
+  const sumTxt = await page.textContent('#v-home details[data-g="p0"] > summary');
   ok(sumTxt.includes('1부') && sumTxt.includes('No.1–500') && sumTxt.includes('끝낸 장 0/11'), 'part summary shows range + progress: ' + sumTxt.trim());
+  ok(await page.locator('#v-home .book >> visible=true').count() === 1, 'open BJT 단어: only its 전체 총정리 book shows until a part is opened');
   await page.locator('#v-home details[data-g="p0"] > summary').click(); await page.waitForTimeout(150);
   ok(await page.locator('#v-home details[data-g="p0"] .book >> visible=true').count() === 11, 'tap opens 1부 (11 books)');
   await vis(page, '#v-home [data-act="browse"]').click(); await page.waitForSelector('#blist');
   await page.keyboard.press('Escape'); await page.waitForSelector('#v-home details.gf', { state: 'attached' }); await page.waitForTimeout(100);
-  ok(await page.locator('#v-home details[data-g="p0"][open]').count() === 1 && await page.locator('#v-home details.gf[open]').count() === 1, 'opened group stays open after home re-render, others stay folded');
+  ok(await page.locator('#v-home details[data-g="P"][open]').count() === 1 && await page.locator('#v-home details[data-g="p0"][open]').count() === 1 && await page.locator('#v-home details.gf[open]').count() === 2, 'opened groups (BJT 단어 + 1부) stay open after home re-render, others stay folded');
   await page.reload(); await page.waitForSelector('#v-home details.gf', { state: 'attached' }); await openFolds(page);
-  ok(await page.locator('#v-home details.gf[open]').count() === 6, 'helper can open all groups');
+  ok(await page.locator('#v-home details.gf[open]').count() === nFold, 'helper can open all groups');
   // 10/16 단어 카드: 칸 이름 '한자'(한자 없는 가나 단어는 '이야기'), 한자 줄 = [네모 한자 버튼] 훈음 + 이 단어 읽기 / 카드 장면 한 줄(카드 없는 한자는 옛 구성 + 풀이), 한자·부수 풀이 없음
   const wr = await page.evaluate(() => {
     const bad = []; const t = window.__t; let rows = 0, cardRows = 0, oldRows = 0; const KATA = /[ァ-ヺ]/;
@@ -574,7 +580,7 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
   const t0 = await homeTxt();
   const layout = await page.evaluate(() => [...document.querySelector('#v-home .home').children].map(e => { const d = e.querySelector(':scope > details.gf'); return d ? 'fold:' + d.dataset.g : e.querySelector('.zrow') ? 'zrow' : e.className; }));
   const iz = layout.indexOf('fold:kz');
-  ok(iz > layout.indexOf('fold:p2') && layout.indexOf('fold:p2') > 0 && iz < layout.indexOf('zrow'), 'kanji fold after 1–3부, above the word-list row: ' + layout.join(','));
+  ok(layout.indexOf('fold:B') > 0 && layout.indexOf('fold:B') < layout.indexOf('fold:P') && iz > layout.indexOf('fold:P') && iz < layout.indexOf('zrow'), 'big folds 기본 → BJT 단어 → 한자, above the word-list row: ' + layout.join(','));   /* 11/13: fold:p2 → fold:P */
   const kz = await page.evaluate(() => ({ o: __t.KZO, ch: __t.KZCH.map(c => [c.a, c.b, c.kind, c.ids.join('')]) }));
   const gc = genChapters(950);
   ok(kz.o.join('') === KZSRC.join('') && kz.ch.length === gc.length && kz.ch.every((c, i) => c[0] === gc[i].a && c[1] === gc[i].b && c[2] === gc[i].kind && c[3] === KZSRC.slice(c[0] - 1, c[1]).join('')), 'kanji chapters = word rule on 950 kanji (most used first): ' + kz.ch.length + ' chapters');
@@ -830,6 +836,121 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
     ok(await overT(page, '#v-home .scroll') <= 1, `home with the kanji fold open: no horizontal overflow ${vp.width}`);
     ok(errs.length === 0, `no console errors (kanji layout ${vp.width}): ` + errs.join(' | '));
     await ctx.close();
+  }
+}
+// ---------- 14. 11/13 홈 정리: 접힌 홈 한 화면 · 큰 접기 안 500개 묶음 · 펼침 기억 · 접기 안 장 → 단어 화면 · 진도 표시 · 시험일? ----------
+{
+  const nB = Math.ceil(BORDER.length / 500), nP = Math.ceil(ORDER.length / 500);
+  const GB = genChapters(BORDER.length), GP = genChapters(ORDER.length);
+  const allP = GP.length - 1, allB = GP.length + GB.length - 1;   /* 장 번호 i: 본편 장 → 기본 장, 각자 맨 끝이 전체 총정리 */
+  const shownBooks = page => page.evaluate(() => [...document.querySelectorAll('#v-home .book')].filter(b => b.checkVisibility ? b.checkVisibility() : b.getClientRects().length).map(b => +b.dataset.i));   /* 닫힌 details 안은 상자가 있어도 안 보임 → checkVisibility */
+  const openSet = page => page.evaluate(() => [...document.querySelectorAll('#v-home details.gf[open]')].map(d => d.dataset.g).sort().join(','));
+  const sumOf = (page, g) => page.evaluate(g => { const s = document.querySelector('#v-home details[data-g="' + g + '"] > summary'); return s ? s.textContent.trim() : ''; }, g);
+  // (a) 접힌 홈: 세로 820×1180은 한 화면 안 · 가로 1180×820은 큰 접기 3개가 첫 화면 안 · 보이는 장 카드 0
+  for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }]) {
+    const { ctx, page, errs } = await newPage(vp);
+    await page.waitForSelector('#v-home details[data-g="kz"]', { state: 'attached' }); await page.waitForTimeout(200);
+    const m = await page.evaluate(() => { const sc = document.querySelector('#v-home .scroll'), kz = document.querySelector('#v-home details[data-g="kz"]');
+      return { sh: sc.scrollHeight, ch: sc.clientHeight, kzb: Math.round(kz.getBoundingClientRect().bottom), hint: !!document.querySelector('#v-home .hint-card'), big: [...document.querySelectorAll('#v-home .home > section > details.gf')].map(d => d.dataset.g).join(',') }; });
+    const sb = await shownBooks(page);
+    ok(m.big === 'B,P,kz' && sb.length === 0, `${vp.width}: closed home = 3 big folds (${m.big}), no chapter book showing (${sb.length})`);
+    if (vp.width === 820) ok(m.sh <= m.ch + 1, `820x1180: closed home fits one screen (${m.sh} ≤ ${m.ch}px, install hint ${m.hint ? 'shown' : 'hidden'})`);
+    else ok(m.kzb <= vp.height, `1180x820: all three big folds on the first screen (kanji fold bottom ${m.kzb} ≤ ${vp.height})`);
+    await page.screenshot({ path: `/home/claude/work/app/shot_home1113_closed_${vp.width}.png` });
+    ok(errs.length === 0, `no console errors (closed home ${vp.width}): ` + errs.join(' | '));
+    await ctx.close();
+  }
+  // (b) 큰 접기 안 구조 · 안쪽 장 열기 → 단어 화면 → 돌아오면 펼침·스크롤 그대로 · 진행중 표시 · 큰 접기를 닫아도 안쪽 펼침 기억
+  {
+    const { ctx, page, errs } = await newPage({ width: 820, height: 1180 });
+    await page.waitForSelector('#v-home details[data-g="P"]', { state: 'attached' });
+    await page.locator('#v-home details[data-g="P"] > summary').click(); await page.waitForTimeout(150);
+    const innerP = await page.evaluate(() => [...document.querySelectorAll('#v-home details[data-g="P"] > .g-in > section > details.gf')].map(d => d.dataset.g).join(','));
+    ok(innerP === [...Array(nP).keys()].map(p => 'p' + p).join(','), 'BJT 단어 holds the 500-word folds: ' + innerP);
+    ok((await shownBooks(page)).join() === String(allP) && (await page.textContent('#v-home details[data-g="P"] > .g-in > .g-ph')).includes('전체 총정리'), 'BJT 단어 open: only the 전체 총정리 card (第' + (allP + 1) + '章) at the bottom');
+    await page.locator('#v-home details[data-g="B"] > summary').click(); await page.waitForTimeout(150);
+    const innerB = await page.evaluate(() => [...document.querySelectorAll('#v-home details[data-g="B"] > .g-in > section > details.gf')].map(d => d.dataset.g).join(','));
+    ok(innerB === [...Array(nB).keys()].map(p => 'b' + p).join(',') && (await shownBooks(page)).sort((a, b) => a - b).join() === [allP, allB].join() && (await page.textContent('#v-home details[data-g="B"] > .g-in > .g-ph')).includes('기본 전체 총정리'), '0부 · 기본 holds ' + innerB + ' + 기본 전체 총정리 card');
+    const sb0 = await sumOf(page, 'b0'), sB = await sumOf(page, 'B');
+    ok(sB.startsWith('0부 · 기본') && sB.includes('기본 1–' + BORDER.length) && sB.includes('끝낸 장 0/' + GB.length) && sb0.startsWith('기본 1') && sb0.includes('기본 1–500') && sb0.includes('끝낸 장 0/' + GB.filter(c => c.kind !== 'all' && c.a <= 500).length), 'basic headers: ' + sB + ' / ' + sb0);
+    await page.locator('#v-home details[data-g="p1"] > summary').click(); await page.waitForTimeout(150);
+    ok(await openSet(page) === 'B,P,p1', 'open folds: B, P, p1');
+    const bk = page.locator('#v-home details[data-g="p1"] .book[data-i="11"]');
+    await bk.scrollIntoViewIfNeeded(); await page.waitForTimeout(150);
+    const sc0 = await page.evaluate(() => document.querySelector('#v-home .scroll').scrollTop);
+    await bk.click({ position: { x: 30, y: 30 } }); await page.waitForSelector('#v-study .cf-word'); await page.waitForTimeout(350);
+    const st = await page.evaluate(() => ({ ord: __t.getRun().ord, t: document.querySelector('#v-study .sb-t').textContent }));
+    ok(st.t.includes('第12章') && st.ord.length === 50 && [...st.ord].sort((a, b) => a - b).join() === ORDER.slice(500, 550).sort((a, b) => a - b).join(), 'a chapter inside a 500-word fold opens the word screen: ' + st.t.trim());
+    await vis(page, '#v-study [data-act="ok"]').click(); await page.waitForTimeout(380);
+    await vis(page, '[data-act="exit"]').click(); await page.waitForSelector('#v-home details[data-g="P"]', { state: 'attached' }); await page.waitForTimeout(200);
+    const sc1 = await page.evaluate(() => document.querySelector('#v-home .scroll').scrollTop);
+    ok(await openSet(page) === 'B,P,p1' && sc0 > 300 && Math.abs(sc1 - sc0) < 4, 'back home: same folds open, scroll kept ' + sc0 + '→' + sc1);
+    const [sP, sp0, sp1, sB2] = [await sumOf(page, 'P'), await sumOf(page, 'p0'), await sumOf(page, 'p1'), await sumOf(page, 'B')];
+    ok(sP.includes('진행중') && sp1.includes('진행중') && !sp0.includes('진행중') && !sB2.includes('진행중'), '진행중 on BJT 단어 + 2부 only: ' + sP + ' / ' + sp1);
+    const ban = (await page.textContent('#v-home .resume')).trim();
+    ok(ban.includes('이어서 하기') && ban.includes('第12章') && ban.includes('2/50'), 'resume banner unchanged: ' + ban.replace(/\s+/g, ' '));
+    await page.locator('#v-home details[data-g="P"] > summary').click(); await page.waitForTimeout(150);
+    await vis(page, '#v-home [data-act="browse"]').click(); await page.waitForSelector('#blist');
+    await page.keyboard.press('Escape'); await page.waitForSelector('#v-home details[data-g="P"]', { state: 'attached' }); await page.waitForTimeout(150);
+    ok(await openSet(page) === 'B,p1' && (await shownBooks(page)).every(i => i >= GP.length), 'BJT 단어 closed stays closed after re-render; its 2부 is remembered inside (no BJT book showing)');
+    await page.locator('#v-home details[data-g="P"] > summary').click(); await page.waitForTimeout(150);
+    ok((await shownBooks(page)).filter(i => i >= 11 && i <= 21).length === 11, 'reopen BJT 단어 → 2부 still open (11 books)');
+    await page.screenshot({ path: '/home/claude/work/app/shot_home1113_open_820.png' });
+    await vis(page, '#v-home .resume').click(); await page.waitForSelector('#v-study .cf-word'); await page.waitForTimeout(350);
+    ok(await page.evaluate(() => __t.getRun().pos) === 1 && (await page.textContent('#v-study .sb-t')).includes('第12章'), 'resume continues 第12章 at card 2');
+    await vis(page, '[data-act="exit"]').click(); await page.waitForSelector('#v-home details[data-g="P"]', { state: 'attached' });
+    ok(errs.length === 0, 'no console errors (nested folds): ' + errs.join(' | '));
+    await ctx.close();
+  }
+  // (c) 저장된 진도 → 큰 접기·안쪽 접기 머리(끝낸 장·진행중)·총정리 카드·이어서 하기
+  {
+    const probe = await newPage({ width: 1180, height: 820 });
+    await probe.page.waitForSelector('#v-home details[data-g="P"]', { state: 'attached' });
+    const keys = await probe.page.evaluate(() => __t.CHAPTERS.map(c => c.key));
+    await probe.ctx.close();
+    const h = H0();
+    h.ch = { 0: { n: 1, cur: null, t: 10, last: { pass: 1, k: 40, tot: 50, r: 1, t: 5, at: 1 }, u: 5, k: keys[0] },
+      [GP.length + 1]: { n: 2, cur: null, t: 10, last: null, u: 6, k: keys[GP.length + 1] },
+      [allP]: { n: 0, cur: { ord: ORDER, pos: 3, unk: [], ph: 'main', q: [], qpos: 0, next: [], round: 0, shuf: true, t: 9, k: 3, started: 1, u: 9 }, t: 9, last: null, u: 9, k: keys[allP] } };
+    const { ctx, page, errs } = await newPage({ width: 1180, height: 820 }, seed(h));
+    await page.waitForSelector('#v-home details[data-g="P"]', { state: 'attached' });
+    const [sP, sp0, sp2, sB, sb0] = [await sumOf(page, 'P'), await sumOf(page, 'p0'), await sumOf(page, 'p' + (nP - 1)), await sumOf(page, 'B'), await sumOf(page, 'b0')];
+    ok(sP.includes('끝낸 장 1/' + GP.length) && sP.includes('진행중'), 'BJT 단어 header counts every chapter incl. 전체 총정리 (진행중): ' + sP);
+    ok(sp0.includes('끝낸 장 1/11') && !sp0.includes('진행중') && !sp2.includes('진행중'), 'part folds: 1부 1/11, no 진행중 (the in-progress chapter is the 전체 총정리 outside the parts)');
+    ok(sB.includes('끝낸 장 1/' + GB.length) && !sB.includes('진행중') && sb0.includes('끝낸 장 1/11'), 'basic headers: ' + sB + ' / ' + sb0);
+    ok((await page.textContent('#v-home .resume')).includes('第' + (allP + 1) + '章') && (await page.textContent('#v-home .resume')).includes('4/' + ORDER.length), 'resume banner points at 第' + (allP + 1) + '章 4/' + ORDER.length);
+    await page.locator('#v-home details[data-g="P"] > summary').click(); await page.waitForTimeout(150);
+    const allTxt = await page.textContent('#v-home .book[data-i="' + allP + '"]');
+    ok(allTxt.includes('진행중') && allTxt.includes('진행 4/' + ORDER.length), '전체 총정리 card inside BJT 단어 shows 진행중 · 진행 4/' + ORDER.length);
+    ok((await page.textContent('#v-home .stats')).includes('끝낸 장 2/' + (GP.length + GB.length)), 'stats: 끝낸 장 2/' + (GP.length + GB.length));
+    await page.screenshot({ path: '/home/claude/work/app/shot_home1113_open_1180.png' });
+    ok(errs.length === 0, 'no console errors (seeded progress): ' + errs.join(' | '));
+    await ctx.close();
+  }
+  // (d) 시험일이 지났으면 'D+n' 대신 작은 '시험일?' → 누르면 설정의 시험일 칸 · 앞날이면 D-n
+  {
+    const day = ms => { const d = new Date(ms); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+    const P = ex => ({ auto: true, rate: 1, sent: true, shuf: false, wkN: 5, wv: 2, furi: 'all', tr: 'show', kp: false, exam: ex, em: 3, u: 1 });
+    const chip = page => page.evaluate(() => { const b = document.querySelector('#v-home .bar .dchip'); return b ? { tag: b.tagName, txt: b.textContent, act: b.dataset.act || '' } : null; });
+    const { ctx, page, errs } = await newPage({ width: 820, height: 1180 }, seed(H0(), P('2026-01-05')));
+    await page.waitForSelector('#v-home .bar .dchip');
+    const c0 = await chip(page);
+    ok(c0.tag === 'BUTTON' && c0.txt === '시험일?' && c0.act === 'examSet' && !(await page.textContent('#v-home .bar')).includes('D+'), 'exam date passed → small 시험일? button, no D+n: ' + JSON.stringify(c0));
+    await vis(page, '#v-home [data-act="examSet"]').click(); await page.waitForTimeout(300);
+    const pos = await page.evaluate(() => { const sb = document.getElementById('sheet-body'), x = document.getElementById('exam-date'); const a = sb.getBoundingClientRect(), b = x.getBoundingClientRect(); return { open: !document.getElementById('sheet').hidden, title: document.getElementById('sheet-title').textContent, inView: b.top >= a.top && b.bottom <= a.bottom, st: Math.round(sb.scrollTop) }; });
+    ok(pos.open && pos.title === '설정' && pos.inView, 'tap 시험일? → settings, 시험일 in view (scrollTop ' + pos.st + ')');
+    const fut = day(Date.now() + 40 * 864e5);
+    await page.fill('#exam-date', fut); await page.dispatchEvent('#exam-date', 'change'); await page.waitForTimeout(250);
+    await vis(page, '#sheet .sheet-head [data-act="closeSheet"]').click(); await page.waitForTimeout(150);
+    const c1 = await chip(page), n1 = c1 && /^D-(\d+)$/.exec(c1.txt);
+    ok(c1.tag === 'SPAN' && n1 && +n1[1] >= 39 && +n1[1] <= 41 && await page.evaluate(() => __t.S.exam) === fut, 'new exam date → D-day chip again: ' + c1.txt);
+    ok(errs.length === 0, 'no console errors (exam chip): ' + errs.join(' | '));
+    await ctx.close();
+    const p2 = await newPage({ width: 1180, height: 820 }, seed(H0(), P(day(Date.now()))));
+    await p2.page.waitForSelector('#v-home .bar .dchip');
+    const c2 = await chip(p2.page);
+    ok(c2.tag === 'SPAN' && c2.txt === 'D-DAY', 'exam today → D-DAY: ' + c2.txt);
+    await p2.ctx.close();
   }
 }
 await browser.close();
