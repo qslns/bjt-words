@@ -226,7 +226,7 @@ const H0 = w => ({ ch: {}, w: w || {}, wr: null, wru: 0, g: { tt: 0, d: {} }, lt
   const st = await page.evaluate(() => ({ h: JSON.parse(localStorage.getItem('bjt500.hoedok.v2')), s: JSON.parse(localStorage.getItem('bjt500.prefs.v2')) }));
   ok(st.h.w[firstOld] && st.h.w[firstOld].m === 2, 'word records kept');
   ok(st.h.g.tt === 123000, 'study time kept');
-  ok(st.s.exam === '2026-10-22', 'exam date moved to 10-22');
+  ok(st.s.exam === '2027-02-20' && st.s.em === 4, 'exam date moved 10-07 → 10-13 → 10-22 → (past) 2027-02-20: ' + st.s.exam);   /* 11/13: 다음 BJT 2월 중후반 */
   ok((await page.textContent('#v-home .wk-top b')).includes('0개'), '2 misses no longer weak');
   // settings: choose 3, persists
   await vis(page, '[data-act="settings"]').click();
@@ -930,7 +930,7 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
   // (d) 시험일이 지났으면 'D+n' 대신 작은 '시험일?' → 누르면 설정의 시험일 칸 · 앞날이면 D-n
   {
     const day = ms => { const d = new Date(ms); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
-    const P = ex => ({ auto: true, rate: 1, sent: true, shuf: false, wkN: 5, wv: 2, furi: 'all', tr: 'show', kp: false, exam: ex, em: 3, u: 1 });
+    const P = (ex, em) => ({ auto: true, rate: 1, sent: true, shuf: false, wkN: 5, wv: 2, furi: 'all', tr: 'show', kp: false, exam: ex, em: em || 4, u: 1 });
     const chip = page => page.evaluate(() => { const b = document.querySelector('#v-home .bar .dchip'); return b ? { tag: b.tagName, txt: b.textContent, act: b.dataset.act || '' } : null; });
     const { ctx, page, errs } = await newPage({ width: 820, height: 1180 }, seed(H0(), P('2026-01-05')));
     await page.waitForSelector('#v-home .bar .dchip');
@@ -951,6 +951,21 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
     const c2 = await chip(p2.page);
     ok(c2.tag === 'SPAN' && c2.txt === 'D-DAY', 'exam today → D-DAY: ' + c2.txt);
     await p2.ctx.close();
+    // 11/13 이동(em 4): 지난 시험일(예전 기본 10/22)이면 2027-02-20으로 한 번만 · 앞날로 정해 둔 날짜는 그대로 · 다시 열어도 안 바뀜
+    const p3 = await newPage({ width: 820, height: 1180 }, seed(H0(), P('2026-10-22', 3)));
+    await p3.page.waitForSelector('#v-home .bar .dchip');
+    const m3 = await p3.page.evaluate(() => ({ ex: __t.S.exam, em: __t.S.em, st: JSON.parse(localStorage.getItem('bjt500.prefs.v2')) }));
+    const c3 = await chip(p3.page);
+    ok(m3.ex === '2027-02-20' && m3.em === 4 && m3.st.exam === '2027-02-20' && m3.st.em === 4 && /^D-\d+$/.test(c3.txt), 'old default 10/22 (passed) → 2027-02-20 saved once, chip ' + c3.txt);
+    await p3.page.evaluate(() => { const s = JSON.parse(localStorage.getItem('bjt500.prefs.v2')); s.exam = '2026-11-01'; localStorage.setItem('bjt500.prefs.v2', JSON.stringify(s)); });
+    await p3.page.reload(); await p3.page.waitForSelector('#v-home .bar .dchip');
+    ok(await p3.page.evaluate(() => __t.S.exam) === '2026-11-01' && (await chip(p3.page)).txt === '시험일?', 'after the move (em 4) a passed date is left alone → 시험일?');
+    await p3.ctx.close();
+    const fut2 = day(Date.now() + 20 * 864e5);
+    const p4 = await newPage({ width: 820, height: 1180 }, seed(H0(), P(fut2, 3)));
+    await p4.page.waitForSelector('#v-home .bar .dchip');
+    ok(await p4.page.evaluate(() => __t.S.exam) === fut2, 'a future exam date set before the move stays: ' + fut2);
+    await p4.ctx.close();
   }
 }
 await browser.close();

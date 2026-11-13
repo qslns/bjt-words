@@ -896,7 +896,7 @@ const dayKey = ts => { const d = new Date(ts - H4); return d.getFullYear() + '-'
 const calDay = ts => { const d = new Date(ts); return Math.round(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / DAY); };
 const parseDay = s => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || '')); return m ? Math.round(Date.UTC(+m[1], +m[2] - 1, +m[3]) / DAY) : null; };
 const WD = '일월화수목금토';
-const DEF_EXAM = '2026-10-22';
+const DEF_EXAM = '2027-02-20';
 
 /* ================= 저장소 ================= */
 const KH = 'bjt500.hoedok.v2', KS = 'bjt500.prefs.v2';
@@ -921,7 +921,7 @@ function cleanS(o) {
   if (typeof o.exam === 'string' && parseDay(o.exam) != null) r.exam = o.exam;
   if (typeof o.lis === 'boolean') r.lis = o.lis;
   if (o.jf === 'm' || o.jf === 'g') r.jf = o.jf;
-  if (o.em === 1 || o.em === 2 || o.em === 3) r.em = o.em;
+  if ([1, 2, 3, 4].includes(o.em)) r.em = o.em;
   r.u = nn(o.u);
   return r;
 }
@@ -929,6 +929,8 @@ let S = Object.assign({}, DEF, cleanS(LS.get(KS)));
 /* 시험일이 10/8(목) 08:00으로 바뀜: 예전 기본값(10/7)이면 한 번만 옮김 */
 if (!(S.em >= 2)) { if (S.exam === '2026-10-07' || S.exam === '2026-10-08') S.exam = '2026-10-13'; S.em = 2; LS.set(KS, S); }
 if (!(S.em >= 3)) { if (S.exam === '2026-10-13') S.exam = '2026-10-22'; S.em = 3; LS.set(KS, S); }
+/* 11/13: 다음 BJT는 2027년 2월 중후반 → 지난 시험일이면 2/20으로 한 번만(날짜가 정해지면 설정 › 시험일) */
+if (!(S.em >= 4)) { const v = parseDay(S.exam); if (v == null || v < calDay(Date.now())) S.exam = DEF_EXAM; S.em = 4; LS.set(KS, S); }
 const applyJf = () => document.body.classList.toggle('jf-g', S.jf === 'g');
 applyJf();
 const examDay = () => { const v = parseDay(S.exam); return v == null ? parseDay(DEF_EXAM) : v; };
