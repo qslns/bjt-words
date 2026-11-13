@@ -3,7 +3,7 @@
 ## 잠금
 상태: 작업중
 누가: 페이지-1113-0949
-마지막 신호: 2026-11-13 10:35
+마지막 신호: 2026-11-13 10:45
 
 ### 잠금 규칙
 1. 시작: `cd /home/claude/bjt-words && git fetch origin && git checkout expansion && git pull --rebase origin expansion` → 위 세 줄을 읽음. 시각은 `TZ=Asia/Seoul date '+%Y-%m-%d %H:%M'`.
@@ -37,7 +37,7 @@
 
 ### P2 기본 추가 (bn 886~, id 9000+bn)
 - [x] P2-1 `expansion/basic_final.json` 446개(bn 886~1331, id 9886~10331, 빈도 순, 숫자 零~十은 한데) — 뺀 43·표기 바꾼 40·더한 12(기초 인사 11 + 一). 만드는 스크립트 `expansion/p2/make_basic_final.py`, 기록 `p2/basic_final_log.json` (11/13)
-- [ ] P2-2 검사기 tools/check_cards.py + 합치기 tools/append_cards.py (HANDOFF 7절)
+- [x] P2-2 `expansion/tools/` — `cardlib.py`(hw·kj·루비 함수: 지금 2,331개 hw 2,314 재현, 나머지 17개는 옛 본편 〜 표제가 루비 없이 w 그대로 — 새 카드는 루비 붙임) · `check_cards.py`(지금 기본 831장으로 맞춤: 오류 12 = 옛 카드의 조수사 루비·一日 두 장뿐, 경고는 검수된 읽기를 빼고 문맥 글자만) · `append_cards.py`(카드 없이 = 입력과 바이트까지 같음, 기본 3장 빼고 다시 붙이면 원래와 바이트까지 같음, 한자 u 재계산) · `kanji_ref.py`(jamdict=KANJIDIC2: 음독·훈독·획수·부수·한국 음) (11/13)
 - [ ] P2-3 카드 작성 100장 단위 (기록: 묶음별 파일·검사 결과)
 - [ ] P2-4 다른 에이전트 검수 → 반영
 - [ ] P2-5 새 한자 항목(옛 자료 61자 + 새로 약 111자)

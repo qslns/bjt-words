@@ -20,6 +20,7 @@ SCENES = set('tel mtg talk visit biz graph doc mail notice report news'.split())
 NO_GLOSS = set('する いる この なる ある こと おる ござる そう よう その 私 いい よる 知る くる いう うち もの いつ ところ それ これ ほう なに 為る 居る 有る 成る 言う 来る 良い 事 物 内 所 方 何 御座る 御'.split())
 COUNTERS = set('円 割 度 階 週間 か月 ヶ月 カ月 個 人 名 社 件 台 枚 冊 本 回 倍 歳 才 時 時間 分 秒 日 月 年 年間 日間 号 位 点 品 種 代 期 泊 着 軒 杯 匹 店 店舗 部 課 箱 通 便 個所 か所 箇所 カ所 ケ所 番 番目 次 名様 人分 円台 本目 年度 月末 日目 階建て 万 億 千 百 兆 キロ メートル グラム パーセント 時半 分間 年代 ドル ユーロ ウォン 元 字 行 ページ 枚目 回目 週 週目 週末 期目'.split())
 DIGIT = re.compile(r'[0-9０-９]')
+NUMK = re.compile(r'[0-9０-９〇一二三四五六七八九十百千万億兆]')
 HANGUL = re.compile(r'[가-힣ㄱ-ㆎ]')
 KATA = re.compile(r'[ァ-ヺ]')
 HIRA_ONLY = re.compile(r'^[ぁ-ゖーー]+$')
@@ -69,12 +70,17 @@ def reading_variants(c):
     if not k: return None
     base = set()
     for o in k.get('on', []) or []: base.add(hira(o.replace('-', '').replace('.', '')))
+    I_ROW = dict(zip('うくぐすつぬぶむる', 'いきぎしちにびみり'))
     for o in k.get('kun', []) or []:
         o = re.sub(r'[()（）]', '|', o).replace('-', '')
         stem = o.split('|')[0].split('.')[0]
         whole = o.replace('|', '').replace('.', '')
         if stem: base.add(hira(stem))
         if whole: base.add(hira(whole))
+        oku = hira(whole[len(stem):]) if whole.startswith(stem) else ''
+        if stem and oku:
+            base.add(hira(stem) + I_ROW.get(oku[0], oku[0]) if len(oku) == 1 else hira(stem) + oku[:-1] + I_ROW.get(oku[-1], oku[-1]))   # 연용형(合う→あい, 組む→くみ)
+            base.add(hira(stem) + 'っ')
     out = set()
     for r in base:
         if not r: continue
@@ -99,7 +105,8 @@ def toks(plain):
         if i < 0: i = pos
         f = t.feature
         lem = (f.lemma or s).split('-')[0]
-        out.append(dict(s=s, a=i, b=i + len(s), kana=hira(f.kana) if f.kana and f.kana != '*' else None, lemma=lem, p1=f.pos1, p2=f.pos2))
+        lf = getattr(f, 'lForm', None)
+        out.append(dict(s=s, a=i, b=i + len(s), kana=hira(f.kana) if f.kana and f.kana != '*' else None, lemma=lem, lread=hira(lf) if lf and lf != '*' else None, p1=f.pos1, p2=f.pos2))
         pos = i + len(s)
     return out
 
@@ -110,10 +117,63 @@ def jacc(a, b): return len(a & b) / max(1, len(a | b))
 
 # 지금 덱·복원 예문(비슷한 문장 확인)
 EXIST_SENT = []
-for w in CUR: EXIST_SENT += [(strip_ruby(e['j']), 'No' + str(w['id']) + ' ' + w['w']) for e in w['e']]
-EXIST_BG = [(s, who, bigrams(s)) for s, who in EXIST_SENT]
+for w in CUR: EXIST_SENT += [(strip_ruby(e['j']), 'No' + str(w['id']) + ' ' + w['w'], w['id']) for e in w['e']]
+EXIST_BG = [(s, who, bigrams(s), wid) for s, who, wid in EXIST_SENT]
 HEAD_ALL = {w['w']: ('지금 덱', w['id']) for w in CUR}
 for w in OLD: HEAD_ALL.setdefault(w['w'], ('복원 목록', w['id']))
+
+CTX_CH = r'[方何日中後上間人行通市場気明今一会社私]'
+def read_spans(segs, plain, T):
+    """루비 구간을 토큰 경계까지 넓혀 (구간 글, 루비 쪽 읽기, fugashi 읽기) 중 서로 다른 것"""
+    def widen(a, z):
+        for t in T:
+            if t['a'] < z and t['b'] > a: a, z = min(a, t['a']), max(z, t['b'])
+        return a, z
+    spans = []
+    for b0, rd0, a, z, tg0 in segs:
+        a, z = widen(a, z)
+        while True:
+            na, nz = a, z
+            for b2, rd2, a2, z2, tg2 in segs:
+                if a2 < nz and z2 > na: na, nz = min(na, a2), max(nz, z2)
+            na, nz = widen(na, nz)
+            if (na, nz) == (a, z): break
+            a, z = na, nz
+        if [a, z] not in spans: spans.append([a, z])
+    out = []
+    for a, z in spans:
+        frag = plain[a:z]
+        if DIGIT.search(frag): continue
+        rr, i2 = '', a
+        while i2 < z:
+            sg = next((x for x in segs if x[2] == i2), None)
+            if sg: rr += sg[1]; i2 = sg[3]
+            else:
+                ch = plain[i2]
+                if is_kanji(ch): rr = None; break
+                rr += hira(ch); i2 += 1
+        if rr is None: continue
+        tk = [t for t in T if t['a'] >= a and t['b'] <= z]
+        if not tk or any(t['kana'] is None for t in tk): continue
+        fr = ''.join(t['kana'] for t in tk)
+        if hira(fr) != hira(rr): out.append((frag, rr, fr))
+    return out
+def build_accept():
+    cache = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.accept_cache.json')
+    key = '%s:%d' % (WORK + '/build/data_app.json', int(os.path.getmtime(WORK + '/build/data_app.json')))
+    try:
+        c = json.load(open(cache, encoding='utf-8'))
+        if c.get('key') == key: return {tuple(x) for x in c['pairs']}
+    except Exception: pass
+    pairs = set()
+    for w in CUR:
+        for e in w['e']:
+            segs, plain = ruby_segments(e['j'])
+            for frag, rr, fr in read_spans(segs, plain, toks(plain)): pairs.add((frag, rr))
+    try: json.dump({'key': key, 'pairs': sorted(pairs)}, open(cache, 'w', encoding='utf-8'), ensure_ascii=False)
+    except Exception: pass
+    return pairs
+ACCEPT = build_accept()
 
 class Report:
     def __init__(s): s.items = []
@@ -199,7 +259,9 @@ def check_card(c, R, sheet, seen_heads, new_bg):
                 else:
                     cand = set()
                     for x in ok_set: cand |= dueum(x) if i == 0 else {x}
-                    if sy not in cand: E('ko %s: %s의 음은 %s' % (sy, ch, '/'.join(sorted(ok_set))))
+                    if sy not in cand:
+                        if ch in K and sy in K[ch].get('h', ''): Wn('ko %s: %s의 음은 %s (훈음 %s — 맞는지 확인)' % (sy, ch, '/'.join(sorted(ok_set)), K[ch]['h']))
+                        else: E('ko %s: %s의 음은 %s' % (sy, ch, '/'.join(sorted(ok_set))))
                 prev = sy
         # st 훈음
         for ch in dict.fromkeys(kjs):
@@ -237,7 +299,9 @@ def check_card(c, R, sheet, seen_heads, new_bg):
         if not e['k'].strip() or not HANGUL.search(e['k']): E(tag + '번역 k 없음')
         for b, rd, a, z, tg in segs:
             if not any(is_kanji(ch) for ch in b): E(tag + '루비 밑글에 한자가 없음: ' + b)
-            if not HIRA_ONLY.match(rd): E(tag + '루비 읽기는 히라가나: ' + rd)
+            if not HIRA_ONLY.match(rd):
+                if KATA_ONLY.match(rd): Wn(tag + '루비 읽기가 가타카나(외국 이름일 때만): ' + b + '|' + rd)
+                else: E(tag + '루비 읽기는 히라가나: ' + rd)
             if b and not is_kanji(b[-1]) and not b[-1] in '々': Wn(tag + '루비 밑글 끝이 가나(送り仮名는 밖에): ' + b)
         covered = set()
         for b, rd, a, z, tg in segs: covered |= set(range(a, z))
@@ -260,61 +324,36 @@ def check_card(c, R, sheet, seen_heads, new_bg):
         ia, ib = j.index('{'), j.index('}')
         inner = strip_ruby(j[ia + 1:ib])
         if not inner: E(tag + '{ } 안이 빔'); continue
+        rstem = hira(r)
+        if re.search(r'[うくぐすつぬぶむるい]$', rstem) and len(rstem) >= 2 and not is_kanji(w0[-1]): rstem = rstem[:-1]   # 활용하는 말은 어간
+        irr = {'する': ('し', 'さ', 'せ', 'す'), 'くる': ('き', 'こ', 'く'), '来る': ('き', 'こ', 'く')}
+        inner_rd = hira(''.join(t['kana'] or t['s'] for t in toks(inner)))
+        by_read = (rstem and (rstem in hira(inner) or rstem in inner_rd)) or any(inner_rd.startswith(x) or hira(inner).startswith(x) for x in irr.get(w0, ()))
         if kjs:
             pos = 0; okk = True
             for ch in kjs:
                 f = inner.find(ch, pos)
                 if f < 0: okk = False; break
                 pos = f + 1
-            if not okk: E(tag + '{ } 안에 표제 한자가 순서대로 없음: ' + inner)
-            elif not inner.startswith(w0[0]) and not inner.startswith(kjs[0]): Wn(tag + '{ }가 표제 첫 글자로 시작하지 않음: ' + inner)
+            numk = all(ch in '一二三四五六七八九十' for ch in kjs[:1]) and DIGIT.search(inner)
+            if not okk and not numk:
+                if by_read: Wn(tag + '{ }에 표제를 가나로 씀(보조동사 등이면 괜찮음): ' + inner)
+                else: E(tag + '{ } 안에 표제 한자가 순서대로 없음: ' + inner)
+            elif okk and not inner.startswith(w0[0]) and not inner.startswith(kjs[0]): Wn(tag + '{ }가 표제 첫 글자로 시작하지 않음: ' + inner)
         else:
             core = w0
             need = core[:max(1, min(len(core) - 1, 4))] if len(core) > 1 else core
-            if not inner.startswith(need): E(tag + '{ }가 표제(' + core + ')로 시작해야 함: ' + inner)
-        # 읽기 대조(fugashi)
+            if not inner.startswith(need):
+                if by_read: Wn(tag + '{ }에 표제를 다른 꼴로 씀: ' + inner)
+                else: E(tag + '{ }가 표제(' + core + ')로 시작해야 함: ' + inner)
+        # 읽기 대조(fugashi): 지금 덱에서 검수 끝난 (구간, 읽기)는 넘김. 문맥 글자(方·何·日…)는 늘 확인
         T = toks(plain)
-        groups = []
-        for b, rd, a, z, tg in segs:
-            groups.append([a, z])
-        # 루비 구간을 토큰 경계까지 넓히고 겹치는 것끼리 합침
-        def widen(a, z):
-            for t in T:
-                if t['a'] < z and t['b'] > a: a, z = min(a, t['a']), max(z, t['b'])
-            return a, z
-        spans = []
-        for a, z in groups:
-            a, z = widen(a, z)
-            while True:
-                na, nz = a, z
-                for b2, rd2, a2, z2, tg2 in segs:
-                    if a2 < nz and z2 > na: na, nz = min(na, a2), max(nz, z2)
-                na, nz = widen(na, nz)
-                if (na, nz) == (a, z): break
-                a, z = na, nz
-            if [a, z] not in spans: spans.append([a, z])
-        for a, z in spans:
-            frag = plain[a:z]
-            if DIGIT.search(frag): continue
-            # 루비 쪽 읽기
-            rr, i2 = '', a
-            while i2 < z:
-                sg = next((s for s in segs if s[2] == i2), None)
-                if sg: rr += sg[1]; i2 = sg[3]
-                else:
-                    ch = plain[i2]
-                    if is_kanji(ch): rr = None; break
-                    rr += hira(ch); i2 += 1
-            if rr is None: continue
-            tk = [t for t in T if t['a'] >= a and t['b'] <= z]
-            if any(t['kana'] is None for t in tk): continue
-            fr = ''.join(t['kana'] for t in tk)
-            if hira(fr) != hira(rr):
-                known = ''
-                if frag in ('明日',) and rr == 'あす': continue
-                if frag.startswith('私') and rr.startswith('わたくし'): continue
-                if re.search(r'[方何日中後上間人行通市場気明今一会社]', frag): known = ' (문맥 읽기 주의 글자)'
-                Wn(tag + '루비 읽기 확인: %s = %s (fugashi %s)%s' % (frag, rr, fr, known))
+        for frag, rr, fr in read_spans(segs, plain, T):
+            ctx = re.search(CTX_CH, frag)
+            if (frag, rr) in ACCEPT and not ctx: continue
+            if frag == '明日' and rr == 'あす': continue
+            if frag.startswith('私') and rr.startswith('わたくし'): continue
+            Wn(tag + '루비 읽기 확인: %s = %s (fugashi %s)%s' % (frag, rr, fr, ' (문맥 읽기 주의 글자' + (', 지금 덱에도 있는 읽기' if (frag, rr) in ACCEPT else '') + ')' if ctx else ''))
         # 단어 풀이 g
         g = e['g']
         if not isinstance(g, list) or any(not (isinstance(x, list) and len(x) == 2 and all(isinstance(y, str) and y.strip() for y in x)) for x in g): E(tag + 'g 꼴: [[표제, 뜻], …]'); continue
@@ -322,7 +361,7 @@ def check_card(c, R, sheet, seen_heads, new_bg):
         if len(set(gk)) != len(gk): Wn(tag + 'g 표제 중복')
         ta, tb = len(strip_ruby(j[:ia])), len(strip_ruby(j[:ib]))
         def covered_by_g(t):
-            cands = {t['lemma'], t['s']}
+            cands = {t['lemma'], t['s']} | ({t['lread']} if t.get('lread') else set())
             for x in gk:
                 if x in cands or t['s'] in x or t['lemma'] in x or (len(x) >= 2 and x in plain[max(0, t['a'] - 3):t['b'] + 3]): return True
             return False
@@ -332,18 +371,22 @@ def check_card(c, R, sheet, seen_heads, new_bg):
             if t['p2'] in ('数詞', '固有名詞'): continue
             if t['lemma'] in NO_GLOSS or t['s'] in NO_GLOSS or hira(t['s']) in NO_GLOSS: continue
             pv = plain[:t['a']].rstrip()
-            if pv and DIGIT.match(pv[-1]) and (t['s'] in COUNTERS or t['lemma'] in COUNTERS): continue
+            if pv and NUMK.match(pv[-1]) and (t['s'] in COUNTERS or t['lemma'] in COUNTERS): continue
             if not any(is_kanji(ch) or KATA.search(ch) for ch in t['s']) and len(t['s']) <= 2: continue   # 짧은 가나 기능어
             if not covered_by_g(t): Wn(tag + '풀이 g에 없음: ' + t['s'] + ('(' + t['lemma'] + ')' if t['lemma'] != t['s'] else ''))
         for x, mean in g:
             if x == w or x == w0: Wn(tag + 'g에 표제어가 들어 있음: ' + x)
             core = re.sub(r'(する|る|う|く|ぐ|す|つ|ぬ|ぶ|む|い)$', '', x)
-            if core and core not in plain and x not in plain and not any(t['lemma'] == x for t in T): Wn(tag + 'g 표제가 예문에 안 보임: ' + x)
+            rd_all = hira(ruby_reading(j))
+            hcore = hira(core)
+            if core and core not in plain and x not in plain and not any(t['lemma'] == x or t.get('lread') == hira(x) for t in T) and not (len(hcore) >= 2 and hcore in rd_all): Wn(tag + 'g 표제가 예문에 안 보임: ' + x)
             gd = GLOSS.get(x)
-            if gd and isinstance(gd, list) and gd and gd[0] != mean and not (gd[0] in mean or mean in gd[0]): Wn(tag + 'g 뜻이 풀이 사전과 다름: %s=%s (사전 %s)' % (x, mean, gd[0]))
+            if gd and isinstance(gd, list):
+                ms = [m[0] if isinstance(m, list) else str(m) for m in gd]
+                if mean not in ms and not any(m and (m in mean or mean in m) for m in ms): Wn(tag + 'g 뜻이 풀이 사전과 다름: %s=%s (사전 %s)' % (x, mean, ' / '.join(ms[:3])))
         # 비슷한 예문
         bg = bigrams(plain)
-        best = max(((jacc(bg, b2), s2, who) for s2, who, b2 in EXIST_BG), default=(0, '', ''))
+        best = max(((jacc(bg, b2), s2, who) for s2, who, b2, wid in EXIST_BG if wid != cid), default=(0, '', ''))
         if best[0] >= 0.6: Wn(tag + '지금 덱 예문과 비슷함(%.2f): %s [%s]' % (best[0], best[1], best[2]))
         for s2, who, b2 in new_bg:
             if who != cid and jacc(bg, b2) >= 0.6: Wn(tag + '새 카드 예문과 비슷함(%.2f): %s [%s]' % (jacc(bg, b2), s2, who))
