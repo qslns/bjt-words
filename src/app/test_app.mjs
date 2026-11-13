@@ -374,7 +374,7 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 390, height: 844 }, { w
     const bad = []; const t = window.__t; let rows = 0, cardRows = 0, oldRows = 0; const KATA = /[ァ-ヺ]/;
     const D = JSON.parse(document.getElementById('bjt-data').textContent), KJ = D.kanji, KC = D.kc || {};
     if (D.kz) bad.push('data.kz still there');
-    if (!Array.isArray(D.kzo) || D.kzo.length !== Object.keys(KJ).length) bad.push('data.kzo ' + (D.kzo || []).length);
+    if (!Array.isArray(D.kzo) || D.kzo.length !== Object.keys(KC).length || D.kzo.some(c => !KC[c])) bad.push('data.kzo ' + (D.kzo || []).length);   // 11/13 P2: 한자 단원은 그림 카드 950자만(새 한자는 카드 없음 → 옛 방식)
     for (const w of D.words) {
       const st = t.storyHTML(w, 's-story'), ex = t.explainHTML(w, true);
       if (/undefined|NaN/.test(st + ex)) bad.push(w.w + ':undef');
