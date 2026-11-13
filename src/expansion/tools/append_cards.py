@@ -16,8 +16,10 @@ def dump(o): return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
 def compute_u(words, kanji):
     main = sorted([w for w in words if w.get('ord') is not None], key=lambda w: w['ord'])
     basic = sorted([w for w in words if w.get('ord') is None and w.get('bn') is not None], key=lambda w: w['bn'])
+    # 11/14 N3·N2 칸에만 있는 단어(BJT·기본 아님): N3 → N2, 칸 안 번호 순
+    lvw = sorted([w for w in words if w.get('ord') is None and w.get('bn') is None and w.get('jn') is not None], key=lambda w: (-w['jl'], w['jn']))
     out = {c: [] for c in kanji}
-    for w in main + basic:
+    for w in main + basic + lvw:
         for c in dict.fromkeys(w['kj']):
             if c in out: out[c].append(w['id'])
     return out
@@ -26,11 +28,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--data', default='/home/claude/work/build/data_app.json'); ap.add_argument('--out', required=True)
     ap.add_argument('--order'); ap.add_argument('--cards', nargs='*', default=[]); ap.add_argument('--kanji', nargs='*', default=[]); ap.add_argument('--tt')
+    ap.add_argument('--lvset', help='11/14 이미 있는 단어에 N3·N2 칸 번호 붙이기: [{id, jl, jn}]')
     a = ap.parse_args()
     raw = open(a.data, encoding='utf-8').read()
     D = json.loads(raw)
     W, K = D['words'], D['kanji']
     before_w = [dump(w) for w in W]
+    lvset = {x['id']: x for x in json.load(open(a.lvset, encoding='utf-8'))} if a.lvset else {}
     before_k = {c: dump({k: v for k, v in e.items() if k != 'u'}) for c, e in K.items()}
     # 0) 지금 데이터에서 u 재현 확인
     u0 = compute_u(W, K)
@@ -38,6 +42,7 @@ def main():
     if badu: sys.exit('u 재현 안 됨: ' + ''.join(badu[:20]))
     ids = {w['id'] for w in W}
     heads = {w['w']: w['id'] for w in W}
+    ALLOW_DUP = {20467}   # 空(から) — 空(そら)와 같은 표기(来る·一日처럼 둠)
     order = {}
     if a.order:
         for x in json.load(open(a.order, encoding='utf-8')):
@@ -52,7 +57,7 @@ def main():
     for c in cards:
         if c['id'] in ids: errs.append('id 이미 있음 %s' % c['id'])
         if c['id'] not in order: errs.append('순서표에 없는 id %s' % c['id'])
-        if c['w'] in heads: errs.append('표제 이미 있음 %s %s' % (c['id'], c['w']))
+        if c['w'] in heads and c['id'] not in ALLOW_DUP: errs.append('표제 이미 있음 %s %s' % (c['id'], c['w']))
         ids.add(c['id']); heads[c['w']] = c['id']
     if errs: sys.exit('\n'.join(errs[:30]))
     # 새 한자
@@ -64,7 +69,7 @@ def main():
     # 카드 → 단어
     used_bn = {w['bn'] for w in W if w.get('bn') is not None}; used_ord = {w['ord'] for w in W if w.get('ord') is not None}
     add = []
-    for c in sorted(cards, key=lambda c: (order[c['id']].get('ord', 1e9), order[c['id']].get('bn', 1e9))):
+    for c in sorted(cards, key=lambda c: (order[c['id']].get('ord', 1e9), order[c['id']].get('bn', 1e9), -order[c['id']].get('jl', 0), order[c['id']].get('jn', 1e9))):
         o = order[c['id']]
         hw = make_hw(c['w'], c['r'], c['kr'])
         if hw is None: errs.append('hw를 못 만듦 %s %s' % (c['id'], c['w'])); continue
@@ -89,10 +94,13 @@ def main():
             used_ord.add(o['ord'])
             w['pr'] = pr; w['ord'] = o['ord']; w['st'] = c['st']
             if o.get('bn') is not None: w['bn'] = o['bn']; used_bn.add(o['bn'])
-        else:
+        elif o.get('bn') is not None:
             if o['bn'] in used_bn: errs.append('bn 겹침 %s' % o['bn'])
             used_bn.add(o['bn'])
             w['pr'] = pr; w['st'] = c['st']; w['bn'] = o['bn']
+        else:
+            w['pr'] = pr; w['st'] = c['st']
+        if o.get('jn') is not None: w['jl'] = o['jl']; w['jn'] = o['jn']
         if c.get('tw'): w['tw'] = c['tw']
         miss = [ch for ch in w['kj'] if ch not in K and ch not in newk]
         if miss: print('경고: 한자 항목 없음 %s %s: %s' % (c['id'], c['w'], ''.join(miss)))
@@ -104,6 +112,11 @@ def main():
     if bns != list(range(1, len(bns) + 1)): sys.exit('bn이 1부터 빈틈없이 이어지지 않음')
     if ords != list(range(len(ords))): sys.exit('ord가 0부터 빈틈없이 이어지지 않음')
     W2 = W + add
+    for w in W:
+        if w['id'] in lvset: w['jl'] = lvset[w['id']]['jl']; w['jn'] = lvset[w['id']]['jn']
+    for L in (3, 2):
+        js = sorted(w['jn'] for w in W2 if w.get('jl') == L)
+        if js != list(range(1, len(js) + 1)): sys.exit('N%d 칸 번호가 1부터 빈틈없이 이어지지 않음' % L)
     K2 = dict(K)
     for ch, e in newk.items():
         K2[ch] = {k: e[k] for k in ('h', 'b', 'bn', 's', 'x', 'on', 'kun') if k in e}
@@ -114,11 +127,13 @@ def main():
         K2[ch] = {k: (u[ch] if k == 'u' else e[k]) for k in ('h', 'b', 'bn', 's', 'x', 'on', 'kun', 'u', 'n') if k in e or k == 'u'}
     # 기존 것 그대로인지
     for i, s in enumerate(before_w):
-        if dump(W2[i]) != s: sys.exit('기존 단어가 바뀜: %s' % W2[i]['id'])
+        cur = W2[i]
+        if cur['id'] in lvset: cur = {k: v for k, v in cur.items() if k not in ('jl', 'jn')}
+        if dump(cur) != s: sys.exit('기존 단어가 바뀜: %s' % W2[i]['id'])
     for ch, s in before_k.items():
         if dump({k: v for k, v in K2[ch].items() if k != 'u'}) != s: sys.exit('기존 한자 항목이 바뀜(u 말고): ' + ch)
     out = dump({'words': W2, 'kanji': K2, 'v': D['v']})
-    if not cards and not newk and out != raw: sys.exit('카드 없이 돌렸는데 입력과 다름')
+    if not cards and not newk and not lvset and out != raw: sys.exit('카드 없이 돌렸는데 입력과 다름')
     open(a.out, 'w', encoding='utf-8').write(out)
     chu = sum(1 for ch in K if K2[ch]['u'] != K[ch]['u'])
     print('붙임 %d · 새 한자 %d · u 바뀐 한자 %d · 단어 %d → %d · 크기 %d → %d' % (len(add), len(newk), chu, len(W), len(W2), len(raw.encode()), len(out.encode())))

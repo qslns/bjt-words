@@ -391,6 +391,13 @@ rt{font-family:var(--f-jp);font-size:.5em;font-weight:500;color:var(--ink-2);let
 .lis-btn:active{filter:brightness(.92)}
 .tb.lis[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 .s-story{order:2}
+.tb-t+.tb-t{margin-left:4px}
+.t-L{border-color:var(--stamp);color:var(--stamp)}
+.gf .g-wk{font-size:13px;font-weight:700;color:var(--ink-2)}
+.pw{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:2px 0 12px;padding:10px 12px;border:1px dashed var(--line);border-radius:12px}
+.pw b{font-size:15px}
+.pw .pw-n{font-size:13px;color:var(--ink-3)}
+.pw .grow{flex:1}
 @media (prefers-reduced-motion:no-preference){
   .cf-mid,.ex,.dlg{animation:fade .14s ease-out}
   @keyframes fade{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
@@ -778,11 +785,19 @@ const TOTAL = ORDER.length;
 const BORDER = W.filter(w => w.bn != null).sort((a, b) => a.bn - b.bn).map(w => w.id);
 const BNO = new Map(BORDER.map(id => [id, byId.get(id).bn]));
 const BTOTAL = BORDER.length;
-const ALL_IDS = ORDER.concat(BORDER.filter(id => !NO.has(id)));
+/* 11/14 N3·N2 칸: jl(3·2) + jn(칸 안 번호). 기본(bn) 카드는 안 들어감. BJT·기본과 겹치는 카드는 같은 카드라 기록이 같이 쌓임 */
+const LV = [3, 2];
+const LORDER = {};
+LV.forEach(L => { LORDER[L] = W.filter(w => w.jl === L && w.jn != null).sort((a, b) => a.jn - b.jn).map(w => w.id); });
+const LNO = new Map();
+LV.forEach(L => LORDER[L].forEach((id, i) => { if (!LNO.has(id)) LNO.set(id, {L, n: i + 1}); }));
+const LTOTAL = LV.reduce((n, L) => n + LORDER[L].length, 0);
+const ALL_IDS = ORDER.concat(BORDER.filter(id => !NO.has(id)), [].concat(...LV.map(L => LORDER[L])).filter(id => !NO.has(id) && !BNO.has(id)));
 const ALLN = ALL_IDS.length;
-const numLabel = id => NO.has(id) ? 'No.' + NO.get(id) + (BNO.has(id) ? ' · 기본 ' + BNO.get(id) : '') : '기본 ' + BNO.get(id);
-const rowNum = id => NO.has(id) ? NO.get(id) : '기' + BNO.get(id);
-const sortNo = id => NO.has(id) ? NO.get(id) : TOTAL + (BNO.get(id) || 0);
+const lvLab = id => { const l = LNO.get(id); return l ? 'N' + l.L + ' ' + l.n : ''; };
+const numLabel = id => [NO.has(id) ? 'No.' + NO.get(id) : '', BNO.has(id) ? '기본 ' + BNO.get(id) : '', lvLab(id)].filter(Boolean).join(' · ');
+const rowNum = id => NO.has(id) ? NO.get(id) : BNO.has(id) ? '기' + BNO.get(id) : LNO.has(id) ? 'N' + LNO.get(id).L + '·' + LNO.get(id).n : '';
+const sortNo = id => NO.has(id) ? NO.get(id) : BNO.has(id) ? TOTAL + BNO.get(id) : TOTAL + 5000 + (LNO.has(id) ? (LNO.get(id).L === 3 ? 0 : 5000) + LNO.get(id).n : 0);
 const CATS = [['org','조직·사람'],['mtg','회의·보고'],['sch','일정·기한'],['tel','전화·방문'],['doc','메일·문서'],['deal','거래·물류'],['money','돈·회계'],['sales','영업·시장'],['graph','수치·그래프'],['hr','인사·근무'],['trouble','문제·대응'],['verb','업무 동사'],['formal','격식어·부사'],['kata','가타카나'],['keigo','경어·정형 표현'],['it','업무·시스템'],['gen','일반 어휘']];
 const CAT = {};
 CATS.forEach(([k, name]) => { CAT[k] = name; });
@@ -806,17 +821,25 @@ function genChapters(total) {
 const PSIG = (() => { const out = []; for (let p = 0; p * 500 < TOTAL; p++) { let h = 2166136261; const part = ORDER.slice(p * 500, p * 500 + 500); for (const id of part) { h ^= id; h = Math.imul(h, 16777619) >>> 0; } out.push(h.toString(36) + '.' + part.length); } return out; })();
 const chKey = (c, sig) => c.kind === 'all' ? 'all:' + sig.join(',') : sig[c.part] + ':' + c.a + '-' + c.b + ':' + c.kind;
 const CHAPTERS = genChapters(TOTAL).map((c, i) => Object.assign(c, {i, ids: ORDER.slice(c.a - 1, c.b), cnt: c.b - c.a + 1, key: chKey(c, PSIG)}));
-const BCH0 = CHAPTERS.length;
+const BCH0 = CHAPTERS.length, LCH0 = {};
 (() => {
   const hs = ids => { let h = 2166136261; for (const id of ids) { h ^= id; h = Math.imul(h, 16777619) >>> 0; } return h.toString(36) + '.' + ids.length; };
   genChapters(BTOTAL).forEach(c => { const ids = BORDER.slice(c.a - 1, c.b); CHAPTERS.push(Object.assign(c, {i: CHAPTERS.length, ids, cnt: ids.length, basic: true, key: 'B:' + hs(ids) + ':' + c.a + '-' + c.b + ':' + c.kind})); });
+  LV.forEach(L => { LCH0[L] = CHAPTERS.length; genChapters(LORDER[L].length).forEach(c => { const ids = LORDER[L].slice(c.a - 1, c.b); CHAPTERS.push(Object.assign(c, {i: CHAPTERS.length, ids, cnt: ids.length, lv: L, key: 'N' + L + ':' + hs(ids) + ':' + c.a + '-' + c.b + ':' + c.kind})); }); });
 })();
 const KEY2I = new Map(CHAPTERS.map(c => [c.key, c.i]));
 const LAYOUT = 'v4';
 const LEGACY = {'v3:2697:60': ['zkf6ci.500', '1g6pezw.500', 'ppslt0.500', '1ytbfhm.500', 'dj9ngn.500', 'dxqmwp.197']};
 function legacyKeys(lay) { const sig = LEGACY[lay]; if (!sig) return null; return genChapters(+String(lay).split(':')[1]).map(c => chKey(c, sig)); }
-const chName = i => CHAPTERS[i] && CHAPTERS[i].basic ? '基本' + (i - BCH0 + 1) + '章' : '第' + (i + 1) + '章';
-const chRange = c => (c.basic ? '기본 ' : 'No.') + c.a + '–' + c.b;
+const chName = i => { const c = CHAPTERS[i]; return c && c.lv ? 'N' + c.lv + '·' + (i - LCH0[c.lv] + 1) + '章' : c && c.basic ? '基本' + (i - BCH0 + 1) + '章' : '第' + (i + 1) + '章'; };
+const chRange = c => (c.lv ? 'N' + c.lv + ' ' : c.basic ? '기본 ' : 'No.') + c.a + '–' + c.b;
+/* 11/14 500개 묶음(홈의 작은 접기 하나) → 이름·단어: 묶음별 약점 */
+const PARTS = new Map();
+for (let p = 0; p * 500 < TOTAL; p++) PARTS.set('p' + p, {name: (p + 1) + '부', ids: ORDER.slice(p * 500, p * 500 + 500)});
+for (let p = 0; p * 500 < BTOTAL; p++) PARTS.set('b' + p, {name: '기본 ' + (p + 1), ids: BORDER.slice(p * 500, p * 500 + 500)});
+LV.forEach(L => { for (let p = 0; p * 500 < LORDER[L].length; p++) PARTS.set('l' + L + '_' + p, {name: 'N' + L + ' ' + (p + 1) + '부', ids: LORDER[L].slice(p * 500, p * 500 + 500)}); });
+PARTS.forEach(v => { v.set = new Set(v.ids); });
+const pName = g => PARTS.has(g) ? PARTS.get(g).name : '';
 
 /* ================= 유틸 ================= */
 const $ = (s, r) => (r || document).querySelector(s);
@@ -954,7 +977,7 @@ function cleanW(x) {
   const rm = +x.rm;
   return {n: nn(x.n), m: nn(x.m), l: x.l === 1 ? 1 : x.l === 0 ? 0 : -1, t: nn(x.t), pin: x.pin ? 1 : 0, rm: Number.isFinite(rm) && rm >= 0 ? rm : -1, u: nn(x.u)};
 }
-const blankH = () => ({ch: {}, w: {}, wr: null, wru: 0, g: {tt: 0, d: {}}, lt: {pos: 0, done: 0, t: 0, u: 0}, lay: LAYOUT, rs: 0, u: 0});
+const blankH = () => ({ch: {}, w: {}, wr: null, wru: 0, wrp: {}, wrpu: {}, g: {tt: 0, d: {}}, lt: {pos: 0, done: 0, t: 0, u: 0}, lay: LAYOUT, rs: 0, u: 0});
 function cleanLt(x) { x = obj(x); let pos = Math.min(Math.floor(nn(x.pos)), Math.max(0, TOTAL - 1)); const id = +x.id; if (Number.isInteger(id) && NO.has(id)) pos = NO.get(id) - 1; return {pos, id: ORDER[pos], done: nn(x.done), t: nn(x.t), u: nn(x.u)}; }
 function normH(o) {
   const h = blankH();
@@ -965,6 +988,7 @@ function normH(o) {
   const w = obj(o.w);
   for (const k in w) { if (byId.has(+k)) { const c = cleanW(w[k]); if (c) h.w[+k] = c; } }
   h.wr = cleanRun(o.wr); h.wru = nn(o.wru);
+  { const wp = obj(o.wrp), wpu = obj(o.wrpu); for (const k in wp) if (PARTS.has(k)) { const r = cleanRun(wp[k]); if (r) h.wrp[k] = r; } for (const k in wpu) if (PARTS.has(k)) h.wrpu[k] = nn(wpu[k]); }
   h.lt = cleanLt(o.lt);
   const g = obj(o.g); h.g.tt = nn(g.tt);
   const d = obj(g.d); for (const k in d) if (/^\d{4}-\d{2}-\d{2}$/.test(k)) h.g.d[k] = nn(d[k]);
@@ -986,11 +1010,11 @@ function setWeak(id, on) { const x = wsGet(id); if (on) { x.pin = 1; x.rm = -1; 
 /* ================= 회독 진행 ================= */
 function newRun(ids, shuf) { const now = Date.now(); return {ord: shuf ? shuffled(ids) : ids.slice(), pos: 0, unk: [], ph: 'main', q: [], qpos: 0, next: [], round: 0, shuf: true, t: 0, k: 0, started: now, u: now}; }
 let ctx = null, ui = {rev: false, mode: 'front', id: null, t0: 0, lock: 0}, undoStack = [];
-const ctxKey = () => ctx ? (ctx.kind === 'ch' ? 'ch' + ctx.i : 'weak') : '';
-function getRun() { if (!ctx) return null; return ctx.kind === 'ch' ? (H.ch[ctx.i] ? H.ch[ctx.i].cur : null) : H.wr; }
-function setRun(r) { if (ctx.kind === 'ch') chGet(ctx.i).cur = r; else H.wr = r; }
+const ctxKey = () => ctx ? (ctx.kind === 'ch' ? 'ch' + ctx.i : 'weak' + (ctx.g ? ':' + ctx.g : '')) : '';
+function getRun() { if (!ctx) return null; return ctx.kind === 'ch' ? (H.ch[ctx.i] ? H.ch[ctx.i].cur : null) : ctx.g ? (H.wrp[ctx.g] || null) : H.wr; }
+function setRun(r) { if (ctx.kind === 'ch') chGet(ctx.i).cur = r; else if (ctx.g) { if (r) H.wrp[ctx.g] = r; else delete H.wrp[ctx.g]; } else H.wr = r; }
 function curId(r) { if (!r) return null; return r.ph === 'main' ? (r.pos < r.ord.length ? r.ord[r.pos] : null) : (r.qpos < r.q.length ? r.q[r.qpos] : null); }
-function touch(r, now) { r.u = now; if (ctx.kind === 'ch') chGet(ctx.i).u = now; else H.wru = now; }
+function touch(r, now) { r.u = now; if (ctx.kind === 'ch') chGet(ctx.i).u = now; else if (ctx.g) H.wrpu[ctx.g] = now; else H.wru = now; }
 function addTime(r, dt) {
   if (!(dt > 0)) return;
   r.t += dt; H.g.tt += dt;
@@ -1028,13 +1052,17 @@ function weakOrder(ids) {
   for (const id of ids) { const m = H.w[id] ? H.w[id].m : 0; if (!g.has(m)) g.set(m, []); g.get(m).push(id); }
   return [...g.keys()].sort((a, b) => b - a).flatMap(m => shuffled(g.get(m)));
 }
-function openWeak(fresh) {
-  const ids = weakIds(), now = Date.now();
-  if (fresh || !H.wr) {
-    if (!ids.length) { toast('약점 단어가 아직 없어요'); return; }
-    H.wr = newRun(weakOrder(ids), false); H.wru = now; saveH();
+const partWeak = g => { const P = PARTS.get(g); return P ? weakIds().filter(id => P.set.has(id)) : weakIds(); };
+function openWeak(fresh, g) {
+  g = g && PARTS.has(g) ? g : '';
+  const ids = partWeak(g), now = Date.now(), cur = g ? H.wrp[g] : H.wr;
+  if (fresh || !cur) {
+    if (!ids.length) { toast(g ? pName(g) + '에 약점 단어가 없어요' : '약점 단어가 아직 없어요'); return; }
+    const r = newRun(weakOrder(ids), false);
+    if (g) { H.wrp[g] = r; H.wrpu[g] = now; } else { H.wr = r; H.wru = now; }
+    saveH();
   }
-  ctx = {kind: 'weak'}; undoStack = [];
+  ctx = {kind: 'weak', g}; undoStack = [];
   show('study'); enterCard();
 }
 function startNextRound(r) {
@@ -1134,7 +1162,7 @@ function finishRun(r) {
     const ch = chGet(ctx.i);
     ch.n++; ch.last = {pass: ch.n, k: r.k, tot: r.ord.length, r: r.round, t: r.t, at: now}; ch.cur = null; ch.u = now;
     info = {kind: 'ch', i: ctx.i, pass: ch.n, chT: ch.t};
-  } else { H.wr = null; H.wru = now; info = {kind: 'weak'}; }
+  } else { if (ctx.g) { delete H.wrp[ctx.g]; H.wrpu[ctx.g] = now; } else { H.wr = null; H.wru = now; } info = {kind: 'weak', g: ctx.g || ''}; }
   saveH(); undoStack = [];
   renderSummary(r, info);
 }
@@ -1372,6 +1400,9 @@ function mergeH(R) {
   for (const k in H.w) if (!(k in rw)) res.localNewer = true;
   const rwru = nn(R.wru);
   if (rwru > H.wru) { H.wr = cleanRun(R.wr); H.wru = rwru; res.changed = true; } else if (H.wru > rwru) res.localNewer = true;
+  { const rpu = obj(R.wrpu), rp = obj(R.wrp);
+    for (const k in rpu) { if (!PARTS.has(k)) continue; const t = nn(rpu[k]), l = H.wrpu[k] || 0; if (t > l) { const r = cleanRun(rp[k]); if (r) H.wrp[k] = r; else delete H.wrp[k]; H.wrpu[k] = t; res.changed = true; } else if (l > t) res.localNewer = true; }
+    for (const k in H.wrpu) if (!(k in rpu)) res.localNewer = true; }
   const rg = obj(R.g), rtt = nn(rg.tt);
   if (rtt > H.g.tt) { H.g.tt = rtt; res.changed = true; } else if (H.g.tt > rtt) res.localNewer = true;
   const rd = obj(rg.d);
@@ -1456,7 +1487,7 @@ const Sync = {
 /* ================= 화면 공통 ================= */
 const V = {home: $('#v-home'), study: $('#v-study'), weak: $('#v-weak'), browse: $('#v-browse'), light: $('#v-light')};
 let view = 'home', sheetOpen = false, sheetStack = [], modalOpen = false, modalDismiss = false, confirmCb = null;
-const B = {q: '', tier: 'all', st: 'all', cat: 'all', mask: false, wmask: false, smask: false, wsel: false, wpick: new Set()};
+const B = {q: '', tier: 'all', st: 'all', cat: 'all', mask: false, wmask: false, smask: false, wsel: false, wpick: new Set(), wg: ''};
 let swPending = false, swReload = false;
 function applyUpdate() { if (swReload) return; swReload = true; try { if (view === 'light') { ltTime(); ltSave(); } Sync.flushNow(); } catch (e) {} location.reload(); }
 const SCR = {};   /* 홈 스크롤 위치(홈을 다시 그려도·다른 화면 갔다 와도 그대로) */
@@ -1504,6 +1535,11 @@ function askConfirm(title, msg, okLabel, cb, danger) {
   confirmCb = cb;
   openModal('<div class="dlg"><h2>' + esc(title) + '</h2><p>' + esc(msg) + '</p><div class="dlg-acts"><button class="btn ' + (danger ? 'danger' : 'primary') + '" data-act="cfmOk">' + esc(okLabel) + '</button><button class="btn" data-act="cfmNo">취소</button></div></div>', true);
 }
+const tagsHTML = id => { const w = byId.get(id), out = [];
+  if (BNO.has(id)) out.push('<b class="tb-t t-K" title="기본 단어">기본</b>');
+  if (NO.has(id)) out.push('<b class="tb-t' + (w.t === 'S' ? ' t-S' : '') + '" title="BJT ' + w.t + '급">BJT ' + w.t + '</b>');
+  const l = LNO.get(id); if (l) out.push('<b class="tb-t t-L" title="JLPT N' + l.L + '">N' + l.L + '</b>');
+  return out.join('') || tierTag(w && w.t); };
 const tierTag = t => t === 'K' ? '<b class="tb-t t-K" title="기본 단어">기본</b>' : '<b class="tb-t' + (t === 'S' ? ' t-S' : '') + '" title="' + t + '급">' + t + '</b>';
 const modeCls = () => (S.furi === 'tap' ? ' furi-off' : '') + (S.tr === 'tap' ? ' tr-off' : '');
 
@@ -1512,9 +1548,10 @@ function findResume() {
   let best = null;
   for (const c of CHAPTERS) { const ch = H.ch[c.i]; if (ch && ch.cur && (!best || ch.cur.u > best.u)) best = {kind: 'ch', i: c.i, u: ch.cur.u, r: ch.cur}; }
   if (H.wr && (!best || H.wr.u > best.u)) best = {kind: 'weak', u: H.wr.u, r: H.wr};
+  for (const k in H.wrp) { const r = H.wrp[k]; if (r && (!best || r.u > best.u)) best = {kind: 'weak', g: k, u: r.u, r}; }
   return best;
 }
-const suggestNext = () => { for (const c of CHAPTERS.filter(c => c.basic).concat(CHAPTERS.filter(c => !c.basic))) { const ch = H.ch[c.i]; if (!ch || ch.n === 0) return c.i; } return CHAPTERS.length - 1; };
+const suggestNext = () => { for (const c of CHAPTERS.filter(c => c.basic).concat(CHAPTERS.filter(c => c.lv === 3), CHAPTERS.filter(c => c.lv === 2), CHAPTERS.filter(c => !c.basic && !c.lv))) { const ch = H.ch[c.i]; if (!ch || ch.n === 0) return c.i; } return CHAPTERS.length - 1; };
 function bookHTML(c, wide) {
   const ch = H.ch[c.i] || {n: 0, cur: null, last: null};
   const inprog = !!ch.cur;
@@ -1537,7 +1574,7 @@ function renderHome() {
   const res = findResume();
   let banner;
   if (res) {
-    const name = res.kind === 'ch' ? chName(res.i) + ' · ' + (chGet(res.i).n + 1) + '회독' : '약점 복습';
+    const name = res.kind === 'ch' ? chName(res.i) + ' · ' + (chGet(res.i).n + 1) + '회독' : '약점 복습' + (res.g ? ' · ' + pName(res.g) : '');
     banner = '<button class="resume" data-act="resume"><span><span class="r-k">이어서 하기</span><br><span class="r-t" lang="ko">' + name + ' · ' + progText(res.r) + '</span></span><span class="r-go">계속 →</span></button>';
   } else {
     const i = suggestNext(), c = CHAPTERS[i], ch = H.ch[i];
@@ -1551,25 +1588,26 @@ function renderHome() {
   const exD = new Date(ex * DAY);
   const syncTxt = Sync.state === 'cloud' ? '계정에 저장 중 · 다른 기기에서도 이어집니다' : Sync.state === 'local' ? (IS_PWA ? (STANDALONE ? '이 앱에 자동 저장 · 백업은 설정 › 진도 백업' : 'Safari 탭에 저장 중 · 홈 화면 앱과는 따로 저장돼요') : '이 브라우저에만 저장 중 · claude.ai 안에서 열면 계정에 저장') : '저장소 연결 중…';
   V.home.innerHTML =
-    '<header class="bar"><div class="brand"><b>BJT</b><span>단어 회독 ' + TOTAL.toLocaleString() + (BTOTAL ? '<small class="b-sub2"> + 기본 ' + BTOTAL + '</small>' : '') + '</span></div>' +
+    '<header class="bar"><div class="brand"><b>BJT</b><span>단어 회독 ' + TOTAL.toLocaleString() + (BTOTAL ? '<small class="b-sub2"> + 기본 ' + BTOTAL + (LTOTAL ? ' + N3·N2 ' + LTOTAL : '') + '</small>' : '') + '</span></div>' +
       (D < 0 ? '<button class="dchip dq" data-act="examSet" aria-label="다음 시험일 정하기">시험일?</button>'
         : '<span class="dchip" title="' + (exD.getUTCMonth() + 1) + '/' + exD.getUTCDate() + '(' + WD[exD.getUTCDay()] + ') 시험">' + ddTxt + '</span>') + '<div class="grow"></div>' +
       (FS.ok && !STANDALONE ? '<button class="tb" data-act="full" aria-label="전체화면">' + ICON.full + '<span class="sm-hide">전체화면</span></button>' : '') +
       '<button class="tb" data-act="settings" aria-label="설정">' + ICON.gear + '</button></header>' +
-    '<div class="scroll"><div class="wrap home">' + installHint() + weakTopHTML() + banner + basicHTML() + partsHTML() + kzHomeHTML() +
+    '<div class="scroll"><div class="wrap home">' + installHint() + weakTopHTML() + banner + basicHTML() + partsHTML() + lvHTML(3) + lvHTML(2) + kzHomeHTML() +
       '<section class="grp"><div class="zrow"><div class="side"><button class="btn big" data-act="browse"><span>전체 단어 목록</span><small>' + ALLN.toLocaleString() + '</small></button></div>' +
         '<div class="side"><div class="stats"><span>본 단어 <b>' + seen + '</b>/' + ALLN + '</span><span>마지막 판정 앎 <b>' + okN + '</b></span><span>끝낸 장 <b>' + done + '</b>/' + CHAPTERS.length + '</span><span>오늘 <b>' + fmtDur(today) + '</b></span><span>총 <b>' + fmtDur(H.g.tt) + '</b></span></div></div>' +
       '</div></section>' +
       '<details class="guide"><summary>이렇게 쓰세요</summary><ol>' +
         '<li><b>번호가 앞일수록 BJT 핵심</b>이에요. 시간이 모자라면 앞에서부터.</li>' +
+        (LTOTAL ? '<li><b>N3 · N2</b>: JLPT N3·N2 단어(기본 제외)를 중요한 것부터 500개씩. 앞 1,000개가 핵심이에요. BJT·기본과 겹치는 단어는 같은 카드라 기록이 같이 쌓여요.</li>' : '') +
         (BTOTAL ? '<li><b>0부 · 기본</b>: N5·N4 기초 단어(' + BTOTAL + '개). BJT 단어와 겹치는 단어는 같은 카드라 기록이 같이 쌓여요. 예문 아래 ‘단어’ 풀이와 같이 보세요.</li>' : '') +
         '<li><b>회독 장</b>: 第1章부터 차례대로. 250개 묶음 안에서 50개씩 늘려 가며 앞 단어를 계속 다시 봐요. 500개마다 총정리 장이 있어요.</li>' +
         '<li>카드마다 <b>알고있음</b> / <b>모르겠음</b>. 모르는 단어는 장 끝에 다 맞힐 때까지 반복. 위쪽 <b>소리</b> 버튼을 켜면 글자 없이 발음만 듣고 맞혀요(청해 연습).</li>' +
-        '<li>장을 넘나들며 합쳐서 ' + S.wkN + '번 이상 모르겠음 누른 단어는 맨 위 <b>약점 단어</b>에 자동으로 모여요(많이 틀린 순). ★로 직접 넣고 뺄 수도 있어요.</li>' +
+        '<li>장을 넘나들며 합쳐서 ' + S.wkN + '번 이상 모르겠음 누른 단어는 맨 위 <b>약점 단어</b>에 자동으로 모여요(많이 틀린 순). ★로 직접 넣고 뺄 수도 있어요. 500개 묶음을 펼치면 그 묶음 약점만 따로 복습할 수 있어요.</li>' +
         '<li>중간에 닫아도 자동 저장. 장 카드의 <b>↺</b>로 그 장을 처음부터 다시.</li>' +
       '</ol></details>' +
       '<div class="sync ' + Sync.state + '"><i></i><span>' + syncTxt + '</span></div>' +
-      '<p class="ver">앱 버전 ' + BUILD + ' · 단어 ' + TOTAL.toLocaleString() + '개' + (BTOTAL ? ' + 기본 ' + BTOTAL + '개' : '') + '</p>' +
+      '<p class="ver">앱 버전 ' + BUILD + ' · 단어 ' + TOTAL.toLocaleString() + '개' + (BTOTAL ? ' + 기본 ' + BTOTAL + '개' : '') + (LTOTAL ? ' + N3·N2 ' + LTOTAL + '개' : '') + '</p>' +
     '</div></div>';
   { const sc = V.home.querySelector('.scroll'); if (sc) { if (SCR.home) sc.scrollTop = SCR.home; sc.addEventListener('scroll', () => { SCR.home = sc.scrollTop; }, {passive: true}); } }
 }
@@ -1594,10 +1632,10 @@ function liteHTML() {
    펼친 묶음은 앱을 쓰는 동안 기억(홈을 다시 그려도 유지, 큰 접기를 닫아도 안쪽 펼침은 그대로) */
 const GOPEN = new Set();
 document.addEventListener('toggle', e => { const d = e.target; if (d && d.matches && d.matches('details.gf[data-g]')) { if (d.open) GOPEN.add(d.dataset.g); else GOPEN.delete(d.dataset.g); } }, true);
-function foldHTML(key, cls, title, range, cs, inner, st) {
+function foldHTML(key, cls, title, range, cs, inner, st, wk) {
   const done = st ? st.done : cs.filter(c => H.ch[c.i] && H.ch[c.i].n > 0).length, on = st ? st.on : cs.some(c => H.ch[c.i] && H.ch[c.i].cur);
   return '<section class="grp' + (cls ? ' ' + cls : '') + '"><details class="gf" data-g="' + key + '"' + (GOPEN.has(key) ? ' open' : '') + '>' +
-    '<summary class="grp-h"><b>' + title + '</b><span>' + range + '</span><span class="g-p">끝낸 장 ' + done + '/' + cs.length + '</span>' + (on ? '<span class="g-on">진행중</span>' : '') + '<i class="rule"></i><span class="fold"></span></summary>' +
+    '<summary class="grp-h"><b>' + title + '</b><span>' + range + '</span><span class="g-p">끝낸 장 ' + done + '/' + cs.length + '</span>' + (wk ? '<span class="g-wk">★ ' + wk + '</span>' : '') + (on ? '<span class="g-on">진행중</span>' : '') + '<i class="rule"></i><span class="fold"></span></summary>' +
     '<div class="g-in">' + inner + '</div></details></section>';
 }
 /* 큰 접기 하나: 머리(이름·범위·그 묶음 모든 장의 끝낸 장·진행중) + 안내 한 줄 + 500개 묶음 작은 접기들 + 맨 아래 총정리 카드 */
@@ -1606,9 +1644,24 @@ function bigFoldHTML(key, cls, title, range, note, cs, sub, allName) {
   cs.forEach(c => { if (c.kind !== 'all') (parts[c.part] = parts[c.part] || []).push(c); });
   const all = cs.find(c => c.kind === 'all');
   const inner = '<p class="part-h">' + note + '</p>' +
-    parts.map((ps, p) => { const s = sub(p); return foldHTML(s.key, cls, s.title, s.range, ps, '<div class="books">' + ps.map(c => bookHTML(c)).join('') + '</div>'); }).join('') +
+    parts.map((ps, p) => { const s = sub(p), wk = PARTS.has(s.key) ? partWeak(s.key).length : 0; return foldHTML(s.key, cls, s.title, s.range, ps, pwHTML(s.key, wk) + '<div class="books">' + ps.map(c => bookHTML(c)).join('') + '</div>', null, wk); }).join('') +
     (all ? '<p class="g-ph">' + allName + '</p><div class="books">' + bookHTML(all) + '</div>' : '');
   return foldHTML(key, cls, title, range, cs, inner);
+}
+/* 11/14 묶음 안 약점 줄: 이 묶음 약점 n개 · 이어서/복습 · 목록 */
+function pwHTML(key, n) {
+  if (!PARTS.has(key)) return '';
+  const r = H.wrp[key], pg = ' data-pg="' + key + '"';
+  return '<div class="pw"><b>★ 이 묶음 약점 ' + n + '개</b>' + (n ? '' : '<span class="pw-n">' + S.wkN + '번 이상 모르면 여기 모여요</span>') + '<span class="grow"></span>' +
+    (r ? '<button class="btn primary" data-act="weakGo"' + pg + '>이어서 · ' + progText(r) + '</button>' : '') +
+    '<button class="btn' + (r ? '' : ' primary') + '" data-act="weakNew"' + pg + (n ? '' : ' disabled') + '>' + (r ? '처음부터' : '약점 복습') + '</button>' +
+    '<button class="btn" data-act="weakView"' + pg + (n ? '' : ' disabled') + '>목록</button></div>';
+}
+function lvHTML(L) {
+  const cs = CHAPTERS.filter(c => c.lv === L), T = LORDER[L].length;
+  if (!cs.length) return '';
+  return bigFoldHTML('L' + L, 'grp-lv', 'N' + L + ' 단어', 'N' + L + ' 1–' + T, 'JLPT N' + L + ' 단어(기본 제외) · 중요한 것부터 — 앞 1,000개가 핵심 · BJT·기본과 겹치는 건 같은 카드 · 250개씩 50개 단위로 쌓아 가며 회독', cs,
+    p => ({key: 'l' + L + '_' + p, title: 'N' + L + ' ' + (p + 1) + '부', range: 'N' + L + ' ' + (p * 500 + 1) + '–' + Math.min(T, p * 500 + 500)}), 'N' + L + ' 전체 총정리');
 }
 function basicHTML() {
   if (!BTOTAL) return '';
@@ -1617,7 +1670,7 @@ function basicHTML() {
     p => ({key: 'b' + p, title: '기본 ' + (p + 1), range: '기본 ' + (p * 500 + 1) + '–' + Math.min(BTOTAL, p * 500 + 500)}), '기본 전체 총정리');
 }
 function partsHTML() {
-  const cs = CHAPTERS.filter(c => !c.basic);
+  const cs = CHAPTERS.filter(c => !c.basic && !c.lv);
   if (!cs.length) return '';
   const lab = ['핵심', '중요', '확장', '보충', '보충', '보충', '보충', '보충'];
   return bigFoldHTML('P', 'grp-main', 'BJT 단어', 'No.1–' + TOTAL, '번호가 앞일수록 BJT 핵심 · 250개씩 50개 단위로 쌓아 가며 회독 · 500개마다 총정리', cs,
@@ -1663,7 +1716,7 @@ function renderLight(play) {
       '<div class="sb-p"><b>' + (H.lt.pos + 1).toLocaleString() + ' / ' + TOTAL.toLocaleString() + '</b><span>' + pct(H.lt.pos + 1, TOTAL) + '%</span></div>' +
       '<button class="tb star" data-act="ltStar" aria-pressed="' + weak + '" aria-label="약점 단어에 ' + (weak ? '서 빼기' : ' 넣기') + '">' + (weak ? ICON.star : ICON.starO) + '</button></header>' +
     '<div class="pbar"><i style="width:' + (100 * (H.lt.pos + 1) / TOTAL).toFixed(2) + '%"></i></div>' +
-    '<div class="scroll" id="lsc"><div class="stage' + modeCls() + '"><div class="cf-top">' + tierTag(w.t) + '<span>' + esc(CAT[w.c] || '') + '</span><span class="no">No.' + NO.get(id) + '</span></div>' +
+    '<div class="scroll" id="lsc"><div class="stage' + modeCls() + '"><div class="cf-top">' + tagsHTML(w.id) + '<span>' + esc(CAT[w.c] || '') + '</span><span class="no">No.' + NO.get(id) + '</span></div>' +
       '<div class="lt"><div class="lt-a">' +
         '<section class="lt-head"><button class="lt-word' + (n >= 10 ? ' xlong' : n >= 6 ? ' long' : '') + '" data-act="sayW" data-id="' + id + '" lang="ja" aria-label="발음 듣기">' + headRuby(w) + '</button>' +
           (w.r !== w.w ? '<div class="lt-read" lang="ja">' + esc(w.r) + '</div>' : '') +
@@ -2077,7 +2130,7 @@ document.addEventListener('visibilitychange', () => { if (document.visibilitySta
 
 /* ================= 학습 화면 ================= */
 function sbarHTML(r, id) {
-  const title = ctx.kind === 'ch' ? chName(ctx.i) + ' · ' + (chGet(ctx.i).n + 1) + '회독' : '약점 복습';
+  const title = ctx.kind === 'ch' ? chName(ctx.i) + ' · ' + (chGet(ctx.i).n + 1) + '회독' : '약점 복습' + (ctx.g ? ' · ' + pName(ctx.g) : '');
   const sub = ctx.kind === 'ch' ? chRange(CHAPTERS[ctx.i]) : (r ? r.ord.length + '개 · 많이 틀린 순' : '약점 단어');
   let prog = '', ratio = 0;
   if (r) {
@@ -2115,10 +2168,10 @@ function frontHTML(w, r) {
   if (r && r.ph === 'loop') phase = '<span class="phase">모르는 단어 복습 · ' + r.round + '라운드</span>';
   const passN = ctx.kind === 'ch' ? chGet(ctx.i).n : 0;
   const e = w.e[(passN + (r ? r.round : 0)) % w.e.length];
-  if (S.lis) return '<div class="cf-top">' + tierTag(w.t) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">' + numLabel(w.id) + '</span>' + phase + '</div>' +
+  if (S.lis) return '<div class="cf-top">' + tagsHTML(w.id) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">' + numLabel(w.id) + '</span>' + phase + '</div>' +
     '<div class="cf-mid"><button class="lis-btn" data-act="sayW" aria-label="다시 듣기">' + ICON.spk + '</button>' +
       '<span class="cf-hint">듣고 뜻을 떠올려 보세요 · 누르면 다시 들어요</span></div>';
-  return '<div class="cf-top">' + tierTag(w.t) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">' + numLabel(w.id) + '</span>' + phase + '</div>' +
+  return '<div class="cf-top">' + tagsHTML(w.id) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">' + numLabel(w.id) + '</span>' + phase + '</div>' +
     '<div class="cf-mid">' +
       '<button class="cf-word w' + len + '" data-act="sayW" lang="ja" aria-label="' + esc(w.w) + ' 발음 듣기">' + esc(w.w) + '</button>' +
       (CAN_SPEAK() ? '<span class="cf-hint">' + ICON.spk + '단어를 누르면 발음</span>' : '') +
@@ -2163,7 +2216,7 @@ function ansHTML(w, inSheet) {
   if (w.o) sub.push('<span>어원 <b>' + mixJa(w.o) + '</b></span>');
   const weak = isWeak(w.id);
   const x = H.w[w.id];
-  return '<section class="s-ans ans"><div class="ans-top">' + tierTag(w.t) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">' + numLabel(w.id) + '</span>' +
+  return '<section class="s-ans ans"><div class="ans-top">' + tagsHTML(w.id) + '<span>' + esc(CAT[w.c]) + '</span><span class="no">' + numLabel(w.id) + '</span>' +
       (x && x.m ? '<span class="miss">모르겠음 ' + x.m + '회</span>' : '') +
       (inSheet ? '<button class="starw" data-act="starW" data-id="' + w.id + '" aria-pressed="' + weak + '">' + (weak ? ICON.star + '약점에 있음' : ICON.starO + '약점에 넣기') + '</button>' : '') + '</div>' +
     '<div class="ans-row"><h2 class="ans-hw' + ([...w.w].length >= 10 ? ' xlong' : [...w.w].length >= 6 ? ' long' : '') + '" lang="ja"' + (CAN_SPEAK() ? ' data-act="sayW" data-id="' + w.id + '" role="button" tabindex="0" aria-label="' + esc(w.w) + ' 발음 듣기"' : '') + '>' + headRuby(w) + '</h2>' + (CAN_SPEAK() ? '<button class="spk lg" data-act="sayW" data-id="' + w.id + '" aria-label="발음 듣기">' + ICON.spk + '</button>' : '') + '</div>' +
@@ -2280,14 +2333,14 @@ function roundGo(shuf) {
 }
 function renderSummary(r, info) {
   const t = $('#toast'); t.hidden = true; clearTimeout(toastT);
-  V.study.innerHTML = '<header class="sbar"><button class="tb" data-act="home" aria-label="홈으로">' + ICON.close + '</button><div class="sb-t"><b>' + (info.kind === 'ch' ? chName(info.i) + ' · ' + info.pass + '회독 완료' : '약점 복습 완료') + '</b></div></header><div class="scroll"><div class="stage"></div></div>';
+  V.study.innerHTML = '<header class="sbar"><button class="tb" data-act="home" aria-label="홈으로">' + ICON.close + '</button><div class="sb-t"><b>' + (info.kind === 'ch' ? chName(info.i) + ' · ' + info.pass + '회독 완료' : '약점 복습' + (info.g ? ' · ' + pName(info.g) : '') + ' 완료') + '</b></div></header><div class="scroll"><div class="stage"></div></div>';
   const wk = weakIds().length;
   let rows = '', guide = '', acts = '';
   if (info.kind === 'ch') {
     const c = CHAPTERS[info.i];
     rows = '<dt>장</dt><dd>' + chName(info.i) + ' · ' + chRange(c) + '</dd><dt>회독</dt><dd>' + info.pass + '회독 완료</dd>';
-    const nx0 = CHAPTERS[info.i + 1], nx = nx0 && !!nx0.basic === !!c.basic ? nx0 : null;
-    if (c.kind === 'all') guide = (c.basic ? '기본 ' + BTOTAL : TOTAL) + '개 전체 회독 완료. 시험까지 약점 복습 + 이 장 반복으로 굳히세요.';
+    const nx0 = CHAPTERS[info.i + 1], nx = nx0 && !!nx0.basic === !!c.basic && (nx0.lv || 0) === (c.lv || 0) ? nx0 : null;
+    if (c.kind === 'all') guide = (c.lv ? 'N' + c.lv + ' ' + LORDER[c.lv].length : c.basic ? '기본 ' + BTOTAL : TOTAL) + '개 전체 회독 완료. 시험까지 약점 복습 + 이 장 반복으로 굳히세요.';
     else if (c.kind === 'review') guide = chRange(c) + ' 총정리 완료. ' + (nx ? '다음은 ' + chName(nx.i) + '(' + chRange(nx) + ').' : '');
     else if (nx && nx.a !== c.a) guide = chRange(c) + ' 묶음 완성. 다음 묶음으로 — ' + chName(nx.i) + '.';
     else guide = '잊기 전에 바로 다음 장으로 — 방금 본 단어도 다시 나와요.';
@@ -2295,9 +2348,9 @@ function renderSummary(r, info) {
       : '<button class="btn primary" data-act="openCh" data-i="' + info.i + '">' + chName(info.i) + ' 한 번 더</button>') +
       '<button class="btn" data-act="home">홈으로</button>';
   } else {
-    rows = '<dt>복습</dt><dd>약점 단어</dd>';
+    rows = '<dt>복습</dt><dd>약점 단어' + (info.g ? ' · ' + pName(info.g) : '') + '</dd>';
     guide = '다 외운 단어는 약점 목록에서 삭제하세요.';
-    acts = '<button class="btn primary" data-act="weakView">약점 목록 보기</button><button class="btn" data-act="home">홈으로</button>';
+    acts = '<button class="btn primary" data-act="weakView" data-pg="' + (info.g || '') + '">약점 목록 보기</button><button class="btn" data-act="home">홈으로</button>';
   }
   rows += '<dt>첫 판정</dt><dd>' + r.k + ' / ' + r.ord.length + ' 알고있음 (' + pct(r.k, r.ord.length) + '%)</dd>' +
     '<dt>모르는 단어</dt><dd>' + (r.ord.length - r.k) + '개' + (r.round ? ' → ' + r.round + '라운드 만에 통과' : '') + '</dd>' +
@@ -2318,7 +2371,7 @@ function rowHTML(id, withDel, pick) {
     (withDel && !pick ? '<button class="del" data-act="wdel" data-id="' + id + '" aria-label="' + esc(w.w) + ' 약점에서 삭제">삭제</button>' : '') + '</li>';
 }
 function wselBar() {
-  const n = B.wpick.size, ids = weakIds();
+  const n = B.wpick.size, ids = partWeak(B.wg || '');
   const t = $('#wsel-n'); if (t) t.textContent = n + '개 선택';
   const d = $('#wsel-del'); if (d) { d.disabled = !n; d.textContent = '선택 삭제' + (n ? ' (' + n + ')' : ''); }
   const a = $('#wsel-all'); if (a) a.textContent = n && n === ids.length ? '선택 해제' : '모두 선택';
@@ -2326,20 +2379,22 @@ function wselBar() {
 function weakDrop(ids, all) {
   const prev = {}, now = Date.now();
   for (const id of ids) prev[id] = H.w[id] ? JSON.stringify(H.w[id]) : null;
-  const prevWr = all && H.wr ? JSON.stringify(H.wr) : null;
+  const g = view === 'weak' ? (B.wg || '') : '';
+  const prevWr = all && (g ? H.wrp[g] : H.wr) ? JSON.stringify(g ? H.wrp[g] : H.wr) : null;
   for (const id of ids) { const x = wsGet(id); x.pin = 0; x.rm = x.m; x.u = now; }
-  if (all) { H.wr = null; H.wru = now; }
+  if (all) { if (g) { delete H.wrp[g]; H.wrpu[g] = now; } else { H.wr = null; H.wru = now; } }
   saveH(); B.wsel = false; B.wpick = new Set();
   if (view === 'weak') renderWeak();
   toast(ids.length + '개를 약점에서 뺐어요', '되돌리기', () => {
     const t = Date.now();
     for (const id of ids) { const q = prev[id] ? JSON.parse(prev[id]) : null; if (q) { const x = cleanW(q); x.u = t; H.w[id] = x; } }
-    if (prevWr) { H.wr = cleanRun(JSON.parse(prevWr)); H.wru = t; }
+    if (prevWr) { const pr = cleanRun(JSON.parse(prevWr)); if (g) { if (pr) H.wrp[g] = pr; H.wrpu[g] = t; } else { H.wr = pr; H.wru = t; } }
     saveH(); if (view === 'weak') renderWeak(); else if (view === 'home') renderHome();
   });
 }
 function renderWeak() {
-  const ids = weakIds(), wr = H.wr;
+  if (B.wg && !PARTS.has(B.wg)) B.wg = '';
+  const g = B.wg || '', ids = partWeak(g), wr = g ? H.wrp[g] : H.wr, pg = ' data-pg="' + g + '"';
   if (!ids.length) B.wsel = false;
   const sc = V.weak.querySelector('.scroll'), top = sc ? sc.scrollTop : 0;
   const sel = B.wsel;
@@ -2349,10 +2404,11 @@ function renderWeak() {
         '<button class="btn" id="wsel-all" data-act="wselAll">' + (B.wpick.size && B.wpick.size === ids.length ? '선택 해제' : '모두 선택') + '</button>' +
         '<button class="btn danger" id="wsel-del" data-act="wdelSel"' + (B.wpick.size ? '' : ' disabled') + '>선택 삭제' + (B.wpick.size ? ' (' + B.wpick.size + ')' : '') + '</button>' +
         '<button class="btn" data-act="wselOff">취소</button></div>'
-    : '<div class="wtools">' + (wr ? '<button class="btn primary big" data-act="weakGo">이어서 · ' + progText(wr) + '</button><button class="btn big" data-act="weakNew"' + (ids.length ? '' : ' disabled') + '>처음부터 (' + ids.length + '개 · 많이 틀린 순)</button>'
-        : '<button class="btn primary big" data-act="weakNew"' + (ids.length ? '' : ' disabled') + '>카드로 복습 · ' + ids.length + '개 (많이 틀린 순)</button>') +
+    : '<div class="wtools">' + (wr ? '<button class="btn primary big" data-act="weakGo"' + pg + '>이어서 · ' + progText(wr) + '</button><button class="btn big" data-act="weakNew"' + pg + (ids.length ? '' : ' disabled') + '>처음부터 (' + ids.length + '개 · 많이 틀린 순)</button>'
+        : '<button class="btn primary big" data-act="weakNew"' + pg + (ids.length ? '' : ' disabled') + '>카드로 복습 · ' + ids.length + '개 (많이 틀린 순)</button>') +
+        (g ? '<button class="btn big" data-act="weakView" data-pg="">전체 약점 보기</button>' : '') +
         (ids.length ? '<div class="grow"></div><button class="btn" data-act="wselOn">선택 삭제</button><button class="btn" data-act="wdelAll">전체 삭제</button>' : '') + '</div>';
-  V.weak.innerHTML = '<header class="bar"><button class="tb" data-act="home" aria-label="홈으로">' + ICON.back + '<span class="sm-hide">홈</span></button><h1 class="bar-title">약점 단어 ' + ids.length + '</h1><div class="grow"></div>' +
+  V.weak.innerHTML = '<header class="bar"><button class="tb" data-act="home" aria-label="홈으로">' + ICON.back + '<span class="sm-hide">홈</span></button><h1 class="bar-title">약점 단어' + (g ? ' · ' + pName(g) : '') + ' ' + ids.length + '</h1><div class="grow"></div>' +
     '<button class="tb" data-act="wmask" aria-pressed="' + B.wmask + '">뜻 가리기</button></header>' +
     '<div class="scroll"><div class="wrap">' + tools +
       (sel ? '<p class="note" style="margin:4px 0 12px">뺄 단어를 눌러서 고르세요.</p>'
@@ -2373,7 +2429,7 @@ function renderBrowse() {
     '<div class="scroll" id="bsc"><div class="wrap">' +
       '<div class="filters">' +
         '<input class="search" id="bq" type="search" placeholder="한자 · 읽기 · 뜻으로 찾기" autocomplete="off" autocapitalize="off" spellcheck="false" value="' + esc(B.q) + '">' +
-        '<div class="frow">' + seg('tier', [['all', '전체'], ['S', 'S'], ['A', 'A'], ['B', 'B']].concat(BTOTAL ? [['K', '기본']] : [])) + seg('st', [['all', '전체'], ['new', '안 봄'], ['ng', '모름'], ['ok', '앎'], ['weak', '약점']]) + '</div>' +
+        '<div class="frow">' + seg('tier', [['all', '전체'], ['S', 'S'], ['A', 'A'], ['B', 'B']].concat(BTOTAL ? [['K', '기본']] : [], LORDER[3].length ? [['N3', 'N3']] : [], LORDER[2].length ? [['N2', 'N2']] : [])) + seg('st', [['all', '전체'], ['new', '안 봄'], ['ng', '모름'], ['ok', '앎'], ['weak', '약점']]) + '</div>' +
         '<div class="cats">' + [['all', '모든 분야']].concat(CATS).map(([k, t]) => '<button class="chip" data-act="bf" data-grp="cat" data-v="' + k + '" aria-pressed="' + (B.cat === k) + '">' + t + '</button>').join('') + '</div>' +
       '</div><div class="list-meta" id="bmeta"></div><ul class="list' + (B.mask ? ' masked' : '') + '" id="blist"></ul>' +
     '</div></div>';
@@ -2385,7 +2441,7 @@ function renderList() {
   const rows = [];
   for (const id of ALL_IDS) {
     const w = byId.get(id);
-    if (B.tier !== 'all' && (B.tier === 'K' ? !BNO.has(id) : w.t !== B.tier)) continue;
+    if (B.tier !== 'all' && (B.tier === 'K' ? !BNO.has(id) : B.tier === 'N3' || B.tier === 'N2' ? !(LNO.has(id) && 'N' + LNO.get(id).L === B.tier) : !(NO.has(id) && w.t === B.tier))) continue;
     if (B.cat !== 'all' && w.c !== B.cat) continue;
     if (B.st !== 'all' && stOf(id) !== B.st) continue;
     if (q && !(w.w.includes(q) || w.r.includes(q) || toHira(w.r).includes(qh) || w.m.includes(q) || (w.ko && w.ko.includes(q)) || (w.y && w.y.includes(q)))) continue;
@@ -2564,7 +2620,7 @@ function act(a, el) {
   const idAttr = el.dataset.id != null ? +el.dataset.id : null;
   if (a.slice(0, 2) === 'kz') { kzAct(a, el); return; }
   switch (a) {
-    case 'resume': { const r = findResume(); if (!r) break; if (r.kind === 'ch') openChapter(r.i, false); else openWeak(false); break; }
+    case 'resume': { const r = findResume(); if (!r) break; if (r.kind === 'ch') openChapter(r.i, false); else openWeak(false, r.g); break; }
     case 'openCh': closeModal(); closeSheet(); openChapter(+el.dataset.i, false); break;
     case 'chList': openChList(+el.dataset.i); break;
     case 'chRestart': { const i = +el.dataset.i, ch = H.ch[i]; askConfirm(chName(i) + '을 처음부터?', (ch && ch.cur ? '지금 ' + progText(ch.cur) + '까지 한 이번 회독을 버리고 처음부터 시작해요. ' : '') + '단어별 기록과 약점은 그대로예요.', '처음부터', () => openChapter(i, true)); break; }
@@ -2601,9 +2657,9 @@ function act(a, el) {
     }
     case 'sheetBack': sheetStack.pop(); sheetShow(sheetStack[sheetStack.length - 1]); break;
     case 'closeSheet': closeSheet(); break;
-    case 'weakView': closeModal(); closeSheet(); show('weak'); break;
-    case 'weakGo': openWeak(false); break;
-    case 'weakNew': openWeak(true); break;
+    case 'weakView': B.wg = el.dataset.pg || ''; B.wsel = false; B.wpick = new Set(); closeModal(); closeSheet(); show('weak'); break;
+    case 'weakGo': openWeak(false, el.dataset.pg || ''); break;
+    case 'weakNew': openWeak(true, el.dataset.pg || ''); break;
     case 'wmask': B.wmask = !B.wmask; renderWeak(); break;
     case 'smask': { B.smask = !B.smask; el.setAttribute('aria-pressed', B.smask); const l = $('#slist'); if (l) l.classList.toggle('masked', B.smask); break; }
     case 'wdel': {
@@ -2616,9 +2672,9 @@ function act(a, el) {
     case 'wselOn': B.wsel = true; B.wpick = new Set(); renderWeak(); break;
     case 'wselOff': B.wsel = false; B.wpick = new Set(); renderWeak(); break;
     case 'wpick': { if (idAttr == null) break; if (B.wpick.has(idAttr)) B.wpick.delete(idAttr); else B.wpick.add(idAttr); const li = el.closest('li'); if (li) li.classList.toggle('on', B.wpick.has(idAttr)); el.setAttribute('aria-pressed', B.wpick.has(idAttr)); wselBar(); break; }
-    case 'wselAll': { const ids = weakIds(); B.wpick = B.wpick.size === ids.length ? new Set() : new Set(ids); renderWeak(); break; }
+    case 'wselAll': { const ids = partWeak(B.wg || ''); B.wpick = B.wpick.size === ids.length ? new Set() : new Set(ids); renderWeak(); break; }
     case 'wdelSel': { const ids = [...B.wpick].filter(isWeak); if (!ids.length) break; askConfirm(ids.length + '개를 약점에서 뺄까요?', '단어별 기록(앎·모름)은 그대로예요. 다시 ' + S.wkN + '번 모르면 돌아와요.', '빼기', () => weakDrop(ids, false), true); break; }
-    case 'wdelAll': { const ids = weakIds(); if (!ids.length) break; askConfirm('약점 단어 ' + ids.length + '개를 전부 뺄까요?', '단어별 기록(앎·모름)은 그대로예요. 진행 중인 약점 복습도 끝나요. 다시 ' + S.wkN + '번 모르면 돌아와요.', '전부 빼기', () => weakDrop(ids, true), true); break; }
+    case 'wdelAll': { const ids = partWeak(B.wg || ''); if (!ids.length) break; askConfirm('약점 단어 ' + ids.length + '개를 전부 뺄까요?', '단어별 기록(앎·모름)은 그대로예요. 진행 중인 약점 복습도 끝나요. 다시 ' + S.wkN + '번 모르면 돌아와요.', '전부 빼기', () => weakDrop(ids, true), true); break; }
     case 'toastAct': { const f = toastFn; toastFn = null; $('#toast').hidden = true; if (f) f(); break; }
     case 'browse': show('browse'); break;
     case 'mask': B.mask = !B.mask; el.setAttribute('aria-pressed', B.mask); renderList(); break;

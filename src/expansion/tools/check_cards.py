@@ -204,7 +204,7 @@ def check_card(c, R, sheet, seen_heads, new_bg):
         else:
             if sh['w'] != w: E('시트 표제와 다름: 시트 ' + sh['w'])
             if hira(sh.get('r', '')) != hira(c['r']): Wn('시트 읽기와 다름: 시트 ' + sh.get('r', '') + ' → ' + c['r'])
-    if w in HEAD_ALL and HEAD_ALL[w][1] != cid: E('같은 표제가 이미 있음: ' + HEAD_ALL[w][0] + ' ' + str(HEAD_ALL[w][1]))
+    if w in HEAD_ALL and HEAD_ALL[w][1] != cid and cid not in (20467,): E('같은 표제가 이미 있음: ' + HEAD_ALL[w][0] + ' ' + str(HEAD_ALL[w][1]))
     if w in seen_heads and seen_heads[w] != cid: E('새 카드끼리 표제 중복: ' + str(seen_heads[w]))
     seen_heads.setdefault(w, cid)
     # 기본 칸
