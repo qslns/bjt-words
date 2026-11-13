@@ -4,7 +4,12 @@ import sys, json, unicodedata
 from jamdict import Jamdict
 _J = None
 RAD = {i + 1: unicodedata.normalize('NFKC', chr(0x2F00 + i)) for i in range(214)}
+_MEMO = {}
 def ref(c):
+    if c in _MEMO: return _MEMO[c]
+    _MEMO[c] = _ref(c)
+    return _MEMO[c]
+def _ref(c):
     global _J
     if _J is None: _J = Jamdict()
     r = _J.lookup(c)

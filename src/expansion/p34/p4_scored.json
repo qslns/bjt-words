@@ -1,0 +1,3377 @@
+[
+{
+"src": "Jn3-541",
+"w": "〜性",
+"r": "せい",
+"en": "sex, gender",
+"lv": "N3",
+"score": 67.99,
+"note": "접미어 ~성(安全性·可能性·利便性) — 낱말 性(성별)은 p에"
+},
+{
+"src": "Jn3-738",
+"w": "桜",
+"r": "さくら",
+"en": "cherry blossom, cherry tree",
+"lv": "N3",
+"score": 35.37,
+"note": ""
+},
+{
+"src": "Jn3-998",
+"w": "まあ",
+"r": "まあ",
+"en": "well (used when making a modest or hesitant statement)",
+"lv": "N3",
+"score": 22.93,
+"note": ""
+},
+{
+"src": "Jn3-922",
+"w": "何も",
+"r": "なにも",
+"en": "nothing",
+"lv": "N3",
+"score": 22.53,
+"note": "何も〜ない"
+},
+{
+"src": "Jn3-666",
+"w": "関する",
+"r": "かんする",
+"en": "to concern, to be related",
+"lv": "N3",
+"score": 21.83,
+"note": ""
+},
+{
+"src": "Jn3-839",
+"w": "大〜",
+"r": "だい",
+"en": "big, great",
+"lv": "N3",
+"score": 21.68,
+"note": "접두어 대~(大企業·大規模)"
+},
+{
+"src": "Jn2-1137",
+"w": "ええと",
+"r": "ええと",
+"en": "let me see, well, er...",
+"lv": "N2",
+"score": 17.05,
+"note": ""
+},
+{
+"src": "Jn3-745",
+"w": "身",
+"r": "み",
+"en": "body, main part",
+"lv": "N3",
+"score": 11.79,
+"note": ""
+},
+{
+"src": "Jn3-869",
+"w": "地",
+"r": "ち",
+"en": "earth",
+"lv": "N3",
+"score": 10.93,
+"note": ""
+},
+{
+"src": "Jn3-910",
+"w": "どこか",
+"r": "どこか",
+"en": "somewhere, anywhere",
+"lv": "N3",
+"score": 10.21,
+"note": ""
+},
+{
+"src": "Jn3-1009",
+"w": "柵",
+"r": "さく",
+"en": "fence, paling",
+"lv": "N3",
+"score": 9.84,
+"note": ""
+},
+{
+"src": "Jn3-983",
+"w": "ベンチ",
+"r": "ベンチ",
+"en": "bench",
+"lv": "N3",
+"score": 9.83,
+"note": ""
+},
+{
+"src": "Jn3-499",
+"w": "小〜",
+"r": "しょう",
+"en": "small",
+"lv": "N3",
+"score": 8.97,
+"note": "접두어 소~(小規模·小会議室)"
+},
+{
+"src": "Jn3-879",
+"w": "疲れ",
+"r": "つかれ",
+"en": "tiredness, fatigue",
+"lv": "N3",
+"score": 8.97,
+"note": ""
+},
+{
+"src": "Jn3-938",
+"w": "はあ",
+"r": "はあ",
+"en": "(sigh)",
+"lv": "N3",
+"score": 8.55,
+"note": ""
+},
+{
+"src": "Jn3-752",
+"w": "胸",
+"r": "むね",
+"en": "breast, chest",
+"lv": "N3",
+"score": 8.14,
+"note": ""
+},
+{
+"src": "Jn2-1363",
+"w": "重〜",
+"r": "じゅう",
+"en": "heavy ~",
+"lv": "N2",
+"score": 7.95,
+"note": "접두어 중~(重工業·重労働)"
+},
+{
+"src": "Jn3-734",
+"w": "こんなに",
+"r": "こんなに",
+"en": "so, like this, in this way",
+"lv": "N3",
+"score": 7.56,
+"note": ""
+},
+{
+"src": "Jn3-486",
+"w": "じっと",
+"r": "じっと",
+"en": "patiently, quietly",
+"lv": "N3",
+"score": 7.16,
+"note": ""
+},
+{
+"src": "Jn3-639",
+"w": "肩",
+"r": "かた",
+"en": "shoulder",
+"lv": "N3",
+"score": 7.16,
+"note": ""
+},
+{
+"src": "Jn3-632",
+"w": "〜学",
+"r": "がく",
+"en": "learning, knowledge",
+"lv": "N3",
+"score": 7.15,
+"note": "접미어 ~학(経済学·心理学)"
+},
+{
+"src": "Jn3-564",
+"w": "ある〜",
+"r": "ある",
+"en": "a certain..., some...",
+"lv": "N3",
+"score": 6.71,
+"note": "어떤~(ある日·ある企業) — 동사 ある와 다름"
+},
+{
+"src": "Jn3-724",
+"w": "腰",
+"r": "こし",
+"en": "hip, waist",
+"lv": "N3",
+"score": 6.17,
+"note": ""
+},
+{
+"src": "Jn2-1160",
+"w": "お出かけ",
+"r": "おでかけ",
+"en": "outing",
+"lv": "N2",
+"score": 6.17,
+"note": "지금 표기"
+},
+{
+"src": "Jn3-957",
+"w": "腹",
+"r": "はら",
+"en": "abdomen, belly, stomach",
+"lv": "N3",
+"score": 5.98,
+"note": ""
+},
+{
+"src": "Jn3-702",
+"w": "ゲーム",
+"r": "ゲーム",
+"en": "game",
+"lv": "N3",
+"score": 5.95,
+"note": ""
+},
+{
+"src": "Jn3-575",
+"w": "板",
+"r": "いた",
+"en": "board, plank",
+"lv": "N3",
+"score": 5.91,
+"note": ""
+},
+{
+"src": "Jn3-493",
+"w": "銃",
+"r": "じゅう",
+"en": "gun",
+"lv": "N3",
+"score": 5.9,
+"note": ""
+},
+{
+"src": "Jn3-950",
+"w": "バッグ",
+"r": "バッグ",
+"en": "bag",
+"lv": "N3",
+"score": 5.64,
+"note": ""
+},
+{
+"src": "Jn3-783",
+"w": "ワイン",
+"r": "ワイン",
+"en": "wine",
+"lv": "N3",
+"score": 5.39,
+"note": ""
+},
+{
+"src": "Jn2-1325",
+"w": "シーツ",
+"r": "シーツ",
+"en": "sheet",
+"lv": "N2",
+"score": 5.11,
+"note": ""
+},
+{
+"src": "Jn3-729",
+"w": "粉",
+"r": "こな",
+"en": "flour, powder",
+"lv": "N3",
+"score": 5.07,
+"note": ""
+},
+{
+"src": "Jn3-978",
+"w": "文",
+"r": "ぶん",
+"en": "sentence",
+"lv": "N3",
+"score": 4.77,
+"note": ""
+},
+{
+"src": "Jn2-1534",
+"w": "どきどき",
+"r": "どきどき",
+"en": "throb, beat (fast)",
+"lv": "N2",
+"score": 4.77,
+"note": ""
+},
+{
+"src": "Jn3-619",
+"w": "お前",
+"r": "おまえ",
+"en": "you (sing), presence (of a high personage)",
+"lv": "N3",
+"score": 4.75,
+"note": ""
+},
+{
+"src": "Jn3-737",
+"w": "裂く",
+"r": "さく",
+"en": "to tear, to split",
+"lv": "N3",
+"score": 4.49,
+"note": ""
+},
+{
+"src": "Jn2-1415",
+"w": "スクール",
+"r": "スクール",
+"en": "school",
+"lv": "N2",
+"score": 4.15,
+"note": ""
+},
+{
+"src": "Jn2-1779",
+"w": "レンズ",
+"r": "レンズ",
+"en": "lens",
+"lv": "N2",
+"score": 4.07,
+"note": ""
+},
+{
+"src": "Jn3-835",
+"w": "そっと",
+"r": "そっと",
+"en": "softly, gently",
+"lv": "N3",
+"score": 3.93,
+"note": ""
+},
+{
+"src": "Jn3-531",
+"w": "スープ",
+"r": "スープ",
+"en": "(Western) soup",
+"lv": "N3",
+"score": 3.91,
+"note": ""
+},
+{
+"src": "Jn3-623",
+"w": "カー",
+"r": "カー",
+"en": "car",
+"lv": "N3",
+"score": 3.87,
+"note": ""
+},
+{
+"src": "Jn3-665",
+"w": "感心",
+"r": "かんしん",
+"en": "admiration",
+"lv": "N3",
+"score": 3.79,
+"note": ""
+},
+{
+"src": "Jn2-1390",
+"w": "汁",
+"r": "しる",
+"en": "juice, soup",
+"lv": "N2",
+"score": 3.79,
+"note": ""
+},
+{
+"src": "Jn3-558",
+"w": "油",
+"r": "あぶら",
+"en": "oil",
+"lv": "N3",
+"score": 3.62,
+"note": ""
+},
+{
+"src": "Jn3-637",
+"w": "貸し",
+"r": "かし",
+"en": "loan, lending",
+"lv": "N3",
+"score": 3.59,
+"note": ""
+},
+{
+"src": "Jn3-640",
+"w": "堅い",
+"r": "かたい",
+"en": "hard, firm, solid",
+"lv": "N3",
+"score": 3.44,
+"note": ""
+},
+{
+"src": "Jn3-694",
+"w": "クリスマス",
+"r": "クリスマス",
+"en": "Christmas",
+"lv": "N3",
+"score": 3.36,
+"note": ""
+},
+{
+"src": "Jn3-747",
+"w": "無〜",
+"r": "む",
+"en": "nothing, naught, zero",
+"lv": "N3",
+"score": 3.16,
+"note": "접두어 무~(無関心·無責任)"
+},
+{
+"src": "Jn3-485",
+"w": "舌",
+"r": "した",
+"en": "tongue",
+"lv": "N3",
+"score": 2.95,
+"note": ""
+},
+{
+"src": "Jn3-870",
+"w": "チーズ",
+"r": "チーズ",
+"en": "cheese",
+"lv": "N3",
+"score": 2.95,
+"note": ""
+},
+{
+"src": "Jn3-1000",
+"w": "巻く",
+"r": "まく",
+"en": "to wind, to coil, to roll",
+"lv": "N3",
+"score": 2.95,
+"note": ""
+},
+{
+"src": "Jn2-1245",
+"w": "くぎ",
+"r": "くぎ",
+"en": "nail",
+"lv": "N2",
+"score": 2.95,
+"note": "원래 표기 釘(상용한자 밖)"
+},
+{
+"src": "Jn3-967",
+"w": "膝",
+"r": "ひざ",
+"en": "knee, lap",
+"lv": "N3",
+"score": 2.94,
+"note": ""
+},
+{
+"src": "Jn3-782",
+"w": "輪",
+"r": "わ",
+"en": "ring, hoop, circle",
+"lv": "N3",
+"score": 2.87,
+"note": ""
+},
+{
+"src": "Jn3-508",
+"w": "植物",
+"r": "しょくぶつ",
+"en": "plant, vegetation",
+"lv": "N3",
+"score": 2.8,
+"note": ""
+},
+{
+"src": "Jn2-1083",
+"w": "〜年生",
+"r": "ねんせい",
+"en": "counter for school year",
+"lv": "N2",
+"score": 2.8,
+"note": "학년(小学3年生)"
+},
+{
+"src": "Jn3-923",
+"w": "鍋",
+"r": "なべ",
+"en": "saucepan, pot",
+"lv": "N3",
+"score": 2.79,
+"note": ""
+},
+{
+"src": "Jn3-739",
+"w": "酒",
+"r": "さけ",
+"en": "alcohol, sake",
+"lv": "N3",
+"score": 2.6,
+"note": ""
+},
+{
+"src": "Jn3-630",
+"w": "かく",
+"r": "かく",
+"en": "to scratch",
+"lv": "N3",
+"score": 2.52,
+"note": "掻는 상용한자 밖(書く·欠く와 헷갈림 주의)"
+},
+{
+"src": "Jn2-1310",
+"w": "材木",
+"r": "ざいもく",
+"en": "lumber, timber",
+"lv": "N2",
+"score": 2.52,
+"note": ""
+},
+{
+"src": "Jn2-1411",
+"w": "杉",
+"r": "すぎ",
+"en": "Japanese cedar",
+"lv": "N2",
+"score": 2.52,
+"note": ""
+},
+{
+"src": "Jn2-1548",
+"w": "なす",
+"r": "なす",
+"en": "to accomplish, to do",
+"lv": "N2",
+"score": 2.46,
+"note": "為의 な 읽기는 상용 밖 → 가나"
+},
+{
+"src": "Jn3-895",
+"w": "鉄",
+"r": "てつ",
+"en": "iron",
+"lv": "N3",
+"score": 2.43,
+"note": ""
+},
+{
+"src": "Jn3-551",
+"w": "アウト",
+"r": "アウト",
+"en": "out",
+"lv": "N3",
+"score": 2.4,
+"note": ""
+},
+{
+"src": "Jn3-858",
+"w": "旅",
+"r": "たび",
+"en": "travel, trip, journey",
+"lv": "N3",
+"score": 2.4,
+"note": ""
+},
+{
+"src": "Jn3-497",
+"w": "手術",
+"r": "しゅじゅつ",
+"en": "surgical operation",
+"lv": "N3",
+"score": 2.24,
+"note": ""
+},
+{
+"src": "Jn3-513",
+"w": "女子",
+"r": "じょし",
+"en": "woman, girl",
+"lv": "N3",
+"score": 2.24,
+"note": ""
+},
+{
+"src": "Jn3-532",
+"w": "スキー",
+"r": "スキー",
+"en": "ski",
+"lv": "N3",
+"score": 2.24,
+"note": ""
+},
+{
+"src": "Jn3-635",
+"w": "籠",
+"r": "かご",
+"en": "basket, cage",
+"lv": "N3",
+"score": 2.24,
+"note": ""
+},
+{
+"src": "Jn3-758",
+"w": "もしも",
+"r": "もしも",
+"en": "if",
+"lv": "N3",
+"score": 2.24,
+"note": ""
+},
+{
+"src": "Jn3-874",
+"w": "中学",
+"r": "ちゅうがく",
+"en": "middle school, junior high school",
+"lv": "N3",
+"score": 2.24,
+"note": ""
+},
+{
+"src": "Jn3-916",
+"w": "トランプ",
+"r": "トランプ",
+"en": "playing cards (lit: trump)",
+"lv": "N3",
+"score": 2.15,
+"note": ""
+},
+{
+"src": "Jn3-890",
+"w": "出会う",
+"r": "であう",
+"en": "to meet by chance, to come across, to happen to encounter",
+"lv": "N3",
+"score": 2.1,
+"note": ""
+},
+{
+"src": "Jn3-947",
+"w": "始まり",
+"r": "はじまり",
+"en": "origin, beginning",
+"lv": "N3",
+"score": 2.1,
+"note": ""
+},
+{
+"src": "Jn3-612",
+"w": "丘",
+"r": "おか",
+"en": "hill, height",
+"lv": "N3",
+"score": 1.97,
+"note": ""
+},
+{
+"src": "Jn3-707",
+"w": "蹴る",
+"r": "ける",
+"en": "to kick",
+"lv": "N3",
+"score": 1.97,
+"note": ""
+},
+{
+"src": "Jn2-1458",
+"w": "太鼓",
+"r": "たいこ",
+"en": "drum, tambourine",
+"lv": "N2",
+"score": 1.97,
+"note": ""
+},
+{
+"src": "Jn2-1567",
+"w": "にわか",
+"r": "にわか",
+"en": "sudden, abrupt, unexpected",
+"lv": "N2",
+"score": 1.97,
+"note": "원래 표기 俄(상용한자 밖)"
+},
+{
+"src": "Jn3-581",
+"w": "いとこ",
+"r": "いとこ",
+"en": "cousin (male)",
+"lv": "N3",
+"score": 1.96,
+"note": "熟字訓 — 지금은 가나가 흔함"
+},
+{
+"src": "Jn3-834",
+"w": "注ぐ",
+"r": "そそぐ",
+"en": "to pour (into)",
+"lv": "N3",
+"score": 1.96,
+"note": ""
+},
+{
+"src": "Jn3-887",
+"w": "積もる",
+"r": "つもる",
+"en": "to pile up",
+"lv": "N3",
+"score": 1.96,
+"note": ""
+},
+{
+"src": "Jn2-1067",
+"w": "〜校",
+"r": "こう",
+"en": "counter for school",
+"lv": "N2",
+"score": 1.96,
+"note": "학교 세는 말·~교(3校·母校)"
+},
+{
+"src": "Jn3-764",
+"w": "優勝",
+"r": "ゆうしょう",
+"en": "overall victory, championship",
+"lv": "N3",
+"score": 1.9,
+"note": ""
+},
+{
+"src": "Jn2-1084",
+"w": "〜病",
+"r": "びょう",
+"en": "kind of disease",
+"lv": "N2",
+"score": 1.9,
+"note": "접미어 ~병(糖尿病)"
+},
+{
+"src": "Jn2-1232",
+"w": "基地",
+"r": "きち",
+"en": "base",
+"lv": "N2",
+"score": 1.84,
+"note": ""
+},
+{
+"src": "Jn2-1197",
+"w": "貸家",
+"r": "かしや",
+"en": "house for rent",
+"lv": "N2",
+"score": 1.8,
+"note": ""
+},
+{
+"src": "Jn2-1477",
+"w": "淡水",
+"r": "たんすい",
+"en": "fresh water",
+"lv": "N2",
+"score": 1.8,
+"note": ""
+},
+{
+"src": "Jn2-1742",
+"w": "薬局",
+"r": "やっきょく",
+"en": "pharmacy, drugstore",
+"lv": "N2",
+"score": 1.8,
+"note": ""
+},
+{
+"src": "Jn2-1060",
+"w": "〜園",
+"r": "えん",
+"en": "~ garden (especially man made)",
+"lv": "N2",
+"score": 1.76,
+"note": "접미어 ~원(幼稚園·動物園)"
+},
+{
+"src": "Jn2-1432",
+"w": "セメント",
+"r": "セメント",
+"en": "cement",
+"lv": "N2",
+"score": 1.72,
+"note": ""
+},
+{
+"src": "Jn3-570",
+"w": "息",
+"r": "いき",
+"en": "breath",
+"lv": "N3",
+"score": 1.7,
+"note": ""
+},
+{
+"src": "Jn3-760",
+"w": "素",
+"r": "もと",
+"en": "prime",
+"lv": "N3",
+"score": 1.7,
+"note": ""
+},
+{
+"src": "Jn3-505",
+"w": "賞品",
+"r": "しょうひん",
+"en": "prize, trophy",
+"lv": "N3",
+"score": 1.68,
+"note": ""
+},
+{
+"src": "Jn3-871",
+"w": "父親",
+"r": "ちちおや",
+"en": "father",
+"lv": "N3",
+"score": 1.68,
+"note": ""
+},
+{
+"src": "Jn2-1077",
+"w": "〜帳",
+"r": "ちょう",
+"en": "~ book, notebook",
+"lv": "N2",
+"score": 1.68,
+"note": "접미어 ~장(手帳·通帳)"
+},
+{
+"src": "Jn2-1574",
+"w": "狙う",
+"r": "ねらう",
+"en": "to aim at",
+"lv": "N2",
+"score": 1.68,
+"note": ""
+},
+{
+"src": "Jn3-687",
+"w": "管",
+"r": "くだ",
+"en": "pipe, tube",
+"lv": "N3",
+"score": 1.64,
+"note": ""
+},
+{
+"src": "Jn2-1454",
+"w": "タイヤ",
+"r": "タイヤ",
+"en": "tire, tyre",
+"lv": "N2",
+"score": 1.64,
+"note": "지금 표기"
+},
+{
+"src": "Jn3-523",
+"w": "心臓",
+"r": "しんぞう",
+"en": "heart",
+"lv": "N3",
+"score": 1.54,
+"note": ""
+},
+{
+"src": "Jn3-546",
+"w": "せき",
+"r": "せき",
+"en": "cough",
+"lv": "N3",
+"score": 1.54,
+"note": "원래 표기 咳(상용한자 밖)"
+},
+{
+"src": "Jn3-945",
+"w": "吐く",
+"r": "はく",
+"en": "to throw up, to vomit",
+"lv": "N3",
+"score": 1.54,
+"note": ""
+},
+{
+"src": "Jn3-990",
+"w": "ほこり",
+"r": "ほこり",
+"en": "dust",
+"lv": "N3",
+"score": 1.54,
+"note": "원래 표기 埃(상용한자 밖)"
+},
+{
+"src": "Jn2-1286",
+"w": "紅葉",
+"r": "こうよう",
+"en": "fall colors (of leaves)",
+"lv": "N2",
+"score": 1.48,
+"note": ""
+},
+{
+"src": "Jn3-819",
+"w": "計器",
+"r": "けいき",
+"en": "meter, gauge",
+"lv": "N3",
+"score": 1.44,
+"note": ""
+},
+{
+"src": "Jn3-673",
+"w": "球",
+"r": "きゅう",
+"en": "globe, sphere, ball",
+"lv": "N3",
+"score": 1.4,
+"note": ""
+},
+{
+"src": "Jn2-1062",
+"w": "〜科",
+"r": "か",
+"en": "family, group, course",
+"lv": "N2",
+"score": 1.4,
+"note": "접미어 ~과(内科·学科)"
+},
+{
+"src": "Jn2-1372",
+"w": "主人",
+"r": "しゅじん",
+"en": "(one's own) husband",
+"lv": "N2",
+"score": 1.4,
+"note": ""
+},
+{
+"src": "Jn2-1451",
+"w": "その頃",
+"r": "そのころ",
+"en": "in those days, at that time, then",
+"lv": "N2",
+"score": 1.4,
+"note": ""
+},
+{
+"src": "Jn3-904",
+"w": "東洋",
+"r": "とうよう",
+"en": "Orient",
+"lv": "N3",
+"score": 1.34,
+"note": ""
+},
+{
+"src": "Jn3-617",
+"w": "帯",
+"r": "おび",
+"en": "band, sash",
+"lv": "N3",
+"score": 1.28,
+"note": ""
+},
+{
+"src": "Jn3-679",
+"w": "強力",
+"r": "きょうりょく",
+"en": "powerful, strong",
+"lv": "N3",
+"score": 1.28,
+"note": ""
+},
+{
+"src": "Jn3-693",
+"w": "クリーム",
+"r": "クリーム",
+"en": "cream",
+"lv": "N3",
+"score": 1.26,
+"note": ""
+},
+{
+"src": "Jn3-977",
+"w": "震える",
+"r": "ふるえる",
+"en": "to shiver, to shake, to quake",
+"lv": "N3",
+"score": 1.26,
+"note": ""
+},
+{
+"src": "Jn3-1043",
+"w": "デザート",
+"r": "デザート",
+"en": "dessert",
+"lv": "N3",
+"score": 1.26,
+"note": ""
+},
+{
+"src": "Jn2-1105",
+"w": "甘やかす",
+"r": "あまやかす",
+"en": "to pamper, to spoil",
+"lv": "N2",
+"score": 1.26,
+"note": ""
+},
+{
+"src": "Jn2-1150",
+"w": "お代わり",
+"r": "おかわり",
+"en": "second helping, another cup",
+"lv": "N2",
+"score": 1.26,
+"note": ""
+},
+{
+"src": "Jn2-1219",
+"w": "枯れる",
+"r": "かれる",
+"en": "to wither, to die (plant), to be blasted (plant)",
+"lv": "N2",
+"score": 1.26,
+"note": ""
+},
+{
+"src": "Jn2-1527",
+"w": "東西",
+"r": "とうざい",
+"en": "East and West, whole country",
+"lv": "N2",
+"score": 1.26,
+"note": ""
+},
+{
+"src": "Jn3-865",
+"w": "段",
+"r": "だん",
+"en": "step, stair, grade",
+"lv": "N3",
+"score": 1.2,
+"note": ""
+},
+{
+"src": "Jn3-490",
+"w": "しまった",
+"r": "しまった",
+"en": "Damn it!",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-522",
+"w": "親戚",
+"r": "しんせき",
+"en": "relative(s)",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-527",
+"w": "親友",
+"r": "しんゆう",
+"en": "close friend, buddy",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-664",
+"w": "患者",
+"r": "かんじゃ",
+"en": "patient",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-674",
+"w": "救助",
+"r": "きゅうじょ",
+"en": "relief, aid, rescue",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-733",
+"w": "転ぶ",
+"r": "ころぶ",
+"en": "to fall down, to fall over",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-744",
+"w": "豆",
+"r": "まめ",
+"en": "beans, peas",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-763",
+"w": "屋根",
+"r": "やね",
+"en": "roof",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-913",
+"w": "友",
+"r": "とも",
+"en": "friend, companion, pal",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-1004",
+"w": "孫",
+"r": "まご",
+"en": "grandchild",
+"lv": "N3",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn2-1066",
+"w": "〜教",
+"r": "きょう",
+"en": "religion",
+"lv": "N2",
+"score": 1.12,
+"note": "접미어 ~교(仏教)"
+},
+{
+"src": "Jn2-1274",
+"w": "恋しい",
+"r": "こいしい",
+"en": "dear, beloved; to miss",
+"lv": "N2",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn2-1465",
+"w": "ダイヤモンド",
+"r": "ダイヤモンド",
+"en": "diamond",
+"lv": "N2",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn2-1540",
+"w": "丼",
+"r": "どんぶり",
+"en": "porcelain bowl, bowl of rice with food on top",
+"lv": "N2",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn2-1757",
+"w": "幼稚園",
+"r": "ようちえん",
+"en": "kindergarten",
+"lv": "N2",
+"score": 1.12,
+"note": ""
+},
+{
+"src": "Jn3-495",
+"w": "ジュース",
+"r": "ジュース",
+"en": "juice, soft drink; deuce",
+"lv": "N3",
+"score": 1.08,
+"note": ""
+},
+{
+"src": "Jn3-1012",
+"w": "酸化",
+"r": "さんか",
+"en": "oxidation",
+"lv": "N3",
+"score": 1.08,
+"note": ""
+},
+{
+"src": "Jn2-1608",
+"w": "半島",
+"r": "はんとう",
+"en": "peninsula",
+"lv": "N2",
+"score": 1.08,
+"note": ""
+},
+{
+"src": "Jn3-815",
+"w": "菌",
+"r": "きん",
+"en": "germ, bacterium",
+"lv": "N3",
+"score": 1.0,
+"note": ""
+},
+{
+"src": "Jn3-921",
+"w": "謎",
+"r": "なぞ",
+"en": "riddle, puzzle, enigma",
+"lv": "N3",
+"score": 1.0,
+"note": ""
+},
+{
+"src": "Jn2-1769",
+"w": "リボン",
+"r": "リボン",
+"en": "ribbon",
+"lv": "N2",
+"score": 1.0,
+"note": ""
+},
+{
+"src": "Jn3-498",
+"w": "出場",
+"r": "しゅつじょう",
+"en": "participation",
+"lv": "N3",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn3-809",
+"w": "歓声",
+"r": "かんせい",
+"en": "cheer, shout of joy",
+"lv": "N3",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn3-884",
+"w": "務め",
+"r": "つとめ",
+"en": "duty",
+"lv": "N3",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn3-909",
+"w": "解ける",
+"r": "とける",
+"en": "to come untied, to come apart",
+"lv": "N3",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn3-924",
+"w": "涙",
+"r": "なみだ",
+"en": "tear",
+"lv": "N3",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn3-1030",
+"w": "膳",
+"r": "ぜん",
+"en": "(small) table, tray, meal",
+"lv": "N3",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn2-1064",
+"w": "〜画",
+"r": "が",
+"en": "picture, painting",
+"lv": "N2",
+"score": 0.98,
+"note": "접미어 ~화(日本画·映画)"
+},
+{
+"src": "Jn2-1128",
+"w": "うなずく",
+"r": "うなずく",
+"en": "to nod",
+"lv": "N2",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn2-1132",
+"w": "売り切れる",
+"r": "うりきれる",
+"en": "to be sold out",
+"lv": "N2",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn2-1302",
+"w": "こらえる",
+"r": "こらえる",
+"en": "to bear, to endure, to put up with",
+"lv": "N2",
+"score": 0.98,
+"note": "堪의 こら 읽기는 상용 밖"
+},
+{
+"src": "Jn2-1578",
+"w": "のり",
+"r": "のり",
+"en": "glue, paste, starch",
+"lv": "N2",
+"score": 0.98,
+"note": "원래 표기 糊(상용한자 밖)"
+},
+{
+"src": "Jn2-1609",
+"w": "ハンドル",
+"r": "ハンドル",
+"en": "handle, steering wheel",
+"lv": "N2",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn2-1740",
+"w": "夜行",
+"r": "やこう",
+"en": "night train, night travel",
+"lv": "N2",
+"score": 0.98,
+"note": ""
+},
+{
+"src": "Jn3-489",
+"w": "死亡",
+"r": "しぼう",
+"en": "death",
+"lv": "N3",
+"score": 0.92,
+"note": ""
+},
+{
+"src": "Jn3-807",
+"w": "がん",
+"r": "がん",
+"en": "cancer",
+"lv": "N3",
+"score": 0.92,
+"note": "원래 표기 癌(상용한자 밖)"
+},
+{
+"src": "Jn3-518",
+"w": "城",
+"r": "しろ",
+"en": "castle",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-535",
+"w": "頭痛",
+"r": "ずつう",
+"en": "headache",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-568",
+"w": "あんなに",
+"r": "あんなに",
+"en": "to that extent, to that degree",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-569",
+"w": "胃",
+"r": "い",
+"en": "stomach",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-584",
+"w": "命",
+"r": "いのち",
+"en": "life",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-593",
+"w": "うがい",
+"r": "うがい",
+"en": "gargling",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-652",
+"w": "髪の毛",
+"r": "かみのけ",
+"en": "hair (head)",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-685",
+"w": "臭い",
+"r": "くさい",
+"en": "stinky, smelly, bad-smelling",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-759",
+"w": "持ち上げる",
+"r": "もちあげる",
+"en": "to raise, to lift up, to flatter",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-892",
+"w": "デート",
+"r": "デート",
+"en": "date (in the sense of 'social engagement' only)",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-984",
+"w": "棒",
+"r": "ぼう",
+"en": "pole, rod, stick",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-986",
+"w": "ほえる",
+"r": "ほえる",
+"en": "to bark, to howl",
+"lv": "N3",
+"score": 0.84,
+"note": "원래 표기 吠える(상용한자 밖)"
+},
+{
+"src": "Jn3-989",
+"w": "ボール",
+"r": "ボール",
+"en": "ball; bowl",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-1058",
+"w": "マッサージ",
+"r": "マッサージ",
+"en": "massage",
+"lv": "N3",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn2-1181",
+"w": "回数券",
+"r": "かいすうけん",
+"en": "book of tickets",
+"lv": "N2",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn2-1265",
+"w": "血圧",
+"r": "けつあつ",
+"en": "blood pressure",
+"lv": "N2",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn2-1552",
+"w": "何々",
+"r": "なになに",
+"en": "such and such, What?",
+"lv": "N2",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn2-1607",
+"w": "バンド",
+"r": "バンド",
+"en": "band",
+"lv": "N2",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn2-1636",
+"w": "ピンク",
+"r": "ピンク",
+"en": "pink",
+"lv": "N2",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn2-1699",
+"w": "マラソン",
+"r": "マラソン",
+"en": "marathon",
+"lv": "N2",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn2-1727",
+"w": "もたれる",
+"r": "もたれる",
+"en": "to lean against, to lean on",
+"lv": "N2",
+"score": 0.84,
+"note": ""
+},
+{
+"src": "Jn3-1056",
+"w": "膜",
+"r": "まく",
+"en": "membrane, film",
+"lv": "N3",
+"score": 0.72,
+"note": ""
+},
+{
+"src": "Jn2-1263",
+"w": "下水",
+"r": "げすい",
+"en": "drainage, sewage, ditch, gutter, sewerage",
+"lv": "N2",
+"score": 0.72,
+"note": ""
+},
+{
+"src": "Jn2-1336",
+"w": "磁石",
+"r": "じしゃく",
+"en": "magnet",
+"lv": "N2",
+"score": 0.72,
+"note": ""
+},
+{
+"src": "Jn2-1665",
+"w": "別荘",
+"r": "べっそう",
+"en": "villa; vacation home; summer cottage",
+"lv": "N2",
+"score": 0.72,
+"note": ""
+},
+{
+"src": "Jn2-1706",
+"w": "ミシン",
+"r": "ミシン",
+"en": "sewing machine",
+"lv": "N2",
+"score": 0.72,
+"note": ""
+},
+{
+"src": "Jn2-1781",
+"w": "和〜",
+"r": "わ",
+"en": "Japanese style",
+"lv": "N2",
+"score": 0.72,
+"note": "접두어 일본식(和食·和室)"
+},
+{
+"src": "Jn3-477",
+"w": "酸素",
+"r": "さんそ",
+"en": "oxygen",
+"lv": "N3",
+"score": 0.64,
+"note": ""
+},
+{
+"src": "Jn3-548",
+"w": "愛",
+"r": "あい",
+"en": "love",
+"lv": "N3",
+"score": 0.64,
+"note": ""
+},
+{
+"src": "Jn3-595",
+"w": "牛",
+"r": "うし",
+"en": "cattle, cow",
+"lv": "N3",
+"score": 0.64,
+"note": ""
+},
+{
+"src": "Jn3-706",
+"w": "血液",
+"r": "けつえき",
+"en": "blood",
+"lv": "N3",
+"score": 0.64,
+"note": ""
+},
+{
+"src": "Jn3-746",
+"w": "ミルク",
+"r": "ミルク",
+"en": "milk",
+"lv": "N3",
+"score": 0.64,
+"note": ""
+},
+{
+"src": "Jn3-762",
+"w": "物語",
+"r": "ものがたり",
+"en": "tale, story, legend",
+"lv": "N3",
+"score": 0.64,
+"note": ""
+},
+{
+"src": "Jn2-1127",
+"w": "うどん",
+"r": "うどん",
+"en": "udon noodles (Japanese traditional noodles)",
+"lv": "N2",
+"score": 0.64,
+"note": ""
+},
+{
+"src": "Jn2-1389",
+"w": "私立",
+"r": "しりつ",
+"en": "private (establishment)",
+"lv": "N2",
+"score": 0.64,
+"note": ""
+},
+{
+"src": "Jn3-520",
+"w": "診察",
+"r": "しんさつ",
+"en": "medical examination (of a patient)",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-524",
+"w": "身体",
+"r": "しんたい",
+"en": "the body",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-559",
+"w": "脂",
+"r": "あぶら",
+"en": "fat",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-560",
+"w": "嵐",
+"r": "あらし",
+"en": "storm",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-579",
+"w": "痛み",
+"r": "いたみ",
+"en": "pain, ache, sore",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-615",
+"w": "恐ろしい",
+"r": "おそろしい",
+"en": "terrible, dreadful",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-620",
+"w": "思い出",
+"r": "おもいで",
+"en": "memories, recollections, reminiscence",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-636",
+"w": "飾り",
+"r": "かざり",
+"en": "decoration",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-644",
+"w": "学期",
+"r": "がっき",
+"en": "term (school)",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-662",
+"w": "乾かす",
+"r": "かわかす",
+"en": "to dry",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-675",
+"w": "教科書",
+"r": "きょうかしょ",
+"en": "textbook",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-705",
+"w": "けち",
+"r": "けち",
+"en": "stinginess, miser",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-710",
+"w": "恋",
+"r": "こい",
+"en": "love, tender passion",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-713",
+"w": "光景",
+"r": "こうけい",
+"en": "scene, spectacle",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-722",
+"w": "国語",
+"r": "こくご",
+"en": "national language",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-771",
+"w": "汚す",
+"r": "よごす",
+"en": "to pollute, to make dirty",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-776",
+"w": "ライター",
+"r": "ライター",
+"en": "lighter; writer",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-849",
+"w": "タオル",
+"r": "タオル",
+"en": "(hand) towel",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-863",
+"w": "だます",
+"r": "だます",
+"en": "to trick, to cheat, to deceive",
+"lv": "N3",
+"score": 0.56,
+"note": "원래 표기 騙す(상용한자 밖)"
+},
+{
+"src": "Jn3-867",
+"w": "男子",
+"r": "だんし",
+"en": "young man",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-1026",
+"w": "真理",
+"r": "しんり",
+"en": "truth",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-1036",
+"w": "隊",
+"r": "たい",
+"en": "party, troops",
+"lv": "N3",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1247",
+"w": "くしゃみ",
+"r": "くしゃみ",
+"en": "sneeze",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1364",
+"w": "集会",
+"r": "しゅうかい",
+"en": "meeting, assembly",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1377",
+"w": "小学生",
+"r": "しょうがくせい",
+"en": "elementary school pupil",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1408",
+"w": "スカーフ",
+"r": "スカーフ",
+"en": "scarf",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1509",
+"w": "手洗い",
+"r": "てあらい",
+"en": "restroom, lavatory",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1523",
+"w": "天皇",
+"r": "てんのう",
+"en": "Emperor of Japan",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1582",
+"w": "灰色",
+"r": "はいいろ",
+"en": "grey, ashen",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1656",
+"w": "ふわふわ",
+"r": "ふわふわ",
+"en": "light, soft",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1695",
+"w": "真っ黒",
+"r": "まっくろ",
+"en": "pitch black",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1722",
+"w": "迷信",
+"r": "めいしん",
+"en": "superstition",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1734",
+"w": "盛る",
+"r": "もる",
+"en": "to serve (food); to fill up; to prescribe",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn2-1735",
+"w": "問答",
+"r": "もんどう",
+"en": "questions and answers, dialogue",
+"lv": "N2",
+"score": 0.56,
+"note": ""
+},
+{
+"src": "Jn3-530",
+"w": "酢",
+"r": "す",
+"en": "vinegar",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-613",
+"w": "沖",
+"r": "おき",
+"en": "open sea",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-650",
+"w": "神",
+"r": "かみ",
+"en": "god",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-654",
+"w": "歌謡",
+"r": "かよう",
+"en": "song, ballad",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-676",
+"w": "競技",
+"r": "きょうぎ",
+"en": "game, match, contest",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-682",
+"w": "銀",
+"r": "ぎん",
+"en": "silver",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-698",
+"w": "郡",
+"r": "ぐん",
+"en": "country, district",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-725",
+"w": "こしょう",
+"r": "こしょう",
+"en": "pepper",
+"lv": "N3",
+"score": 0.36,
+"note": "원래 표기 胡椒(상용한자 밖)"
+},
+{
+"src": "Jn3-757",
+"w": "毛布",
+"r": "もうふ",
+"en": "blanket",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-778",
+"w": "陸",
+"r": "りく",
+"en": "land, shore",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-801",
+"w": "核",
+"r": "かく",
+"en": "nucleus, kernel",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-829",
+"w": "作",
+"r": "さく",
+"en": "a work, a harvest",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-847",
+"w": "大陸",
+"r": "たいりく",
+"en": "continent",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-882",
+"w": "土",
+"r": "つち",
+"en": "earth, soil",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-899",
+"w": "塔",
+"r": "とう",
+"en": "tower, pagoda",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-943",
+"w": "墓",
+"r": "はか",
+"en": "grave, tomb",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-1014",
+"w": "磁気",
+"r": "じき",
+"en": "magnetism",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-1057",
+"w": "股",
+"r": "また",
+"en": "thigh, crotch",
+"lv": "N3",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1086",
+"w": "〜弁",
+"r": "べん",
+"en": "speech, dialect",
+"lv": "N2",
+"score": 0.36,
+"note": "접미어 ~사투리(関西弁)"
+},
+{
+"src": "Jn2-1140",
+"w": "園芸",
+"r": "えんげい",
+"en": "horticulture, gardening",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1144",
+"w": "煙突",
+"r": "えんとつ",
+"en": "chimney",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1199",
+"w": "カセット",
+"r": "カセット",
+"en": "cassette (tape)",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1326",
+"w": "寺院",
+"r": "じいん",
+"en": "temple",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1382",
+"w": "蒸発",
+"r": "じょうはつ",
+"en": "evaporation; unexplained disappearance",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1392",
+"w": "人造",
+"r": "じんぞう",
+"en": "man-made, synthetic, artificial",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1504",
+"w": "粒",
+"r": "つぶ",
+"en": "grain",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1524",
+"w": "テンポ",
+"r": "テンポ",
+"en": "tempo",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1525",
+"w": "電流",
+"r": "でんりゅう",
+"en": "electric current",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1629",
+"w": "皮膚",
+"r": "ひふ",
+"en": "skin",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1666",
+"w": "ヘリコプター",
+"r": "ヘリコプター",
+"en": "helicopter",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn2-1680",
+"w": "保健",
+"r": "ほけん",
+"en": "health preservation, hygiene, sanitation",
+"lv": "N2",
+"score": 0.36,
+"note": ""
+},
+{
+"src": "Jn3-473",
+"w": "覚める",
+"r": "さめる",
+"en": "to wake, to wake up",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-475",
+"w": "猿",
+"r": "さる",
+"en": "monkey",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-479",
+"w": "ジーンズ",
+"r": "ジーンズ",
+"en": "jeans",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-491",
+"w": "湿る",
+"r": "しめる",
+"en": "to be wet, to be damp",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-494",
+"w": "宗教",
+"r": "しゅうきょう",
+"en": "religion",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-528",
+"w": "人類",
+"r": "じんるい",
+"en": "mankind, humanity",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-529",
+"w": "巣",
+"r": "す",
+"en": "nest, breeding place",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-549",
+"w": "愛情",
+"r": "あいじょう",
+"en": "love, affection",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-555",
+"w": "暖まる",
+"r": "あたたまる",
+"en": "to warm up",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-566",
+"w": "泡",
+"r": "あわ",
+"en": "bubble, foam",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-573",
+"w": "意地悪",
+"r": "いじわる",
+"en": "malicious, mean, unkind",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-588",
+"w": "今にも",
+"r": "いまにも",
+"en": "at any time, soon",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-601",
+"w": "生まれ",
+"r": "うまれ",
+"en": "birth, birth-place",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-604",
+"w": "餌",
+"r": "えさ",
+"en": "feed, bait",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-606",
+"w": "演奏",
+"r": "えんそう",
+"en": "musical performance",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-616",
+"w": "鬼",
+"r": "おに",
+"en": "ogre, demon, 'it' (e.g.,in a game of tag)",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-645",
+"w": "課程",
+"r": "かてい",
+"en": "course, curriculum",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-697",
+"w": "軍",
+"r": "ぐん",
+"en": "army, force, troops",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-720",
+"w": "呼吸",
+"r": "こきゅう",
+"en": "breath, respiration",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-726",
+"w": "骨折",
+"r": "こっせつ",
+"en": "bone fracture",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-743",
+"w": "ママ",
+"r": "ママ",
+"en": "Mama",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-755",
+"w": "飯",
+"r": "めし",
+"en": "meals, food",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-768",
+"w": "酔う",
+"r": "よう",
+"en": "to get drunk",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-784",
+"w": "別れ",
+"r": "わかれ",
+"en": "parting, separation, farewell",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-791",
+"w": "医院",
+"r": "いいん",
+"en": "doctor's office (surgery), clinic",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-808",
+"w": "刊行",
+"r": "かんこう",
+"en": "publication, issue",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-825",
+"w": "興奮",
+"r": "こうふん",
+"en": "excitement, stimulation",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-826",
+"w": "語句",
+"r": "ごく",
+"en": "words, phrases",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-832",
+"w": "全身",
+"r": "ぜんしん",
+"en": "the whole body, full-length (portrait)",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-836",
+"w": "袖",
+"r": "そで",
+"en": "sleeve",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-840",
+"w": "体育",
+"r": "たいいく",
+"en": "physical education, gymnastics, athletics",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-848",
+"w": "倒す",
+"r": "たおす",
+"en": "to throw down, to beat",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-850",
+"w": "宝",
+"r": "たから",
+"en": "treasure",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-861",
+"w": "弾",
+"r": "たま",
+"en": "bullet, shot",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-864",
+"w": "たまらない",
+"r": "たまらない",
+"en": "intolerable, unbearable, unendurable",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-866",
+"w": "単語",
+"r": "たんご",
+"en": "word; vocabulary",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-880",
+"w": "突く",
+"r": "つく",
+"en": "to thrust, to strike; to poke",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-883",
+"w": "包み",
+"r": "つつみ",
+"en": "bundle, package",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-886",
+"w": "罪",
+"r": "つみ",
+"en": "crime, fault, indiscretion",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-888",
+"w": "釣り",
+"r": "つり",
+"en": "fishing",
+"lv": "N3",
+"score": 0.28,
+"note": "지금 표기"
+},
+{
+"src": "Jn3-908",
+"w": "溶ける",
+"r": "とける",
+"en": "to melt, to thaw, to dissolve",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-917",
+"w": "ドレス",
+"r": "ドレス",
+"en": "dress",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-918",
+"w": "泥",
+"r": "どろ",
+"en": "mud",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-941",
+"w": "ハイキング",
+"r": "ハイキング",
+"en": "hiking",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-946",
+"w": "博物館",
+"r": "はくぶつかん",
+"en": "museum",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-952",
+"w": "罰する",
+"r": "ばっする",
+"en": "to punish, to penalize",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-954",
+"w": "羽",
+"r": "はね",
+"en": "wing",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-956",
+"w": "母親",
+"r": "ははおや",
+"en": "mother",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-960",
+"w": "反抗",
+"r": "はんこう",
+"en": "opposition, resistance",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-962",
+"w": "犯人",
+"r": "はんにん",
+"en": "offender, criminal",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-964",
+"w": "ピクニック",
+"r": "ピクニック",
+"en": "picnic",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-966",
+"w": "飛行",
+"r": "ひこう",
+"en": "aviation, flight",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-968",
+"w": "美人",
+"r": "びじん",
+"en": "beautiful person (woman)",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-971",
+"w": "ピン",
+"r": "ピン",
+"en": "pin",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-981",
+"w": "平和",
+"r": "へいわ",
+"en": "peace",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-982",
+"w": "ベルト",
+"r": "ベルト",
+"en": "Belt for western clothes",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-992",
+"w": "炎",
+"r": "ほのお",
+"en": "flame",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-1008",
+"w": "まぶしい",
+"r": "まぶしい",
+"en": "dazzling, radiant",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-1011",
+"w": "裁く",
+"r": "さばく",
+"en": "to judge",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-1017",
+"w": "脂肪",
+"r": "しぼう",
+"en": "fat, grease",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-1031",
+"w": "禅",
+"r": "ぜん",
+"en": "Zen (Buddhism)",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-1041",
+"w": "摘む",
+"r": "つむ",
+"en": "to pluck, to pick, to trim",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn3-1049",
+"w": "脳",
+"r": "のう",
+"en": "brain, memory",
+"lv": "N3",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1121",
+"w": "ウーマン",
+"r": "ウーマン",
+"en": "woman",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1130",
+"w": "恨む",
+"r": "うらむ",
+"en": "to curse, to feel bitter",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1133",
+"w": "うろうろ",
+"r": "うろうろ",
+"en": "loitering, aimless wandering",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1147",
+"w": "応接",
+"r": "おうせつ",
+"en": "reception",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1148",
+"w": "おかず",
+"r": "おかず",
+"en": "side dish, accompaniment for rice dishes",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1151",
+"w": "お気の毒に",
+"r": "おきのどくに",
+"en": "I'm sorry to hear that…",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1172",
+"w": "重たい",
+"r": "おもたい",
+"en": "heavy, massive, serious",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1173",
+"w": "おやつ",
+"r": "おやつ",
+"en": "between meal snack, afternoon refreshment",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1174",
+"w": "親指",
+"r": "おやゆび",
+"en": "thumb",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1183",
+"w": "解放",
+"r": "かいほう",
+"en": "release, liberation, emancipation",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1188",
+"w": "学年",
+"r": "がくねん",
+"en": "year in school, grade in school",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1189",
+"w": "学力",
+"r": "がくりょく",
+"en": "scholarship, knowledge",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1223",
+"w": "看病",
+"r": "かんびょう",
+"en": "nursing (a patient)",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1235",
+"w": "キャンパス",
+"r": "キャンパス",
+"en": "campus",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1244",
+"w": "空中",
+"r": "くうちゅう",
+"en": "sky, air",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1261",
+"w": "外科",
+"r": "げか",
+"en": "surgical department",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1266",
+"w": "下品",
+"r": "げひん",
+"en": "vulgar, indecent, coarse",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1277",
+"w": "交差",
+"r": "こうさ",
+"en": "cross",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1284",
+"w": "鉱物",
+"r": "こうぶつ",
+"en": "mineral",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1318",
+"w": "刺身",
+"r": "さしみ",
+"en": "sliced raw fish",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1322",
+"w": "算数",
+"r": "さんすう",
+"en": "arithmetic",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1362",
+"w": "じゃんけん",
+"r": "じゃんけん",
+"en": "rock-scissors-paper game",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1396",
+"w": "森林",
+"r": "しんりん",
+"en": "forest, woods",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1410",
+"w": "隙",
+"r": "すき",
+"en": "unguarded moment, chance",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1412",
+"w": "好き嫌い",
+"r": "すききらい",
+"en": "likes and dislikes, taste",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1431",
+"w": "ゼミ",
+"r": "ゼミ",
+"en": "seminar",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1434",
+"w": "栓",
+"r": "せん",
+"en": "stopper, cork, stopcock",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1441",
+"w": "雑巾",
+"r": "ぞうきん",
+"en": "house-cloth, dust cloth",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1475",
+"w": "炭鉱",
+"r": "たんこう",
+"en": "coal mine, coal pit",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1493",
+"w": "長男",
+"r": "ちょうなん",
+"en": "eldest son",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1516",
+"w": "テニスコート",
+"r": "テニスコート",
+"en": "tennis court",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1553",
+"w": "生意気",
+"r": "なまいき",
+"en": "impertinent, saucy, cheeky, impudent, audacious, cocky, pert, brash",
+"lv": "N2",
+"score": 0.28,
+"note": "な형용사는 な 없이"
+},
+{
+"src": "Jn2-1557",
+"w": "南北",
+"r": "なんぼく",
+"en": "south and north",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1565",
+"w": "女房",
+"r": "にょうぼう",
+"en": "wife",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1575",
+"w": "農村",
+"r": "のうそん",
+"en": "agricultural community",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1576",
+"w": "のこぎり",
+"r": "のこぎり",
+"en": "saw",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1585",
+"w": "はう",
+"r": "はう",
+"en": "to creep, to crawl",
+"lv": "N2",
+"score": 0.28,
+"note": "원래 표기 這う(상용한자 밖)"
+},
+{
+"src": "Jn2-1588",
+"w": "吐き気",
+"r": "はきけ",
+"en": "nausea, sickness in the stomach",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1590",
+"w": "バケツ",
+"r": "バケツ",
+"en": "bucket, pail",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1611",
+"w": "ぴかぴか",
+"r": "ぴかぴか",
+"en": "glitter, sparkle",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1619",
+"w": "肘",
+"r": "ひじ",
+"en": "elbow",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1622",
+"w": "人差し指",
+"r": "ひとさしゆび",
+"en": "index finger",
+"lv": "N2",
+"score": 0.28,
+"note": "지금 표기"
+},
+{
+"src": "Jn2-1637",
+"w": "風船",
+"r": "ふうせん",
+"en": "balloon",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1642",
+"w": "武士",
+"r": "ぶし",
+"en": "warrior, samurai",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1645",
+"w": "ふすま",
+"r": "ふすま",
+"en": "sliding screen",
+"lv": "N2",
+"score": 0.28,
+"note": "원래 표기 襖(상용한자 밖)"
+},
+{
+"src": "Jn2-1646",
+"w": "吹雪",
+"r": "ふぶき",
+"en": "snow storm",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1652",
+"w": "ブラシ",
+"r": "ブラシ",
+"en": "brush",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1684",
+"w": "掘る",
+"r": "ほる",
+"en": "to dig, to excavate",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1701",
+"w": "見下ろす",
+"r": "みおろす",
+"en": "to overlook, to look down on something",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1717",
+"w": "紫",
+"r": "むらさき",
+"en": "purple color, violet",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1726",
+"w": "潜る",
+"r": "もぐる",
+"en": "to dive, to pass through; to evade, to hide",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1733",
+"w": "もむ",
+"r": "もむ",
+"en": "to rub, to crumple (up), to wrinkle",
+"lv": "N2",
+"score": 0.28,
+"note": "원래 표기 揉む(상용한자 밖)"
+},
+{
+"src": "Jn2-1744",
+"w": "破く",
+"r": "やぶく",
+"en": "to tear",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1761",
+"w": "欲張り",
+"r": "よくばり",
+"en": "greedy",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1773",
+"w": "領事",
+"r": "りょうじ",
+"en": "consul",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+},
+{
+"src": "Jn2-1778",
+"w": "れんが",
+"r": "れんが",
+"en": "brick",
+"lv": "N2",
+"score": 0.28,
+"note": "원래 표기 煉瓦(상용한자 밖)"
+},
+{
+"src": "Jn2-1780",
+"w": "ろうそく",
+"r": "ろうそく",
+"en": "candle",
+"lv": "N2",
+"score": 0.28,
+"note": ""
+}
+]

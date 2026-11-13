@@ -320,6 +320,8 @@ def check_card(c, R, sheet, seen_heads, new_bg):
         for b, rd, a, z, tg in segs:
             pv = plain[:a].rstrip()
             if pv and DIGIT.match(pv[-1]) and (b in COUNTERS or b[:1] in COUNTERS): E(tag + '숫자 뒤 조수사에 루비를 달지 않음: ' + b + '|' + rd)
+            if b == '明日' and rd != 'あす': E(tag + '明日는 あす로 통일: ' + rd)
+            if '会社' in b and rd.endswith('かいしゃ') and (len(b) > 2 and b.endswith('会社') or (b == '会社' and a > 0 and is_kanji(plain[a - 1]))): E(tag + '○○会社는 がいしゃ: ' + b + '|' + rd)
         # 표제 {}
         ia, ib = j.index('{'), j.index('}')
         inner = strip_ruby(j[ia + 1:ib])
