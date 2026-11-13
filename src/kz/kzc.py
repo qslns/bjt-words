@@ -10,6 +10,8 @@ import json, re, sys, os, unicodedata, glob
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SP = '/tmp/claude-0/-home-claude-bjt-words/4ecb1043-4c6e-5d36-a7b6-577be7533edc/scratchpad'
+# 11/14: 컨테이너가 바뀌어 옛 임시 폴더가 없으면 /home/claude/kzdata/sp(KanjiVG·libhangul·makemeahanzi·kanji-data를 같은 배치로 받아 둔 곳)
+if not os.path.isdir(SP + '/kvg_all'): SP = os.environ.get('KZ_SP', '/home/claude/kzdata/sp')
 KV = SP + '/kvg_all/'
 DATA = '/home/claude/work/build/data_app.json'
 SRC = '/home/claude/work/kanji_mn/kanji_src.json'

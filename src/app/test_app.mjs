@@ -7,6 +7,11 @@ const ORDER = data.words.filter(w => w.ord != null).sort((a, b) => a.ord - b.ord
 const BORDER = data.words.filter(w => w.bn != null).sort((a, b) => a.bn - b.bn).map(w => w.id);
 function genChapters(total) { const list = []; const add = (a, b, kind) => list.push({a, b, kind}); for (let p = 0; p * 500 < total; p++) { const ps = p * 500 + 1, pe = Math.min(total, ps + 499); for (let bs = ps; bs <= pe; bs += 250) { const be = Math.min(pe, bs + 249); for (let e = Math.min(be, bs + 49); ; e = Math.min(be, e + 50)) { add(bs, e, 'step'); if (e >= be) break; } } if (pe - ps + 1 > 250) add(ps, pe, 'review'); } if (total > 500) add(1, total, 'all'); return list; }
 const byId = new Map(data.words.map(w => [w.id, w]));
+/* 11/14 N3·N2 칸(데이터에 jl·jn이 있으면) — genChapters는 아래에서 정의되므로 함수로 */
+const LVL = () => [3, 2].filter(L => data.words.some(w => w.jl === L));
+const LVN = L => data.words.filter(w => w.jl === L).length;
+const LVCH = () => LVL().reduce((t, L) => t + genChapters(LVN(L)).length, 0);
+const LVF = () => LVL().reduce((t, L) => t + 1 + Math.ceil(LVN(L) / 500), 0);
 let pass = 0, fail = 0;
 const ok = (c, m) => { if (c) { pass++; console.log('  ok  ', m); } else { fail++; console.log('  FAIL', m); } };
 
@@ -40,7 +45,7 @@ const H0 = w => ({ ch: {}, w: w || {}, wr: null, wru: 0, g: { tt: 0, d: {} }, lt
   ok((await page.textContent('#v-home .wk-top')).includes('0개') && (await page.textContent('#v-home .wk-top')).includes('5번'), 'weak block empty state mentions 5');
   ok(await page.locator('#v-home .wk-top [data-act="weakNew"][disabled]').count() === 1, 'weak review disabled when empty');
   const books = await page.locator('#v-home .grp:not(.grp-basic):not(.grp-kz) .book').count();
-  ok(books === Math.ceil(ORDER.length / 500) * 11 + 1, 'home renders chapters: ' + books);
+  ok(books === Math.ceil(ORDER.length / 500) * 11 + 1 + LVCH(), 'home renders chapters: ' + books + ' (N3·N2 장 ' + LVCH() + ' 포함)');
   const bbooks = await page.locator('#v-home .grp-basic .book').count();
   ok(bbooks === genChapters(BORDER.length).length, 'home renders basic chapters: ' + bbooks);
   ok((await page.textContent('#v-home .ver')).includes(ORDER.length.toLocaleString()) && (await page.textContent('#v-home .ver')).includes('기본 ' + BORDER.length), 'version line shows word count');
@@ -351,7 +356,7 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 390, height: 844 }, { w
   const { ctx, page, errs } = await newPage({ width: 1180, height: 820 });
   await page.waitForSelector('#v-home details.gf', { state: 'attached' });
   /* 11/13 홈 정리: 큰 접기 3개(기본 B · BJT 단어 P · 한자 kz) + 큰 접기 안 500개 묶음 접기(b0… · p0…). 총정리 카드도 큰 접기 안 → 접힌 홈엔 장 카드 0 */
-  const nFold = 3 + Math.ceil(BORDER.length / 500) + Math.ceil(ORDER.length / 500);
+  const nFold = 3 + Math.ceil(BORDER.length / 500) + Math.ceil(ORDER.length / 500) + LVF();   /* 11/14 N3·N2 칸: 큰 접기 L3·L2 + 500개 묶음 */
   ok(await page.locator('#v-home details.gf').count() === nFold, 'home has ' + nFold + ' folding groups (3 big + 500-word folds inside)');
   ok(await page.locator('#v-home details.gf[open]').count() === 0, 'all groups folded by default');
   ok(await page.locator('#v-home .book >> visible=true').count() === 0, 'no chapter book visible when folded (총정리 cards are inside the big folds)');
@@ -851,11 +856,12 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
     const { ctx, page, errs } = await newPage(vp);
     await page.waitForSelector('#v-home details[data-g="kz"]', { state: 'attached' }); await page.waitForTimeout(200);
     const m = await page.evaluate(() => { const sc = document.querySelector('#v-home .scroll'), kz = document.querySelector('#v-home details[data-g="kz"]');
-      return { sh: sc.scrollHeight, ch: sc.clientHeight, kzb: Math.round(kz.getBoundingClientRect().bottom), hint: !!document.querySelector('#v-home .hint-card'), big: [...document.querySelectorAll('#v-home .home > section > details.gf')].map(d => d.dataset.g).join(',') }; });
+      const hc = document.querySelector('#v-home .hint-card');
+      return { sh: sc.scrollHeight, ch: sc.clientHeight, kzb: Math.round(kz.getBoundingClientRect().bottom), hh: hc ? Math.round(hc.getBoundingClientRect().height) + 22 : 0, hint: !!hc, big: [...document.querySelectorAll('#v-home .home > section > details.gf')].map(d => d.dataset.g).join(',') }; });
     const sb = await shownBooks(page);
-    ok(m.big === 'B,P,kz' && sb.length === 0, `${vp.width}: closed home = 3 big folds (${m.big}), no chapter book showing (${sb.length})`);
+    ok(m.big === ['B', 'P'].concat(LVL().map(L => 'L' + L), ['kz']).join(',') && sb.length === 0, `${vp.width}: closed home = big folds (${m.big}), no chapter book showing (${sb.length})`);
     if (vp.width === 820) ok(m.sh <= m.ch + 1, `820x1180: closed home fits one screen (${m.sh} ≤ ${m.ch}px, install hint ${m.hint ? 'shown' : 'hidden'})`);
-    else ok(m.kzb <= vp.height, `1180x820: all three big folds on the first screen (kanji fold bottom ${m.kzb} ≤ ${vp.height})`);
+    else ok(m.kzb - m.hh <= vp.height, `1180x820: all big folds on the first screen once the one-time install hint is closed (kanji fold bottom ${m.kzb} − hint ${m.hh} ≤ ${vp.height})`);   /* 11/14: 큰 접기 4~5개 — 설치 안내(한 번 닫으면 안 나옴)는 빼고 잼 */
     await page.screenshot({ path: `/home/claude/work/app/shot_home1113_closed_${vp.width}.png` });
     ok(errs.length === 0, `no console errors (closed home ${vp.width}): ` + errs.join(' | '));
     await ctx.close();
@@ -922,7 +928,7 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
     await page.locator('#v-home details[data-g="P"] > summary').click(); await page.waitForTimeout(150);
     const allTxt = await page.textContent('#v-home .book[data-i="' + allP + '"]');
     ok(allTxt.includes('진행중') && allTxt.includes('진행 4/' + ORDER.length), '전체 총정리 card inside BJT 단어 shows 진행중 · 진행 4/' + ORDER.length);
-    ok((await page.textContent('#v-home .stats')).includes('끝낸 장 2/' + (GP.length + GB.length)), 'stats: 끝낸 장 2/' + (GP.length + GB.length));
+    ok((await page.textContent('#v-home .stats')).includes('끝낸 장 2/' + (GP.length + GB.length + LVCH())), 'stats: 끝낸 장 2/' + (GP.length + GB.length + LVCH()));
     await page.screenshot({ path: '/home/claude/work/app/shot_home1113_open_1180.png' });
     ok(errs.length === 0, 'no console errors (seeded progress): ' + errs.join(' | '));
     await ctx.close();

@@ -15,6 +15,8 @@ NK = {}
 for f in ('p2/kanji_new_p2.json', 'p34/kanji_new_p34.json'):
     NK.update(json.load(open(E + '/' + f, encoding='utf-8')))
 HX = json.load(open(E + '/lv/kanji_h_lv.json', encoding='utf-8')) if os.path.exists(E + '/lv/kanji_h_lv.json') else {}
+if os.path.exists(E + '/lv/kanji_h_tmp.json'):  # 11/13 23시: lvk1 결과 전 임시 훈음(시트용, 합칠 때는 lvk1 값)
+    for k, v in json.load(open(E + '/lv/kanji_h_tmp.json', encoding='utf-8')).items(): HX.setdefault(k, v)
 OLD = {w['id']: w for w in json.load(open(E + '/old_words_2312.json', encoding='utf-8'))}
 KC = {x['c'] for x in json.load(open('/home/claude/work/kanji_mn/kanji_src.json', encoding='utf-8'))}
 done4 = set()
