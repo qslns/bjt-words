@@ -1740,9 +1740,19 @@ function renderLight(play) {
 const KC = obj(DATA.kc);
 const KZO = (() => { const out = [], seen = new Set(); for (const c of (Array.isArray(DATA.kzo) ? DATA.kzo : [])) { if (typeof c === 'string' && K[c] && !seen.has(c)) { seen.add(c); out.push(c); } } return out; })();
 const KZN = KZO.length, KZNO = new Map(KZO.map((c, i) => [c, i + 1]));
+/* 11/14 K1 묶음: [이름, 수] — 수의 합이 KZN과 같을 때만 씀(아니면 예전처럼 한 줄) */
+const KZG = (() => { const g = Array.isArray(DATA.kzg) ? DATA.kzg.filter(x => Array.isArray(x) && typeof x[0] === 'string' && Number.isInteger(x[1]) && x[1] > 0) : []; return g.reduce((t, x) => t + x[1], 0) === KZN ? g : []; })();
 const kzHs = ids => { let h = 2166136261; for (const c of ids) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619) >>> 0; } return h.toString(36) + '.' + ids.length; };
 /* 장: 단어와 같은 규칙(250자 안에서 50자씩 누적 → 500자마다 총정리 → 전체) */
-const KZCH = genChapters(KZN).map((c, i) => { const ids = KZO.slice(c.a - 1, c.b); return Object.assign(c, {i, ids, cnt: ids.length, key: 'K:' + kzHs(ids) + ':' + c.a + '-' + c.b + ':' + c.kind}); });
+const KZCH = (() => {
+  let list;
+  if (KZG.length) {
+    list = []; let o = 0;
+    KZG.forEach((g, gi) => { for (const c of genChapters(g[1])) list.push({a: c.a + o, b: c.b + o, blk: c.blk, kind: c.kind === 'all' ? 'review' : c.kind, part: gi}); o += g[1]; });
+    if (KZN > 500) list.push({a: 1, b: KZN, blk: 'Z', kind: 'all', part: KZG.length});
+  } else list = genChapters(KZN);
+  return list.map((c, i) => { const ids = KZO.slice(c.a - 1, c.b); return Object.assign(c, {i, ids, cnt: ids.length, key: 'K:' + kzHs(ids) + ':' + c.a + '-' + c.b + ':' + c.kind}); });
+})();
 const kzName = i => '漢字' + (i + 1) + '章';
 const kzRange = c => c.a + '–' + c.b + '자';
 const kzH = c => String((K[c] && K[c].h) || '').replace(/^\?\s*/, '').trim();
@@ -1873,8 +1883,11 @@ function kzHomeHTML() {
     const parts = [];
     KZCH.forEach(c => { if (c.kind !== 'all') (parts[c.part] = parts[c.part] || []).push(c); });
     const all = KZCH.find(c => c.kind === 'all');
-    const inner = '<p class="part-h">단어에 나오는 한자 ' + KZN + '자 · 많이 쓰는 순 · 250자 안에서 50자씩 쌓아 가며 회독 · 기록은 단어와 따로</p>' +
-      parts.map((ps, p) => (parts.length > 1 ? '<p class="kzu-ph">' + (p * 500 + 1) + '–' + Math.min(KZN, p * 500 + 500) + '자</p>' : '') + '<div class="books">' + ps.map(kzBookHTML).join('') + '</div>').join('') +
+    const goff = p => KZG.slice(0, p).reduce((t, g) => t + g[1], 0);
+    const inner = (KZG.length
+      ? '<p class="part-h">단어에 나오는 한자 ' + KZN + '자 · 그 한자가 처음 나오는 단어 칸 순(' + KZG.map(g => g[0]).join(' → ') + '), 같은 묶음 안에서는 많이 쓰는 순 · 250자 안에서 50자씩 쌓아 가며 회독 · 기록은 단어와 따로</p>'
+      : '<p class="part-h">단어에 나오는 한자 ' + KZN + '자 · 많이 쓰는 순 · 250자 안에서 50자씩 쌓아 가며 회독 · 기록은 단어와 따로</p>') +
+      parts.map((ps, p) => (KZG.length ? '<p class="kzu-ph">' + esc(KZG[p][0]) + ' 한자 · ' + (goff(p) + 1) + '–' + (goff(p) + KZG[p][1]) + '자</p>' : parts.length > 1 ? '<p class="kzu-ph">' + (p * 500 + 1) + '–' + Math.min(KZN, p * 500 + 500) + '자</p>' : '') + '<div class="books">' + ps.map(kzBookHTML).join('') + '</div>').join('') +
       (all ? '<p class="kzu-ph">한자 전체 총정리</p><div class="books">' + kzBookHTML(all) + '</div>' : '');
     const done = KZCH.filter(c => { const x = kzChPeek(c.i); return x && x.n > 0; }).length, on = KZCH.some(c => { const x = kzChPeek(c.i); return !!(x && x.cur); });
     return foldHTML('kz', 'grp-kz', '한자', '1–' + KZN + '자', KZCH, inner, {done, on});

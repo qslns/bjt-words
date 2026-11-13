@@ -19,7 +19,7 @@ for (const vp of VPS) {
       const t = window.__t, bad = [];
       for (const c of t.KZO) {
         const card = t.KC[c];
-        if (!card) { bad.push(c + ':no card'); continue; }
+        if (!card) { const sb = t.kzBodyHTML(c); if (!sb.includes('kz-simple') || /undefined|NaN|\[object/.test(sb) || (!sb.includes('kzu-ws') && (JSON.parse(document.getElementById('bjt-data').textContent).kanji[c].u || []).length)) bad.push(c + ':simple card broken'); continue; }   /* 11/14 K1: 그림 카드 없는 한자는 옛 꼴 카드 */
         let h = '';
         try { h = kzCardHTML(card, { words: '' }); } catch (e) { bad.push(c + ':throw ' + e.message); continue; }
         if (/undefined|NaN|\[object/.test(h)) bad.push(c + ':undef/NaN');
@@ -48,16 +48,16 @@ for (const vp of VPS) {
         // 그림 칸 안 글자가 그림 밖으로 나가는지(svg bbox)
         let clip = 0;
         sb.querySelectorAll('.kz-pic > svg').forEach(svg => { try { const vb = svg.viewBox.baseVal, bb = svg.getBBox(); const m = Math.max(vb.x - bb.x, vb.y - bb.y, bb.x + bb.width - (vb.x + vb.width), bb.y + bb.height - (vb.y + vb.height)); if (m > clip) clip = m; } catch (e) {} });
-        return { card: !!card, title, undef: /undefined|NaN|\[object/.test(html), ids, pics, over, clip, hasC: title.includes(c) };
+        return { card: !!card, simple: !!sb.querySelector('.kz-simple'), kc: !!window.__t.KC[c], nu: ((JSON.parse(document.getElementById('bjt-data').textContent).kanji[c] || {}).u || []).length, title, undef: /undefined|NaN|\[object/.test(html), ids, pics, over, clip, hasC: title.includes(c) };
       }, c);
       if (r.e) bad.push(c + ':' + r.e);
       else {
         if (!r.card) bad.push(c + ':no card');
         if (!r.hasC) bad.push(c + ':title ' + r.title);
         if (r.undef) bad.push(c + ':undef');
-        if (!r.ids.length) bad.push(c + ':no words');
+        if (!r.ids.length && (r.kc || r.nu)) bad.push(c + ':no words');   /* 11/14 K1: 아직 단어가 안 들어온 한자(N3 2부·N2 것)는 단어 없음 */
         if (r.ids.some(x => !Number.isFinite(x))) bad.push(c + ':bad id');
-        if (r.pics !== 3) bad.push(c + ':pics ' + r.pics);
+        if (r.kc ? r.pics !== 3 : !r.simple) bad.push(c + (r.kc ? ':pics ' + r.pics : ':simple card missing'));   /* 그림 카드 없는 한자는 옛 꼴 카드 */
         if (r.over > worst) { worst = r.over; at = c; }
         if (r.clip > 12) bad.push(c + ':clip ' + Math.round(r.clip));
       }

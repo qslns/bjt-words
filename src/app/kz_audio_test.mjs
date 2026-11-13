@@ -15,10 +15,10 @@ for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }]) {
   const tag = vp.width + 'x' + vp.height;
   // 데이터: 카드마다 순위·흘려보기·대표 소리, 음성 파일 버전
   const dv = await page.evaluate(() => {
-    const t = __t, bad = []; let chips = 0, sk = 0, k = 0, kr = 0;
+    const t = __t, bad = []; let chips = 0, sk = 0, k = 0, kr = 0, nocard = 0;
     for (const c of t.KZO) {
       const card = t.KC[c];
-      if (!card) { bad.push(c + ':no card'); continue; }
+      if (!card) { nocard++; continue; }   /* 11/14 K1: 그림 카드 없는 한자도 칸에 있음(옛 꼴 카드, 대표 소리 없음) */
       const ranks = [...(card.onr || []), ...(card.kunr || [])].sort((a, b) => a - b);
       if (!ranks.length || ranks.some((r, i) => r !== i + 1)) bad.push(c + ':ranks ' + ranks.join(','));
       if (!Array.isArray(card.rep) || !card.rep.length) bad.push(c + ':rep');
@@ -39,9 +39,9 @@ for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }]) {
       if (JSON.stringify(reds.map(x => x[2])) !== JSON.stringify(card.rep)) bad.push(c + ':rep≠reds');
     }
     kr = Object.keys(t.AV).filter(x => x.startsWith('kr/')).length;
-    return { n: t.KZO.length, bad: bad.slice(0, 12), nbad: bad.length, chips, sk, k, kr };
+    return { n: t.KZO.length, bad: bad.slice(0, 12), nbad: bad.length, chips, sk, k, kr, nocard, nkc: Object.keys(t.KC).length };
   });
-  ok(dv.nbad === 0 && dv.k === 950, `${tag} 950 cards: ranks ①… complete, rep sound + reading audio for every chip (${dv.chips} chips, ${dv.kr} reading files, ${dv.sk} skim): ` + dv.bad.join(' | '));
+  ok(dv.nbad === 0 && dv.k === dv.nkc && dv.k + dv.nocard === dv.n, `${tag} ${dv.k} picture cards (+ ${dv.nocard} simple of ${dv.n}): ranks ①… complete, rep sound + reading audio for every chip (${dv.chips} chips, ${dv.kr} reading files, ${dv.sk} skim): ` + dv.bad.join(' | '));
   // 한자 단원 앞면: 큰 한자 = 버튼(누르면 대표 소리) + 안내, 자동 재생 없음
   await page.evaluate(() => { document.querySelector('#v-home details[data-g="kz"]').open = true; });
   await page.locator('#v-home .kzu-book[data-k="0"] >> visible=true').first().click();
@@ -85,8 +85,8 @@ for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }]) {
   ok(await page.evaluate(c => { const s = __t.AUD.el ? __t.AUD.el.src : ''; return s === __t.kzAUrl(__t.kzRepKey(c)) || s.startsWith('blob:'); }, c0), `${tag} [발음] → representative sound again`);
   // 다음 카드로 → 소리 멈춤, 새 한자 대표 소리 미리 받아 둠
   await page.locator('#v-kz [data-act="kzOk"] >> visible=true').tap(); await page.waitForTimeout(600);
-  const n1 = await page.evaluate(() => { const c = __t.kui.c, u = __t.kzAUrl(__t.kzRepKey(c)); const e = __t.AMEM.m.get(u); return { c, warm: !!e, paused: !__t.AUD.el || __t.AUD.el.paused }; });
-  ok(n1.c !== c0 && n1.warm && n1.paused, `${tag} next kanji ${n1.c}: previous sound stopped, its sound prefetched`);
+  const n1 = await page.evaluate(() => { const c = __t.kui.c, u = __t.kzAUrl(__t.kzRepKey(c)); const e = __t.AMEM.m.get(u); return { c, card: !!__t.KC[c], warm: !!e, paused: !__t.AUD.el || __t.AUD.el.paused }; });
+  ok(n1.c !== c0 && (n1.warm || !n1.card) && n1.paused, `${tag} next kanji ${n1.c}: previous sound stopped, ` + (n1.card ? 'its sound prefetched' : 'no picture card → no rep sound to prefetch'));
   await page.locator('#v-kz [data-act="kzExit"] >> visible=true').tap(); await page.waitForTimeout(300);
   // 단어 카드에서 연 한자 카드: 칩 누르면 소리
   const wid = await page.evaluate(() => { const D = JSON.parse(document.getElementById('bjt-data').textContent); return D.words.find(w => w.w === '意見').id; });

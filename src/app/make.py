@@ -9,6 +9,16 @@ data = json.load(open(data_path, encoding='utf-8'))
 KZ_SRC, KZ_CARDS = '/home/claude/work/kanji_mn/kanji_src.json', '/home/claude/work/kz/kz_cards.json'
 if os.path.exists(KZ_SRC) and data.get('kanji'):
     data['kzo'] = [k['c'] for k in json.load(open(KZ_SRC, encoding='utf-8')) if k.get('c') in data['kanji']]
+    # 11/14 K1: 새 순서(kanji_mn/kzo_v2.json — expansion/lv/kanji_order.py) + 묶음 data.kzg [[이름, 수]] — 앱 한자 전부(그림 카드 없는 것도)
+    KZ_ORDER2 = '/home/claude/work/kanji_mn/kzo_v2.json'
+    if os.path.exists(KZ_ORDER2):
+        o2 = json.load(open(KZ_ORDER2, encoding='utf-8')); gs, off = [], 0
+        for name, n in o2['groups']:
+            seg = [c for c in o2['order'][off:off + n] if c in data['kanji']]; off += n
+            if seg: gs.append((name, seg))
+        data['kzo'] = [c for _, seg in gs for c in seg]; data['kzg'] = [[name, len(seg)] for name, seg in gs]
+        miss = [c for c in data['kanji'] if c not in set(data['kzo'])]
+        if miss: print('kanji not in kzo_v2 (뒤에 붙임):', ''.join(miss[:40])); data['kzo'] += miss; data['kzg'].append(['그 밖', len(miss)])
     if os.path.exists(KZ_CARDS):
         kc, bad = {}, []
         need = {'c': str, 'h': str, 'on': list, 'kun': list, 'hook': str, 'S': list, 'p': list, 't': list, 'snd': str}

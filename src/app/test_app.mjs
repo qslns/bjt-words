@@ -379,7 +379,7 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 390, height: 844 }, { w
     const bad = []; const t = window.__t; let rows = 0, cardRows = 0, oldRows = 0; const KATA = /[ァ-ヺ]/;
     const D = JSON.parse(document.getElementById('bjt-data').textContent), KJ = D.kanji, KC = D.kc || {};
     if (D.kz) bad.push('data.kz still there');
-    if (!Array.isArray(D.kzo) || D.kzo.length !== Object.keys(KC).length || D.kzo.some(c => !KC[c])) bad.push('data.kzo ' + (D.kzo || []).length);   // 11/13 P2: 한자 단원은 그림 카드 950자만(새 한자는 카드 없음 → 옛 방식)
+    if (!Array.isArray(D.kzo) || D.kzo.length !== Object.keys(KJ).length || new Set(D.kzo).size !== D.kzo.length || D.kzo.some(c => !KJ[c]) || !Object.keys(KC).every(c => D.kzo.includes(c))) bad.push('data.kzo ' + (D.kzo || []).length);   // 11/14 K1: 한자 칸 = 앱 한자 전부(그림 카드 없는 것은 옛 꼴 카드)
     for (const w of D.words) {
       const st = t.storyHTML(w, 's-story'), ex = t.explainHTML(w, true);
       if (/undefined|NaN/.test(st + ex)) bad.push(w.w + ':undef');
@@ -515,7 +515,12 @@ const toHiraT = s => String(s || '').replace(/[ァ-ヶ]/g, c => String.fromCharC
 const openWordT = (page, id) => page.evaluate(id => { document.body.insertAdjacentHTML('beforeend', '<button id="tmp-open" data-act="open" data-id="' + id + '">x</button>'); document.getElementById('tmp-open').click(); document.getElementById('tmp-open').remove(); }, id);
 const openKzT = (page, c) => page.evaluate(c => { document.body.insertAdjacentHTML('beforeend', '<button id="tmp-kz" data-act="kz" data-c="' + c + '">x</button>'); document.getElementById('tmp-kz').click(); document.getElementById('tmp-kz').remove(); }, c);
 const overT = (page, sel) => page.evaluate(sel => { const el = document.querySelector(sel); return Math.max(document.documentElement.scrollWidth - innerWidth, el ? el.scrollWidth - el.clientWidth : 999); }, sel);
-const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.json', 'utf8')).map(k => k.c);
+/* 11/14 K1: 한자 칸 순서 = kanji_mn/kzo_v2.json(묶음별) — make.py와 같은 방법으로 앱 한자만 거름. 없으면 예전 kanji_src(950) */
+const KZ2P = '/home/claude/work/kanji_mn/kzo_v2.json';
+let KZSRC, KZG = null;
+if (fs.existsSync(KZ2P)) { const o2 = JSON.parse(fs.readFileSync(KZ2P, 'utf8')); let off = 0; KZG = []; KZSRC = []; for (const [name, n] of o2.groups) { const seg = o2.order.slice(off, off + n).filter(c => data.kanji[c]); off += n; if (seg.length) { KZG.push([name, seg.length]); KZSRC.push(...seg); } } }
+else KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.json', 'utf8')).map(k => k.c);
+const kzChapters = () => { if (!KZG) return genChapters(KZSRC.length); const list = []; let o = 0; for (const [, n] of KZG) { for (const c of genChapters(n)) list.push({ a: c.a + o, b: c.b + o, kind: c.kind === 'all' ? 'review' : c.kind }); o += n; } if (KZSRC.length > 500) list.push({ a: 1, b: KZSRC.length, kind: 'all' }); return list; };
 
 // ---------- 10. 네모 한자 → 한자 카드 시트(단어 카드 시트와 같은 쌓기·뒤로가기) · 같은 한자 칸 네모 한자도 ----------
 {
@@ -587,15 +592,15 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
   const iz = layout.indexOf('fold:kz');
   ok(layout.indexOf('fold:B') > 0 && layout.indexOf('fold:B') < layout.indexOf('fold:P') && iz > layout.indexOf('fold:P') && iz < layout.indexOf('zrow'), 'big folds 기본 → BJT 단어 → 한자, above the word-list row: ' + layout.join(','));   /* 11/13: fold:p2 → fold:P */
   const kz = await page.evaluate(() => ({ o: __t.KZO, ch: __t.KZCH.map(c => [c.a, c.b, c.kind, c.ids.join('')]) }));
-  const gc = genChapters(950);
-  ok(kz.o.join('') === KZSRC.join('') && kz.ch.length === gc.length && kz.ch.every((c, i) => c[0] === gc[i].a && c[1] === gc[i].b && c[2] === gc[i].kind && c[3] === KZSRC.slice(c[0] - 1, c[1]).join('')), 'kanji chapters = word rule on 950 kanji (most used first): ' + kz.ch.length + ' chapters');
+  const gc = kzChapters();
+  ok(kz.o.join('') === KZSRC.join('') && kz.ch.length === gc.length && kz.ch.every((c, i) => c[0] === gc[i].a && c[1] === gc[i].b && c[2] === gc[i].kind && c[3] === KZSRC.slice(c[0] - 1, c[1]).join('')), 'kanji chapters = word rule per group on ' + KZSRC.length + ' kanji (' + (KZG ? KZG.map(g => g[0] + ' ' + g[1]).join(' · ') : 'one list') + '): ' + kz.ch.length + ' chapters');
   const sum = (await page.textContent('#v-home details[data-g="kz"] > summary')).trim();
-  ok(sum.startsWith('한자') && sum.includes('1–950자') && sum.includes('끝낸 장 0/' + gc.length), 'kanji fold header: ' + sum);
+  ok(sum.startsWith('한자') && sum.includes('1–' + KZSRC.length + '자') && sum.includes('끝낸 장 0/' + gc.length), 'kanji fold header: ' + sum);
   await page.locator('#v-home details[data-g="kz"] > summary').click(); await page.waitForTimeout(150);
   ok(await page.locator('#v-home details[data-g="kz"] .book >> visible=true').count() === gc.length, 'tap opens the kanji fold (' + gc.length + ' chapters)');
   await vis(page, '#v-home .kzu-book[data-k="0"]').click(); await page.waitForSelector('#v-kz .cf-word'); await page.waitForTimeout(350);
   const run0 = await page.evaluate(() => __t.kzRun());
-  ok(run0.ord.length === 50 && [...run0.ord].sort().join('') === KZSRC.slice(0, 50).sort().join(''), '漢字1章 = 50 most used kanji (shuffled)');
+  ok(run0.ord.length === 50 && [...run0.ord].sort().join('') === KZSRC.slice(0, 50).sort().join(''), '漢字1章 = first 50 kanji of the order (shuffled)');
   const fr = await page.evaluate(() => ({ word: document.querySelector('#v-kz .cf-word').textContent, stage: document.querySelector('#v-kz .stage').textContent, card: document.querySelectorAll('#v-kz .kz-card').length,
     acts: [...document.querySelectorAll('#v-kz .abar [data-act]')].map(b => b.dataset.act).join(','), noise: document.querySelectorAll('#v-kz [data-act="sayW"], #v-kz [data-act="star"], #v-kz [data-act="lis"], #v-kz .spk').length,
     ff: getComputedStyle(document.querySelector('#v-kz .cf-word')).fontFamily, kyo: (() => { const d = document.createElement('div'); d.style.fontFamily = 'var(--f-kyo)'; document.body.appendChild(d); const f = getComputedStyle(d).fontFamily; d.remove(); return f; })(),
@@ -606,9 +611,9 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
   ok(fr.title.includes('漢字1章') && fr.title.includes('1회독') && fr.title.includes('1–50자'), 'study bar: ' + fr.title);
   const okR1 = await page.locator('#v-kz [data-act="kzOk"]').boundingBox();
   await vis(page, '#v-kz [data-act="kzExplain"]').click(); await page.waitForTimeout(380);
-  const rv = await page.evaluate(() => ({ card: document.querySelectorAll('#v-kz .kz-card').length, words: document.querySelectorAll('#v-kz .kzu-ws .sk-w').length, acts: [...document.querySelectorAll('#v-kz .abar-in > *')].map(b => b.dataset.act || b.className).join(','), html: document.getElementById('v-kz').innerHTML }));
+  const rv = await page.evaluate(() => ({ card: document.querySelectorAll('#v-kz .kz-card').length, words: document.querySelectorAll('#v-kz .kzu-ws .sk-w').length, acts: [...document.querySelectorAll('#v-kz .abar-in > *')].map(b => b.dataset.act || b.className).join(','), html: document.getElementById('v-kz').innerHTML, kc: !!__t.KC[__t.kui.c] }));
   ok(rv.card === 1 && rv.words === [...new Set(kd.u)].filter(i => byId.has(i)).length && !/undefined|NaN/.test(rv.html), '해설 = kanji card with its ' + rv.words + ' words');
-  ok(rv.acts === 'kzSay,kzNg,kzOk', 'explain bar: [발음][모르겠음][알고있음] (10/20 한자 소리)');
+  ok(rv.acts === (rv.kc ? 'kzSay,kzNg,kzOk' : 'kzNg,kzOk'), 'explain bar: ' + (rv.kc ? '[발음][모르겠음][알고있음] (10/20 한자 소리)' : '[모르겠음][알고있음] (그림 카드 없는 한자 — 대표 소리 없음, 11/14 K1)') + ': ' + rv.acts);
   const okR2 = await page.locator('#v-kz [data-act="kzOk"]').boundingBox();
   ok(Math.abs(okR1.x - okR2.x) < 1 && Math.abs(okR1.width - okR2.width) < 1 && Math.abs(okR1.y - okR2.y) < 1, '알고있음 stays in the same place after 해설');
   await page.screenshot({ path: '/home/claude/work/app/shot_kz_explain_1180.png' });
@@ -780,7 +785,7 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
     }
     return { n, full, kc: Object.keys(t.KC).length, bad };
   });
-  ok(all.bad.length === 0 && all.n === 950 && all.full === all.kc && all.kc === new Set(cardsFile.map(c => c.c)).size, 'all ' + all.n + ' kanji render: ' + all.full + ' full cards (= kz_cards.json ' + cardsFile.length + ') + ' + (all.n - all.full) + ' simple, no undefined/NaN: ' + all.bad.slice(0, 10).join(' '));
+  ok(all.bad.length === 0 && all.n === KZSRC.length && all.full === all.kc && all.kc === new Set(cardsFile.map(c => c.c)).size, 'all ' + all.n + ' kanji render: ' + all.full + ' full cards (= kz_cards.json ' + cardsFile.length + ') + ' + (all.n - all.full) + ' simple, no undefined/NaN: ' + all.bad.slice(0, 10).join(' '));
   // 실제 화면에 전부 붙여서 그려 보기(SVG 경로 오류 등은 콘솔 오류로 잡힘)
   const drawn = await page.evaluate(async () => {
     const t = __t, box = document.createElement('div'); box.style.cssText = 'position:absolute;left:0;top:0;width:900px;visibility:hidden'; document.body.appendChild(box);
@@ -788,7 +793,7 @@ const KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.j
     for (let i = 0; i < t.KZO.length; i += 50) { box.innerHTML = t.KZO.slice(i, i + 50).map(c => t.kzBodyHTML(c)).join(''); svgs += box.querySelectorAll('svg').length; await new Promise(r => requestAnimationFrame(r)); }
     box.remove(); return svgs;
   });
-  ok(drawn > 0 && errs.length === 0, 'all 950 kanji cards drawn in the page (' + drawn + ' svg), no console errors: ' + errs.slice(0, 3).join(' | '));
+  ok(drawn > 0 && errs.length === 0, 'all ' + KZSRC.length + ' kanji cards drawn in the page (' + drawn + ' svg), no console errors: ' + errs.slice(0, 3).join(' | '));
   // 카드가 없는 한자(자료가 덜 찼을 때) · 그리는 스크립트가 없을 때도 오류 없이 간단한 카드/옛 줄로
   const fb = await page.evaluate(() => {
     const t = __t, D = JSON.parse(document.getElementById('bjt-data').textContent), c = '日';

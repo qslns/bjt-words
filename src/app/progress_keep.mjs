@@ -13,6 +13,9 @@ const BASE = process.env.BASE || 'http://127.0.0.1:8765/';
 const OLD = process.env.OLD || '/home/claude/bjt-words/index.html';
 const NEW = process.env.NEW || '/home/claude/work/app/test/index.html';
 const EXPECT_GONE = (process.env.EXPECT_GONE || '').split(',').map(s => s.trim()).filter(Boolean).sort();
+/* 11/14 K1: EXPECT_KZ_NEW=1 → 한자 칸 순서가 바뀌어 한자 장은 새로 시작(키가 바뀜) — 한자별 기록(w)·시간(g)은 그대로여야 함 */
+const KZ_NEW = process.env.EXPECT_KZ_NEW === '1';
+const kzWG = s => { const o = JSON.parse(s); return JSON.stringify({ w: o.w, g: o.g }); };
 /* 설정 옮기기(마이그레이션)로 바뀌어도 되는 설정 키, 예: ALLOW_S=em (11/13 시험일 옮기기 em 4) */
 const ALLOW_S = (process.env.ALLOW_S || '').split(',').map(s => s.trim()).filter(Boolean);
 const sNorm = x => { if (!x) return x; const o = JSON.parse(x); for (const k of ALLOW_S.concat('u')) delete o[k]; return JSON.stringify(o); };
@@ -140,7 +143,8 @@ ok(diff.length === 0 && kept.every(k => k in s2.chap), 'every chapter progress k
 ok(s2.w === s1.w && s2.wr === s1.wr && s2.wru === s1.wru && s2.lt === s1.lt && s2.g === s1.g, 'word records · weak review run · light pass · time totals identical');
 ok(s2.weak === s1.weak && s2.wk === s1.wk, 'weak words identical: ' + s2.wk);
 ok(s2.S === s1.S || (ALLOW_S.length && sNorm(s2.S) === sNorm(s1.S)), 'settings identical' + (s2.S !== s1.S ? ' except ' + sDiff(s1.S, s2.S) : ''));
-ok(s2.KZ === s1.KZ && s2.kzSum === s1.kzSum && s2.kzKeys.join() === s1.kzKeys.join(), 'kanji unit records identical: ' + s2.kzSum);
+if (!KZ_NEW) ok(s2.KZ === s1.KZ && s2.kzSum === s1.kzSum && s2.kzKeys.join() === s1.kzKeys.join(), 'kanji unit records identical: ' + s2.kzSum);
+else ok(kzWG(s2.KZ) === kzWG(s1.KZ) && s2.kzKeys.join() !== s1.kzKeys.join() && JSON.parse(s1.KZ).w && Object.keys(JSON.parse(s1.KZ).w).length > 0, 'K1: kanji chapters start fresh with the new order (' + s1.kzKeys.length + ' → ' + s2.kzKeys.length + ' chapters: ' + s2.kzSum + '), per-kanji records (' + Object.keys(JSON.parse(s2.KZ).w).length + ') and time kept');
 const resumeLost = lost.some(k => JSON.parse(s1.chap[k]).cur);
 ok(resumeLost || s2.banner === s1.banner, 'resume banner identical: ' + s2.banner);
 /* 홈 통계: 본 단어 n/전체 단어 수 · 앎 · 끝낸 장 n/장 수 · 오늘 · 총 — 전체 단어 수·장 수는 새 빌드 것, 끝낸 장은 없어진 장만큼 줄어듦 */
@@ -167,7 +171,7 @@ p = await open('old', 'old2');
 const s4 = await snap(p);
 const both = Object.keys(s3.chap).filter(k => s1.keys.includes(k));
 const d4 = both.filter(k => s4.chap[k] !== s3.chap[k]);
-ok(d4.length === 0 && s4.w === s3.w && (s4.S === s3.S || (ALLOW_S.length && sNorm(s4.S) === sNorm(s3.S))) && s4.KZ === s3.KZ, 'old build reads what the new build saved: ' + both.length + ' chapters, word records, settings, kanji' + (d4.length ? ' DIFF ' + d4.map(k => s3.desc[k]).join(',') : ''));
+ok(d4.length === 0 && s4.w === s3.w && (s4.S === s3.S || (ALLOW_S.length && sNorm(s4.S) === sNorm(s3.S))) && (KZ_NEW ? kzWG(s4.KZ) === kzWG(s3.KZ) : s4.KZ === s3.KZ), 'old build reads what the new build saved: ' + both.length + ' chapters, word records, settings, kanji' + (d4.length ? ' DIFF ' + d4.map(k => s3.desc[k]).join(',') : ''));
 ok(errs.old2.length === 0, 'no console errors when going back to the old build: ' + errs.old2.join(' | '));
 await p.close();
 await browser.close();
