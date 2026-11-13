@@ -10,6 +10,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cardlib import strip_ruby, ruby_segments, is_kanji, kata
 SUBS = {tuple(k.split('|')): v for k, v in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tts_subs.json'), encoding='utf-8')).items()}
 N, K = 'ja-JP-NanamiNeural', 'ja-JP-KeitaNeural'
+# 11/13 P2 받아쓰기에서 TTS가 다른 읽기로 읽은 것 → 루비가 이 읽기면 늘 가나로 넣음(私를 わたし로, 君을 くん으로, 米를 べい로 …)
+FORCE = {('私', 'わたくし'), ('君', 'きみ'), ('米', 'こめ'), ('星', 'ほし'), ('町', 'まち'), ('後', 'のち'), ('背', 'せい'), ('年', 'とし'), ('月', 'つき'), ('離', 'ばな'), ('止', 'ど')}
 def word_text(c):
     w, r = c['w'], c['r']
     core = w.strip('〜～')
@@ -23,7 +25,9 @@ def sent_text(j):
     out, pos = '', 0
     for b, rd, a, z, tg in segs:
         out += plain[pos:a]
-        out += rd if SUBS.get((b, rd), 0) >= 2 else b
+        if SUBS.get((b, rd), 0) >= 2 or (b, rd) in FORCE:
+            out += kata(rd) if rd.startswith('は') else rd   # は로 시작하는 히라가나는 조사 わ로 읽힘(はこ→わこ) → 가타카나
+        else: out += b
         pos = z
     out += plain[pos:]
     return out
