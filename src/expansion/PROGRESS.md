@@ -2,8 +2,8 @@
 
 ## 잠금
 상태: 작업중
-누가: 페이지-1113-0949
-마지막 신호: 2026-11-13 11:13
+누가: 자동-1113-1542
+마지막 신호: 2026-11-13 15:42
 
 ### 잠금 규칙
 1. 시작: `cd /home/claude/bjt-words && git fetch origin && git checkout expansion && git pull --rebase origin expansion` → 위 세 줄을 읽음. 시각은 `TZ=Asia/Seoul date '+%Y-%m-%d %H:%M'`.
