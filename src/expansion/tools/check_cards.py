@@ -37,6 +37,7 @@ for c, v in (load_json(E_DIR + '/old_kanji_extra.json', {}) or {}).items(): K.se
 for p in sorted(glob.glob(E_DIR + '/p*/kanji_new*.json')):
     for c, v in (load_json(p, {}) or {}).items(): K.setdefault(c, v)
 GLOSS = load_json(E_DIR + '/gloss_dict.json', {})
+KREF = load_json(E_DIR + '/kanji_ref_cache.json', {}) or {}   # KANJIDIC2 읽기(사전 항목에 빠진 훈독 보충용)
 TG = fugashi.Tagger()
 
 # ---------- 한국 한자음 ----------
@@ -67,7 +68,11 @@ VOICE = dict(zip('かきくけこさしすせそたちつてとはひふへほ',
 HPV = dict(zip('はひふへほ', 'ぱぴぷぺぽ'))
 def reading_variants(c):
     k = K.get(c)
-    if not k: return None
+    kr_ = KREF.get(c) or {}
+    if not k and not kr_: return None
+    k = dict(k or {})
+    k['on'] = list(k.get('on', []) or []) + [x for x in kr_.get('on', []) or []]
+    k['kun'] = list(k.get('kun', []) or []) + [re.sub(r'^([^.]+)\.(.+)$', r'\1(\2)', x.strip('-')) for x in kr_.get('kun', []) or [] if x.strip('-')]
     base = set()
     for o in k.get('on', []) or []: base.add(hira(o.replace('-', '').replace('.', '')))
     I_ROW = dict(zip('うくぐすつぬぶむる', 'いきぎしちにびみり'))
@@ -258,7 +263,7 @@ def check_card(c, R, sheet, seen_heads, new_bg):
                 if ok_set is None: Wn('ko 확인 못 함(한자 정보 없음): ' + ch)
                 else:
                     cand = set()
-                    for x in ok_set: cand |= dueum(x) if i == 0 else {x}
+                    for x in ok_set: cand |= dueum(x) if (i == 0 and len(nk) > 1) else {x}   # 두음법칙은 2자 이상 단어의 첫 음절만(한 글자 단어는 来 래·量 량처럼 그대로 — 지금 덱 606장 중 598장)
                     if sy not in cand:
                         if ch in K and sy in K[ch].get('h', ''): Wn('ko %s: %s의 음은 %s (훈음 %s — 맞는지 확인)' % (sy, ch, '/'.join(sorted(ok_set)), K[ch]['h']))
                         else: E('ko %s: %s의 음은 %s' % (sy, ch, '/'.join(sorted(ok_set))))

@@ -5,6 +5,7 @@ sys.path.insert(0, '/home/claude/work/expansion/tools')
 from cardlib import kj_of, hira
 E = '/home/claude/work/expansion'
 part = int(sys.argv[1]); size = int(sys.argv[2]) if len(sys.argv) > 2 else 46
+KEEP = set(sys.argv[3].split(',')) if len(sys.argv) > 3 else set()   # 이미 작업 중인 묶음 폴더 이름: 덮어쓰지 않음(내용이 같은지만 확인)
 order = json.load(open(E + '/p34/main_order.json', encoding='utf-8'))
 lo, hi = 1500 + (part - 4) * 500, 1500 + (part - 4) * 500 + 499
 sel = [x for x in order if lo <= x['ord'] <= hi]
@@ -47,7 +48,11 @@ base = '/home/claude/agents'
 nb = (len(R) + size - 1) // size
 for b in range(nb):
     ch = R[b * size:(b + 1) * size]
-    dd = '%s/p%dr%02d' % (base, part, b + 1); os.makedirs(dd, exist_ok=True)
+    name = 'p%dr%02d' % (part, b + 1); dd = '%s/%s' % (base, name); os.makedirs(dd, exist_ok=True)
+    if name in KEEP:
+        cur = json.load(open(dd + '/sheet.json', encoding='utf-8'))
+        if [c['old_card']['id'] for c in cur] != [c['old_card']['id'] for c in ch]: sys.exit('작업 중인 묶음 %s의 내용이 바뀜 — 멈춤' % name)
+        print('keep', name); continue
     json.dump(ch, open(dd + '/sheet.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     json.dump([c['old_card'] for c in ch], open(dd + '/old_cards.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 dd = '%s/p%dn' % (base, part); os.makedirs(dd, exist_ok=True)

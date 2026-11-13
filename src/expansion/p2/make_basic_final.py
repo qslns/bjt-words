@@ -47,6 +47,7 @@ CHANGE = {  # (w, r) → 새 w, 새 r, 쓰는 사람에게 메모
  ('そう','そう; そうです'): ('そう','そう','そうです·そうですか'), ('九','きゅう'): ('九','きゅう','く(9時=くじ)는 p에'), ('十','じゅう'): ('十','じゅう','とお(열 개)는 p에'),
  ('四','し'): ('四','よん','지금 보통 よん. し는 四月·四半期·四捨五入(p에)'), ('七','しち'): ('七','なな','지금 보통 なな. しち는 7時·七五三(p에)'),
  ('二十歳','はたち'): ('二十歳','はたち','특별한 읽기 — kr 비움(熟字訓)'),
+ ('可愛い','かわいい'): ('かわいい','かわいい','可愛い는 当て字 — 지금은 가나가 보통(작성자 p2w4 의견)'),
  ('味噌','みそ'): ('みそ','みそ','噌는 상용한자 밖 → 가나'),
 }
 out, log = [], {'drop': [], 'change': [], 'add': []}
@@ -88,6 +89,12 @@ pos = next((i for i, x in enumerate(rest) if x['score'] == 0 and order[id(x)] > 
 final = rest[:pos] + nums + rest[pos:]
 for i, x in enumerate(final):
     x['bn'] = 886 + i; x['id'] = 9000 + x['bn']
+# 11/13 11:20 작성 뒤에 찾은 중복: id는 이미 카드에 쓰였으니 그대로 두고 빼기만, bn은 다시 빈틈없이(뒤쪽 카드는 id ≠ 9000+bn)
+POST_DROP = {'お弁当': '앱의 弁当(9604)와 같은 말(お는 정중 접두어) — 작성 뒤 발견'}
+for x in [x for x in final if x['w'] in POST_DROP]:
+    log['drop'].append({'src': x['src'], 'w': x['w'], 'r': x['r'], 'why': POST_DROP[x['w']]})
+final = [x for x in final if x['w'] not in POST_DROP]
+for i, x in enumerate(final): x['bn'] = 886 + i
 ws = [x['w'] for x in final]
 assert len(ws) == len(set(ws)), [w for w in ws if ws.count(w) > 1]
 cur = json.load(open('/home/claude/work/build/data_app.json', encoding='utf-8'))['words']
