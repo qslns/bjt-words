@@ -16,7 +16,9 @@ rep(".gf>.g-in{padding:2px 14px 16px;display:flex;flex-direction:column;gap:10px
     ".gf .gf>summary b{font-size:16px}\n"
     ".gf .gf>.g-in{padding:2px 12px 14px}\n"
     ".dchip.dq{font-size:13px;font-weight:600;padding:3px 10px;color:var(--ink-2);border:1px dashed var(--ink-3);background:transparent}\n"
-    ".dchip.dq:active{background:var(--surface-2)}")
+    ".dchip.dq:active{background:var(--surface-2)}\n"
+    "/* 휴대폰 폭: 머리 '+ 기본 N'이 시험일 칩 밑으로 겹쳐 그려지던 것(전부터) → 좁은 화면에선 숨김(아이패드는 그대로) */\n"
+    "@media (max-width:480px){.brand .b-sub2{display:none}}")
 # 접기 표시(펼치기 + / 접기 −)는 자기 접기 상태만 따름: 큰 접기가 열려 있어도 닫힌 안쪽 접기는 '펼치기 +'
 rep('.gf[open] .fold::after{content:"접기 −"}', '.gf[open]>summary .fold::after{content:"접기 −"}')
 rep(".kzu-ph{font-size:13px;font-weight:600;color:var(--ink-2);margin-top:4px}",

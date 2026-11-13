@@ -543,6 +543,8 @@ u.em{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-of
 .gf .gf>.g-in{padding:2px 12px 14px}
 .dchip.dq{font-size:13px;font-weight:600;padding:3px 10px;color:var(--ink-2);border:1px dashed var(--ink-3);background:transparent}
 .dchip.dq:active{background:var(--surface-2)}
+/* 휴대폰 폭: 머리 '+ 기본 N'이 시험일 칩 밑으로 겹쳐 그려지던 것(전부터) → 좁은 화면에선 숨김(아이패드는 그대로) */
+@media (max-width:480px){.brand .b-sub2{display:none}}
 
 /* ---------- 10/15 편의성 ---------- */
 /* 화면 전체가 출렁이며 밀리는 것 줄이기(레이아웃·터치는 그대로) */

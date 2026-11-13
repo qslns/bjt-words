@@ -61,6 +61,9 @@ pip install --break-system-packages -q torch --index-url https://download.pytorc
 
 # 시험용 playwright: npm ci 하지 말 것(컨테이너에 깔린 브라우저와 버전이 어긋남) → 전역 것을 연결
 mkdir -p /home/claude/work/app/node_modules && ln -sfn "$(npm root -g)/playwright" /home/claude/work/app/node_modules/playwright
+
+# rsync가 없는 컨테이너가 있음(11/13) → 9절 src 갱신 전에
+which rsync || apt-get install -y -q rsync || (apt-get update -q && apt-get install -y -q rsync)
 ```
 - 시험 파일의 브라우저 경로는 11/13부터 `PW_CHROME` 환경 변수(없으면 기본 브라우저). 기본으로 안 뜨면 `PW_CHROME=$(ls -d /opt/pw-browsers/chromium-*/chrome-linux64/chrome | tail -1)`.
 - 음성 검사 모델: `src/audioqa/README.md`. 받는 곳은 둘 다 `curl -L`로 받아짐(11/13 확인): HuggingFace `prj-beatrice/japanese-hubert-base-phoneme-ctc-v4`(→ `export_onnx.py`로 ONNX), GitHub 릴리스 `k2-fsa/sherpa-onnx` asr-models `sherpa-onnx-zipformer-ja-reazonspeech-2024-08-01.tar.bz2`. 모델 파일은 커밋 금지.
@@ -82,7 +85,7 @@ cd /home/claude/work/app/test && ln -sfn /home/claude/bjt-words/audio audio && l
 cd /home/claude/work/app && bash run_revert_tests.sh && tail -2 t_revert_*.log && node kz_audio_test.mjs | tail -2 && node furi_test.mjs | tail -2
 ```
 - **`app/test/audio` 연결이 없으면 음성 시험 7개가 실패**(11/13에 겪음: 217/7 → 연결 후 229/0).
-- 11/13 기준 결과: 앱 시험 229/0 · 전체화면 9/0 · 업데이트 통과(나머지는 PROGRESS에 기록).
+- 11/13 기준 결과: 앱 시험 229/0 · 전체화면 9/0 · 업데이트 통과(나머지는 PROGRESS에 기록). **P1 뒤(새 홈): 앱 261/0**(무작위 표본 때문에 ±1 — 이름으로 비교) · 진도 보존 `node app/progress_keep.mjs` 16/0.
 
 ## 4. 동시 작업 잠금 (요약 — 자세한 건 PROGRESS.md 맨 위)
 
@@ -124,7 +127,9 @@ cd /home/claude/work/app && bash run_revert_tests.sh && tail -2 t_revert_*.log &
 
 ## 6. 단계별 방법
 
-### P1 홈 정리
+### P1 홈 정리 — 11/13 끝(배포는 PROGRESS 참고)
+만든 모양(`app/patch_1113.py`): 큰 접기 `details.gf[data-g=B|P|kz]`(섹션 `.grp-basic`·`.grp-main`·`.grp-kz`) → 그 안 `.g-in` > 안내 `p.part-h` + 500개 묶음 접기(`b0`…·`p0`…, 같은 `foldHTML`) + 총정리 `p.g-ph` + `.books`. 머리 '끝낸 장'은 그 묶음 모든 장(총정리 포함). 접기 글자(펼치기 +/접기 −)는 자기 summary 기준(`.gf[open]>summary .fold`). 시험일 지나면 `button.dchip.dq[data-act=examSet]`. 아래는 원래 계획:
+
 지금 홈(위에서부터): 설치 안내 · ★약점 단어 · 이어서/다음 순서 버튼 · [0부·기본 1 접기][0부·기본 2 접기] · **기본 전체 총정리 카드(접기 밖, 211px)** · [1부][2부][3부 접기] · **전체 총정리 카드(접기 밖)** · [한자 접기] · 전체 단어 목록·통계 · 사용법 · 저장 상태 · 버전. 확장하면 접기만 11개 + 큰 카드 2개.
 바꿀 모양:
 - 큰 접기 3개: **`0부 · 기본`**(기본 1–N) / **`BJT 단어`**(No.1–N) / **`한자`**(지금 그대로). 머리에 '끝낸 장 n/m' · '진행중'(지금 foldHTML과 같은 모양).
@@ -183,7 +188,9 @@ cd /home/claude/work/app && bash run_revert_tests.sh && tail -2 t_revert_*.log &
 배포 조건(전부):
 1. 3절 기준선 확인을 이번 세션에서 했음.
 2. 새 빌드로 앱 시험·전체화면·업데이트·한자 소리·후리가나 시험 전부 통과(기대값을 바꿨으면 이유를 PROGRESS에). 예상되는 기대값 변화: 단어 수·장 수·홈 구조, 그리고 '모든 단어 카드 … 0 old'(한자 칸이 전부 그림 카드) — 새 한자(그림 카드 없음)가 생기면 old > 0이 정상.
-3. **진도 보존 시험**(새로 만듦, `app/progress_keep.mjs` 권장): 같은 주소에서 ① 지금 배포본 index.html로 진도를 만든다(기본·본편 장 몇 개 끝냄, 진행 중인 장, 약점·★, 한자 단원 기록, 설정) → ② 새 빌드로 바꿔 다시 연다 → 바뀌지 않아야 할 장 진도·단어 기록·이어서 하기·설정이 그대로인지, 5절에서 바뀐다고 한 장만 바뀌는지 확인.
+3. **진도 보존 시험** `app/progress_keep.mjs`(11/13 만듦): 같은 주소에서 ① 배포본(OLD)으로 진도를 만듦(가짜 진도 + 화면으로 장 풀기·★·설정·한자 단원) → ② 새 빌드(NEW)로 열어 저장값이 바이트까지 그대로·장마다 키로 이어짐·없어진 장 = `EXPECT_GONE`·단어 기록·약점·설정·한자·이어서 하기·홈 숫자 → ③ 다시 OLD로 열어도 오류 없음.
+   - `cd /home/claude/work/app && OLD=/home/claude/bjt-words/index.html NEW=test/index.html EXPECT_GONE='…' node progress_keep.mjs` (OLD는 **지금 배포본** = 저장소 루트 index.html을 배포 전에)
+   - P1: `EXPECT_GONE` 없음. **P2(기본 885 → 900 넘게)**: `B:751-885:step,B:501-885:review,B:1-885:all`(11/13 대조 시험으로 확인). **P3(본편 500개씩)**: `P:1-<지금 끝>:all`만(예: 4부 배포 때 `P:1-1500:all`). P2·P3를 한 번에 배포하면 둘 다.
 4. 새 카드 검사기 0 오류 + 검수 반영 + 새·바뀐 음성 받아쓰기 통과.
 5. 새 카드 전부 열기(세로·가로, 오류·빈칸·넘침 0), 홈 스크린샷 눈으로.
 6. index.html 크기 기록(지금 약 5.8MB; 3,800+1,300단어면 10MB 안팎 예상 — 15MB 넘으면 멈추고 생각).
@@ -193,7 +200,8 @@ cd /home/claude/work/app && bash run_revert_tests.sh && tail -2 t_revert_*.log &
 cd /home/claude/work && python3 app/make.py build/data_app.json app/dist pwa https://qslns.github.io/bjt-words/ 120
 cp app/dist/index.html app/dist/sw.js /home/claude/bjt-words/
 # src 갱신: 작업 폴더에서 바꾼 원본을 src로 (node_modules·test·dist·로그·모델·임시 파일 제외)
-rsync -a --exclude node_modules --exclude 'app/test' --exclude 'app/dist' --exclude '*.log' --exclude __pycache__ --exclude 'models' --exclude '.tmp' /home/claude/work/ /home/claude/bjt-words/src/
+# shot_*.png(시험 스크린샷)·expansion/*.md(문서는 저장소에서만 고침 — 작업 폴더 사본은 낡음)는 빼기
+rsync -a --exclude node_modules --exclude 'app/test' --exclude 'app/dist' --exclude '*.log' --exclude __pycache__ --exclude 'models' --exclude '.tmp' --exclude 'shot_*.png' --exclude 'expansion/*.md' /home/claude/work/ /home/claude/bjt-words/src/
 cd /home/claude/bjt-words && git status --short | head   # 큰 파일·모델·키가 섞였는지 확인
 git add -A && git commit -m "…" && git push origin expansion
 git push origin expansion:main    # main으로 배포(fast-forward). 안 되면 main을 expansion에 먼저 merge

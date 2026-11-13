@@ -1,5 +1,6 @@
 import { chromium } from 'playwright';
-const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}) });
+/* 11/13: 컨테이너는 HTTPS_PROXY로만 밖에 나감 → 크로미움에도 같은 프록시 */
+const browser = await chromium.launch({ ...(process.env.PW_CHROME ? { executablePath: process.env.PW_CHROME } : {}), ...(process.env.HTTPS_PROXY ? { proxy: { server: process.env.HTTPS_PROXY } } : {}) });
 const ctx = await browser.newContext({ viewport: { width: 1180, height: 820 } });
 const page = await ctx.newPage(); const errs = [];
 page.on('pageerror', e => errs.push(String(e)));
