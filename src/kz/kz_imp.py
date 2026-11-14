@@ -5,7 +5,10 @@ usage: python3 kz_imp.py  → kz_imp.json
 대표 소리(rep) = 빨간 읽기를 순위대로(10/21 사용자: 중요하지 않은 음독은 읽지 말 것)."""
 import json, re, collections
 KZ = '/home/claude/work/kz'
-cards = json.load(open(KZ + '/kz_cards.json', encoding='utf-8')); C = {c['c']: c for c in cards}
+import sys   # 11/14 K2: python3 kz_imp.py [CARDS.json OUT.json] — 새 카드만 따로 계산해 합칠 때(옛 950장 항목은 그대로 둠)
+CARDS_IN = sys.argv[1] if len(sys.argv) > 2 else KZ + '/kz_cards.json'
+IMP_OUT = sys.argv[2] if len(sys.argv) > 2 else KZ + '/kz_imp.json'
+cards = json.load(open(CARDS_IN, encoding='utf-8')); C = {c['c']: c for c in cards}
 for c in cards: c['kun'] = [k for k in c['kun'] if k.replace('(', '').replace(')', '') not in c['on']]   # 気: 훈독 き(음독과 같음) 빼기
 d = json.load(open('/home/claude/work/build/data_app.json', encoding='utf-8'))
 W = [w for w in d['words'] if w.get('ord') is not None or w.get('bn') is not None]
@@ -147,6 +150,6 @@ for c, card in C.items():
     stats['must%d' % len(must)] += 1
     stats['kun_first' if rows and rows[0]['t'] == 'kun' else 'on_first'] += 1
     stats['skim'] += sum(z['sk'] for z in rows); stats['readings'] += len(rows)
-json.dump(out, open(KZ + '/kz_imp.json', 'w', encoding='utf-8'), ensure_ascii=False)
+json.dump(out, open(IMP_OUT, 'w', encoding='utf-8'), ensure_ascii=False)
 print('sentences', len(sents), 'segments', n_seg, 'attributed', n_ok, 'hw unattributed', dict(miss_hw))
 print(dict(stats))
