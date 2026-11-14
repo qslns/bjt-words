@@ -11,7 +11,15 @@ from cardlib import strip_ruby, ruby_segments, is_kanji, kata
 SUBS = {tuple(k.split('|')): v for k, v in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tts_subs.json'), encoding='utf-8')).items()}
 N, K = 'ja-JP-NanamiNeural', 'ja-JP-KeitaNeural'
 # 11/13 P2 받아쓰기에서 TTS가 다른 읽기로 읽은 것 → 루비가 이 읽기면 늘 가나로 넣음(私를 わたし로, 君을 くん으로, 米를 べい로 …)
-FORCE = {('空', 'から'), ('私', 'わたくし'), ('君', 'きみ'), ('米', 'こめ'), ('星', 'ほし'), ('町', 'まち'), ('後', 'のち'), ('背', 'せい'), ('年', 'とし'), ('月', 'つき'), ('離', 'ばな'), ('止', 'ど')}
+FORCE = {('空', 'から'), ('私', 'わたくし'), ('君', 'きみ'), ('米', 'こめ'), ('星', 'ほし'), ('町', 'まち'), ('後', 'のち'), ('背', 'せい'), ('年', 'とし'), ('月', 'つき'), ('離', 'ばな'), ('止', 'ど'),
+         ('灯', 'ひ'), ('管', 'くだ'), ('尾', 'お'), ('飯', 'めし'), ('球', 'きゅう'),   # 11/14 N3 2부: 홀로 쓰는 한 글자 표제(읽기가 여럿)
+         ('金', 'きん'), ('上座', 'かみざ'), ('同一', 'どういつ'), ('下', 'くだ'), ('悪', 'あく'), ('巻', 'まき')}   # 11/14 N3 2부 받아쓰기에서 틀린 것
+# 예문 하나만 손으로 고칠 때(읽기 쌍이 너무 흔해 FORCE로 못 넣는 것): (id, 예문 번호) → 엔진에 넣을 글
+OVR = {(20441, 1): '鈴木さんとはおないどしで、永遠のライバルです。',   # 同い年 → どういどし로 읽음(11/14)
+       (20483, 1): '社長賞の受賞者には、賞状と金一封が贈られます。',
+       (3629, 1): '予報が外れて、駅からかいしゃまでびしょぬれになりました。'}   # 駅から会社 → がいしゃ로 들림(두 번)   # きん一封으로 넣으면 いちぷう로 읽음 — 한자 그대로가 맞게 읽음
+# 한 글자 단어 소리: 'ひ'만 넣으면 き처럼 들림 → 앱 火(10102)처럼 「」로 감쌈
+WOVR = {20627: '「ひ」'}
 def word_text(c):
     w, r = c['w'], c['r']
     core = w.strip('〜～')
@@ -44,10 +52,10 @@ if __name__ == '__main__':
             if not line: continue
             c = json.loads(line)
             o = old.get(c['id'])
-            if not o: jobs.append({'f': 'audio/w/%d.mp3' % c['id'], 'v': N, 't': word_text(c)})
+            if not o: jobs.append({'f': 'audio/w/%d.mp3' % c['id'], 'v': N, 't': WOVR.get(c['id']) or word_text(c)})
             else: reuse.append('audio/w/%d.mp3' % c['id'])
             for n, e in enumerate(c['e']):
-                t = sent_text(e['j'])
+                t = OVR.get((c['id'], n)) or sent_text(e['j'])
                 tt['%d-%d' % (c['id'], n)] = t
                 if o and n < len(o['e']) and strip_ruby(o['e'][n]['j']) == strip_ruby(e['j']):
                     tt['%d-%d' % (c['id'], n)] = o['e'][n].get('t') or t; reuse.append('audio/s/%d-%d.mp3' % (c['id'], n)); continue

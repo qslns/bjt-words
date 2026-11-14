@@ -47,6 +47,9 @@ for (const vp of [{ width: 820, height: 1180 }, { width: 1180, height: 820 }]) {
   await page.locator('#v-home .kzu-book[data-k="0"] >> visible=true').first().click();
   await page.waitForSelector('#v-kz .cf-word');
   await page.waitForTimeout(400);
+  /* 11/14 K1: 1章에 그림 카드 없는 한자(대표 소리 없음)도 섞여 있음 → 그림 카드 한자가 나올 때까지 [알고있음]으로 넘김(섞인 순서라 매번 다름) */
+  for (let i = 0; i < 50 && !(await page.evaluate(() => !!__t.KC[__t.kui.c])); i++) { await page.locator('#v-kz [data-act="kzOk"] >> visible=true').first().tap(); await page.waitForTimeout(250); }
+  await page.evaluate(() => { __t.AUD.stop(); if (__t.AUD.el) { __t.AUD.el.removeAttribute('src'); __t.AUD.el.load(); } });
   const c0 = await page.evaluate(() => __t.kui.c);
   const f0 = await page.evaluate(() => ({ src: __t.AUD.el ? __t.AUD.el.src : '', btn: document.querySelector('#v-kz .cf-word').tagName, act: document.querySelector('#v-kz .cf-word').dataset.act, hint: (document.querySelector('#v-kz .cf-hint') || {}).textContent || '' }));
   ok(f0.btn === 'BUTTON' && f0.act === 'kzSay' && f0.hint.includes('한자를 누르면 발음') && !f0.src, `${tag} front: kanji ${c0} is a tap-to-hear button + hint, nothing plays by itself`);

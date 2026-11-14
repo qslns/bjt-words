@@ -1,0 +1,22 @@
+{
+ "w/3762": {
+  "file": "n3b_fix/stage/audio/w/3762.a.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "ハシ"
+ },
+ "w/3741": {
+  "file": "n3b_fix/stage/audio/w/3741.d.mp3",
+  "v": "ja-JP-NanamiNeural",
+  "t": "ぬの。"
+ },
+ "s/3632-1": {
+  "file": "n3b_fix/stage/audio/s/3632-1.a.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "お客様の笑顔が、わたくしたちの喜びです。"
+ },
+ "s/3480-1": {
+  "file": "n3b_fix/stage/audio/s/3480-1.b.mp3",
+  "v": "ja-JP-KeitaNeural",
+  "t": "ご回答を、いつまでもお待ちするわけには、まいりません。"
+ }
+}
