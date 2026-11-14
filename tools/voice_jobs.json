@@ -29761,5 +29761,5731 @@
 "t": "部署かんの摩擦を避けるため、事前に調整しておきましょう。",
 "jl": 2,
 "jn": 363
+},
+{
+"f": "audio/s/3170-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "出張のしょにちは、移動だけで終わってしまいました。",
+"jl": 2,
+"jn": 504
+},
+{
+"f": "audio/s/2997-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "このレストランでは、韓国風の焼き肉が食べられます。",
+"jl": 2,
+"jn": 522
+},
+{
+"f": "audio/s/3192-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "スーパーの水産部門で、魚をさばく仕事をしています。",
+"jl": 2,
+"jn": 537
+},
+{
+"f": "audio/s/3192-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "にほんは、多くの水産物を海外から輸入している。",
+"jl": 2,
+"jn": 537
+},
+{
+"f": "audio/s/3373-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この薬品が目に入ったら、すぐに水で洗ってください。",
+"jl": 2,
+"jn": 551
+},
+{
+"f": "audio/s/3373-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "医薬品の広告には、厳しいルールがあります。",
+"jl": 2,
+"jn": 551
+},
+{
+"f": "audio/s/2975-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "更衣室で制服に着替えてから、作業を始めます。",
+"jl": 2,
+"jn": 557
+},
+{
+"f": "audio/s/826-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "航空各社が、アジア路線を拡充している。",
+"jl": 2,
+"jn": 604
+},
+{
+"f": "audio/s/3205-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "毎朝走るようになって、少しスマートになりました。",
+"jl": 2,
+"jn": 611
+},
+{
+"f": "audio/s/3351-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "未記入の項目がある場合は、書類をお返しします。",
+"jl": 2,
+"jn": 656
+},
+{
+"f": "audio/s/3351-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この事件は、10年たった今も未解決のままだ。",
+"jl": 2,
+"jn": 656
+},
+{
+"f": "audio/w/20017.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "じゅう",
+"jl": 2,
+"jn": 676
+},
+{
+"f": "audio/s/20017-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この地域は、昔から重工業で栄えてきた。",
+"jl": 2,
+"jn": 676
+},
+{
+"f": "audio/s/20017-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "物流センターの作業は重労働なので、こまめに休憩を取ってください。",
+"jl": 2,
+"jn": 676
+},
+{
+"f": "audio/s/1199-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "旅行で、ヨーロッパの古いまちを巡りました。",
+"jl": 2,
+"jn": 682
+},
+{
+"f": "audio/s/1187-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このマンションは、オートロックなので安心です。",
+"jl": 2,
+"jn": 686
+},
+{
+"f": "audio/s/3140-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "田中さんは、社内で最年少の課長です。",
+"jl": 2,
+"jn": 688
+},
+{
+"f": "audio/s/3298-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "通勤手当は、一定の金額まで非課税です。",
+"jl": 2,
+"jn": 694
+},
+{
+"f": "audio/s/3298-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "彼は、なかなか自分の非を認めようとしません。",
+"jl": 2,
+"jn": 694
+},
+{
+"f": "audio/s/785-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "準備は大変でしたが、いよいよあすが本番です。",
+"jl": 2,
+"jn": 697
+},
+{
+"f": "audio/s/2998-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このお店に来るのは、5年ぶりです。",
+"jl": 2,
+"jn": 698
+},
+{
+"f": "audio/s/2967-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この充電器は、海外でもそのまま使えます。",
+"jl": 2,
+"jn": 706
+},
+{
+"f": "audio/s/1044-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "決める前に、せめて一言相談してほしかったです。",
+"jl": 2,
+"jn": 723
+},
+{
+"f": "audio/w/20037.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "スクール",
+"jl": 2,
+"jn": 733
+},
+{
+"f": "audio/s/20037-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "いつか、海外のビジネススクールで学びたいと思っています。",
+"jl": 2,
+"jn": 733
+},
+{
+"f": "audio/s/20037-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "このスクールでは、平日の夜や週末にもレッスンがあります。",
+"jl": 2,
+"jn": 733
+},
+{
+"f": "audio/s/3219-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この駅伝の総距離は、約200キロにもなる。",
+"jl": 2,
+"jn": 768
+},
+{
+"f": "audio/s/1496-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "連休明けで、みんな少し疲れぎみですね。",
+"jl": 2,
+"jn": 781
+},
+{
+"f": "audio/w/20038.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "レンズ",
+"jl": 2,
+"jn": 803
+},
+{
+"f": "audio/s/20038-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "同社のレンズは、世界の医療機器に使われている。",
+"jl": 2,
+"jn": 803
+},
+{
+"f": "audio/s/20038-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "眼鏡のレンズが汚れていて、画面がよく見えません。",
+"jl": 2,
+"jn": 803
+},
+{
+"f": "audio/s/3237-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "赤ちゃんが、わたしの指を力強く握りました。",
+"jl": 2,
+"jn": 804
+},
+{
+"f": "audio/s/2196-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このバスツアーは日帰りなので、気軽に参加できます。",
+"jl": 2,
+"jn": 826
+},
+{
+"f": "audio/s/2979-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "文部科学省は、小学校での英語の授業を増やした。",
+"jl": 2,
+"jn": 851
+},
+{
+"f": "audio/s/2970-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "首都圏で、震度4の地震があった。",
+"jl": 2,
+"jn": 886
+},
+{
+"f": "audio/s/767-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "きのうの料理が余ったので、お弁当にしました。",
+"jl": 2,
+"jn": 892
+},
+{
+"f": "audio/s/1090-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "その話、とっくに知っていると思っていました。",
+"jl": 2,
+"jn": 909
+},
+{
+"f": "audio/w/20007.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ええと",
+"jl": 2,
+"jn": 923
+},
+{
+"f": "audio/s/20007-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ええと、なにから話せばいいでしょうか。",
+"jl": 2,
+"jn": 923
+},
+{
+"f": "audio/s/20007-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ええと、先月の数字は手元にないので、後で確認します。",
+"jl": 2,
+"jn": 923
+},
+{
+"f": "audio/s/875-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "親しい同僚には、敬語を使わなくてもいいですよ。",
+"jl": 2,
+"jn": 927
+},
+{
+"f": "audio/s/3117-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "現住所と、免許証の住所が違います。",
+"jl": 2,
+"jn": 929
+},
+{
+"f": "audio/s/3117-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "現社長は、創業者の孫にあたる。",
+"jl": 2,
+"jn": 929
+},
+{
+"f": "audio/s/1169-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "山田さんは、この道20年のベテランです。",
+"jl": 2,
+"jn": 975
+},
+{
+"f": "audio/s/1169-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ベテランのパイロットでも、毎年厳しい訓練を受けています。",
+"jl": 2,
+"jn": 975
+},
+{
+"f": "audio/s/1245-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "本社のロビーに、会社の歴史を紹介するコーナーがあります。",
+"jl": 2,
+"jn": 979
+},
+{
+"f": "audio/w/20024.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "お出かけ",
+"jl": 2,
+"jn": 983
+},
+{
+"f": "audio/s/20024-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "課長、お出かけですか。外は雨ですよ。",
+"jl": 2,
+"jn": 983
+},
+{
+"f": "audio/s/20024-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "今日は暖かくて、絶好のお出かけびよりですね。",
+"jl": 2,
+"jn": 983
+},
+{
+"f": "audio/w/21072.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "包丁",
+"jl": 2,
+"jn": 506
+},
+{
+"f": "audio/s/21072-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "板前さんの包丁さばきに、お客さんが見とれていました。",
+"jl": 2,
+"jn": 506
+},
+{
+"f": "audio/s/21072-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "お買い上げの包丁は、無料で研ぎ直しいたします。",
+"jl": 2,
+"jn": 506
+},
+{
+"f": "audio/w/20912.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "先祖",
+"jl": 2,
+"jn": 508
+},
+{
+"f": "audio/s/20912-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "先祖のお墓は、山のうえの小さなお寺にあります。",
+"jl": 2,
+"jn": 508
+},
+{
+"f": "audio/s/20912-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "先祖代々の畑を、今は弟が守っています。",
+"jl": 2,
+"jn": 508
+},
+{
+"f": "audio/w/21075.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "牧場",
+"jl": 2,
+"jn": 509
+},
+{
+"f": "audio/s/21075-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "牧場で、生まれたばかりの子牛に触らせてもらいました。",
+"jl": 2,
+"jn": 509
+},
+{
+"f": "audio/s/21075-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この牧場では、牛を一年じゅう放し飼いにしています。",
+"jl": 2,
+"jn": 509
+},
+{
+"f": "audio/w/20711.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "井戸",
+"jl": 2,
+"jn": 513
+},
+{
+"f": "audio/s/20711-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "昔はこの井戸の水で、野菜を洗っていたそうです。",
+"jl": 2,
+"jn": 513
+},
+{
+"f": "audio/s/20711-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "市では、災害時に使える井戸の登録を受け付けています。",
+"jl": 2,
+"jn": 513
+},
+{
+"f": "audio/w/21057.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "文芸",
+"jl": 2,
+"jn": 514
+},
+{
+"f": "audio/s/21057-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "文芸部の先輩に勧められて、初めて詩集を読みました。",
+"jl": 2,
+"jn": 514
+},
+{
+"f": "audio/s/21057-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この文芸誌は、今月号で休刊になるそうです。",
+"jl": 2,
+"jn": 514
+},
+{
+"f": "audio/w/20953.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "直線",
+"jl": 2,
+"jn": 520
+},
+{
+"f": "audio/s/20953-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "駅までは直線距離だと近いですが、坂が多いです。",
+"jl": 2,
+"jn": 520
+},
+{
+"f": "audio/s/20953-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "北海道には、30キロ近く直線が続く道路があります。",
+"jl": 2,
+"jn": 520
+},
+{
+"f": "audio/w/20925.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "大工",
+"jl": 2,
+"jn": 525
+},
+{
+"f": "audio/s/20925-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "日曜大工で作った棚が、少し傾いてしまいました。",
+"jl": 2,
+"jn": 525
+},
+{
+"f": "audio/s/20925-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "大工の見習いとして、毎日現場で木材を運んでいます。",
+"jl": 2,
+"jn": 525
+},
+{
+"f": "audio/w/20169.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "回数券",
+"jl": 2,
+"jn": 528
+},
+{
+"f": "audio/s/20169-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "週に2回しか出社しないので、定期券より回数券のほうが安いです。",
+"jl": 2,
+"jn": 528
+},
+{
+"f": "audio/s/20169-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "回数券は、家族や同僚と分けて使うこともできます。",
+"jl": 2,
+"jn": 528
+},
+{
+"f": "audio/w/20170.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "血圧",
+"jl": 2,
+"jn": 534
+},
+{
+"f": "audio/s/20170-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "血圧を測りますので、袖をまくってください。",
+"jl": 2,
+"jn": 534
+},
+{
+"f": "audio/s/20170-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "健康診断で、血圧が少し高いと言われました。",
+"jl": 2,
+"jn": 534
+},
+{
+"f": "audio/w/20985.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "内科",
+"jl": 2,
+"jn": 539
+},
+{
+"f": "audio/s/20985-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "風邪かと思って内科に行ったら、花粉症でした。",
+"jl": 2,
+"jn": 539
+},
+{
+"f": "audio/s/20985-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "胃が痛いときは、内科と外科のどちらに行けばいいですか。",
+"jl": 2,
+"jn": 539
+},
+{
+"f": "audio/w/21120.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "浴衣",
+"jl": 2,
+"jn": 543
+},
+{
+"f": "audio/s/21120-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "花火大会には、浴衣を着て行くつもりです。",
+"jl": 2,
+"jn": 543
+},
+{
+"f": "audio/s/21120-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "浴衣は、左の襟がうえになるように着てください。",
+"jl": 2,
+"jn": 543
+},
+{
+"f": "audio/w/20867.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "巡査",
+"jl": 2,
+"jn": 546
+},
+{
+"f": "audio/s/20867-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夜になると、巡査が自転車で住宅街を見回っています。",
+"jl": 2,
+"jn": 546
+},
+{
+"f": "audio/s/20867-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "母は、30年前に巡査として警察に入りました。",
+"jl": 2,
+"jn": 546
+},
+{
+"f": "audio/w/21109.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "もち",
+"jl": 2,
+"jn": 552
+},
+{
+"f": "audio/s/21109-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "年末に、近所の人たちと餅をつきました。",
+"jl": 2,
+"jn": 552
+},
+{
+"f": "audio/s/21109-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "お年寄りが餅をのどに詰まらせる事故は、正月に多い。",
+"jl": 2,
+"jn": 552
+},
+{
+"f": "audio/w/21069.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "方言",
+"jl": 2,
+"jn": 553
+},
+{
+"f": "audio/s/21069-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "青森の祖父の方言は、半分くらいしかわかりません。",
+"jl": 2,
+"jn": 553
+},
+{
+"f": "audio/s/21069-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "方言で話してくれる店員さんに、親しみを感じました。",
+"jl": 2,
+"jn": 553
+},
+{
+"f": "audio/w/21084.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "まくら",
+"jl": 2,
+"jn": 554
+},
+{
+"f": "audio/s/21084-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "枕が変わると、なかなか眠れないタイプです。",
+"jl": 2,
+"jn": 554
+},
+{
+"f": "audio/s/21084-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "修学旅行の夜は、みんなで枕投げをしました。",
+"jl": 2,
+"jn": 554
+},
+{
+"f": "audio/w/20902.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "青少年",
+"jl": 2,
+"jn": 555
+},
+{
+"f": "audio/s/20902-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "青少年の深夜の外出は、条例で制限されています。",
+"jl": 2,
+"jn": 555
+},
+{
+"f": "audio/s/20902-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "スマホの使いすぎが、青少年の睡眠不足につながっている。",
+"jl": 2,
+"jn": 555
+},
+{
+"f": "audio/w/20217.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "灰色",
+"jl": 2,
+"jn": 558
+},
+{
+"f": "audio/s/20217-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "友人から、灰色の子猫を譲ってもらいました。",
+"jl": 2,
+"jn": 558
+},
+{
+"f": "audio/s/20217-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "表のみだしの行は、薄い灰色にしてください。",
+"jl": 2,
+"jn": 558
+},
+{
+"f": "audio/w/21133.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "理科",
+"jl": 2,
+"jn": 559
+},
+{
+"f": "audio/s/21133-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "娘は、国語は苦手ですが、理科は得意です。",
+"jl": 2,
+"jn": 559
+},
+{
+"f": "audio/s/21133-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "理科室の人体模型が、子供のころは怖かったです。",
+"jl": 2,
+"jn": 559
+},
+{
+"f": "audio/w/20720.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "恨み",
+"jl": 2,
+"jn": 566
+},
+{
+"f": "audio/s/20720-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "食べ物の恨みは恐ろしい、とよく言いますね。",
+"jl": 2,
+"jn": 566
+},
+{
+"f": "audio/s/20720-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "容疑者は、元同僚への恨みから事件を起こしたと話している。",
+"jl": 2,
+"jn": 566
+},
+{
+"f": "audio/w/20328.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "学力",
+"jl": 2,
+"jn": 567
+},
+{
+"f": "audio/s/20328-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この学校は、生徒の学力に合わせてクラスを分けています。",
+"jl": 2,
+"jn": 567
+},
+{
+"f": "audio/s/20328-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "全国学力テストの結果が、今月末に公表される。",
+"jl": 2,
+"jn": 567
+},
+{
+"f": "audio/w/20241.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "べん",
+"jl": 2,
+"jn": 570
+},
+{
+"f": "audio/s/20241-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "広島に住んで5年、すっかり広島弁がうつりました。",
+"jl": 2,
+"jn": 570
+},
+{
+"f": "audio/s/20241-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "名古屋弁では、「とても」を「でら」と言います。",
+"jl": 2,
+"jn": 570
+},
+{
+"f": "audio/w/20892.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "図鑑",
+"jl": 2,
+"jn": 573
+},
+{
+"f": "audio/s/20892-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "図鑑にも載っていない珍しい虫を、庭で見つけました。",
+"jl": 2,
+"jn": 573
+},
+{
+"f": "audio/s/20892-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "最近の図鑑は、スマホをかざすと動物が動き出します。",
+"jl": 2,
+"jn": 573
+},
+{
+"f": "audio/w/20173.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ピンク",
+"jl": 2,
+"jn": 580
+},
+{
+"f": "audio/s/20173-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "春らしく、薄いピンクのシャツを買いました。",
+"jl": 2,
+"jn": 580
+},
+{
+"f": "audio/s/20173-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "桜の季節には、店内をピンクの飾りでいっぱいにします。",
+"jl": 2,
+"jn": 580
+},
+{
+"f": "audio/w/21102.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "無数",
+"jl": 2,
+"jn": 584
+},
+{
+"f": "audio/s/21102-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夏の夜、川辺で無数のホタルが光っていました。",
+"jl": 2,
+"jn": 584
+},
+{
+"f": "audio/s/21102-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "アイデアは無数にありますが、使えるものは少ないです。",
+"jl": 2,
+"jn": 584
+},
+{
+"f": "audio/w/20871.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "蒸気",
+"jl": 2,
+"jn": 585
+},
+{
+"f": "audio/s/20871-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "炊飯器の蒸気が出る所に、手を近づけないでください。",
+"jl": 2,
+"jn": 585
+},
+{
+"f": "audio/s/20871-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "別府の温泉街では、あちこちから白い蒸気が上がっていました。",
+"jl": 2,
+"jn": 585
+},
+{
+"f": "audio/w/20940.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "短編",
+"jl": 2,
+"jn": 586
+},
+{
+"f": "audio/s/20940-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "短編なので、昼休みの間に読み終わりました。",
+"jl": 2,
+"jn": 586
+},
+{
+"f": "audio/s/20940-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この短編集には、10の物語が収められています。",
+"jl": 2,
+"jn": 586
+},
+{
+"f": "audio/w/20358.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "風船",
+"jl": 2,
+"jn": 587
+},
+{
+"f": "audio/s/20358-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "誕生日パーティーの風船を、30個も膨らませました。",
+"jl": 2,
+"jn": 587
+},
+{
+"f": "audio/s/20358-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "風船は、暑い車の中に置くと割れることがあります。",
+"jl": 2,
+"jn": 587
+},
+{
+"f": "audio/w/20754.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "学級",
+"jl": 2,
+"jn": 594
+},
+{
+"f": "audio/s/20754-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "学級閉鎖で、息子は今週ずっといえにいます。",
+"jl": 2,
+"jn": 594
+},
+{
+"f": "audio/s/20754-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "中学時代は、学級委員を任されていました。",
+"jl": 2,
+"jn": 594
+},
+{
+"f": "audio/w/20359.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "武士",
+"jl": 2,
+"jn": 597
+},
+{
+"f": "audio/s/20359-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "「武士ににごんはない」と言って、部長は約束を守ってくれました。",
+"jl": 2,
+"jn": 597
+},
+{
+"f": "audio/s/20359-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "こちらは、武士が実際に使っていたよろいです。",
+"jl": 2,
+"jn": 597
+},
+{
+"f": "audio/w/20694.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "もん",
+"jl": 2,
+"jn": 598
+},
+{
+"f": "audio/s/20694-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "アンケートは5問だけなので、1分ほどで終わります。",
+"jl": 2,
+"jn": 598
+},
+{
+"f": "audio/s/20694-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "クイズの第1問から、いきなり難しくて驚きました。",
+"jl": 2,
+"jn": 598
+},
+{
+"f": "audio/w/20325.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "親指",
+"jl": 2,
+"jn": 607
+},
+{
+"f": "audio/s/20325-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "先輩が親指を立てて、「よくやった」と合図してくれました。",
+"jl": 2,
+"jn": 607
+},
+{
+"f": "audio/s/20325-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "赤ちゃんが、寝ながら親指をしゃぶっています。",
+"jl": 2,
+"jn": 607
+},
+{
+"f": "audio/w/20250.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "電流",
+"jl": 2,
+"jn": 608
+},
+{
+"f": "audio/s/20250-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このコードには、大きな電流を流さないでください。",
+"jl": 2,
+"jn": 608
+},
+{
+"f": "audio/s/20250-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "新しい企画を思いついた瞬間、体に電流が走りました。",
+"jl": 2,
+"jn": 608
+},
+{
+"f": "audio/w/20353.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "吐き気",
+"jl": 2,
+"jn": 612
+},
+{
+"f": "audio/s/20353-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "生ごみのにおいがひどくて、吐き気がしました。",
+"jl": 2,
+"jn": 612
+},
+{
+"f": "audio/s/20353-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "吐き気がおさまるまで、少し横になっていてください。",
+"jl": 2,
+"jn": 612
+},
+{
+"f": "audio/w/20701.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "足跡",
+"jl": 2,
+"jn": 613
+},
+{
+"f": "audio/s/20701-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "砂浜の足跡が、波ですぐに消えてしまいました。",
+"jl": 2,
+"jn": 613
+},
+{
+"f": "audio/s/20701-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "創業者は、にほんの家電業界に大きな足跡を残した。",
+"jl": 2,
+"jn": 613
+},
+{
+"f": "audio/w/20994.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "南極",
+"jl": 2,
+"jn": 615
+},
+{
+"f": "audio/s/20994-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ペンギンは、南極だけでなくアフリカにもいます。",
+"jl": 2,
+"jn": 615
+},
+{
+"f": "audio/s/20994-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "南極へのツアーは、1人100万円以上かかるそうです。",
+"jl": 2,
+"jn": 615
+},
+{
+"f": "audio/w/20743.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "家屋",
+"jl": 2,
+"jn": 616
+},
+{
+"f": "audio/s/20743-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "地震の後、専門家が家屋の安全性を調べて回った。",
+"jl": 2,
+"jn": 616
+},
+{
+"f": "audio/s/20743-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "固定資産税は、土地と家屋にかかる税金です。",
+"jl": 2,
+"jn": 616
+},
+{
+"f": "audio/w/20087.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "薬局",
+"jl": 2,
+"jn": 618
+},
+{
+"f": "audio/s/20087-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ほかの薬と一緒に飲んでも大丈夫か、薬局で聞きました。",
+"jl": 2,
+"jn": 618
+},
+{
+"f": "audio/s/20087-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "調剤薬局の数は、コンビニより多いと言われている。",
+"jl": 2,
+"jn": 618
+},
+{
+"f": "audio/w/20764.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "かわら",
+"jl": 2,
+"jn": 619
+},
+{
+"f": "audio/s/20764-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "空手の先生が、瓦を10枚まとめて割ってみせました。",
+"jl": 2,
+"jn": 619
+},
+{
+"f": "audio/s/20764-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "沖縄では、赤い瓦の屋根のうえにシーサーが飾られています。",
+"jl": 2,
+"jn": 619
+},
+{
+"f": "audio/w/20877.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "書道",
+"jl": 2,
+"jn": 622
+},
+{
+"f": "audio/s/20877-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "書道で使う墨は、一度服に付くとなかなか落ちません。",
+"jl": 2,
+"jn": 622
+},
+{
+"f": "audio/s/20877-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この掛け軸の字は、有名な書道家が書いたものです。",
+"jl": 2,
+"jn": 622
+},
+{
+"f": "audio/w/20979.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "童話",
+"jl": 2,
+"jn": 627
+},
+{
+"f": "audio/s/20979-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "アンデルセンの童話には、悲しい結末の話も多いです。",
+"jl": 2,
+"jn": 627
+},
+{
+"f": "audio/s/20979-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "彼女は、銀行員をやめて童話作家になりました。",
+"jl": 2,
+"jn": 627
+},
+{
+"f": "audio/w/20946.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "地名",
+"jl": 2,
+"jn": 628
+},
+{
+"f": "audio/s/20946-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "にほんの地名には、読みかたが難しいものが多いです。",
+"jl": 2,
+"jn": 628
+},
+{
+"f": "audio/s/20946-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "海外向けの資料では、地名をローマ字で表記してください。",
+"jl": 2,
+"jn": 628
+},
+{
+"f": "audio/w/21137.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "漁師",
+"jl": 2,
+"jn": 629
+},
+{
+"f": "audio/s/21137-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "漁師の兄が、とれたての魚を送ってくれました。",
+"jl": 2,
+"jn": 629
+},
+{
+"f": "audio/s/21137-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "若い漁師を育てるため、まちが研修制度を作った。",
+"jl": 2,
+"jn": 629
+},
+{
+"f": "audio/w/20349.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "女房",
+"jl": 2,
+"jn": 634
+},
+{
+"f": "audio/s/20349-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うちの女房は、わたしより稼ぎがいいんですよ。",
+"jl": 2,
+"jn": 634
+},
+{
+"f": "audio/s/20349-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "野球では、キャッチャーはピッチャーの女房役と言われます。",
+"jl": 2,
+"jn": 634
+},
+{
+"f": "audio/w/20681.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "さん",
+"jl": 2,
+"jn": 635
+},
+{
+"f": "audio/s/20681-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "富士山に登ったとき、頂上の寒さに驚きました。",
+"jl": 2,
+"jn": 635
+},
+{
+"f": "audio/s/20681-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "高尾山へは、新宿から電車で1時間ほどで行けます。",
+"jl": 2,
+"jn": 635
+},
+{
+"f": "audio/w/20966.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "手首",
+"jl": 2,
+"jn": 636
+},
+{
+"f": "audio/s/20966-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "デスクワークの合間に、手首を回してストレッチしています。",
+"jl": 2,
+"jn": 636
+},
+{
+"f": "audio/s/20966-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "バドミントンは、手首をうまく使うとシャトルが遠くまで飛びます。",
+"jl": 2,
+"jn": 636
+},
+{
+"f": "audio/w/20679.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "か",
+"jl": 2,
+"jn": 645
+},
+{
+"f": "audio/s/20679-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うちの会社にも、社歌があるのを知っていますか。",
+"jl": 2,
+"jn": 645
+},
+{
+"f": "audio/s/20679-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ワールドカップの開幕戦で、両国の国歌が演奏された。",
+"jl": 2,
+"jn": 645
+},
+{
+"f": "audio/w/20731.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "王女",
+"jl": 2,
+"jn": 646
+},
+{
+"f": "audio/s/20731-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "隣国の王女が、にほんの大学に留学することになった。",
+"jl": 2,
+"jn": 646
+},
+{
+"f": "audio/s/20731-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この映画は、王女が身分を隠して旅をする物語です。",
+"jl": 2,
+"jn": 646
+},
+{
+"f": "audio/w/21112.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "やかん",
+"jl": 2,
+"jn": 647
+},
+{
+"f": "audio/s/21112-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夏は、やかんで麦茶を作って冷やしておきます。",
+"jl": 2,
+"jn": 647
+},
+{
+"f": "audio/s/21112-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "このやかんは、お湯が沸くと笛のような音で知らせてくれます。",
+"jl": 2,
+"jn": 647
+},
+{
+"f": "audio/w/21042.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "昼寝",
+"jl": 2,
+"jn": 651
+},
+{
+"f": "audio/s/21042-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "昼休みに15分ほど昼寝をすると、午後の仕事がはかどります。",
+"jl": 2,
+"jn": 651
+},
+{
+"f": "audio/s/21042-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "子供が昼寝をしている間に、メールを返信しました。",
+"jl": 2,
+"jn": 651
+},
+{
+"f": "audio/w/20680.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "かん",
+"jl": 2,
+"jn": 657
+},
+{
+"f": "audio/s/20680-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "全20巻の漫画を、3日で一気に読んでしまいました。",
+"jl": 2,
+"jn": 657
+},
+{
+"f": "audio/s/20680-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "友達に貸した第5巻が、まだ返ってきません。",
+"jl": 2,
+"jn": 657
+},
+{
+"f": "audio/w/21048.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "父母",
+"jl": 2,
+"jn": 658
+},
+{
+"f": "audio/s/21048-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "おかげさまで、父母共に元気にしております。",
+"jl": 2,
+"jn": 658
+},
+{
+"f": "audio/s/21048-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "来月の父母会では、修学旅行の説明があります。",
+"jl": 2,
+"jn": 658
+},
+{
+"f": "audio/w/20188.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うどん",
+"jl": 2,
+"jn": 660
+},
+{
+"f": "audio/s/20188-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "関西のうどんは、関東よりつゆの色が薄いです。",
+"jl": 2,
+"jn": 660
+},
+{
+"f": "audio/s/20188-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "うどんを打つときは、きじを足で踏んでこしを出します。",
+"jl": 2,
+"jn": 660
+},
+{
+"f": "audio/w/20061.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "なす",
+"jl": 2,
+"jn": 662
+},
+{
+"f": "audio/s/20061-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "開店前から、店の前には客が列をなしていた。",
+"jl": 2,
+"jn": 662
+},
+{
+"f": "audio/s/20061-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "データが古いので、この比較は意味をなしません。",
+"jl": 2,
+"jn": 662
+},
+{
+"f": "audio/w/20690.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "とう",
+"jl": 2,
+"jn": 668
+},
+{
+"f": "audio/s/20690-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "無人島に一つだけ持っていくなら、なにを選びますか。",
+"jl": 2,
+"jn": 668
+},
+{
+"f": "audio/s/20690-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "離島に住む人のために、ドローンで薬を届ける実験が始まった。",
+"jl": 2,
+"jn": 668
+},
+{
+"f": "audio/w/20779.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "くう",
+"jl": 2,
+"jn": 669
+},
+{
+"f": "audio/s/20779-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "駅から遠いビルほど、空室が目立つ。",
+"jl": 2,
+"jn": 669
+},
+{
+"f": "audio/s/20779-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "空腹を我慢して、会議が終わるのを待ちました。",
+"jl": 2,
+"jn": 669
+},
+{
+"f": "audio/w/20758.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "かま",
+"jl": 2,
+"jn": 672
+},
+{
+"f": "audio/s/20758-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "学生寮で同じ釜のめしを食った友人とは、今も連絡を取り合っています。",
+"jl": 2,
+"jn": 672
+},
+{
+"f": "audio/s/20758-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ご注文を受けてから炊きますので、釜めしは30分ほどかかります。",
+"jl": 2,
+"jn": 672
+},
+{
+"f": "audio/w/21116.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "遊園地",
+"jl": 2,
+"jn": 679
+},
+{
+"f": "audio/s/21116-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "遊園地のにんきのアトラクションは、2時間待ちでした。",
+"jl": 2,
+"jn": 679
+},
+{
+"f": "audio/s/21116-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "閉園が決まった遊園地に、最後にもう一度行ってきました。",
+"jl": 2,
+"jn": 679
+},
+{
+"f": "audio/w/20338.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "じゃんけん",
+"jl": 2,
+"jn": 681
+},
+{
+"f": "audio/s/20338-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "誰が幹事をするか、じゃんけんで決めましょう。",
+"jl": 2,
+"jn": 681
+},
+{
+"f": "audio/s/20338-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "じゃんけんであいこが5回も続いて、なかなか勝負がつきませんでした。",
+"jl": 2,
+"jn": 681
+},
+{
+"f": "audio/w/20797.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "原始",
+"jl": 2,
+"jn": 685
+},
+{
+"f": "audio/s/20797-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "原始時代の人々は、狩りをして暮らしていた。",
+"jl": 2,
+"jn": 685
+},
+{
+"f": "audio/s/20797-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "今どき手書きで集計するなんて、原始的なやりかたですね。",
+"jl": 2,
+"jn": 685
+},
+{
+"f": "audio/w/20687.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "せん",
+"jl": 2,
+"jn": 689
+},
+{
+"f": "audio/s/20687-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "横浜港には、毎日たくさんの貨物船が出入りしている。",
+"jl": 2,
+"jn": 689
+},
+{
+"f": "audio/s/20687-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "宇宙船の窓から見た地球は、青くて美しかったそうです。",
+"jl": 2,
+"jn": 689
+},
+{
+"f": "audio/w/20965.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "停車",
+"jl": 2,
+"jn": 690
+},
+{
+"f": "audio/s/20965-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この列車は、次の京都駅で3分間停車いたします。",
+"jl": 2,
+"jn": 690
+},
+{
+"f": "audio/s/20965-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ここは駐停車禁止なので、車を止めないでください。",
+"jl": 2,
+"jn": 690
+},
+{
+"f": "audio/w/21060.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "兵隊",
+"jl": 2,
+"jn": 692
+},
+{
+"f": "audio/s/21060-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "兵隊アリは、大きなあごで巣を守ります。",
+"jl": 2,
+"jn": 692
+},
+{
+"f": "audio/s/21060-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "社員を兵隊のように扱う会社は、長続きしない。",
+"jl": 2,
+"jn": 692
+},
+{
+"f": "audio/w/20102.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "紅葉",
+"jl": 2,
+"jn": 695
+},
+{
+"f": "audio/s/20102-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "山の紅葉が、例年より1週間ほど遅れている。",
+"jl": 2,
+"jn": 695
+},
+{
+"f": "audio/s/20102-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この辺りの木は、10月げじゅんごろから紅葉し始めます。",
+"jl": 2,
+"jn": 695
+},
+{
+"f": "audio/w/20879.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "しん",
+"jl": 2,
+"jn": 701
+},
+{
+"f": "audio/s/20879-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "鉛筆の芯が折れたので、削り直しました。",
+"jl": 2,
+"jn": 701
+},
+{
+"f": "audio/s/20879-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "山田さんは、物静かだけど芯の強い人です。",
+"jl": 2,
+"jn": 701
+},
+{
+"f": "audio/w/21124.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "溶岩",
+"jl": 2,
+"jn": 702
+},
+{
+"f": "audio/s/21124-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "噴火した火山から、溶岩が海まで流れ出た。",
+"jl": 2,
+"jn": 702
+},
+{
+"f": "audio/s/21124-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "冷えて固まった溶岩のうえを歩いて、火口の近くまで行きました。",
+"jl": 2,
+"jn": 702
+},
+{
+"f": "audio/w/20794.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "毛皮",
+"jl": 2,
+"jn": 709
+},
+{
+"f": "audio/s/20794-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ラッコは、厚い毛皮のおかげで冷たい海でも暮らせます。",
+"jl": 2,
+"jn": 709
+},
+{
+"f": "audio/s/20794-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "寒い地域では、昔から動物の毛皮で服を作ってきた。",
+"jl": 2,
+"jn": 709
+},
+{
+"f": "audio/w/20853.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "車庫",
+"jl": 2,
+"jn": 717
+},
+{
+"f": "audio/s/20853-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "いえを建てるなら、車2台分の車庫がほしいです。",
+"jl": 2,
+"jn": 717
+},
+{
+"f": "audio/s/20853-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "車を購入する際は、車庫証明を取る必要がある。",
+"jl": 2,
+"jn": 717
+},
+{
+"f": "audio/w/20960.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "つな",
+"jl": 2,
+"jn": 718
+},
+{
+"f": "audio/s/20960-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "強風で、みなとの船をつないでいた綱が切れた。",
+"jl": 2,
+"jn": 718
+},
+{
+"f": "audio/s/20960-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "終電を逃して、頼みの綱だったタクシーもつかまりませんでした。",
+"jl": 2,
+"jn": 718
+},
+{
+"f": "audio/w/20242.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "園芸",
+"jl": 2,
+"jn": 726
+},
+{
+"f": "audio/s/20242-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "高校の園芸部が育てた野菜を、文化祭で販売した。",
+"jl": 2,
+"jn": 726
+},
+{
+"f": "audio/s/20242-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "園芸用の土は重いので、ネットで注文しています。",
+"jl": 2,
+"jn": 726
+},
+{
+"f": "audio/w/20920.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "祖先",
+"jl": 2,
+"jn": 728
+},
+{
+"f": "audio/s/20920-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "鳥の祖先は、実は恐竜だったそうです。",
+"jl": 2,
+"jn": 728
+},
+{
+"f": "audio/s/20920-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この機械が、今のパソコンの祖先といえる。",
+"jl": 2,
+"jn": 728
+},
+{
+"f": "audio/w/21040.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "標識",
+"jl": 2,
+"jn": 730
+},
+{
+"f": "audio/s/21040-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "霧で道路標識がよく見えず、出口を通り過ぎてしまいました。",
+"jl": 2,
+"jn": 730
+},
+{
+"f": "audio/s/21040-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "非常口の標識は、停電しても光るようになっています。",
+"jl": 2,
+"jn": 730
+},
+{
+"f": "audio/w/21096.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "見つめる",
+"jl": 2,
+"jn": 731
+},
+{
+"f": "audio/s/21096-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "彼は、パソコンの画面を見つめたまま動きません。",
+"jl": 2,
+"jn": 731
+},
+{
+"f": "audio/s/21096-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "厳しい現実を見つめて、計画を立て直しましょう。",
+"jl": 2,
+"jn": 731
+},
+{
+"f": "audio/w/20097.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "タイヤ",
+"jl": 2,
+"jn": 734
+},
+{
+"f": "audio/s/20097-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "自転車のタイヤがパンクしたので、駅まで歩きました。",
+"jl": 2,
+"jn": 734
+},
+{
+"f": "audio/s/20097-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "社用車のタイヤは、12月までに冬用のものに交換してください。",
+"jl": 2,
+"jn": 734
+},
+{
+"f": "audio/w/20778.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "金魚",
+"jl": 2,
+"jn": 735
+},
+{
+"f": "audio/s/20778-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夏祭りの金魚すくいで、子供が3匹もすくいました。",
+"jl": 2,
+"jn": 735
+},
+{
+"f": "audio/s/20778-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "受付に金魚の水槽を置いたら、雰囲気が明るくなりました。",
+"jl": 2,
+"jn": 735
+},
+{
+"f": "audio/w/20858.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "車輪",
+"jl": 2,
+"jn": 736
+},
+{
+"f": "audio/s/20858-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "スーツケースの車輪が一つ壊れて、転がりにくいです。",
+"jl": 2,
+"jn": 736
+},
+{
+"f": "audio/s/20858-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "走行中のトラックから車輪が外れる事故があった。",
+"jl": 2,
+"jn": 736
+},
+{
+"f": "audio/w/20788.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "稽古",
+"jl": 2,
+"jn": 738
+},
+{
+"f": "audio/s/20788-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "剣道の稽古は厳しいですが、終わった後は気持ちがいいです。",
+"jl": 2,
+"jn": 738
+},
+{
+"f": "audio/s/20788-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "稽古を休むと、体がすぐになまってしまいます。",
+"jl": 2,
+"jn": 738
+},
+{
+"f": "audio/w/21134.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "リズム",
+"jl": 2,
+"jn": 742
+},
+{
+"f": "audio/s/21134-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夜勤が続いて、生活のリズムが崩れてしまいました。",
+"jl": 2,
+"jn": 742
+},
+{
+"f": "audio/s/21134-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "音楽のリズムに合わせて、体を動かしましょう。",
+"jl": 2,
+"jn": 742
+},
+{
+"f": "audio/w/21139.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "零点",
+"jl": 2,
+"jn": 751
+},
+{
+"f": "audio/s/21139-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "答案用紙に名前を書き忘れて、零点になってしまいました。",
+"jl": 2,
+"jn": 751
+},
+{
+"f": "audio/s/21139-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "料理の味は満点でしたが、接客は零点でした。",
+"jl": 2,
+"jn": 751
+},
+{
+"f": "audio/w/20345.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "炭鉱",
+"jl": 2,
+"jn": 763
+},
+{
+"f": "audio/s/20345-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "石油の時代になって、多くの炭鉱が閉山した。",
+"jl": 2,
+"jn": 763
+},
+{
+"f": "audio/s/20345-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "炭鉱での仕事は、いつも危険と隣り合わせだったそうです。",
+"jl": 2,
+"jn": 763
+},
+{
+"f": "audio/w/20737.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "お待ちどおさま",
+"jl": 2,
+"jn": 764
+},
+{
+"f": "audio/s/20737-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "お待ちどおさま。天ぷらそば、大盛りです。",
+"jl": 2,
+"jn": 764
+},
+{
+"f": "audio/s/20737-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "お待ちどおさま。準備ができたので、出かけましょう。",
+"jl": 2,
+"jn": 764
+},
+{
+"f": "audio/w/21104.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "めい",
+"jl": 2,
+"jn": 766
+},
+{
+"f": "audio/s/21104-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "姉に娘が生まれて、初めてめいができました。",
+"jl": 2,
+"jn": 766
+},
+{
+"f": "audio/s/21104-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "今年から、めいにもお年玉をあげることにしました。",
+"jl": 2,
+"jn": 766
+},
+{
+"f": "audio/w/20174.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "マラソン",
+"jl": 2,
+"jn": 769
+},
+{
+"f": "audio/s/20174-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "初めてのフルマラソンで、なんとか最後まで走りきりました。",
+"jl": 2,
+"jn": 769
+},
+{
+"f": "audio/s/20174-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "資格の勉強は、短距離走ではなくマラソンだと思って続けましょう。",
+"jl": 2,
+"jn": 769
+},
+{
+"f": "audio/w/20806.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "公務",
+"jl": 2,
+"jn": 772
+},
+{
+"f": "audio/s/20806-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "首相の公務は、夜遅くまで続くことも多い。",
+"jl": 2,
+"jn": 772
+},
+{
+"f": "audio/s/20806-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "警察官の仕事を邪魔すると、公務執行妨害の罪になる。",
+"jl": 2,
+"jn": 772
+},
+{
+"f": "audio/w/20989.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "仲良し",
+"jl": 2,
+"jn": 773
+},
+{
+"f": "audio/s/20989-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うちの犬と猫は、とても仲良しです。",
+"jl": 2,
+"jn": 773
+},
+{
+"f": "audio/s/20989-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "娘は新しい学校で、仲良しの友達ができたそうです。",
+"jl": 2,
+"jn": 773
+},
+{
+"f": "audio/w/20824.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "酒場",
+"jl": 2,
+"jn": 777
+},
+{
+"f": "audio/s/20824-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "酒場で隣に座った人と、話が盛り上がりました。",
+"jl": 2,
+"jn": 777
+},
+{
+"f": "audio/s/20824-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "仕事帰りに、同僚と路地裏の酒場に寄りました。",
+"jl": 2,
+"jn": 777
+},
+{
+"f": "audio/w/20909.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "全集",
+"jl": 2,
+"jn": 778
+},
+{
+"f": "audio/s/20909-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "古本屋で、昔の文学全集を安く手に入れました。",
+"jl": 2,
+"jn": 778
+},
+{
+"f": "audio/s/20909-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "にんき作家の全集が、電子書籍でも読めるようになった。",
+"jl": 2,
+"jn": 778
+},
+{
+"f": "audio/w/21030.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "引き分け",
+"jl": 2,
+"jn": 779
+},
+{
+"f": "audio/s/21030-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "試合終了直前に同点に追いつき、引き分けに持ち込んだ。",
+"jl": 2,
+"jn": 779
+},
+{
+"f": "audio/s/21030-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "このリーグでは、勝てば3点、引き分けなら1点もらえます。",
+"jl": 2,
+"jn": 779
+},
+{
+"f": "audio/w/20890.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "水平線",
+"jl": 2,
+"jn": 780
+},
+{
+"f": "audio/s/20890-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "浜辺に座って、水平線をぼんやり眺めていました。",
+"jl": 2,
+"jn": 780
+},
+{
+"f": "audio/s/20890-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "昔の人は、水平線の向こうになにがあるのか知りませんでした。",
+"jl": 2,
+"jn": 780
+},
+{
+"f": "audio/w/20802.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "光線",
+"jl": 2,
+"jn": 784
+},
+{
+"f": "audio/s/20802-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "レーザー光線を使った演出で、会場は大いに盛り上がった。",
+"jl": 2,
+"jn": 784
+},
+{
+"f": "audio/s/20802-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "光線の具合により、実際の色と異なって見える場合があります。",
+"jl": 2,
+"jn": 784
+},
+{
+"f": "audio/w/21017.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ハチ",
+"jl": 2,
+"jn": 787
+},
+{
+"f": "audio/s/21017-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "観葉植物を、一回り大きな鉢に植え替えました。",
+"jl": 2,
+"jn": 787
+},
+{
+"f": "audio/s/21017-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "居酒屋では、注文しなくても、最初にお通しが小鉢で運ばれてきます。",
+"jl": 2,
+"jn": 787
+},
+{
+"f": "audio/w/21136.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "両側",
+"jl": 2,
+"jn": 788
+},
+{
+"f": "audio/s/21136-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "道の両側に車が止まっていて、通るのが大変でした。",
+"jl": 2,
+"jn": 788
+},
+{
+"f": "audio/s/21136-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "肩がこったら、首の両側を指でゆっくり押しましょう。",
+"jl": 2,
+"jn": 788
+},
+{
+"f": "audio/w/21038.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "日の出",
+"jl": 2,
+"jn": 791
+},
+{
+"f": "audio/s/21038-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "今年は雲が厚くて、はつひのでが見られませんでした。",
+"jl": 2,
+"jn": 791
+},
+{
+"f": "audio/s/21038-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "漁師の父は、いつも日の出より早くみなとを出ます。",
+"jl": 2,
+"jn": 791
+},
+{
+"f": "audio/w/21146.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ワンピース",
+"jl": 2,
+"jn": 796
+},
+{
+"f": "audio/s/21146-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ワンピースは1枚で着られるので、忙しい朝に便利です。",
+"jl": 2,
+"jn": 796
+},
+{
+"f": "audio/s/21146-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "こちらのワンピースは、洗濯機で洗えます。",
+"jl": 2,
+"jn": 796
+},
+{
+"f": "audio/w/20962.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "つや",
+"jl": 2,
+"jn": 798
+},
+{
+"f": "audio/s/20962-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "革靴は、クリームで磨くと艶が出ます。",
+"jl": 2,
+"jn": 798
+},
+{
+"f": "audio/s/20962-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "艶のあるナスは、新鮮な証拠です。",
+"jl": 2,
+"jn": 798
+},
+{
+"f": "audio/w/20878.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "白髪",
+"jl": 2,
+"jn": 800
+},
+{
+"f": "audio/s/20878-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "40歳を過ぎてから、白髪が目立つようになりました。",
+"jl": 2,
+"jn": 800
+},
+{
+"f": "audio/s/20878-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "白髪は抜かずに、根元から切ったほうが頭皮を傷めません。",
+"jl": 2,
+"jn": 800
+},
+{
+"f": "audio/w/21092.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "みさき",
+"jl": 2,
+"jn": 808
+},
+{
+"f": "audio/s/21092-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "岬の先に、白い灯台が立っています。",
+"jl": 2,
+"jn": 808
+},
+{
+"f": "audio/s/21092-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "岬に着いたときには、もう日が沈みかけていました。",
+"jl": 2,
+"jn": 808
+},
+{
+"f": "audio/w/20361.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "吹雪",
+"jl": 2,
+"jn": 812
+},
+{
+"f": "audio/s/20361-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "吹雪で前が見えず、しばらく動けませんでした。",
+"jl": 2,
+"jn": 812
+},
+{
+"f": "audio/s/20361-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "卒業式の日、校門の前で桜の花吹雪が舞っていました。",
+"jl": 2,
+"jn": 812
+},
+{
+"f": "audio/w/20177.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "下水",
+"jl": 2,
+"jn": 820
+},
+{
+"f": "audio/s/20177-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "使った油は、下水に流さないでください。",
+"jl": 2,
+"jn": 820
+},
+{
+"f": "audio/s/20177-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この地域では、まだ下水道が整備されていない。",
+"jl": 2,
+"jn": 820
+},
+{
+"f": "audio/w/20340.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "すき",
+"jl": 2,
+"jn": 821
+},
+{
+"f": "audio/s/20340-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "店員が目を離した隙に、レジの現金が盗まれた。",
+"jl": 2,
+"jn": 821
+},
+{
+"f": "audio/s/20340-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "相手に隙を見せないよう、商談の準備は念入りにしましょう。",
+"jl": 2,
+"jn": 821
+},
+{
+"f": "audio/w/21067.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "望遠鏡",
+"jl": 2,
+"jn": 822
+},
+{
+"f": "audio/s/21067-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夜、子供と天体望遠鏡でつきを見ました。",
+"jl": 2,
+"jn": 822
+},
+{
+"f": "audio/s/21067-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ガリレオは、自分で作った望遠鏡で木星の衛星を発見した。",
+"jl": 2,
+"jn": 822
+},
+{
+"f": "audio/w/20343.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "せん",
+"jl": 2,
+"jn": 825
+},
+{
+"f": "audio/s/20343-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ワインの栓を抜こうとしたら、コルクが途中で折れてしまいました。",
+"jl": 2,
+"jn": 825
+},
+{
+"f": "audio/s/20343-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "長距離の機内では、耳栓をして眠るようにしています。",
+"jl": 2,
+"jn": 825
+},
+{
+"f": "audio/w/20131.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ダイヤモンド",
+"jl": 2,
+"jn": 828
+},
+{
+"f": "audio/s/20131-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "4月の誕生石は、ダイヤモンドです。",
+"jl": 2,
+"jn": 828
+},
+{
+"f": "audio/s/20131-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ダイヤモンドは硬いので、工具の刃にも使われている。",
+"jl": 2,
+"jn": 828
+},
+{
+"f": "audio/w/20139.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "リボン",
+"jl": 2,
+"jn": 829
+},
+{
+"f": "audio/s/20139-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "娘の髪に、水色のリボンを付けてあげました。",
+"jl": 2,
+"jn": 829
+},
+{
+"f": "audio/s/20139-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "胸に赤いリボンをしている人が、受付の係です。",
+"jl": 2,
+"jn": 829
+},
+{
+"f": "audio/w/21064.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "便所",
+"jl": 2,
+"jn": 830
+},
+{
+"f": "audio/s/21064-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "祖母のいえは古くて、便所が外にありました。",
+"jl": 2,
+"jn": 830
+},
+{
+"f": "audio/s/21064-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "駅前の古い公衆便所が、きれいなトイレに建て替えられた。",
+"jl": 2,
+"jn": 830
+},
+{
+"f": "audio/w/20781.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "空想",
+"jl": 2,
+"jn": 831
+},
+{
+"f": "audio/s/20781-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "授業中、窓の外を見ながら、よく空想にふけっていました。",
+"jl": 2,
+"jn": 831
+},
+{
+"f": "audio/s/20781-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "空想科学の小説が、実際の技術開発のヒントになった。",
+"jl": 2,
+"jn": 831
+},
+{
+"f": "audio/w/20083.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "びょう",
+"jl": 2,
+"jn": 833
+},
+{
+"f": "audio/s/20083-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "心臓病などのあるかたは、参加前にお知らせください。",
+"jl": 2,
+"jn": 833
+},
+{
+"f": "audio/s/20083-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "生活習慣病の多くは、食事と運動で予防できる。",
+"jl": 2,
+"jn": 833
+},
+{
+"f": "audio/w/20178.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "磁石",
+"jl": 2,
+"jn": 834
+},
+{
+"f": "audio/s/20178-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ホワイトボードに、磁石で地図を留めました。",
+"jl": 2,
+"jn": 834
+},
+{
+"f": "audio/s/20178-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この冷蔵庫はステンレスなので、磁石が付きません。",
+"jl": 2,
+"jn": 834
+},
+{
+"f": "audio/w/20337.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "算数",
+"jl": 2,
+"jn": 835
+},
+{
+"f": "audio/s/20337-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "にほんでは、小学校は算数、中学校からは数学と呼びます。",
+"jl": 2,
+"jn": 835
+},
+{
+"f": "audio/s/20337-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "原価が上がれば利益が減るのは、簡単な算数です。",
+"jl": 2,
+"jn": 835
+},
+{
+"f": "audio/w/21098.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "醜い",
+"jl": 2,
+"jn": 836
+},
+{
+"f": "audio/s/21098-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "「醜いアヒルの子」は、最後に美しい白鳥になります。",
+"jl": 2,
+"jn": 836
+},
+{
+"f": "audio/s/21098-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "社長の座をめぐる醜い争いが、週刊誌で報じられた。",
+"jl": 2,
+"jn": 836
+},
+{
+"f": "audio/w/21031.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "日差し",
+"jl": 2,
+"jn": 837
+},
+{
+"f": "audio/s/21031-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "強い日差しで、店頭に並べた服の色があせてしまいました。",
+"jl": 2,
+"jn": 837
+},
+{
+"f": "audio/s/21031-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "9月に入って、日差しが少し和らいできました。",
+"jl": 2,
+"jn": 837
+},
+{
+"f": "audio/w/20146.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "が",
+"jl": 2,
+"jn": 841
+},
+{
+"f": "audio/s/20146-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このカレンダーには、毎月違う風景画が載っています。",
+"jl": 2,
+"jn": 841
+},
+{
+"f": "audio/s/20146-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "水彩画は、絵の具を水で溶いて描きます。",
+"jl": 2,
+"jn": 841
+},
+{
+"f": "audio/w/20152.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夜行",
+"jl": 2,
+"jn": 842
+},
+{
+"f": "audio/s/20152-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夜行バスを使えば、ホテルに泊まらずに朝から観光できます。",
+"jl": 2,
+"jn": 842
+},
+{
+"f": "audio/s/20152-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "フクロウは夜行性の鳥で、昼間はほとんど動きません。",
+"jl": 2,
+"jn": 842
+},
+{
+"f": "audio/w/20347.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "テニスコート",
+"jl": 2,
+"jn": 843
+},
+{
+"f": "audio/s/20347-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このテニスコートは夜10時まで照明がつくので、仕事の後でも使えます。",
+"jl": 2,
+"jn": 843
+},
+{
+"f": "audio/s/20347-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "台風で破れたテニスコートのネットを、新しく張り替えました。",
+"jl": 2,
+"jn": 843
+},
+{
+"f": "audio/w/21138.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "留守番",
+"jl": 2,
+"jn": 845
+},
+{
+"f": "audio/s/21138-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "部長たちが外出中なので、今日はわたしが留守番です。",
+"jl": 2,
+"jn": 845
+},
+{
+"f": "audio/s/21138-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "出張でいえをあけるとき、猫に留守番をさせるのが心配です。",
+"jl": 2,
+"jn": 845
+},
+{
+"f": "audio/w/20883.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "親類",
+"jl": 2,
+"jn": 846
+},
+{
+"f": "audio/s/20883-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "結婚式には、遠い親類まで大勢来てくれました。",
+"jl": 2,
+"jn": 846
+},
+{
+"f": "audio/s/20883-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "同族経営のため、役員の多くが社長の親類だ。",
+"jl": 2,
+"jn": 846
+},
+{
+"f": "audio/w/20993.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "並木",
+"jl": 2,
+"jn": 848
+},
+{
+"f": "audio/s/20993-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "秋になると、駅前のイチョウ並木が黄色く色づきます。",
+"jl": 2,
+"jn": 848
+},
+{
+"f": "audio/s/20993-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "並木が日陰を作ってくれるので、夏でも涼しく歩けます。",
+"jl": 2,
+"jn": 848
+},
+{
+"f": "audio/w/20734.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "お手伝いさん",
+"jl": 2,
+"jn": 853
+},
+{
+"f": "audio/s/20734-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "昔は、大きないえにはお手伝いさんがいるのが普通でした。",
+"jl": 2,
+"jn": 853
+},
+{
+"f": "audio/s/20734-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "海外赴任中は、現地のお手伝いさんに家事を頼んでいました。",
+"jl": 2,
+"jn": 853
+},
+{
+"f": "audio/w/20918.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "測量",
+"jl": 2,
+"jn": 854
+},
+{
+"f": "audio/s/20918-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ドローンのおかげで、広い山林の測量が短時間でできるようになった。",
+"jl": 2,
+"jn": 854
+},
+{
+"f": "audio/s/20918-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "いえの前の道路で、作業員が測量をしていました。",
+"jl": 2,
+"jn": 854
+},
+{
+"f": "audio/w/20882.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "人命",
+"jl": 2,
+"jn": 868
+},
+{
+"f": "audio/s/20882-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "人命に関わる事故は、すぐに社長まで報告すること。",
+"jl": 2,
+"jn": 868
+},
+{
+"f": "audio/s/20882-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "駅のホームで倒れた男性を救った高校生に、人命救助の感謝状が贈られた。",
+"jl": 2,
+"jn": 868
+},
+{
+"f": "audio/w/20151.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ハンドル",
+"jl": 2,
+"jn": 874
+},
+{
+"f": "audio/s/20151-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "雪道では、急にハンドルを切らないでください。",
+"jl": 2,
+"jn": 874
+},
+{
+"f": "audio/s/20151-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この台車は、ハンドルを折りたたんで収納できます。",
+"jl": 2,
+"jn": 874
+},
+{
+"f": "audio/w/20181.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "わ",
+"jl": 2,
+"jn": 881
+},
+{
+"f": "audio/s/20181-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "古い駅のトイレは、まだ和式のところもあります。",
+"jl": 2,
+"jn": 881
+},
+{
+"f": "audio/s/20181-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "和菓子は、季節ごとに形や色が変わるのが魅力です。",
+"jl": 2,
+"jn": 881
+},
+{
+"f": "audio/w/21086.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "街角",
+"jl": 2,
+"jn": 882
+},
+{
+"f": "audio/s/21086-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "渋谷で、テレビの街角インタビューを受けました。",
+"jl": 2,
+"jn": 882
+},
+{
+"f": "audio/s/21086-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "街角で配っていたティッシュに、新しいジムの広告が入っていました。",
+"jl": 2,
+"jn": 882
+},
+{
+"f": "audio/w/21022.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "歯磨き",
+"jl": 2,
+"jn": 884
+},
+{
+"f": "audio/s/21022-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うちの子は、寝る前の歯磨きを嫌がって大変です。",
+"jl": 2,
+"jn": 884
+},
+{
+"f": "audio/s/21022-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この歯磨き粉は、ミントの味が強すぎます。",
+"jl": 2,
+"jn": 884
+},
+{
+"f": "audio/w/21135.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "流域",
+"jl": 2,
+"jn": 887
+},
+{
+"f": "audio/s/21135-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "大雨の影響で、川の流域に避難指示が出された。",
+"jl": 2,
+"jn": 887
+},
+{
+"f": "audio/s/21135-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "アマゾン川の流域には、珍しい生き物がたくさん住んでいます。",
+"jl": 2,
+"jn": 887
+},
+{
+"f": "audio/w/20783.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "くず",
+"jl": 2,
+"jn": 888
+},
+{
+"f": "audio/s/20783-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "工場では、出た金属くずを種類ごとに分けて集めている。",
+"jl": 2,
+"jn": 888
+},
+{
+"f": "audio/s/20783-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "黒いセーターに付いた糸くずを、テープで取りました。",
+"jl": 2,
+"jn": 888
+},
+{
+"f": "audio/w/20735.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "脅かす",
+"jl": 2,
+"jn": 890
+},
+{
+"f": "audio/s/20735-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "急に後ろから声をかけて、脅かさないでくださいよ。",
+"jl": 2,
+"jn": 890
+},
+{
+"f": "audio/s/20735-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "部長は怖い人だと脅かされていましたが、実際は話しやすいかたでした。",
+"jl": 2,
+"jn": 890
+},
+{
+"f": "audio/w/20722.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "運河",
+"jl": 2,
+"jn": 894
+},
+{
+"f": "audio/s/20722-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "スエズ運河で事故が起き、世界の物流が混乱した。",
+"jl": 2,
+"jn": 894
+},
+{
+"f": "audio/s/20722-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "小樽では、運河沿いの古い倉庫街を散歩しました。",
+"jl": 2,
+"jn": 894
+},
+{
+"f": "audio/w/20333.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "下品",
+"jl": 2,
+"jn": 895
+},
+{
+"f": "audio/s/20333-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "音を立ててスープを飲むのは、下品だと思われることがあります。",
+"jl": 2,
+"jn": 895
+},
+{
+"f": "audio/s/20333-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "飲み会での下品な冗談は、ハラスメントになりかねません。",
+"jl": 2,
+"jn": 895
+},
+{
+"f": "audio/w/21041.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "標本",
+"jl": 2,
+"jn": 898
+},
+{
+"f": "audio/s/21041-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "昆虫の標本を作るには、専用の針を使います。",
+"jl": 2,
+"jn": 898
+},
+{
+"f": "audio/s/21041-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "よろん調査は、標本の数が少ないと結果が偏りやすい。",
+"jl": 2,
+"jn": 898
+},
+{
+"f": "audio/w/20222.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "問答",
+"jl": 2,
+"jn": 901
+},
+{
+"f": "audio/s/20222-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "閉店後に入ろうとする客と店員が、押し問答になっていました。",
+"jl": 2,
+"jn": 901
+},
+{
+"f": "audio/s/20222-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "会見では、記者との問答が1時間以上続いた。",
+"jl": 2,
+"jn": 901
+},
+{
+"f": "audio/w/20341.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "好き嫌い",
+"jl": 2,
+"jn": 902
+},
+{
+"f": "audio/s/20341-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "娘は好き嫌いが多くて、野菜をほとんど食べません。",
+"jl": 2,
+"jn": 902
+},
+{
+"f": "audio/s/20341-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "人事評価は、上司の好き嫌いで決めるべきではありません。",
+"jl": 2,
+"jn": 902
+},
+{
+"f": "audio/w/21073.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "方程式",
+"jl": 2,
+"jn": 903
+},
+{
+"f": "audio/s/21073-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "息子に聞かれた方程式の問題が、どうしても解けませんでした。",
+"jl": 2,
+"jn": 903
+},
+{
+"f": "audio/s/21073-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ヒット商品を生み出す方程式は、簡単には見つかりません。",
+"jl": 2,
+"jn": 903
+},
+{
+"f": "audio/w/20330.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "キャンパス",
+"jl": 2,
+"jn": 912
+},
+{
+"f": "audio/s/20330-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "採用活動で、卒業以来初めて母校のキャンパスを訪れました。",
+"jl": 2,
+"jn": 912
+},
+{
+"f": "audio/s/20330-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "オープンキャンパスに参加して、志望校を決めました。",
+"jl": 2,
+"jn": 912
+},
+{
+"f": "audio/w/20335.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "鉱物",
+"jl": 2,
+"jn": 913
+},
+{
+"f": "audio/s/20335-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "岩石は、いくつかの鉱物が集まってできている。",
+"jl": 2,
+"jn": 913
+},
+{
+"f": "audio/s/20335-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "河原で拾った石に、きらきら光る鉱物が混じっていました。",
+"jl": 2,
+"jn": 913
+},
+{
+"f": "audio/w/20761.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ガム",
+"jl": 2,
+"jn": 914
+},
+{
+"f": "audio/s/20761-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "道に捨てられたガムが、靴の裏に付いて取れません。",
+"jl": 2,
+"jn": 914
+},
+{
+"f": "audio/s/20761-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "飛行機の離着陸のとき、ガムをかむと耳が痛くなりにくいです。",
+"jl": 2,
+"jn": 914
+},
+{
+"f": "audio/w/20798.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "顕微鏡",
+"jl": 2,
+"jn": 915
+},
+{
+"f": "audio/s/20798-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "肉眼では見えない細菌も、顕微鏡ならはっきり見えます。",
+"jl": 2,
+"jn": 915
+},
+{
+"f": "audio/s/20798-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "品質検査では、部品の小さな傷も顕微鏡で確認します。",
+"jl": 2,
+"jn": 915
+},
+{
+"f": "audio/w/20944.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "地質",
+"jl": 2,
+"jn": 916
+},
+{
+"f": "audio/s/20944-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "トンネルを掘る前に、周辺の地質を詳しく調べます。",
+"jl": 2,
+"jn": 916
+},
+{
+"f": "audio/s/20944-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ワインの味は、ぶどうばたけの地質に大きく左右されます。",
+"jl": 2,
+"jn": 916
+},
+{
+"f": "audio/w/20854.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "車掌",
+"jl": 2,
+"jn": 924
+},
+{
+"f": "audio/s/20854-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "電車が止まった理由を、車掌がアナウンスで説明しました。",
+"jl": 2,
+"jn": 924
+},
+{
+"f": "audio/s/20854-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "特急の車内で、車掌が切符を確認しに来ました。",
+"jl": 2,
+"jn": 924
+},
+{
+"f": "audio/w/21004.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ネックレス",
+"jl": 2,
+"jn": 925
+},
+{
+"f": "audio/s/21004-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このドレスには、長めのネックレスを合わせるといいですよ。",
+"jl": 2,
+"jn": 925
+},
+{
+"f": "audio/s/21004-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "真珠のネックレスは、結婚式にもお葬式にも着けられます。",
+"jl": 2,
+"jn": 925
+},
+{
+"f": "audio/w/20682.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "し",
+"jl": 2,
+"jn": 930
+},
+{
+"f": "audio/s/20682-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "社史には、創業者の苦労や失敗も正直に書かれています。",
+"jl": 2,
+"jn": 930
+},
+{
+"f": "audio/s/20682-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "最近、高校の世界史の教科書を読み直しています。",
+"jl": 2,
+"jn": 930
+},
+{
+"f": "audio/w/20848.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "しめた",
+"jl": 2,
+"jn": 935
+},
+{
+"f": "audio/s/20848-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "しめた、先方の社長が乗り気になってきたぞ。",
+"jl": 2,
+"jn": 935
+},
+{
+"f": "audio/s/20848-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "お客様から質問が出れば、しめたものです。",
+"jl": 2,
+"jn": 935
+},
+{
+"f": "audio/w/21024.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "万歳",
+"jl": 2,
+"jn": 936
+},
+{
+"f": "audio/s/21024-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "当選が決まると、選挙事務所は万歳の声に包まれた。",
+"jl": 2,
+"jn": 936
+},
+{
+"f": "audio/s/21024-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "合格発表で自分の番号を見つけて、思わず万歳しました。",
+"jl": 2,
+"jn": 936
+},
+{
+"f": "audio/w/20740.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "海水浴",
+"jl": 2,
+"jn": 937
+},
+{
+"f": "audio/s/20740-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この浜は波が穏やかで、子供の海水浴にも安心です。",
+"jl": 2,
+"jn": 937
+},
+{
+"f": "audio/s/20740-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "海水浴場では、ブイの内側で泳いでください。",
+"jl": 2,
+"jn": 937
+},
+{
+"f": "audio/w/20321.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "おかず",
+"jl": 2,
+"jn": 942
+},
+{
+"f": "audio/s/20321-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "きのうの残りのおかずを、お弁当に詰めてきました。",
+"jl": 2,
+"jn": 942
+},
+{
+"f": "audio/s/20321-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この漬物は、ご飯のおかずにもお酒のつまみにもなります。",
+"jl": 2,
+"jn": 942
+},
+{
+"f": "audio/w/21078.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "北極",
+"jl": 2,
+"jn": 943
+},
+{
+"f": "audio/s/21078-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "温暖化で北極の氷が減り、夏には船が通れるようになった。",
+"jl": 2,
+"jn": 943
+},
+{
+"f": "audio/s/21078-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "北極星は、一年中ほぼ真北の空に見えます。",
+"jl": 2,
+"jn": 943
+},
+{
+"f": "audio/w/20929.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "大木",
+"jl": 2,
+"jn": 944
+},
+{
+"f": "audio/s/20929-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "神社の大木には、しめ縄が巻いてあります。",
+"jl": 2,
+"jn": 944
+},
+{
+"f": "audio/s/20929-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "公園の大木は、大人5人が手をつないでも囲めないほど太いです。",
+"jl": 2,
+"jn": 944
+},
+{
+"f": "audio/w/21144.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "和服",
+"jl": 2,
+"jn": 946
+},
+{
+"f": "audio/s/21144-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "茶道の先生は、いつも和服姿で教えてくださいます。",
+"jl": 2,
+"jn": 946
+},
+{
+"f": "audio/s/21144-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "絹の和服はいえで洗えないので、専門店に手入れを頼んでいます。",
+"jl": 2,
+"jn": 946
+},
+{
+"f": "audio/w/20829.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "さび",
+"jl": 2,
+"jn": 948
+},
+{
+"f": "audio/s/20829-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "しばらく乗らなかった自転車に、さびが出ていました。",
+"jl": 2,
+"jn": 948
+},
+{
+"f": "audio/s/20829-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "屋外の階段に、さびどめの塗料を塗ってもらいました。",
+"jl": 2,
+"jn": 948
+},
+{
+"f": "audio/w/21122.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "輸血",
+"jl": 2,
+"jn": 950
+},
+{
+"f": "audio/s/21122-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "父は手術の際、輸血を受けて助かりました。",
+"jl": 2,
+"jn": 950
+},
+{
+"f": "audio/s/21122-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "にほんでは、輸血に使う血液はすべて献血で集められている。",
+"jl": 2,
+"jn": 950
+},
+{
+"f": "audio/w/21118.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夕日",
+"jl": 2,
+"jn": 953
+},
+{
+"f": "audio/s/21118-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "夕日を浴びて、ビルの窓がオレンジ色に光っていました。",
+"jl": 2,
+"jn": 953
+},
+{
+"f": "audio/s/21118-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "夕日がきれいに見えた次の日は、晴れることが多いそうです。",
+"jl": 2,
+"jn": 953
+},
+{
+"f": "audio/w/20363.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "掘る",
+"jl": 2,
+"jn": 955
+},
+{
+"f": "audio/s/20363-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "犬が庭に穴を掘って、骨を埋めていました。",
+"jl": 2,
+"jn": 955
+},
+{
+"f": "audio/s/20363-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "地下1,500メートルまで掘ったところ、温泉が出た。",
+"jl": 2,
+"jn": 955
+},
+{
+"f": "audio/w/20678.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "おしまい",
+"jl": 2,
+"jn": 960
+},
+{
+"f": "audio/s/20678-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "すみません、今日のランチはもうおしまいなんです。",
+"jl": 2,
+"jn": 960
+},
+{
+"f": "audio/s/20678-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この店も、客がこれ以上減ったらおしまいです。",
+"jl": 2,
+"jn": 960
+},
+{
+"f": "audio/w/21100.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "民謡",
+"jl": 2,
+"jn": 962
+},
+{
+"f": "audio/s/21100-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "アリランは、韓国で最もよく知られた民謡です。",
+"jl": 2,
+"jn": 962
+},
+{
+"f": "audio/s/21100-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "おじは、お酒が入ると必ずふるさとの民謡を歌い出します。",
+"jl": 2,
+"jn": 962
+},
+{
+"f": "audio/w/20175.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "もたれる",
+"jl": 2,
+"jn": 965
+},
+{
+"f": "audio/s/20175-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "電車のドアにもたれていたら、急にあいて驚きました。",
+"jl": 2,
+"jn": 965
+},
+{
+"f": "audio/s/20175-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "このスープは、夜遅くに飲んでも胃にもたれません。",
+"jl": 2,
+"jn": 965
+},
+{
+"f": "audio/w/20702.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "暴れる",
+"jl": 2,
+"jn": 967
+},
+{
+"f": "audio/s/20702-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "注射を怖がって、息子が診察室で暴れてしまいました。",
+"jl": 2,
+"jn": 967
+},
+{
+"f": "audio/s/20702-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "機内で暴れた乗客が、到着後に警察に引き渡された。",
+"jl": 2,
+"jn": 967
+},
+{
+"f": "audio/w/20831.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "山林",
+"jl": 2,
+"jn": 968
+},
+{
+"f": "audio/s/20831-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "相続した山林を、どう管理すればいいか悩む人が多い。",
+"jl": 2,
+"jn": 968
+},
+{
+"f": "audio/s/20831-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "当社は、北海道と九州に広い山林を持っています。",
+"jl": 2,
+"jn": 968
+},
+{
+"f": "audio/w/20978.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "灯油",
+"jl": 2,
+"jn": 969
+},
+{
+"f": "audio/s/20978-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ストーブの灯油が切れたので、帰りに買ってきます。",
+"jl": 2,
+"jn": 969
+},
+{
+"f": "audio/s/20978-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "雪の多い地域では、いえの外のタンクに灯油をためて使います。",
+"jl": 2,
+"jn": 969
+},
+{
+"f": "audio/w/20948.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "中性",
+"jl": 2,
+"jn": 973
+},
+{
+"f": "audio/s/20948-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このセーターは、中性洗剤で手洗いしてください。",
+"jl": 2,
+"jn": 973
+},
+{
+"f": "audio/s/20948-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "男女どちらにも使ってもらえるよう、ちゅうせいてきな色を選びました。",
+"jl": 2,
+"jn": 973
+},
+{
+"f": "audio/w/20246.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "蒸発",
+"jl": 2,
+"jn": 974
+},
+{
+"f": "audio/s/20246-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "海の水が蒸発して雲になり、やがて雨となって降る。",
+"jl": 2,
+"jn": 974
+},
+{
+"f": "audio/s/20246-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ボーナスが、ローンの返済であっという間に蒸発しました。",
+"jl": 2,
+"jn": 974
+},
+{
+"f": "audio/w/21132.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ランニング",
+"jl": 2,
+"jn": 976
+},
+{
+"f": "audio/s/21132-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "膝を痛めないように、ランニングの前によくストレッチをします。",
+"jl": 2,
+"jn": 976
+},
+{
+"f": "audio/s/21132-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "夏になると、祖父はいえでランニングシャツしか着ません。",
+"jl": 2,
+"jn": 976
+},
+{
+"f": "audio/w/20973.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "伝記",
+"jl": 2,
+"jn": 977
+},
+{
+"f": "audio/s/20973-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "子どものころの愛読書は、野口英世の伝記でした。",
+"jl": 2,
+"jn": 977
+},
+{
+"f": "audio/s/20973-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この伝記は、本人の日記や手紙をもとにまとめられた。",
+"jl": 2,
+"jn": 977
+},
+{
+"f": "audio/w/21130.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "酔っ払い",
+"jl": 2,
+"jn": 978
+},
+{
+"f": "audio/s/21130-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "花見の時期は、昼間から酔っ払いが公園で騒いでいます。",
+"jl": 2,
+"jn": 978
+},
+{
+"f": "audio/s/21130-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "帰り道、駅前で酔っ払いに絡まれてしまいました。",
+"jl": 2,
+"jn": 978
+},
+{
+"f": "audio/w/20129.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "きょう",
+"jl": 2,
+"jn": 980
+},
+{
+"f": "audio/s/20129-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "奈良の大仏は、仏教の力で国を守るために造られた。",
+"jl": 2,
+"jn": 980
+},
+{
+"f": "audio/s/20129-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "イスラム教の国では、金曜日が休みの会社が多い。",
+"jl": 2,
+"jn": 980
+},
+{
+"f": "audio/w/20975.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "電柱",
+"jl": 2,
+"jn": 981
+},
+{
+"f": "audio/s/20975-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "電線を地下に埋めたため、この辺りには電柱が1本もない。",
+"jl": 2,
+"jn": 981
+},
+{
+"f": "audio/s/20975-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "うちの犬は、電柱を見るたびに立ちどまってにおいをかぎます。",
+"jl": 2,
+"jn": 981
+},
+{
+"f": "audio/w/20334.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "交差",
+"jl": 2,
+"jn": 982
+},
+{
+"f": "audio/s/20334-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "売上と費用の線が交差する点を、損益分岐点といいます。",
+"jl": 2,
+"jn": 982
+},
+{
+"f": "audio/s/20334-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この道路は線路と立体交差しているので、踏切がありません。",
+"jl": 2,
+"jn": 982
+},
+{
+"f": "audio/w/20252.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ヘリコプター",
+"jl": 2,
+"jn": 984
+},
+{
+"f": "audio/s/20252-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "山で動けなくなった登山者が、ヘリコプターで救助された。",
+"jl": 2,
+"jn": 984
+},
+{
+"f": "audio/s/20252-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "観光ヘリコプターに乗って、空から東京の夜景を楽しみました。",
+"jl": 2,
+"jn": 984
+},
+{
+"f": "audio/w/20895.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "図形",
+"jl": 2,
+"jn": 986
+},
+{
+"f": "audio/s/20895-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "図形の問題は、補助線を1本引くだけで解けることがあります。",
+"jl": 2,
+"jn": 986
+},
+{
+"f": "audio/s/20895-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "矢印などの図形を使って、作業の流れを示しました。",
+"jl": 2,
+"jn": 986
+},
+{
+"f": "audio/w/20862.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "終点",
+"jl": 2,
+"jn": 988
+},
+{
+"f": "audio/s/20862-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "電車で眠ってしまい、気がついたら終点でした。",
+"jl": 2,
+"jn": 988
+},
+{
+"f": "audio/s/20862-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "工場へは、駅から市営バスに乗り、終点で降りてください。",
+"jl": 2,
+"jn": 988
+},
+{
+"f": "audio/w/20977.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "灯台",
+"jl": 2,
+"jn": 989
+},
+{
+"f": "audio/s/20977-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この灯台の光は、約30キロ先の沖まで届くそうです。",
+"jl": 2,
+"jn": 989
+},
+{
+"f": "audio/s/20977-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "探していた眼鏡が頭のうえにあったなんて、まさに灯台もと暗しです。",
+"jl": 2,
+"jn": 989
+},
+{
+"f": "audio/w/20844.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "失恋",
+"jl": 2,
+"jn": 992
+},
+{
+"f": "audio/s/20844-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "失恋して落ち込んでいた友人が、やっと元気になりました。",
+"jl": 2,
+"jn": 992
+},
+{
+"f": "audio/s/20844-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "失恋ソングを聞いていたら、余計に悲しくなってしまいました。",
+"jl": 2,
+"jn": 992
+},
+{
+"f": "audio/w/20974.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "伝染",
+"jl": 2,
+"jn": 993
+},
+{
+"f": "audio/s/20974-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "マラリアは、蚊に刺されることで伝染する病気だ。",
+"jl": 2,
+"jn": 993
+},
+{
+"f": "audio/s/20974-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "あくびって、なぜか周りの人に伝染しますよね。",
+"jl": 2,
+"jn": 993
+},
+{
+"f": "audio/w/21035.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "独り言",
+"jl": 2,
+"jn": 994
+},
+{
+"f": "audio/s/21035-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "すみません、今のは、ただの独り言です。",
+"jl": 2,
+"jn": 994
+},
+{
+"f": "audio/s/21035-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "隣の席の先輩には、作業中に独り言を言う癖があります。",
+"jl": 2,
+"jn": 994
+},
+{
+"f": "audio/w/20322.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "お気の毒に",
+"jl": 2,
+"jn": 999
+},
+{
+"f": "audio/s/20322-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "楽しみにしていた旅行の前日に骨折とは、お気の毒に。",
+"jl": 2,
+"jn": 999
+},
+{
+"f": "audio/s/20322-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "お気の毒に、山田さんは買ったばかりの車をぶつけられたそうです。",
+"jl": 2,
+"jn": 999
+},
+{
+"f": "audio/w/21093.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "惨め",
+"jl": 2,
+"jn": 1000
+},
+{
+"f": "audio/s/21093-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "みんなの前で注意されて、惨めな思いをしました。",
+"jl": 2,
+"jn": 1000
+},
+{
+"f": "audio/s/21093-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "借金に追われる惨めな生活から、ようやく抜け出せました。",
+"jl": 2,
+"jn": 1000
+},
+{
+"f": "audio/s/3218-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "古い線路の跡が、今は散歩道になっています。",
+"jl": 2,
+"jn": 505
+},
+{
+"f": "audio/s/3218-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "終電の後、作業員が夜通し線路を点検している。",
+"jl": 2,
+"jn": 505
+},
+{
+"f": "audio/s/965-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "失敗を恐れて消極的になるより、まず挑戦してみましょう。",
+"jl": 2,
+"jn": 510
+},
+{
+"f": "audio/s/788-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "名刺の裏は、英文になっています。",
+"jl": 2,
+"jn": 515
+},
+{
+"f": "audio/s/856-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "運動器具を買ったのに、結局ほとんど使っていません。",
+"jl": 2,
+"jn": 516
+},
+{
+"f": "audio/s/3358-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "出張で博多に行くなら、名物のラーメンを食べてみてください。",
+"jl": 2,
+"jn": 517
+},
+{
+"f": "audio/s/790-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "今年の忘年会は、夜の宴会ではなくランチ会にしました。",
+"jl": 2,
+"jn": 519
+},
+{
+"f": "audio/s/790-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "会社の宴会では、お酒を無理に勧めてわ、いけません。",
+"jl": 2,
+"jn": 519
+},
+{
+"f": "audio/s/2995-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うちの2番目の子は、来年から中学生です。",
+"jl": 2,
+"jn": 521
+},
+{
+"f": "audio/s/803-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "お邪魔します。素敵なおたくですね。",
+"jl": 2,
+"jn": 526
+},
+{
+"f": "audio/s/1032-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この本は、にほん経済の問題点を的確に指摘している。",
+"jl": 2,
+"jn": 529
+},
+{
+"f": "audio/s/1032-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "課長は、トラブルの原因を的確に見抜きました。",
+"jl": 2,
+"jn": 529
+},
+{
+"f": "audio/s/1079-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "サーバー室への出入りは、すべて記録されています。",
+"jl": 2,
+"jn": 531
+},
+{
+"f": "audio/s/1079-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "出入りの業者にも、新しい入館証を配りました。",
+"jl": 2,
+"jn": 531
+},
+{
+"f": "audio/s/3152-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "おにぎりを三角に握るのは、意外と難しいです。",
+"jl": 2,
+"jn": 533
+},
+{
+"f": "audio/s/1077-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "いつも強気な課長が、今日は珍しく弱気でした。",
+"jl": 2,
+"jn": 535
+},
+{
+"f": "audio/s/851-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "佐藤さんのことは、友人を通じて間接的に知っています。",
+"jl": 2,
+"jn": 536
+},
+{
+"f": "audio/s/1108-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "乗り換え案内のアプリを使えば、一番早いルートがわかります。",
+"jl": 2,
+"jn": 538
+},
+{
+"f": "audio/s/1086-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "特色のある商品を作らないと、大手には勝てません。",
+"jl": 2,
+"jn": 540
+},
+{
+"f": "audio/s/834-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "事故の過失割合は、双方の保険会社の交渉で決まる。",
+"jl": 2,
+"jn": 541
+},
+{
+"f": "audio/s/3128-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "給料日の前は、いつもお小遣いが足りなくなります。",
+"jl": 2,
+"jn": 542
+},
+{
+"f": "audio/s/1104-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "日用品の売上は、景気にあまり左右されない。",
+"jl": 2,
+"jn": 545
+},
+{
+"f": "audio/s/1104-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "入院するときは、タオルなどの日用品を持っていく必要があります。",
+"jl": 2,
+"jn": 545
+},
+{
+"f": "audio/s/853-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "弊社の営業範囲は、関東一円です。",
+"jl": 2,
+"jn": 547
+},
+{
+"f": "audio/s/853-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "関東地方では、あすの朝まで強い雨が続く見込みです。",
+"jl": 2,
+"jn": 547
+},
+{
+"f": "audio/s/768-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "あの会社の話は条件が良すぎて、何だか怪しいです。",
+"jl": 2,
+"jn": 560
+},
+{
+"f": "audio/s/3018-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "公共工事の入札は、各社が価格を読み合う頭脳戦だ。",
+"jl": 2,
+"jn": 562
+},
+{
+"f": "audio/s/3018-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "就職活動は情報戦なので、先輩の話をよく聞いておきましょう。",
+"jl": 2,
+"jn": 562
+},
+{
+"f": "audio/s/3085-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "子どものころから好きだった選手に会えて、感激しました。",
+"jl": 2,
+"jn": 563
+},
+{
+"f": "audio/s/3196-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "飛行機が水平飛行に入ると、シートベルトのサインが消えます。",
+"jl": 2,
+"jn": 564
+},
+{
+"f": "audio/s/1203-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "おこめを炊くときは、目盛りを目安に水を入れます。",
+"jl": 2,
+"jn": 565
+},
+{
+"f": "audio/s/801-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "天気のいい日は、屋外のテラスで会議をすることもあります。",
+"jl": 2,
+"jn": 571
+},
+{
+"f": "audio/s/3357-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "京都の紅葉の名所は、11月になるとどこも混雑します。",
+"jl": 2,
+"jn": 575
+},
+{
+"f": "audio/s/3189-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "心身の疲れを取るには、十分な睡眠が一番です。",
+"jl": 2,
+"jn": 577
+},
+{
+"f": "audio/s/3220-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "急な葬式のために、ロッカーに黒いネクタイを入れてあります。",
+"jl": 2,
+"jn": 578
+},
+{
+"f": "audio/s/3254-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この公園の花壇は、近所の人たちが手入れをしています。",
+"jl": 2,
+"jn": 579
+},
+{
+"f": "audio/s/857-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "洗濯の前に、タグの記号で洗いかたを確かめてください。",
+"jl": 2,
+"jn": 581
+},
+{
+"f": "audio/s/3125-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "空港の免税店で、母に香水を買いました。",
+"jl": 2,
+"jn": 583
+},
+{
+"f": "audio/s/3124-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "災害のときは、携帯より公衆電話のほうがつながりやすい。",
+"jl": 2,
+"jn": 588
+},
+{
+"f": "audio/s/3284-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "部長は、社員の名前を一人残らず覚えています。",
+"jl": 2,
+"jn": 589
+},
+{
+"f": "audio/s/812-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "昔は、駅員が改札で切符を切っていました。",
+"jl": 2,
+"jn": 590
+},
+{
+"f": "audio/s/812-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "駅の改札は一つだけなので、迷うことはないと思います。",
+"jl": 2,
+"jn": 590
+},
+{
+"f": "audio/s/2986-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "世界には、売上高が数十兆円に上る企業もある。",
+"jl": 2,
+"jn": 593
+},
+{
+"f": "audio/s/2986-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "1兆円あったら、なにに使いますか。",
+"jl": 2,
+"jn": 593
+},
+{
+"f": "audio/s/1236-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "利害関係のない人に相談すると、冷静な意見がもらえます。",
+"jl": 2,
+"jn": 599
+},
+{
+"f": "audio/s/1106-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この売り場の農産物には、生産者の名前と写真が付いています。",
+"jl": 2,
+"jn": 601
+},
+{
+"f": "audio/s/1106-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ブラジルは、コーヒーや大豆などの農産物を多く輸出している。",
+"jl": 2,
+"jn": 601
+},
+{
+"f": "audio/s/1071-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "画面の明るさを調節すると、目が疲れにくくなります。",
+"jl": 2,
+"jn": 602
+},
+{
+"f": "audio/s/3277-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この雑誌のバックナンバーは、図書館で読めます。",
+"jl": 2,
+"jn": 606
+},
+{
+"f": "audio/s/3277-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この駐車場では、入りぐちのカメラが車のナンバーを読み取ります。",
+"jl": 2,
+"jn": 606
+},
+{
+"f": "audio/s/1161-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "顧客の住所の分布を見ると、多くが駅の北側に集中しています。",
+"jl": 2,
+"jn": 609
+},
+{
+"f": "audio/s/3148-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "佐藤さんは、昼ご飯をさっさと食べて仕事に戻りました。",
+"jl": 2,
+"jn": 610
+},
+{
+"f": "audio/s/3203-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "頭脳労働のあとは、甘いものが食べたくなります。",
+"jl": 2,
+"jn": 614
+},
+{
+"f": "audio/s/3264-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "峠に着くと、急に霧が出てきました。",
+"jl": 2,
+"jn": 617
+},
+{
+"f": "audio/s/3264-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "祖父の病状は、ようやく峠を越したようです。",
+"jl": 2,
+"jn": 617
+},
+{
+"f": "audio/s/831-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うちのマンションでは、ペットを飼えるようにする案が可決されました。",
+"jl": 2,
+"jn": 620
+},
+{
+"f": "audio/s/831-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "改正案は、可決に必要な3分の2の賛成を得られなかった。",
+"jl": 2,
+"jn": 620
+},
+{
+"f": "audio/s/1050-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "東京から約1,000キロ離れた小笠原諸島も、東京都に属しています。",
+"jl": 2,
+"jn": 621
+},
+{
+"f": "audio/s/1050-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "その候補者は、どの政党にも属していない。",
+"jl": 2,
+"jn": 621
+},
+{
+"f": "audio/s/1220-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "仕事に慣れたころこそ、油断は禁物です。",
+"jl": 2,
+"jn": 623
+},
+{
+"f": "audio/s/1226-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "新宿店と同じ要領で、ほかの店舗にも新しいレジを入れていきます。",
+"jl": 2,
+"jn": 624
+},
+{
+"f": "audio/s/3342-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "マスクをしていたので、最初は田中さんだと気付きませんでした。",
+"jl": 2,
+"jn": 625
+},
+{
+"f": "audio/s/3346-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "内定を取り消されて、目の前が真っ暗になりました。",
+"jl": 2,
+"jn": 630
+},
+{
+"f": "audio/s/3090-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "「高い物ほどいい」というのは、ただの固定観念です。",
+"jl": 2,
+"jn": 632
+},
+{
+"f": "audio/s/2980-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "年商1億円を目標に、ネットショップを始めました。",
+"jl": 2,
+"jn": 637
+},
+{
+"f": "audio/s/3322-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "鍋に蓋をして、弱火で10分ほど煮てください。",
+"jl": 2,
+"jn": 638
+},
+{
+"f": "audio/s/3322-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "その会社は、工場の事故に蓋をしていたことが分かった。",
+"jl": 2,
+"jn": 638
+},
+{
+"f": "audio/s/1083-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "駅の駐輪場で、自転車の盗難に遭いました。",
+"jl": 2,
+"jn": 640
+},
+{
+"f": "audio/s/3094-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ステージの歌手が、客席に向かって手を振りました。",
+"jl": 2,
+"jn": 643
+},
+{
+"f": "audio/s/3094-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "客席の照明が消えて、いよいよ映画が始まりました。",
+"jl": 2,
+"jn": 643
+},
+{
+"f": "audio/s/3359-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "子供たちが遊んだ後は、いつも部屋の中がめちゃくちゃです。",
+"jl": 2,
+"jn": 644
+},
+{
+"f": "audio/s/3359-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "うちの子、最近めちゃくちゃよく食べるんです。",
+"jl": 2,
+"jn": 644
+},
+{
+"f": "audio/s/3185-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "引っ越しを機に、食器を全部新しくしました。",
+"jl": 2,
+"jn": 648
+},
+{
+"f": "audio/s/3185-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "食器洗い機に入れられない皿は、手で洗っています。",
+"jl": 2,
+"jn": 648
+},
+{
+"f": "audio/s/852-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "財務省や外務省などの官庁は、東京の霞が関に集まっています。",
+"jl": 2,
+"jn": 652
+},
+{
+"f": "audio/s/852-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "官庁との取引では、書類の書きかたが細かく決まっています。",
+"jl": 2,
+"jn": 652
+},
+{
+"f": "audio/s/883-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "新しい部署でも、謙虚な気持ちを忘れずに頑張ります。",
+"jl": 2,
+"jn": 653
+},
+{
+"f": "audio/s/1209-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "もしかしたら、課長はもうその件をご存じかもしれません。",
+"jl": 2,
+"jn": 654
+},
+{
+"f": "audio/s/827-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "デパートで、にほん各地の名物を集めた物産展が開かれている。",
+"jl": 2,
+"jn": 659
+},
+{
+"f": "audio/s/827-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "全国各地から、多くの人がこの祭りを見に来ます。",
+"jl": 2,
+"jn": 659
+},
+{
+"f": "audio/s/818-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "解答を見る前に、もう少し自分で考えてみます。",
+"jl": 2,
+"jn": 661
+},
+{
+"f": "audio/s/1134-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "筆者の意見には、賛成できない部分もあります。",
+"jl": 2,
+"jn": 664
+},
+{
+"f": "audio/s/1062-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "今週末は、カードのポイントがダブルになります。",
+"jl": 2,
+"jn": 666
+},
+{
+"f": "audio/s/3138-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "地域の料理サークルで、つきに1回みんなでパンを作っています。",
+"jl": 2,
+"jn": 667
+},
+{
+"f": "audio/s/1183-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "いえに帰ると、真っ先に猫が玄関まで迎えに来ます。",
+"jl": 2,
+"jn": 670
+},
+{
+"f": "audio/s/1183-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "新しい案に真っ先に賛成したのは、意外にも社長でした。",
+"jl": 2,
+"jn": 670
+},
+{
+"f": "audio/s/3348-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "急にパスワードを聞かれて、頭が真っ白になりました。",
+"jl": 2,
+"jn": 671
+},
+{
+"f": "audio/s/3051-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "このヘアオイルは、ほのかに花の香りがします。",
+"jl": 2,
+"jn": 673
+},
+{
+"f": "audio/s/3051-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "オイルショックのとき、にほんでは店からトイレットペーパーが消えました。",
+"jl": 2,
+"jn": 673
+},
+{
+"f": "audio/s/3276-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "なんとなく入った店が、今ではお気に入りです。",
+"jl": 2,
+"jn": 674
+},
+{
+"f": "audio/s/3297-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "コンパスを使って、半径5センチの円をかいてください。",
+"jl": 2,
+"jn": 675
+},
+{
+"f": "audio/s/1068-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "上司の指示はいつも抽象的で、なにをすればいいか迷います。",
+"jl": 2,
+"jn": 678
+},
+{
+"f": "audio/s/1068-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この抽象画は、なにを表しているのでしょうか。",
+"jl": 2,
+"jn": 678
+},
+{
+"f": "audio/s/3012-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "マラソンのコースには、5キロごとに給水ポイントがあります。",
+"jl": 2,
+"jn": 680
+},
+{
+"f": "audio/s/3012-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この地図は、地域ごとに色分けされています。",
+"jl": 2,
+"jn": 680
+},
+{
+"f": "audio/s/854-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "部長の乾杯の音頭で、忘年会が始まりました。",
+"jl": 2,
+"jn": 683
+},
+{
+"f": "audio/s/3119-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "県庁の最上階には、無料の展望室があります。",
+"jl": 2,
+"jn": 687
+},
+{
+"f": "audio/s/922-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この大学には、約1万人の学生が在学している。",
+"jl": 2,
+"jn": 691
+},
+{
+"f": "audio/s/3178-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "子供のスポーツは、勝敗よりも楽しむことが大切です。",
+"jl": 2,
+"jn": 693
+},
+{
+"f": "audio/s/3072-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "朝ご飯をしっかり食べると、いちにちの活力がわいてきます。",
+"jl": 2,
+"jn": 696
+},
+{
+"f": "audio/s/3390-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "初めて作った料理にしては、割合においしくできました。",
+"jl": 2,
+"jn": 699
+},
+{
+"f": "audio/s/3390-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "うちの会社は、若手の意見が割合に通りやすいです。",
+"jl": 2,
+"jn": 699
+},
+{
+"f": "audio/s/3246-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "リスは、冬に備えてどんぐりを土の中に貯蔵します。",
+"jl": 2,
+"jn": 700
+},
+{
+"f": "audio/s/3173-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "雨じゃしょうがないですね。バーベキューは来週にしましょう。",
+"jl": 2,
+"jn": 707
+},
+{
+"f": "audio/s/3173-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "会場が狭いので、参加者を減らすのはしょうがないと思います。",
+"jl": 2,
+"jn": 707
+},
+{
+"f": "audio/s/3088-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この缶詰は、缶切りがなくてもあけられます。",
+"jl": 2,
+"jn": 708
+},
+{
+"f": "audio/s/3293-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "落としたコップの破片で、指を切ってしまいました。",
+"jl": 2,
+"jn": 710
+},
+{
+"f": "audio/s/3253-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "低金利の時代なので、銀行に預けても利息はほとんど付きません。",
+"jl": 2,
+"jn": 712
+},
+{
+"f": "audio/s/864-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "先生がいないと、クラスの規律がすぐ乱れるんです。",
+"jl": 2,
+"jn": 715
+},
+{
+"f": "audio/s/864-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "軍隊のような厳しい規律は、今の時代には合わないと思います。",
+"jl": 2,
+"jn": 715
+},
+{
+"f": "audio/s/3182-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "寒い日は、スマホの電池の消耗が早い気がします。",
+"jl": 2,
+"jn": 716
+},
+{
+"f": "audio/s/970-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "注射の前に、看護師さんが腕を消毒してくれました。",
+"jl": 2,
+"jn": 721
+},
+{
+"f": "audio/s/970-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "調理器具は、使うたびに熱湯で消毒しています。",
+"jl": 2,
+"jn": 721
+},
+{
+"f": "audio/s/1072-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "独学で覚えた英語が、旅行先で思った以上に通用しました。",
+"jl": 2,
+"jn": 739
+},
+{
+"f": "audio/s/1072-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "社員は、正面玄関ではなく通用ぐちから出入りしてください。",
+"jl": 2,
+"jn": 739
+},
+{
+"f": "audio/s/3239-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "クレジットカードは、ICチップのあるがわから差し込んでください。",
+"jl": 2,
+"jn": 741
+},
+{
+"f": "audio/s/3188-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "真空断熱の水筒なので、氷が夕方まで溶けません。",
+"jl": 2,
+"jn": 745
+},
+{
+"f": "audio/s/3207-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "すまないが、今夜の接待に付き合ってくれないか。",
+"jl": 2,
+"jn": 746
+},
+{
+"f": "audio/s/3049-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "今日は本社の偉い人と食事なので、朝から落ち着きません。",
+"jl": 2,
+"jn": 747
+},
+{
+"f": "audio/s/3049-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "息子が自分から宿題を済ませていたので、「偉いね」と褒めました。",
+"jl": 2,
+"jn": 747
+},
+{
+"f": "audio/s/1213-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "今月の催しは、地元の陶芸家による作品展です。",
+"jl": 2,
+"jn": 748
+},
+{
+"f": "audio/s/1213-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "商店街では、毎年秋にいろいろな催し物があります。",
+"jl": 2,
+"jn": 748
+},
+{
+"f": "audio/s/1224-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "会議に出られなかった人に、要旨だけメールで伝えました。",
+"jl": 2,
+"jn": 752
+},
+{
+"f": "audio/s/1224-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "本書では、各章の冒頭にその章の要旨を示した。",
+"jl": 2,
+"jn": 752
+},
+{
+"f": "audio/s/1235-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "彼はドアの閉めかたが乱暴で、いつも大きな音がします。",
+"jl": 2,
+"jn": 753
+},
+{
+"f": "audio/s/3376-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うちでは、朝刊だけ取って、夕刊は取っていません。",
+"jl": 2,
+"jn": 755
+},
+{
+"f": "audio/s/3376-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "夕刊は、夕方4時ごろに配達されます。",
+"jl": 2,
+"jn": 755
+},
+{
+"f": "audio/s/1075-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この報告書は、前半と後半のつながりが分かりにくいですね。",
+"jl": 2,
+"jn": 757
+},
+{
+"f": "audio/s/1075-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "町内の清掃に参加して、近所の人とのつながりができました。",
+"jl": 2,
+"jn": 757
+},
+{
+"f": "audio/s/2974-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "その事件は、翌朝の全国紙で大きく報じられた。",
+"jl": 2,
+"jn": 758
+},
+{
+"f": "audio/s/2974-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "父は、野球の結果をスポーツ紙で確かめるのが好きです。",
+"jl": 2,
+"jn": 758
+},
+{
+"f": "audio/s/3245-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この店では、世界各地の珍しい調味料を扱っています。",
+"jl": 2,
+"jn": 761
+},
+{
+"f": "audio/s/3245-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "料理によって調味料を使い分けると、味に深みが出ます。",
+"jl": 2,
+"jn": 761
+},
+{
+"f": "audio/s/817-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この橋が開通したのは、ちょうど50年前のことです。",
+"jl": 2,
+"jn": 770
+},
+{
+"f": "audio/s/3135-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "高校の制服は、紺のブレザーでした。",
+"jl": 2,
+"jn": 771
+},
+{
+"f": "audio/s/2403-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "申し込みが定員を超過した場合は、抽選となります。",
+"jl": 2,
+"jn": 774
+},
+{
+"f": "audio/s/2981-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "その決まりは、就業規則の第何条に書いてありますか。",
+"jl": 2,
+"jn": 775
+},
+{
+"f": "audio/s/3071-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "活字ばなれと言われますが、図書館はいつも混んでいます。",
+"jl": 2,
+"jn": 776
+},
+{
+"f": "audio/s/3131-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "天然ゴムの多くは、東南アジアで生産されている。",
+"jl": 2,
+"jn": 782
+},
+{
+"f": "audio/s/3325-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "車は、踏切の手前で必ず一時停止してください。",
+"jl": 2,
+"jn": 783
+},
+{
+"f": "audio/s/3325-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "駅前の踏切は、朝はなかなかあかないんですよ。",
+"jl": 2,
+"jn": 783
+},
+{
+"f": "audio/s/888-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この薬はよく効きます。現に、一晩で熱が下がりました。",
+"jl": 2,
+"jn": 789
+},
+{
+"f": "audio/s/1069-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "彼は大学を中途退学して、料理の道に進みました。",
+"jl": 2,
+"jn": 790
+},
+{
+"f": "audio/s/1092-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ともかく、今できることから始めましょう。",
+"jl": 2,
+"jn": 792
+},
+{
+"f": "audio/s/3060-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "温室の中は蒸し暑くて、少し作業しただけで汗をかきます。",
+"jl": 2,
+"jn": 794
+},
+{
+"f": "audio/s/3082-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "社員食堂のメニューには、すべてカロリーが表示されています。",
+"jl": 2,
+"jn": 799
+},
+{
+"f": "audio/s/3082-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "このケーキ、おいしいけどカロリーが高そうですね。",
+"jl": 2,
+"jn": 799
+},
+{
+"f": "audio/s/794-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "欧米では、夏に長い休暇を取るのが一般的です。",
+"jl": 2,
+"jn": 801
+},
+{
+"f": "audio/s/794-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この料理は、欧米のお客様の口にも合うように、少し味を変えています。",
+"jl": 2,
+"jn": 801
+},
+{
+"f": "audio/s/2983-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "友人が入っている劇団の公演を見に行きました。",
+"jl": 2,
+"jn": 802
+},
+{
+"f": "audio/s/863-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "直線より曲線を多く使ったデザインは、柔らかい印象を与えます。",
+"jl": 2,
+"jn": 805
+},
+{
+"f": "audio/s/3008-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "本館が満室だったので、別館の部屋になりました。",
+"jl": 2,
+"jn": 806
+},
+{
+"f": "audio/s/3008-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "市の体育館で、週に1回バドミントンをしています。",
+"jl": 2,
+"jn": 806
+},
+{
+"f": "audio/s/986-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "雷が鳴り始めたので、試合が一時ストップしました。",
+"jl": 2,
+"jn": 810
+},
+{
+"f": "audio/s/986-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "飲みすぎなので、今月はお酒をストップしています。",
+"jl": 2,
+"jn": 810
+},
+{
+"f": "audio/s/3374-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "今年の夏は、やたらと蚊に刺されます。",
+"jl": 2,
+"jn": 811
+},
+{
+"f": "audio/s/947-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "講師の先生は、豊富な実例を交えて話してくれました。",
+"jl": 2,
+"jn": 814
+},
+{
+"f": "audio/s/947-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "詐欺の手口は、実例を知っておくと見抜きやすいです。",
+"jl": 2,
+"jn": 814
+},
+{
+"f": "audio/s/3331-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "「大丈夫」は、文脈によって「はい」にも「いいえ」にもなります。",
+"jl": 2,
+"jn": 815
+},
+{
+"f": "audio/s/3164-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "彼は元新聞記者で、今はフリーのジャーナリストです。",
+"jl": 2,
+"jn": 819
+},
+{
+"f": "audio/s/3164-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "ジャーナリストの田中氏が、地方の医療問題について本を出した。",
+"jl": 2,
+"jn": 819
+},
+{
+"f": "audio/s/3032-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "水をやったら、しおれていた花が生き生きとしてきました。",
+"jl": 2,
+"jn": 824
+},
+{
+"f": "audio/s/3199-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "窓の隙間から、冷たい風が入ってきます。",
+"jl": 2,
+"jn": 827
+},
+{
+"f": "audio/s/3199-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "隙間時間でも読めるように、記事は短くまとめています。",
+"jl": 2,
+"jn": 827
+},
+{
+"f": "audio/s/999-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "和暦に慣れていないので、日付はいつも西暦で書いています。",
+"jl": 2,
+"jn": 838
+},
+{
+"f": "audio/s/3130-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "こないだ話した件、部長に相談してみました。",
+"jl": 2,
+"jn": 840
+},
+{
+"f": "audio/s/919-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "子供のころ、祖母によく言葉遣いを直されました。",
+"jl": 2,
+"jn": 844
+},
+{
+"f": "audio/s/919-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "彼は年下ですが、言葉遣いがとても丁寧です。",
+"jl": 2,
+"jn": 844
+},
+{
+"f": "audio/s/3385-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "両手に荷物を持っていたので、ドアをあけられませんでした。",
+"jl": 2,
+"jn": 852
+},
+{
+"f": "audio/s/3106-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "マスクをすると口紅がつくので、最近はあまり塗りません。",
+"jl": 2,
+"jn": 856
+},
+{
+"f": "audio/s/3106-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "店員さんに、肌に合う口紅の色を選んでもらいました。",
+"jl": 2,
+"jn": 856
+},
+{
+"f": "audio/s/3217-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "扇風機の風で、机のうえの書類が床に散らばりました。",
+"jl": 2,
+"jn": 857
+},
+{
+"f": "audio/s/3217-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "エアコンと扇風機を一緒に使うと、部屋が早く涼しくなります。",
+"jl": 2,
+"jn": 857
+},
+{
+"f": "audio/s/3084-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "暖房をつけていても、ときどき換気が必要です。",
+"jl": 2,
+"jn": 860
+},
+{
+"f": "audio/s/3289-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "会社のただの歯車で終わりたくないと、彼はよく言っています。",
+"jl": 2,
+"jn": 861
+},
+{
+"f": "audio/s/3289-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "時計の修理で、古くなった歯車を一つ交換しました。",
+"jl": 2,
+"jn": 861
+},
+{
+"f": "audio/s/1158-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "年賀状の宛名は、パソコンでプリントしています。",
+"jl": 2,
+"jn": 862
+},
+{
+"f": "audio/s/1158-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "子供が、学校のプリントを出し忘れていました。",
+"jl": 2,
+"jn": 862
+},
+{
+"f": "audio/s/3354-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "佐藤という名字の者が二人おりますが、どちらの佐藤でしょうか。",
+"jl": 2,
+"jn": 863
+},
+{
+"f": "audio/s/3354-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "わたしの名字は珍しいので、取引先にもすぐ覚えてもらえます。",
+"jl": 2,
+"jn": 863
+},
+{
+"f": "audio/s/3223-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "あのコーチは、選手の素質を見抜く目を持っています。",
+"jl": 2,
+"jn": 864
+},
+{
+"f": "audio/s/1165-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "時間となりましたので、これにて閉会といたします。",
+"jl": 2,
+"jn": 865
+},
+{
+"f": "audio/s/3257-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "電球を替えるので、ちょっと椅子を押さえていてもらえますか。",
+"jl": 2,
+"jn": 867
+},
+{
+"f": "audio/s/3257-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "白熱電球の明かりは、蛍光灯より温かみがあります。",
+"jl": 2,
+"jn": 867
+},
+{
+"f": "audio/s/3333-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "平凡なアイデアでも、組み合わせ次第で面白くなります。",
+"jl": 2,
+"jn": 869
+},
+{
+"f": "audio/s/773-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "彼女は流行へのアンテナが高く、新しい店をよく知っています。",
+"jl": 2,
+"jn": 870
+},
+{
+"f": "audio/s/1127-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "住所に番地が抜けていたため、荷物が戻ってきました。",
+"jl": 2,
+"jn": 873
+},
+{
+"f": "audio/s/1127-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "地図アプリに番地まで入れると、建物の前まで案内してくれます。",
+"jl": 2,
+"jn": 873
+},
+{
+"f": "audio/s/3305-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "風邪をひかないように、ビタミンCを多めに摂っています。",
+"jl": 2,
+"jn": 876
+},
+{
+"f": "audio/s/2988-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "タクシーで、銀座4丁目のかどまで行ってもらいました。",
+"jl": 2,
+"jn": 880
+},
+{
+"f": "audio/s/2988-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "にほんの住所は、町名、丁目、番地の順に書きます。",
+"jl": 2,
+"jn": 880
+},
+{
+"f": "audio/s/3059-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ボールを思い切り蹴ったら、窓ガラスを割ってしまいました。",
+"jl": 2,
+"jn": 889
+},
+{
+"f": "audio/s/2973-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ラベルを見ると、このはちみつはニュージーランド産でした。",
+"jl": 2,
+"jn": 891
+},
+{
+"f": "audio/s/2973-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "国産の豚肉は高いので、今日はカナダ産にしました。",
+"jl": 2,
+"jn": 891
+},
+{
+"f": "audio/s/3286-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "工場の中にも売店があるので、昼ご飯には困りません。",
+"jl": 2,
+"jn": 893
+},
+{
+"f": "audio/s/796-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "大通りがわの部屋はうるさいので、反対側にしてもらいました。",
+"jl": 2,
+"jn": 904
+},
+{
+"f": "audio/s/1228-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "うちの子は、よその人の前だと急におとなしくなります。",
+"jl": 2,
+"jn": 906
+},
+{
+"f": "audio/s/1228-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "よそで買うより、この店のほうがずっと安いですよ。",
+"jl": 2,
+"jn": 906
+},
+{
+"f": "audio/s/3369-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "きのうは、ものすごい雨で傘が役に立ちませんでした。",
+"jl": 2,
+"jn": 907
+},
+{
+"f": "audio/s/3369-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "このソースは、ものすごくからいので少しずつかけてください。",
+"jl": 2,
+"jn": 907
+},
+{
+"f": "audio/s/3024-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "旬の野菜を使った料理を、ゆっくり味わってください。",
+"jl": 2,
+"jn": 908
+},
+{
+"f": "audio/s/3179-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "取引先の会長は、物腰が柔らかく上品なかたです。",
+"jl": 2,
+"jn": 910
+},
+{
+"f": "audio/s/3179-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "このスーツは、色が落ち着いていて上品に見えます。",
+"jl": 2,
+"jn": 910
+},
+{
+"f": "audio/s/3384-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ガソリンを20リットル入れたら、6,000円近くかかりました。",
+"jl": 2,
+"jn": 911
+},
+{
+"f": "audio/s/3111-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "蛍光灯がちかちかしていて、目が疲れます。",
+"jl": 2,
+"jn": 917
+},
+{
+"f": "audio/s/973-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "10月初旬だというのに、まだ夏のような暑さが続いています。",
+"jl": 2,
+"jn": 919
+},
+{
+"f": "audio/s/973-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "この地域では、5月初旬に田植えが始まります。",
+"jl": 2,
+"jn": 919
+},
+{
+"f": "audio/s/3105-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "兄弟げんかの理由は、いつもくだらないことです。",
+"jl": 2,
+"jn": 921
+},
+{
+"f": "audio/s/3204-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "スマホをスピーカーにつないで、音楽を流しました。",
+"jl": 2,
+"jn": 922
+},
+{
+"f": "audio/s/3079-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "ゴルフは自己流で始めたので、変な癖がついてしまいました。",
+"jl": 2,
+"jn": 928
+},
+{
+"f": "audio/s/3079-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "田中さん流の仕事の進めかたは、とても効率的です。",
+"jl": 2,
+"jn": 928
+},
+{
+"f": "audio/s/3159-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "大手私鉄の多くは、沿線で不動産や百貨店の事業も展開している。",
+"jl": 2,
+"jn": 932
+},
+{
+"f": "audio/s/3200-2.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "久しぶりにぐっすり眠ったら、頭がすっきりしました。",
+"jl": 2,
+"jn": 933
+},
+{
+"f": "audio/s/3249-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "通帳がいっぱいになったので、銀行で新しくしてもらいました。",
+"jl": 2,
+"jn": 938
+},
+{
+"f": "audio/s/927-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "まずは一つの店舗で試して、売れる可能性を探りましょう。",
+"jl": 2,
+"jn": 940
+},
+{
+"f": "audio/s/3137-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "庭をコンクリートで固めて、駐車場にしました。",
+"jl": 2,
+"jn": 941
+},
+{
+"f": "audio/s/1132-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "筆記用具は、いつもかばんに入れて持ち歩いています。",
+"jl": 2,
+"jn": 945
+},
+{
+"f": "audio/s/3364-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "電動自転車は、モーターの力で坂道も楽に登れます。",
+"jl": 2,
+"jn": 947
+},
+{
+"f": "audio/s/3364-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "モーターを交換すれば、この洗濯機はまだ使えますよ。",
+"jl": 2,
+"jn": 947
+},
+{
+"f": "audio/s/3092-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "この老舗旅館は、江戸時代からまちとともに歴史を刻んできた。",
+"jl": 2,
+"jn": 949
+},
+{
+"f": "audio/s/3092-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "スピーチの間、緊張で手が小刻みに震えていました。",
+"jl": 2,
+"jn": 949
+},
+{
+"f": "audio/s/3081-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "財布がからっぽで、昼ご飯も買えませんでした。",
+"jl": 2,
+"jn": 954
+},
+{
+"f": "audio/s/957-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "企画書を重役会議に出す前に、部長に見てもらいましょう。",
+"jl": 2,
+"jn": 957
+},
+{
+"f": "audio/s/957-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "山本さんは、30代の若さで重役になりました。",
+"jl": 2,
+"jn": 957
+},
+{
+"f": "audio/s/3330-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "部長のメールは、文体を見ればすぐにわかります。",
+"jl": 2,
+"jn": 959
+},
+{
+"f": "audio/s/3330-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "翻訳するときは、原文の文体をなるべく生かします。",
+"jl": 2,
+"jn": 959
+},
+{
+"f": "audio/s/850-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "元日の朝刊は、広告が多くていつもより分厚いです。",
+"jl": 2,
+"jn": 963
+},
+{
+"f": "audio/s/850-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "元日の朝は、家族そろってお雑煮を食べます。",
+"jl": 2,
+"jn": 963
+},
+{
+"f": "audio/s/954-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "市は、夏休みの間に小学校の校舎を修繕した。",
+"jl": 2,
+"jn": 966
+},
+{
+"f": "audio/s/954-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "築40年の社員寮は、来年度に全面的な修繕をおこなう。",
+"jl": 2,
+"jn": 966
+},
+{
+"f": "audio/s/3279-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "毎晩、体重を量って記録するのを日課にしています。",
+"jl": 2,
+"jn": 985
+},
+{
+"f": "audio/s/3183-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "スキーは初めてなので、初級コースで練習しました。",
+"jl": 2,
+"jn": 987
+},
+{
+"f": "audio/s/3183-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "簿記の初級に合格したので、次は3級に挑戦します。",
+"jl": 2,
+"jn": 987
+},
+{
+"f": "audio/s/3099-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "クーラーの風が直接当たらない席がいいです。",
+"jl": 2,
+"jn": 990
+},
+{
+"f": "audio/s/3099-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "外は暑かったでしょう。すぐにクーラーを強くしますね。",
+"jl": 2,
+"jn": 990
+},
+{
+"f": "audio/s/1162-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "子どもの頃から、文房具を集めるのが趣味です。",
+"jl": 2,
+"jn": 991
+},
+{
+"f": "audio/s/1162-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "おんしゃでは、どちらのメーカーの文房具をお使いですか。",
+"jl": 2,
+"jn": 991
+},
+{
+"f": "audio/s/1163-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "発表資料の分量は、10分で説明できるくらいにしてください。",
+"jl": 2,
+"jn": 996
+},
+{
+"f": "audio/s/1163-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "レシピの分量どおりに作ったのに、味が薄かったです。",
+"jl": 2,
+"jn": 996
+},
+{
+"f": "audio/s/3146-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "料亭の奥の座敷で、取引先を接待しました。",
+"jl": 2,
+"jn": 997
+},
+{
+"f": "audio/s/3146-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "子どもづれなので、座敷のある店を探しています。",
+"jl": 2,
+"jn": 997
+},
+{
+"f": "audio/s/857-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "パスワードには、英字・数字・記号を含めること。",
+"jl": 2,
+"jn": 581
+},
+{
+"f": "audio/s/1144-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "注文数は、つきによって不規則に変動している。",
+"jl": 2,
+"jn": 885
+},
+{
+"f": "audio/s/1496-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "最近、在庫が不足ぎみになっています。",
+"jl": 2,
+"jn": 781
+},
+{
+"f": "audio/s/3134-0.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "同ブランドは、パリであきふゆコレクションを発表した。",
+"jl": 2,
+"jn": 633
+},
+{
+"f": "audio/w/3298.mp3",
+"v": "ja-JP-NanamiNeural",
+"t": "「ひ」",
+"jl": 2,
+"jn": 694
+},
+{
+"f": "audio/s/3342-1.mp3",
+"v": "ja-JP-KeitaNeural",
+"t": "風邪ぎみなので、今日はマスクをして仕事をします。",
+"jl": 2,
+"jn": 625
 }
 ]
