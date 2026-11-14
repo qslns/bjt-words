@@ -613,7 +613,7 @@ const kzChapters = () => { if (!KZG) return genChapters(KZSRC.length); const lis
   await vis(page, '#v-kz [data-act="kzExplain"]').click(); await page.waitForTimeout(380);
   const rv = await page.evaluate(() => ({ card: document.querySelectorAll('#v-kz .kz-card').length, words: document.querySelectorAll('#v-kz .kzu-ws .sk-w').length, acts: [...document.querySelectorAll('#v-kz .abar-in > *')].map(b => b.dataset.act || b.className).join(','), html: document.getElementById('v-kz').innerHTML, kc: !!__t.KC[__t.kui.c] }));
   ok(rv.card === 1 && rv.words === [...new Set(kd.u)].filter(i => byId.has(i)).length && !/undefined|NaN/.test(rv.html), '해설 = kanji card with its ' + rv.words + ' words');
-  ok(rv.acts === (rv.kc ? 'kzSay,kzNg,kzOk' : 'kzNg,kzOk'), 'explain bar: ' + (rv.kc ? '[발음][모르겠음][알고있음] (10/20 한자 소리)' : '[모르겠음][알고있음] (그림 카드 없는 한자 — 대표 소리 없음, 11/14 K1)') + ': ' + rv.acts);
+  ok(rv.acts === (rv.kc ? 'kzSay,kzNg,kzOk' : 'ab-gap,kzNg,kzOk'), 'explain bar: ' + (rv.kc ? '[발음][모르겠음][알고있음] (10/20 한자 소리)' : '[빈 자리][모르겠음][알고있음] (그림 카드 없는 한자 — 대표 소리 없음, 발음 자리는 비워 버튼 자리 고정, 11/14 K1)') + ': ' + rv.acts);
   const okR2 = await page.locator('#v-kz [data-act="kzOk"]').boundingBox();
   ok(Math.abs(okR1.x - okR2.x) < 1 && Math.abs(okR1.width - okR2.width) < 1 && Math.abs(okR1.y - okR2.y) < 1, '알고있음 stays in the same place after 해설');
   await page.screenshot({ path: '/home/claude/work/app/shot_kz_explain_1180.png' });
@@ -865,7 +865,7 @@ const kzChapters = () => { if (!KZG) return genChapters(KZSRC.length); const lis
       return { sh: sc.scrollHeight, ch: sc.clientHeight, kzb: Math.round(kz.getBoundingClientRect().bottom), hh: hc ? Math.round(hc.getBoundingClientRect().height) + 22 : 0, hint: !!hc, big: [...document.querySelectorAll('#v-home .home > section > details.gf')].map(d => d.dataset.g).join(',') }; });
     const sb = await shownBooks(page);
     ok(m.big === ['B', 'P'].concat(LVL().map(L => 'L' + L), ['kz']).join(',') && sb.length === 0, `${vp.width}: closed home = big folds (${m.big}), no chapter book showing (${sb.length})`);
-    if (vp.width === 820) ok(m.sh <= m.ch + 1, `820x1180: closed home fits one screen (${m.sh} ≤ ${m.ch}px, install hint ${m.hint ? 'shown' : 'hidden'})`);
+    if (vp.width === 820) ok(m.sh - m.hh <= m.ch + 1, `820x1180: closed home fits one screen once the one-time install hint is closed (${m.sh} − hint ${m.hh} ≤ ${m.ch}px)`);   /* 11/14 N2 1부: 큰 접기 5개(B·P·L3·L2·kz) — 설치 안내가 떠 있으면 29px 넘침, 가로 시험과 같은 기준 */
     else ok(m.kzb - m.hh <= vp.height, `1180x820: all big folds on the first screen once the one-time install hint is closed (kanji fold bottom ${m.kzb} − hint ${m.hh} ≤ ${vp.height})`);   /* 11/14: 큰 접기 4~5개 — 설치 안내(한 번 닫으면 안 나옴)는 빼고 잼 */
     await page.screenshot({ path: `/home/claude/work/app/shot_home1113_closed_${vp.width}.png` });
     ok(errs.length === 0, `no console errors (closed home ${vp.width}): ` + errs.join(' | '));
