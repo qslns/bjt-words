@@ -1,9 +1,9 @@
 # 진행 상황 (단어장 확장, 브랜치 expansion)
 
 ## 잠금
-상태: 대기(사용자 답 기다림 — N3·N2 한자 326자 그림 카드 할지 · 한자 연결 문제 사례)
-누가: 페이지-1114-2217
-마지막 신호: 2026-11-14 23:22
+상태: 작업중(K2 N3·N2 한자 326자 그림 카드 · 한자 연결 전수 점검 — 사용자 11/15 09:36)
+누가: 페이지-1115-0937
+마지막 신호: 2026-11-15 09:39
 
 ### 잠금 규칙
 1. 시작: `cd /home/claude/bjt-words && git fetch origin && git checkout expansion && git pull --rebase origin expansion` → 위 세 줄을 읽음. 시각은 `TZ=Asia/Seoul date '+%Y-%m-%d %H:%M'`.
