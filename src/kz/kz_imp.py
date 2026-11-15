@@ -1,6 +1,6 @@
 """10/20 한자 읽기 중요도(BJT): 단어장 표제어 + 예문 후리가나에서 읽기마다 몇 번 나오는지 세서 순위·흘려보기·대표 소리를 정함.
 usage: python3 kz_imp.py  → kz_imp.json
-점수 = 10×(핵심 표제어 수: 기본 885 + 본편 1~1,000) + 3×(그 밖 표제어 수: 본편 1,001~1,500) + 1×(예문 속 등장 수, 같은 문장은 한 번)
+점수 = 10×(핵심 표제어 수: 기본 + N3·N2(11/15부터) + 본편 1~1,000) + 3×(그 밖 표제어 수: 본편 1,001~1,500) + 1×(예문 속 등장 수, 같은 문장은 한 번)
 외울 것(빨강, sk=0) = ①은 늘, ②는 점수 30 이상, ③은 80 이상(최대 3개). 나머지는 회색(sk=1, 그 읽기가 나오는 단어에서 익힘). っ꼴·같은 어간 훈독은 맨 뒤.
 대표 소리(rep) = 빨간 읽기를 순위대로(10/21 사용자: 중요하지 않은 음독은 읽지 말 것)."""
 import json, re, collections
@@ -8,10 +8,12 @@ KZ = '/home/claude/work/kz'
 import sys   # 11/14 K2: python3 kz_imp.py [CARDS.json OUT.json] — 새 카드만 따로 계산해 합칠 때(옛 950장 항목은 그대로 둠)
 CARDS_IN = sys.argv[1] if len(sys.argv) > 2 else KZ + '/kz_cards.json'
 IMP_OUT = sys.argv[2] if len(sys.argv) > 2 else KZ + '/kz_imp.json'
+DATA_IN = sys.argv[3] if len(sys.argv) > 3 else '/home/claude/work/build/data_app.json'   # 11/15: 고친 자료로 미리 계산할 때
 cards = json.load(open(CARDS_IN, encoding='utf-8')); C = {c['c']: c for c in cards}
 for c in cards: c['kun'] = [k for k in c['kun'] if k.replace('(', '').replace(')', '') not in c['on']]   # 気: 훈독 き(음독과 같음) 빼기
-d = json.load(open('/home/claude/work/build/data_app.json', encoding='utf-8'))
-W = [w for w in d['words'] if w.get('ord') is not None or w.get('bn') is not None]
+d = json.load(open(DATA_IN, encoding='utf-8'))
+# 11/15: N3·N2 단어(jl)도 셈 — 전에는 본편(ord)·기본(bn)만 세서 N3·N2에만 있는 단어 1,467개와 그 예문이 빠졌음(사용자 11/13 '제대로 설정 안 된 것')
+W = [w for w in d['words'] if w.get('ord') is not None or w.get('bn') is not None or w.get('jl') is not None]
 DAK = str.maketrans('かきくけこさしすせそたちつてとはひふへほ', 'がぎぐげござじずぜぞだぢづでどばびぶべぼ')
 HAN = str.maketrans('はひふへほ', 'ぱぴぷぺぽ')
 def variants(r):
@@ -86,7 +88,7 @@ def split(base, reading):
 hw_core = collections.defaultdict(collections.Counter); hw_all = collections.defaultdict(collections.Counter); sent = collections.defaultdict(collections.Counter)
 miss_hw = collections.Counter()
 for w in W:
-    is_core = w.get('bn') is not None or (w.get('ord') or 9999) <= 1000
+    is_core = w.get('bn') is not None or w.get('jl') is not None or (w.get('ord') or 9999) <= 1000   # 핵심 = 기본 + N3·N2 앞 1,000씩 + 본편 1~1,000
     head = w['w']; seen = set()
     for c, r in (w.get('kr') or []):
         if c not in C or (c, r) in seen: continue

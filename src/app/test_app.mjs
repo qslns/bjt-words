@@ -7,6 +7,9 @@ const ORDER = data.words.filter(w => w.ord != null).sort((a, b) => a.ord - b.ord
 const BORDER = data.words.filter(w => w.bn != null).sort((a, b) => a.bn - b.bn).map(w => w.id);
 function genChapters(total) { const list = []; const add = (a, b, kind) => list.push({a, b, kind}); for (let p = 0; p * 500 < total; p++) { const ps = p * 500 + 1, pe = Math.min(total, ps + 499); for (let bs = ps; bs <= pe; bs += 250) { const be = Math.min(pe, bs + 249); for (let e = Math.min(be, bs + 49); ; e = Math.min(be, e + 50)) { add(bs, e, 'step'); if (e >= be) break; } } if (pe - ps + 1 > 250) add(ps, pe, 'review'); } if (total > 500) add(1, total, 'all'); return list; }
 const byId = new Map(data.words.map(w => [w.id, w]));
+// 11/15 공부 순서(앱 jptNo와 같게): 기본 → N3 → N2 → BJT에만 있는 단어
+const LNOT = new Map(); [3, 2].forEach(L => data.words.filter(w => w.jl === L && w.jn != null).sort((a, b) => a.jn - b.jn).forEach((w, i) => { if (!LNOT.has(w.id)) LNOT.set(w.id, {L, n: i + 1}); }));
+const jptNoT = id => { const w = byId.get(id); return w.bn != null ? w.bn : LNOT.has(id) ? 2000 + (LNOT.get(id).L === 3 ? 0 : 2000) + LNOT.get(id).n : 9000 + (w.ord || 0); };
 /* 11/14 N3·N2 칸(데이터에 jl·jn이 있으면) — genChapters는 아래에서 정의되므로 함수로 */
 const LVL = () => [3, 2].filter(L => data.words.some(w => w.jl === L));
 const LVN = L => data.words.filter(w => w.jl === L).length;
@@ -156,8 +159,12 @@ const H0 = w => ({ ch: {}, w: w || {}, wr: null, wru: 0, g: { tt: 0, d: {} }, lt
   const firstNo = await page.$$eval('#v-study .sk-w', els => els.map(e => +e.dataset.id));
   const uu = data.kanji[w.kj[0]].u.filter(i => i !== w.id && byId.has(i));
   const anc = uu.filter(i => byId.get(i).bn != null).sort((a, b) => byId.get(a).bn - byId.get(b).bn).slice(0, 2);
-  const exp = anc.concat(uu.filter(i => byId.get(i).ord != null && !anc.includes(i)).sort((a, b) => byId.get(a).ord - byId.get(b).ord), uu.filter(i => byId.get(i).ord == null && !anc.includes(i)).sort((a, b) => byId.get(a).bn - byId.get(b).bn));
-  ok(firstNo.join() === exp.join(), 'ordered: basic 2 → 1500 by number → other basic (none seen)');
+  // 11/15: BJT에만 있는 단어(전역 약점 = 단어 칸으로 판단)는 예전 순서(닻 → 본편 번호 → 나머지는 기본 → N3 → N2), 기본·N3·N2 단어면 닻 → 기본 → N3 → N2 → BJT에만 있는 단어
+  const bjtOnly = w.bn == null && w.jl == null;
+  const exp = bjtOnly
+    ? anc.concat(uu.filter(i => byId.get(i).ord != null && !anc.includes(i)).sort((a, b) => byId.get(a).ord - byId.get(b).ord), uu.filter(i => byId.get(i).ord == null && !anc.includes(i)).sort((a, b) => jptNoT(a) - jptNoT(b)))
+    : anc.concat(uu.filter(i => !anc.includes(i) && (byId.get(i).bn != null || byId.get(i).jl != null)).sort((a, b) => jptNoT(a) - jptNoT(b)), uu.filter(i => !anc.includes(i) && byId.get(i).bn == null && byId.get(i).jl == null).sort((a, b) => jptNoT(a) - jptNoT(b)));
+  ok(firstNo.join() === exp.join(), 'ordered (' + (bjtOnly ? 'BJT: basic 2 → 1500 by number → basic → N3 → N2' : 'JPT: basic 2 → basic → N3 → N2 → BJT') + ', none seen)');
   await vis(page, '#v-study .sk-w').first().click(); await page.waitForTimeout(400);
   ok((await page.textContent('#sheet')).includes(byId.get(tid).m.slice(0, 2)), 'tap opens the related word: ' + byId.get(tid).w);
   ok(errs.length === 0, 'no console errors (same-kanji): ' + errs.join(' | '));
@@ -542,9 +549,9 @@ const kzChapters = () => { if (!KZG) return genChapters(KZSRC.length); const lis
   await page.locator('#sheet-body .s-story .lk-big[data-c="' + c0 + '"]').click(); await page.waitForTimeout(300);
   ok((await title()).includes(c0) && await page.locator('#sheet-body .kz-card').count() === 1 && await page.locator('#sheet-back').isVisible(), '한자칸 ' + c0 + ' → kanji card sheet, stacked (back shown)');
   if (KCK.has(c0)) ok((await page.textContent('#sheet-body .kz-hook')).length > 5 && await page.locator('#sheet-body .kz-strip .kz-pn').count() === 3 && await page.locator('#sheet-body .kz-tree').count() === 1, 'kanji card: scene line + 3 pictures + 부수로 쪼개 보기');
-  const exp = [...new Set(data.kanji[c0].u)].filter(i => byId.has(i)).sort((a, b) => sortNoT(a) - sortNoT(b));
+  const exp = [...new Set(data.kanji[c0].u)].filter(i => byId.has(i)).sort((a, b) => jptNoT(a) - jptNoT(b));
   const got = await page.$$eval('#sheet-body .kzu-ws .sk-w', els => els.map(e => +e.dataset.id));
-  ok(got.length === exp.length && got.join() === exp.join(), 'word list at the bottom: all ' + exp.length + ' words with ' + c0 + ' (main order → basic order)');
+  ok(got.length === exp.length && got.join() === exp.join(), 'word list at the bottom: all ' + exp.length + ' words with ' + c0 + ' (basic → N3 → N2 → BJT)');
   ok(await page.locator('#sheet-body .kzu-ws .sk-w .sk-j rt').count() > 0 && await page.locator('#sheet-body .kzu-ws .sk-w .sk-m').count() === exp.length && await page.locator('#sheet-body .kzu-ws .sk-w[data-act="open"]').count() === exp.length, 'word list: big word + reading + short meaning, each opens the word');
   const w1 = byId.get(got.find(i => i !== w0.id));
   await page.locator('#sheet-body .kzu-ws .sk-w[data-id="' + w1.id + '"]').click(); await page.waitForTimeout(300);

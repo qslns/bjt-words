@@ -797,6 +797,7 @@ const ALLN = ALL_IDS.length;
 const lvLab = id => { const l = LNO.get(id); return l ? 'N' + l.L + ' ' + l.n : ''; };
 const numLabel = id => [NO.has(id) ? 'No.' + NO.get(id) : '', BNO.has(id) ? '기본 ' + BNO.get(id) : '', lvLab(id)].filter(Boolean).join(' · ');
 const rowNum = id => NO.has(id) ? NO.get(id) : BNO.has(id) ? '기' + BNO.get(id) : LNO.has(id) ? 'N' + LNO.get(id).L + '·' + LNO.get(id).n : '';
+const jptNo = id => BNO.has(id) ? BNO.get(id) : LNO.has(id) ? 2000 + (LNO.get(id).L === 3 ? 0 : 2000) + LNO.get(id).n : 9000 + (NO.has(id) ? NO.get(id) : 0);
 const sortNo = id => NO.has(id) ? NO.get(id) : BNO.has(id) ? TOTAL + BNO.get(id) : TOTAL + 5000 + (LNO.has(id) ? (LNO.get(id).L === 3 ? 0 : 5000) + LNO.get(id).n : 0);
 const CATS = [['org','조직·사람'],['mtg','회의·보고'],['sch','일정·기한'],['tel','전화·방문'],['doc','메일·문서'],['deal','거래·물류'],['money','돈·회계'],['sales','영업·시장'],['graph','수치·그래프'],['hr','인사·근무'],['trouble','문제·대응'],['verb','업무 동사'],['formal','격식어·부사'],['kata','가타카나'],['keigo','경어·정형 표현'],['it','업무·시스템'],['gen','일반 어휘']];
 const CAT = {};
@@ -1802,10 +1803,10 @@ function kzMerge(R) {
   return ch;
 }
 
-/* ----- 한자 카드(시트·해설 공통): 카드 + 맨 아래 이 한자가 든 단어 전부(본편 순서 → 기본 순서) ----- */
+/* ----- 한자 카드(시트·해설 공통): 카드 + 맨 아래 이 한자가 든 단어 전부(11/15: 공부 순서 기본 → N3 → N2 → BJT에만 있는 단어) ----- */
 function kzWordsHTML(c) {
   const k = K[c]; if (!k) return '';
-  const ids = [...new Set(Array.isArray(k.u) ? k.u : [])].filter(id => byId.has(id)).sort((a, b) => sortNo(a) - sortNo(b));
+  const ids = [...new Set(Array.isArray(k.u) ? k.u : [])].filter(id => byId.has(id)).sort((a, b) => jptNo(a) - jptNo(b));
   if (!ids.length) return '';
   return '<section class="kzu-ws"><h3 class="sec-h"><span>이 한자가 든 단어</span><i class="rule"></i><span class="aux">' + ids.length + '</span></h3><div class="sk-ws">' +
     ids.map(id => { const o = byId.get(id); return '<button class="sk-w' + ([...o.w].length >= 8 ? ' long' : '') + '" data-act="open" data-id="' + id + '"><span class="sk-j" lang="ja">' + headRuby(o) + '</span><span class="sk-m">' + mixJa(shortM(o.m)) + '</span></button>'; }).join('') +
@@ -2194,26 +2195,41 @@ function frontHTML(w, r) {
 
 /* 해설 — 학습 화면과 단어 상세에서 같이 씀 */
 function explainHTML(w, inSheet) {
-  return '<div class="ex"><div class="ex-a">' + ansHTML(w, inSheet) + storyHTML(w, 's-story') + skHTML(w) + ptHTML(w) + pairHTML(w) + '</div><div class="ex-b">' + sentHTML(w, !inSheet && ctx && view === 'study' && w.id === ui.id ? frontSentIdx(w, getRun()) : -1) + '</div></div>';
+  return '<div class="ex"><div class="ex-a">' + ansHTML(w, inSheet) + storyHTML(w, 's-story') + skHTML(w, inSheet) + ptHTML(w) + pairHTML(w) + '</div><div class="ex-b">' + sentHTML(w, !inSheet && ctx && view === 'study' && w.id === ui.id ? frontSentIdx(w, getRun()) : -1) + '</div></div>';
 }
 /* 같은 한자를 쓰는 다른 단어: 한자마다 6개(본 단어 먼저, 그다음 번호순), 나머지는 +N. 지금 단어·이미 나온 단어는 빼기 */
 const SK_N = 6;
-function relIds(c, skip) {
+/* 11/15 같은 한자 순서 — BJT 칸(본편 장·1~3부 약점·BJT에만 있는 단어)은 예전 그대로: 닻(기본 2개) → 본편 1,500 → 나머지(기본 → N3 → N2).
+   그 밖(기본·N3·N2)은 닻(기본 2개) → 기본 → N3 → N2 → BJT에만 있는 단어. 묶음 안에서는 본 것 먼저, 번호 순. */
+function relBjt(w, inSheet) {
+  if (!w) return true;
+  if (!inSheet && ctx && view === 'study' && ui.id === w.id) {
+    if (ctx.kind === 'ch') { const ch = CHAPTERS[ctx.i]; return !!ch && !ch.basic && !ch.lv; }
+    if (ctx.kind === 'weak' && ctx.g) return /^p\d+$/.test(ctx.g);
+  }
+  return NO.has(w.id) && !BNO.has(w.id) && !LNO.has(w.id);
+}
+function relIds(c, skip, w, inSheet) {
   const ids = K[c].u.filter(id => byId.has(id) && !skip.has(id));
   const seen = id => { const x = H.w[id]; return x && x.l !== -1 ? 1 : 0; };
   const anchor = ids.filter(id => BNO.has(id)).sort((a, b) => BNO.get(a) - BNO.get(b)).slice(0, 2), an = new Set(anchor);
-  const main = ids.filter(id => NO.has(id) && !an.has(id)).sort((a, b) => (seen(b) - seen(a)) || (NO.get(a) - NO.get(b)));
-  const rest = ids.filter(id => !NO.has(id) && !an.has(id)).sort((a, b) => (seen(b) - seen(a)) || (BNO.get(a) - BNO.get(b)));
-  return anchor.concat(main, rest);
+  if (relBjt(w, inSheet)) {
+    const main = ids.filter(id => NO.has(id) && !an.has(id)).sort((a, b) => (seen(b) - seen(a)) || (NO.get(a) - NO.get(b)));
+    const rest = ids.filter(id => !NO.has(id) && !an.has(id)).sort((a, b) => (seen(b) - seen(a)) || (jptNo(a) - jptNo(b)));
+    return anchor.concat(main, rest);
+  }
+  const jpt = ids.filter(id => !an.has(id) && (BNO.has(id) || LNO.has(id))).sort((a, b) => (seen(b) - seen(a)) || (jptNo(a) - jptNo(b)));
+  const bj = ids.filter(id => !an.has(id) && !BNO.has(id) && !LNO.has(id)).sort((a, b) => (seen(b) - seen(a)) || (jptNo(a) - jptNo(b)));
+  return anchor.concat(jpt, bj);
 }
 const shortM = m => { let t = String(m || '').replace(/\([^)]*\)/g, '').replace(/\s+/g, ' ').trim(); if (!t) t = String(m || ''); return t.length > 16 ? t.slice(0, 15) + '…' : t; };
-function skHTML(w) {
+function skHTML(w, inSheet) {
   const ks = [...new Set(w.kj || [])].filter(c => K[c]);
   if (!ks.length) return '';
   const shown = new Set([w.id]);
   const seen = id => { const x = H.w[id]; return x && x.l !== -1 ? 1 : 0; };
   const rows = ks.map(c => {
-    const ids = relIds(c, shown);
+    const ids = relIds(c, shown, w, inSheet);
     if (!ids.length) return '';
     ids.slice(0, SK_N).forEach(id => shown.add(id));
     const items = ids.map((id, i) => { const o = byId.get(id); return '<button class="sk-w' + (i >= SK_N ? ' more' : '') + '" data-act="open" data-id="' + id + '"><span class="sk-j" lang="ja">' + headRuby(o) + '</span><span class="sk-m">' + mixJa(shortM(o.m)) + '</span></button>'; }).join('');
@@ -2307,7 +2323,7 @@ function kpHTML(w) {
   const cards = uniq.map(ch => {
     const k = K[ch];
     if (!k) return '';
-    const rel = relIds(ch, new Set([w.id])).slice(0, 8).map(id => byId.get(id)).filter(Boolean);
+    const rel = relIds(ch, new Set([w.id]), w).slice(0, 8).map(id => byId.get(id)).filter(Boolean);
     const here = krm[ch] ? '<div class="kv"><span class="lb">여기선</span>' + krm[ch].map(r => { const kind = readKind(ch, r); return '<span class="here"><b lang="ja">' + esc(r) + '</b>' + (kind ? '<small>' + kind + '</small>' : '') + '</span>'; }).join('') + '</div>' : '';
     return '<div class="kc"><div class="kc-big" lang="ja"><span>' + esc(ch) + '</span></div><div class="kc-body">' +
       '<div class="kc-h"><span>' + esc(k.h) + '</span><small>' + k.n + '획</small></div>' +
