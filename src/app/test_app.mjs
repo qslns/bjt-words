@@ -13,7 +13,7 @@ const jptNoT = id => { const w = byId.get(id); return w.bn != null ? w.bn : LNOT
 /* 11/14 N3·N2 칸(데이터에 jl·jn이 있으면) — genChapters는 아래에서 정의되므로 함수로 */
 const LVL = () => [3, 2].filter(L => data.words.some(w => w.jl === L));
 const LVN = L => data.words.filter(w => w.jl === L).length;
-const LVCH = () => LVL().reduce((t, L) => t + genChapters(LVN(L)).length, 0);
+const LVCH = () => LVL().reduce((t, L) => t + genChapters(LVN(L)).length + (LVN(L) > 1000 ? 1 : 0), 0);   /* 11/16: 1,000을 넘으면 '앞 1,000 총정리' 한 장 더 */
 const LVF = () => LVL().reduce((t, L) => t + 1 + Math.ceil(LVN(L) / 500), 0);
 let pass = 0, fail = 0;
 const ok = (c, m) => { if (c) { pass++; console.log('  ok  ', m); } else { fail++; console.log('  FAIL', m); } };
@@ -527,7 +527,7 @@ const KZ2P = '/home/claude/work/kanji_mn/kzo_v2.json';
 let KZSRC, KZG = null;
 if (fs.existsSync(KZ2P)) { const o2 = JSON.parse(fs.readFileSync(KZ2P, 'utf8')); let off = 0; KZG = []; KZSRC = []; for (const [name, n] of o2.groups) { const seg = o2.order.slice(off, off + n).filter(c => data.kanji[c]); off += n; if (seg.length) { KZG.push([name, seg.length]); KZSRC.push(...seg); } } }
 else KZSRC = JSON.parse(fs.readFileSync('/home/claude/work/kanji_mn/kanji_src.json', 'utf8')).map(k => k.c);
-const kzChapters = () => { if (!KZG) return genChapters(KZSRC.length); const list = []; let o = 0; for (const [, n] of KZG) { for (const c of genChapters(n)) list.push({ a: c.a + o, b: c.b + o, kind: c.kind === 'all' ? 'review' : c.kind }); o += n; } if (KZSRC.length > 500) list.push({ a: 1, b: KZSRC.length, kind: 'all' }); return list; };
+const kzChapters = () => { if (!KZG) return genChapters(KZSRC.length); const list = []; let o = 0; for (const [, n] of KZG) { for (const c of genChapters(n)) list.push({ a: c.a + o, b: c.b + o, kind: c.kind === 'all' ? 'review' : c.kind }); o += n; } const xg = KZG.length > 1 && /1,001/.test(KZG[KZG.length - 1][0]) ? KZG[KZG.length - 1][1] : 0; if (xg && KZSRC.length - xg > 500) list.push({ a: 1, b: KZSRC.length - xg, kind: 'all' }); if (KZSRC.length > 500) list.push({ a: 1, b: KZSRC.length, kind: 'all' }); return list; };   /* 11/16: 맨 뒤 1,001~ 묶음을 뺀 총정리 한 장 더 */
 
 // ---------- 10. 네모 한자 → 한자 카드 시트(단어 카드 시트와 같은 쌓기·뒤로가기) · 같은 한자 칸 네모 한자도 ----------
 {

@@ -14,10 +14,13 @@ OK = json.load(open(E + '/old_kanji_extra.json', encoding='utf-8'))
 NK = {}
 for f in ('p2/kanji_new_p2.json', 'p34/kanji_new_p34.json'):
     NK.update(json.load(open(E + '/' + f, encoding='utf-8')))
-HX = json.load(open(E + '/lv/kanji_h_lv.json', encoding='utf-8')) if os.path.exists(E + '/lv/kanji_h_lv.json') else {}
+HX = json.load(open(E + '/lv/kanji_h_final_1115.json', encoding='utf-8')) if os.path.exists(E + '/lv/kanji_h_final_1115.json') else {}   # 11/16: 최종 훈음 먼저
+if os.path.exists(E + '/lv/kanji_h_lv.json'):
+    for k, v in json.load(open(E + '/lv/kanji_h_lv.json', encoding='utf-8')).items(): HX.setdefault(k, v)
 if os.path.exists(E + '/lv/kanji_h_tmp.json'):  # 11/13 23시: lvk1 결과 전 임시 훈음(시트용, 합칠 때는 lvk1 값)
     for k, v in json.load(open(E + '/lv/kanji_h_tmp.json', encoding='utf-8')).items(): HX.setdefault(k, v)
 OLD = {w['id']: w for w in json.load(open(E + '/old_words_2312.json', encoding='utf-8'))}
+NEWK = json.load(open(E + '/lv/n3p3/kanji/kanji_lv3_f.json', encoding='utf-8')) if os.path.exists(E + '/lv/n3p3/kanji/kanji_lv3_f.json') else {}   # 11/16: 1,000번 이후 새 한자(읽기 거른 것)
 KC = {x['c'] for x in json.load(open('/home/claude/work/kanji_mn/kanji_src.json', encoding='utf-8'))}
 done4 = set()
 for f in glob.glob(E + '/p34/cards4/*.jsonl'):
@@ -37,7 +40,7 @@ for s2 in ('n3', 'n2'):
 def kinfo(w):
     out = []
     for c in kj_of(w):
-        e = K.get(c) or OK.get(c) or NK.get(c)
+        e = K.get(c) or NEWK.get(c) or OK.get(c) or NK.get(c)
         h = e['h'] if e else HX.get(c, '?')
         out.append({'c': c, 'h': h, 'on': (e or {}).get('on', []), 'kun': (e or {}).get('kun', []), 'card': c in KC, 'deck_words': byk.get(c, [])[:6]})
     return out

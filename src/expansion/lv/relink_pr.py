@@ -7,6 +7,7 @@ D = json.load(open(sys.argv[1], encoding='utf-8')); W = {w['id']: w for w in D['
 heads = {}
 for w in D['words']:
     heads.setdefault(w['w'], w['id']); heads.setdefault(w['w'].strip('〜～'), w['id'])
+ALIAS = {'汲む': 'くむ', '綴じる': 'とじる', '掴む': 'つかむ', '溜まる': 'たまる', '経つ': 'たつ', '関する': 'に関して', '供': 'お供'}
 done, still = 0, []
 for f in sys.argv[3:]:
     for line in open(f, encoding='utf-8'):
@@ -14,6 +15,7 @@ for f in sys.argv[3:]:
         if not m: continue
         cid, x = int(m.group(1)), m.group(2)
         if cid not in W: continue
+        x = ALIAS.get(x, x)   # 11/16: 표제를 가나로(상용 밖) 바꾼 말·같은 말로 합친 말
         tid = heads.get(x) or heads.get(x.strip('〜～'))
         if tid and tid != cid:
             pr = W[cid].setdefault('pr', [])

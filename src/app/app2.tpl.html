@@ -826,7 +826,7 @@ const BCH0 = CHAPTERS.length, LCH0 = {};
 (() => {
   const hs = ids => { let h = 2166136261; for (const id of ids) { h ^= id; h = Math.imul(h, 16777619) >>> 0; } return h.toString(36) + '.' + ids.length; };
   genChapters(BTOTAL).forEach(c => { const ids = BORDER.slice(c.a - 1, c.b); CHAPTERS.push(Object.assign(c, {i: CHAPTERS.length, ids, cnt: ids.length, basic: true, key: 'B:' + hs(ids) + ':' + c.a + '-' + c.b + ':' + c.kind})); });
-  LV.forEach(L => { LCH0[L] = CHAPTERS.length; genChapters(LORDER[L].length).forEach(c => { const ids = LORDER[L].slice(c.a - 1, c.b); CHAPTERS.push(Object.assign(c, {i: CHAPTERS.length, ids, cnt: ids.length, lv: L, key: 'N' + L + ':' + hs(ids) + ':' + c.a + '-' + c.b + ':' + c.kind})); }); });
+  LV.forEach(L => { LCH0[L] = CHAPTERS.length; const gl = genChapters(LORDER[L].length); if (LORDER[L].length > 1000) gl.splice(gl.length - 1, 0, {a: 1, b: 1000, blk: 'Z', kind: 'all', part: 0, core: true}); gl.forEach(c => { const ids = LORDER[L].slice(c.a - 1, c.b); CHAPTERS.push(Object.assign(c, {i: CHAPTERS.length, ids, cnt: ids.length, lv: L, key: 'N' + L + ':' + hs(ids) + ':' + c.a + '-' + c.b + ':' + c.kind})); }); });
 })();
 const KEY2I = new Map(CHAPTERS.map(c => [c.key, c.i]));
 const LAYOUT = 'v4';
@@ -1643,10 +1643,10 @@ function foldHTML(key, cls, title, range, cs, inner, st, wk) {
 function bigFoldHTML(key, cls, title, range, note, cs, sub, allName) {
   const parts = [];
   cs.forEach(c => { if (c.kind !== 'all') (parts[c.part] = parts[c.part] || []).push(c); });
-  const all = cs.find(c => c.kind === 'all');
+  const alls = cs.filter(c => c.kind === 'all');
   const inner = '<p class="part-h">' + note + '</p>' +
     parts.map((ps, p) => { const s = sub(p), wk = PARTS.has(s.key) ? partWeak(s.key).length : 0; return foldHTML(s.key, cls, s.title, s.range, ps, pwHTML(s.key, wk) + '<div class="books">' + ps.map(c => bookHTML(c)).join('') + '</div>', null, wk); }).join('') +
-    (all ? '<p class="g-ph">' + allName + '</p><div class="books">' + bookHTML(all) + '</div>' : '');
+    alls.map(c => '<p class="g-ph">' + (c.core ? allName.replace('전체 총정리', '앞 1,000 총정리') : allName) + '</p><div class="books">' + bookHTML(c) + '</div>').join('');
   return foldHTML(key, cls, title, range, cs, inner);
 }
 /* 11/14 묶음 안 약점 줄: 이 묶음 약점 n개 · 이어서/복습 · 목록 */
@@ -1750,6 +1750,8 @@ const KZCH = (() => {
   if (KZG.length) {
     list = []; let o = 0;
     KZG.forEach((g, gi) => { for (const c of genChapters(g[1])) list.push({a: c.a + o, b: c.b + o, blk: c.blk, kind: c.kind === 'all' ? 'review' : c.kind, part: gi}); o += g[1]; });
+    const xg = KZG.length > 1 && /1,001/.test(KZG[KZG.length - 1][0]) ? KZG[KZG.length - 1][1] : 0;
+    if (xg && KZN - xg > 500) list.push({a: 1, b: KZN - xg, blk: 'Z', kind: 'all', part: KZG.length, core: true});
     if (KZN > 500) list.push({a: 1, b: KZN, blk: 'Z', kind: 'all', part: KZG.length});
   } else list = genChapters(KZN);
   return list.map((c, i) => { const ids = KZO.slice(c.a - 1, c.b); return Object.assign(c, {i, ids, cnt: ids.length, key: 'K:' + kzHs(ids) + ':' + c.a + '-' + c.b + ':' + c.kind}); });
@@ -1883,13 +1885,13 @@ function kzHomeHTML() {
   try {
     const parts = [];
     KZCH.forEach(c => { if (c.kind !== 'all') (parts[c.part] = parts[c.part] || []).push(c); });
-    const all = KZCH.find(c => c.kind === 'all');
+    const alls = KZCH.filter(c => c.kind === 'all');
     const goff = p => KZG.slice(0, p).reduce((t, g) => t + g[1], 0);
     const inner = (KZG.length
       ? '<p class="part-h">단어에 나오는 한자 ' + KZN + '자 · 그 한자가 처음 나오는 단어 칸 순(' + KZG.map(g => g[0]).join(' → ') + '), 같은 묶음 안에서는 많이 쓰는 순 · 250자 안에서 50자씩 쌓아 가며 회독 · 기록은 단어와 따로</p>'
       : '<p class="part-h">단어에 나오는 한자 ' + KZN + '자 · 많이 쓰는 순 · 250자 안에서 50자씩 쌓아 가며 회독 · 기록은 단어와 따로</p>') +
       parts.map((ps, p) => (KZG.length ? '<p class="kzu-ph">' + esc(KZG[p][0]) + ' 한자 · ' + (goff(p) + 1) + '–' + (goff(p) + KZG[p][1]) + '자</p>' : parts.length > 1 ? '<p class="kzu-ph">' + (p * 500 + 1) + '–' + Math.min(KZN, p * 500 + 500) + '자</p>' : '') + '<div class="books">' + ps.map(kzBookHTML).join('') + '</div>').join('') +
-      (all ? '<p class="kzu-ph">한자 전체 총정리</p><div class="books">' + kzBookHTML(all) + '</div>' : '');
+      alls.map(c => '<p class="kzu-ph">' + (c.core ? '한자 1–' + c.b + '자 총정리(1,001번 이후 단어의 한자 빼고)' : '한자 전체 총정리') + '</p><div class="books">' + kzBookHTML(c) + '</div>').join('');
     const done = KZCH.filter(c => { const x = kzChPeek(c.i); return x && x.n > 0; }).length, on = KZCH.some(c => { const x = kzChPeek(c.i); return !!(x && x.cur); });
     return foldHTML('kz', 'grp-kz', '한자', '1–' + KZN + '자', KZCH, inner, {done, on});
   } catch (e) { return ''; }
@@ -2090,7 +2092,7 @@ function kzSummary(r, info) {
   V.kz.innerHTML = '<header class="sbar"><button class="tb" data-act="home" aria-label="홈으로">' + ICON.close + '</button><div class="sb-t"><b>' + kzName(info.i) + ' · ' + info.pass + '회독 완료</b></div></header><div class="scroll"><div class="stage"></div></div>';
   const c = KZCH[info.i], nx = KZCH[info.i + 1] || null;
   let guide;
-  if (c.kind === 'all') guide = '한자 ' + KZN + '자 전체 회독 완료. 시험까지 이 장 반복으로 굳히세요.';
+  if (c.kind === 'all') guide = '한자 ' + (c.core ? c.b : KZN) + '자 ' + (c.core ? '' : '전체 ') + '회독 완료. 시험까지 이 장 반복으로 굳히세요.';
   else if (c.kind === 'review') guide = kzRange(c) + ' 총정리 완료. ' + (nx ? '다음은 ' + kzName(nx.i) + '(' + kzRange(nx) + ').' : '');
   else if (nx && nx.a !== c.a) guide = kzRange(c) + ' 묶음 완성. 다음 묶음으로 — ' + kzName(nx.i) + '.';
   else guide = '잊기 전에 바로 다음 장으로 — 방금 본 한자도 다시 나와요.';
@@ -2369,7 +2371,7 @@ function renderSummary(r, info) {
     const c = CHAPTERS[info.i];
     rows = '<dt>장</dt><dd>' + chName(info.i) + ' · ' + chRange(c) + '</dd><dt>회독</dt><dd>' + info.pass + '회독 완료</dd>';
     const nx0 = CHAPTERS[info.i + 1], nx = nx0 && !!nx0.basic === !!c.basic && (nx0.lv || 0) === (c.lv || 0) ? nx0 : null;
-    if (c.kind === 'all') guide = (c.lv ? 'N' + c.lv + ' ' + LORDER[c.lv].length : c.basic ? '기본 ' + BTOTAL : TOTAL) + '개 전체 회독 완료. 시험까지 약점 복습 + 이 장 반복으로 굳히세요.';
+    if (c.kind === 'all') guide = (c.lv ? 'N' + c.lv + ' ' + (c.core ? '앞 1,000' : LORDER[c.lv].length) : c.basic ? '기본 ' + BTOTAL : TOTAL) + '개 전체 회독 완료. 시험까지 약점 복습 + 이 장 반복으로 굳히세요.';
     else if (c.kind === 'review') guide = chRange(c) + ' 총정리 완료. ' + (nx ? '다음은 ' + chName(nx.i) + '(' + chRange(nx) + ').' : '');
     else if (nx && nx.a !== c.a) guide = chRange(c) + ' 묶음 완성. 다음 묶음으로 — ' + chName(nx.i) + '.';
     else guide = '잊기 전에 바로 다음 장으로 — 방금 본 단어도 다시 나와요.';
