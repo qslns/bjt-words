@@ -443,6 +443,7 @@ if __name__ == '__main__':
         for c in ''.join(sys.argv[2:]):
             print(c, '| 이름표:', RAD().get(c), '| 앱 훈음:', data()['K'].get(c, {}).get('h'), '| libhangul:', ' / '.join(LH(c)[:4]), '| 일본 음:', KREAD().get(c, ''))
     elif cmd == 'validate':
+        if _emoji is None: print('주의: emoji 모듈이 없어 이모지 버전(13.1 이하) 검사를 못 함 — pip install emoji --break-system-packages')   # 11/26: 모듈이 없으면 조용히 건너뛰던 것
         cards = load_batches(sys.argv[2:]); bad = 0; seen = set()
         for e in cards:
             if e.get('c') in seen: print(f'{e.get("c")}: 같은 한자 두 번'); bad += 1
