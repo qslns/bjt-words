@@ -7,7 +7,7 @@ import json, os, shutil, sys
 E = '/home/claude/work/expansion'
 sys.path.insert(0, E + '/tools')
 from cardlib import kj_of
-DROP = set('汲綴掴溜')
+DROP = set('汲綴掴溜儲')   # 11/26: 儲도 뺌 — 1206·1207을 가나 표제(もうかる·もうける)로 바꿔 쓰는 단어가 없음(lv/n2p3/fix_kanji_n2p3.py가 이미 앱·kzo_v2에서 뺌)
 raw = json.load(open(E + '/lv/kanji_lv3_raw.json', encoding='utf-8'))
 K = {c: dict(e) for c, e in raw.items() if c not in DROP}
 # 湧: 勇=힘차게는 한 학설뿐(검수 rvn3r) — 소리 부분으로만

@@ -7,7 +7,8 @@ D = json.load(open(sys.argv[1], encoding='utf-8')); W = {w['id']: w for w in D['
 heads = {}
 for w in D['words']:
     heads.setdefault(w['w'], w['id']); heads.setdefault(w['w'].strip('〜～'), w['id'])
-ALIAS = {'汲む': 'くむ', '綴じる': 'とじる', '掴む': 'つかむ', '溜まる': 'たまる', '経つ': 'たつ', '関する': 'に関して', '供': 'お供'}
+ALIAS = {'汲む': 'くむ', '綴じる': 'とじる', '掴む': 'つかむ', '溜まる': 'たまる', '経つ': 'たつ', '関する': 'に関して', '供': 'お供',
+         '儲かる': 'もうかる', '儲ける': 'もうける', '論ずる': '論じる', '膨らます': '膨らませる', 'ウーマン': '〜ウーマン', '破く': 'やぶく'}   # 11/26 N2 3·4부 표제 바꿈
 done, still = 0, []
 for f in sys.argv[3:]:
     for line in open(f, encoding='utf-8'):

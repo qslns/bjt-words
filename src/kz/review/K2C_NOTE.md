@@ -10,3 +10,6 @@ These kanji come from the app's N3·N2 words ranked **1,001 and later** (less fr
 
 ## Final report (short)
 Batch file path, card count, validate result, kanji that were hard (one line each with your choice), kanji whose scene follows the Japanese meaning rather than the app 훈음, part names not in the name table and your source, anything you are unsure about.
+
+## k2c06·k2c07 (11/26 20시 덧붙임)
+These 46 kanji come from N2 words ranked 1,001+ that are being added in the next deploy. `kzc.py info` still shows an EMPTY 단어 line for them (their words are not in the app data yet). Use your folder's `words.txt` instead: one line per kanji with the app words (headword and reading) that will use it. Aim the scene at the meaning those words use. Readings: use only the readings `info` lists (it is the app data), and say in your report if a word's reading is not in the list.
